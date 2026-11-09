@@ -1,46 +1,56 @@
-# CHANGELOG: The Patient Funnel (site-v2)
+# Changelog
 
-## 1.1.0 · 9 Nov 2026 (evening)
-Kitti asked to integrate Market Researcher competitive pack, answer the Social Media Lead brief, ship test-ready creatives, and harden Meta/X/EU compliance. Education assets (Academy, blog, newsletter, eBook) added as the growth engine.
+## 2.0.0 · 9 Nov 2026 (draft, not published)
 
-**New sections**
-- Client brief answered (job-ad requirement → plan mapping).
-- Education as the growth engine (Academy / Straight from Invity / Broken Money / blog hooks; Academy completion as activation metric; no invented lesson titles).
-- Competitive context with four local chart PNGs (`assets/01`–`04`) + counter-moves + research caveats.
-- Test-ready creatives C1–C11 (Meta feed/Reels, X thread/post, carousels, creator brief, newsletter, CZ/DE drafts).
-- Compliance notes (Meta, X Ads vs Paid Partnerships, MiCA Art. 66/7/6, MNB, DSA/GDPR/ePrivacy/UCPD) + `COMPLIANCE.md`.
+A rewrite to make the page shorter, more personal and easier to judge in a few minutes.
+
+**The page now says**
+- Who Kitti is and why Invity, in her own voice, with one line stating this is an independent proposal.
+- The idea: start with Bitcoin-aware people without a buying routine, possibly in Czechia, with both the market and the Auto Buy vs single-purchase question framed as hypotheses to check with Invity.
+- Three things she would make: a real first-purchase walkthrough (storyboard), a "questions people actually ask" series (sample carousel from Invity's public FAQ), and a monthly "meme, decoded" built on her Bitcoin Meme Quiz (sample script).
+- A realistic first month, what depends on other teams, and what 30 days can and cannot show.
+- How she would tell whether it's working, including attributed vs incremental purchases and one simple experiment with an explicit "inconclusive" rule.
+- A short About paragraph, CV link and contact.
+
+**Removed from the main page** (useful parts moved to `archive/notes/`)
+- All six calculators and their benchmark tables.
+- The job-ad mapping table, the 11-asset creative inventory, the two-week publishing rhythm.
+- Competitive charts and fee comparisons; Turbo Buy discussion.
+- The compliance section, source badges and evidence labels; repeated disclaimers.
+- The "What I've actually done" campaign section with budgets and spend (this belongs in the CV).
+- The five-minute walkthrough toggle, progress card and all JavaScript.
 
 **Corrections**
-- Fee conflict **resolved**: public Turbo FAQ + 13 Jun 2026 blog → **1.49% service fee/trx** + **9.9% p.a. on boost only**. Discard unverified 0.49%. Calculator take-rate remains analyst contribution-margin range.
-- X policy wording split: X Ads (certification) vs Paid Partnerships (EU/UK/AU financial ineligibility per secondary sources; X Help 403 — verify in-account). Creator pilot still prefers IG/YouTube for EU paid KOL.
-- Meta: note that CNB MiCA is not explicitly on Meta’s published accepted-licence list — open sign-off item.
-- MiCA July 1, 2026 transitional messaging linked to Invity’s own blog (calm, not scare).
+- Withdrawn: "Small amounts over time beat one dramatic bet." Regular buying is not presented as better or suitable for everyone.
+- The MiCA 1 July 2026 claim is no longer on the page. See `archive/notes/mica-note.md` for what ESMA says and the more careful wording.
+- No comparison of an eBook opt-in with an app download as one conversion; the experiment now compares two versions of the same video.
+- Custody uncertainty is no longer presented as a cause of KYC drop-off.
+- No fixed creator counts or other unexplained thresholds.
+- "Ten assets" vs eleven listed: fixed by moving the inventory to notes with a correction.
+- No local workspace paths in public files (also removed from the archived copy).
+- Product statements limited to what invity.io says (fees shown before confirming; BitGo custody; withdraw any time; Auto Send; Auto Buy) and flagged for Invity's review.
+- No Czech or German copy on the page.
 
-**Technical**
-- Removed `noindex`. Absolute `og:image` / `twitter:image` → `https://kittiborissza.github.io/the-patient-funnel/og.png` via `SITE_CONFIG.baseUrl`.
-- Cookie-free footer note; charts as local assets (no remote hotlink).
-- Nav expanded; sources S24–S32 in `app.js` / ASSUMPTIONS.
+**Design**
+- Calm editorial layout: purple gradient hero (Invity-like token scale), off-white reading column, one dark About block with a single amber CV button. System fonts only. Skip link, visible focus, semantic headings, reduced-motion support, print styles.
 
-## 1.0.0 · 9 Nov 2026
-New standalone microsite, separate from the earlier Growth Desk (https://invity-growth-desk-kitti.borisszakitti.chatgpt.site/, not modified).
+## 1.1.0 · 9 Nov 2026
+Previous version ("The Patient Funnel"). Preserved in `archive/v1.1.0/`; its changelog is in `archive/notes/changelog-v1.md`.
 
-**Name and framing**
-- New project name, **The Patient Funnel**, instead of "Growth Desk". Alternates considered: *Smallest Viable Stack*, *Permission to Stack*.
-- Framed throughout as an independent application. Footer: "Independent application proposal. Not an official Invity page." No Invity logo, wordmark or screenshots.
+## 2.0.1 · 9 Nov 2026 (draft, not published)
+- About paragraph rewritten to match the CV: 15+ years in communications and marketing overall; social media and paid-social grounding from agency and freelance years (roughly 2009–2016); openly says she hasn't had a full-time hands-on social role for several years and is coming back because AI tools made the work enjoyable again and Invity is a Bitcoin company. Bitcoin (POW Lab) now comes before the earlier blockchain developer programmes; "Tezos" no longer named.
+- No "web3" and no Wasabi mention on the page. The Wasabi card was also removed from the archived v1.1.0 page and from `archive/notes/plan-v1-sections.md`.
+- Small copy trims elsewhere to keep the page at about 1,450 words.
 
-**Content changes vs Growth Desk**
-- One pilot market (Czechia, Germany second) instead of four markets (CZ/DE/ES/PL).
-- The plan opens with three Godin-style questions (who, what change, what they'd tell a friend), then the smallest viable audience, the trust ladder, one remarkable thing per sprint, and a permission-first CRM and community section.
-- Claims are tagged *public evidence / my inference / needs internal data*. "What would change my mind" boxes on the major assumptions.
-- One experiment list (E1–E4 from the revised plan PDF); the older "Habit vs first-step / Creator / Referral" lab is gone. Each brief now has a minimum viable test, owner and dependencies.
-- Removed unsupported claims flagged in `out/website_changes.md`: no "first CNB MiCA registration" or "MiCA pioneer" (page uses invity.io's wording, "licensed under MiCA by the Czech National Bank"), no Blocktrainer partnership, no "30k+ users / $2B brokered", **no service-fee figure** (later resolved in 1.1.0).
-- Evidence of work uses only verified items, with team results labelled.
-- Not included: KINCS, the Artemisszió HUF 400,000 claim, "In Bitcoin since 2017".
-- Creator pilot noted X paid-partnership limits for crypto in the EU (policy reported Mar 2026); runs on Instagram/YouTube.
+## 2.1.0 · 9 Nov 2026 (not pushed)
+- One calculator back, at Kitti’s request: “Is the gap real? A quick check” inside “How I’d know if it’s working”. Inputs: visits and first purchases for two walkthrough versions (opens on fees vs opens on custody). Output: rate per version and a plain verdict (“Too early to say”, “Too close to call”, “Leaning towards A/B”, never “winner”), the 95% range for the gap (Newcombe/Wilson), and roughly how many visits per version would be needed (80% power, 5% significance; formula reused from the v1 calculators). Fewer than 5 purchases in a version counts as too early, because one or two sales then swing the rate.
+- Inline vanilla JS, no requests; labelled inputs, aria-live result; without JavaScript a short explanation shows instead.
+- A few copy trims to keep the page near 1,450 words.
 
-**Calculators (6)**
-- Acquisition planner, Funnel, Experiment power, Creator pilot, Payback/contribution, Content time budget.
-- Pure maths in `src/calc.js` with tests in `tests/calc.test.js`.
-
-**Technical**
-- One built `index.html` (CSS/JS inlined) plus local `og.png` / later `assets/` charts; system fonts; mobile-first; print stylesheet.
+## 2.2.0 · 9 Nov 2026 (not pushed)
+- New `strategy.html`, “The plan behind it”, written to a Guy Kawasaki-style brief (meaning first, bottom-up numbers, test then scale). Same look as the main page.
+- Channel planner, simplified from the original Growth Desk “Acquisition scenario planner”: monthly budget slider (€1,000–€20,000), Cautious / Base / Upside, five channels for Czechia (search ads, paid social, creators and podcasts, referrals, newsletter and community), each with a share slider; moving one rebalances the others in proportion so shares always total 100% (kept as decimals internally, shown as whole percentages). Same formula as the original: CPI = base × (1 + 0.15 × spend ÷ €1,000) ÷ scenario factor; buyers = installs × buy rate × factor (max 100%); referral installs capped at 150 a month with unused money reported. Every number labelled “Synthetic example”.
+- Seven creative cards (first-purchase walkthrough, questions people ask, I AM HODLING meme, custody explainer, five scams, Auto Buy does/doesn’t, Czech creator setup), each with format, idea, hook, call to action, hypothesis and one metric; risk line where a purchase is mentioned.
+- First 30 days (five lines) and a table of what Invity would need to share to replace each assumption.
+- Main page: nav link and one line pointing to the new page; A/B check unchanged.
+- No Turbo Buy, no fee figures, no “web3”, no requests to other sites.

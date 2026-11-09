@@ -1,17 +1,15 @@
-# The Patient Funnel (site-v2)
+# Make Bitcoin feel within reach
 
-Kitti Borissza's independent application microsite for Invity's Social Media Lead role. Static folder: open `index.html` or host on GitHub Pages.
+Kitti Borissza's independent application proposal for the Social Media Lead role at Invity. Not an official Invity page and not endorsed by Invity.
 
-- `index.html`: built page (CSS, maths and UI inlined). Rebuild: `node tools/build.js`.
-- `og.png`: 1200×630 share image. Meta tags already point at the Pages absolute URL `https://kittiborissza.github.io/the-patient-funnel/og.png` (`SITE_CONFIG.baseUrl` in `src/page.html`).
-- `assets/`: competitive chart PNGs (self-hosted; no remote requests).
-- `src/`: `page.html`, `style.css`, `calc.js`, `app.js`.
-- `tests/calc.test.js`: formula tests (`node tests/calc.test.js`).
-- `tools/render.js`: headless Chrome screenshots (needs puppeteer-core + Chrome).
-- `ASSUMPTIONS.md`, `DESIGN.md`, `CHANGELOG.md`, **`COMPLIANCE.md`** (policy sources, dates, open sign-offs).
+## What's here
 
-**Privacy:** no cookies, pixels or third-party trackers on this microsite.
+- `index.html`: the whole page. Static HTML with inline CSS and one small inline script (the A/B check in “How I’d know if it’s working”; the page works without it), no web fonts, no cookies, trackers or analytics. Works on GitHub Pages from the repo root.
+- `strategy.html`: “The plan behind it”, linked from the main page: a channel planner (budget slider, one share slider per channel that rebalances to 100%, Cautious/Base/Upside, referral cap) on synthetic numbers, seven testable creatives, first 30 days, and what Invity data would replace the assumptions. Inline vanilla JS; works without it (explanation shown).
+- `og.png`: 1200×630 share image (matches the page headline). Meta tags point at `https://kittiborissza.github.io/the-patient-funnel/og.png`.
+- `cv/`: Kitti's CV as a PDF, linked from the "About me" section.
+- `archive/v1.1.0/`: the previous version of the site ("The Patient Funnel", v1.1.0), kept so it can be recovered. Marked `noindex` and not linked from the main page.
+- `archive/notes/`: research moved off the main page (competitor pack and charts, compliance notes and sources, creative inventory, calculator assumptions, the old plan sections, a MiCA wording note and open questions). See `archive/notes/README.md`.
+- `CHANGELOG.md`: what changed and why.
 
-**Not published from this folder automatically** — push / Pages enablement is a separate step.
-
-Live at https://kittiborissza.github.io/the-patient-funnel/
+Build tooling and screenshot tests are kept outside the public folder; nothing needs building to deploy.

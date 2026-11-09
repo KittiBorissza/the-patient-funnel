@@ -44,7 +44,7 @@
 | P4 | Academy: bite-sized lessons, quizzes, frameworks | https://www.invity.io/about-us | Do **not** invent in-app lesson titles. Czech launch post (18 Feb 2025 on blog.invity.io per search index; live URL redirected/404 on fetch) describes topics: history of money, Bitcoin, blockchain, financial literacy. |
 | P5 | Newsletter “Straight from Invity” | About us | Consent language on page. |
 | P6 | eBook “Broken Money and the Way Out” (~50 pages, free) | https://www.invity.io/broken-money-and-the-way-out · PDF https://www.invity.io/downloads/invity-broken-money-and-the-way-out.pdf | Lead magnet only with consent. |
-| P7 | Competitive charts | Research canvas 9 Nov 2026 + `/workspace/invity-viz/*.png` | Caveats on site; no invented fees/users. |
+| P7 | Competitive charts | Research canvas 9 Nov 2026 + local chart files (now in `charts/`) | Caveats on site; no invented fees/users. |
 
 ## 4. Microsite technical privacy
 

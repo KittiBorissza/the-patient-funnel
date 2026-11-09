@@ -1,5 +1,7 @@
 # ASSUMPTIONS: The Patient Funnel (site-v2)
 
+_Archived copy of the v1.1.0 calculator assumptions. The calculators were removed from the main page in v2.0.0. File paths in this note refer to the old v1.1.0 repo layout._
+
 Everything the calculators assume, where it comes from, and the formulas. All sources were read on **9 Nov 2026** (Europe/Budapest) unless a different date is shown.
 **None of these numbers are Invity data, and none is a forecast.** Each one is a public benchmark, a value derived from one, or an *analyst estimate* (my own conservative guess, labelled as such on the page).
 
@@ -39,9 +41,9 @@ Currency: USD is converted at the **ECB reference rate of 9 Nov 2026: €1 = $1.
 | S28 | ESMA MiCA Art. 66 | read 9 Nov 2026 | https://www.esma.europa.eu/publications-and-data/interactive-single-rulebook/mica/article-66-obligation-act-honestly-fairly |
 | S29 | ESMA MiCA Art. 7 | read 9 Nov 2026 | https://www.esma.europa.eu/publications-and-data/interactive-single-rulebook/mica/article-7-marketing-communications |
 | S30 | Broken Money eBook landing + PDF | read 9 Nov 2026 | https://www.invity.io/broken-money-and-the-way-out |
-| S31 | Market Researcher: MiCA Bitcoin-only pack + invity-viz charts | 9 Nov 2026 | research canvas + /workspace/invity-viz/ |
+| S31 | Market Researcher: MiCA Bitcoin-only pack + invity-viz charts | 9 Nov 2026 | research canvas + chart files (now in `charts/`) |
 | S32 | Secondary: X Paid Partnerships crypto ineligible EU/UK/AU (X Help 403) | 2–3 Mar 2026 | https://crypto-economy.com/x-paid-partnership-rules-bar-crypto-promos/ |
-| Own | Kitti's email records and reports (read-only verification, `/workspace/invity/verification.md`, 9 Nov 2026), masterfile | — | not public |
+| Own | Kitti's email records and reports (read-only verification, 9 Nov 2026), masterfile | — | not public |
 
 Not used: Statista (paywalled; the CPM-by-country chart could not be read). Meta and Google don't publish official CPM/CPC benchmark pages for crypto or fintech, so their policy pages are cited and their numbers aren't.
 

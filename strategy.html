@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The plan behind it · Kitti Borissza for Invity's Social Media Lead role</title>
+<meta name="description" content="The numbers side of Kitti Borissza's independent application for Invity: a channel planner built on synthetic assumptions, seven testable creatives, and what she would need from Invity.">
+<meta name="author" content="Kitti Borissza">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="canonical" href="https://kittiborissza.github.io/the-patient-funnel/strategy.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The plan behind it · Kitti Borissza">
+<meta property="og:description" content="Independent application proposal for Invity's Social Media Lead role. Not an official Invity page.">
+<meta property="og:url" content="https://kittiborissza.github.io/the-patient-funnel/strategy.html">
+<meta property="og:image" content="https://kittiborissza.github.io/the-patient-funnel/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kittiborissza.github.io/the-patient-funnel/og.png">
+<meta name="theme-color" content="#24084c">
+<style>
+:root{
+  --p900:#24084c;--p800:#380c7a;--p700:#4d11a3;--p600:#6016cc;--p500:#781cff;--p400:#8c3fff;--p100:#e4d1ff;--p50:#f4edff;
+  --ink:#16121f;--muted:#4f4a5a;--line:#e3dde9;--paper:#fcfbf8;--amber:#ffd27a;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  --serif:"Iowan Old Style","Charter","Bitstream Charter","Palatino Linotype",Palatino,Georgia,serif;
+  --measure:40rem;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:1rem}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--paper);color:var(--ink);font:1.125rem/1.65 var(--sans)}
+@media (min-width:700px){body{font-size:1.1875rem}}
+a{color:var(--p600);text-decoration-thickness:1px;text-underline-offset:.18em}
+a:hover{color:var(--p800);text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--p600);outline-offset:3px;border-radius:4px}
+.hero :focus-visible,.site-footer :focus-visible{outline-color:var(--amber)}
+.skip{position:absolute;left:-9999px;top:.75rem;z-index:10;background:#fff;color:var(--p800);padding:.6rem 1rem;border-radius:999px;font-weight:700}
+.skip:focus{left:.75rem}
+p{margin:0 0 1.05em}
+h1,h2,h3{line-height:1.12;letter-spacing:-.02em;margin:0}
+h2{font-size:clamp(1.85rem,4.6vw,2.6rem);font-weight:800;margin-bottom:.7em;max-width:22ch}
+h3{font-size:clamp(1.35rem,3vw,1.6rem);font-weight:800;margin-bottom:.55em}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+.col{max-width:var(--measure)}
+
+/* top line */
+.top{background:var(--p900);color:#fff;font-size:.9rem}
+.top .wrap{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;align-items:center;justify-content:space-between;padding-top:.7rem;padding-bottom:.7rem}
+.top a{color:#fff;text-decoration:none;font-weight:600}
+.top a:hover{text-decoration:underline;color:#fff}
+.top nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.15rem 1.1rem}
+.top .name{font-weight:800;letter-spacing:-.01em}
+
+/* hero */
+.hero{background:linear-gradient(170deg,#8c3fff 0%,#781cff 30%,#6016cc 65%,#4d11a3 100%);color:#fff;padding:4.5rem 0 4rem}
+@media (min-width:900px){.hero{padding:6.5rem 0 5.5rem}}
+.kicker{font-size:.95rem;font-weight:700;letter-spacing:.04em;margin:0 0 1.2rem;opacity:.95}
+.hero h1{font-size:clamp(2.7rem,8.5vw,4.7rem);font-weight:800;letter-spacing:-.035em;max-width:11ch;margin-bottom:2.2rem}
+.hero h1 span{text-decoration:underline;text-decoration-color:var(--amber);text-decoration-thickness:.075em;text-underline-offset:.14em;text-decoration-skip-ink:none}
+.hero .lede{font-size:1.2rem;line-height:1.6;max-width:36rem}
+@media (min-width:700px){.hero .lede{font-size:1.32rem}}
+.hero p{max-width:36rem}
+.hero a{color:#fff}
+.hero-grid{display:grid;gap:0 4rem}
+@media (min-width:1000px){.hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:start}.hero-text{padding-top:2.6rem}.hero h1{margin-bottom:0}.hero-text .lede{margin-top:0}}
+.hero .note-top{display:inline-block;margin-top:.6rem;font-size:.95rem;border-left:3px solid var(--amber);padding-left:.8rem;max-width:34rem}
+
+/* sections */
+main section{padding:4.25rem 0;border-top:1px solid var(--line)}
+main section:first-child{border-top:0}
+.label{font-size:.85rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--p700);margin:0 0 .9rem}
+.muted{color:var(--muted)}
+
+/* ideas */
+.idea{display:grid;gap:1.2rem 3rem;padding:2.8rem 0;border-top:1px solid var(--line)}
+.idea:first-of-type{border-top:0;padding-top:.6rem}
+@media (min-width:900px){.idea{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}}
+.idea .meta{font-size:1rem;color:var(--muted);margin-top:1.2rem}
+.idea .meta p{margin-bottom:.6em}
+.idea .meta b{color:var(--ink)}
+.sample{margin:0;background:#fff;border:1px solid var(--line);border-left:4px solid var(--p600);border-radius:4px 14px 14px 4px;padding:1.4rem 1.5rem}
+.sample .tag{display:block;font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--p700);margin-bottom:.8rem}
+.sample p,.sample li{font-family:var(--serif);font-size:1.12rem;line-height:1.55}
+.sample p:last-child{margin-bottom:0}
+.frames{list-style:none;margin:0;padding:0;counter-reset:f}
+.frames li{counter-increment:f;position:relative;padding:0 0 .9rem 2.4rem}
+.frames li:last-child{padding-bottom:0}
+.frames li::before{content:counter(f);position:absolute;left:0;top:.15rem;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--p50);color:var(--p700);font:800 .85rem/1.6rem var(--sans);text-align:center}
+.frames .shot{display:block;font-family:var(--sans);font-size:.88rem;color:var(--muted);line-height:1.45}
+.sample .small{font-family:var(--sans);font-size:.92rem;color:var(--muted);margin-top:1rem}
+
+/* month */
+.steps{list-style:none;margin:1.6rem 0 2rem;padding:0;max-width:var(--measure)}
+.steps li{padding:1rem 0 1rem 0;border-top:1px solid var(--line)}
+.steps li:first-child{border-top:0}
+.steps b{display:block;font-size:1.05rem;color:var(--p800)}
+.two{display:grid;gap:1.5rem 3rem;margin-top:1rem}
+@media (min-width:900px){.two{grid-template-columns:1fr 1fr}}
+.two h3{font-size:1.2rem}
+
+/* about */
+.about{background:var(--p900);color:#f3eefc;border-top:0!important}
+.about h2{color:#fff}
+.about .label{color:var(--amber)}
+.about a{color:#fff}
+.about :focus-visible{outline-color:var(--amber)}
+.cta{display:flex;flex-wrap:wrap;gap:.9rem 1.4rem;align-items:center;margin-top:1.8rem}
+.btn{display:inline-block;background:var(--amber);color:var(--p900)!important;text-decoration:none;font-weight:800;padding:.85rem 1.4rem;border-radius:999px}
+.btn:hover{background:#ffe2a6}
+
+/* A/B check */
+.ab{margin:2.2rem 0 0;padding:1.6rem 0 0;border-top:2px solid var(--p100)}
+.ab-title{font-weight:800;font-size:1.2rem;margin:0 0 1rem;color:var(--p800)}
+.ab-form{display:grid;gap:1rem 2rem}
+.ab-form[hidden]{display:none}
+@media (min-width:640px){.ab-form{grid-template-columns:1fr 1fr}.ab-out,.ab-form .ab-note{grid-column:1/-1}}
+.ab fieldset{border:0;margin:0;padding:0;display:grid;grid-template-columns:auto 7.5rem;gap:.5rem 1rem;align-items:center}
+.ab legend{font-weight:700;font-size:1rem;margin-bottom:.6rem;padding:0}
+.ab label{font-size:1rem;color:var(--muted)}
+.ab input{font:inherit;font-size:1.05rem;width:100%;padding:.45rem .6rem;border:1px solid #8d8698;border-radius:8px;background:#fff;color:var(--ink);font-variant-numeric:tabular-nums}
+.ab input:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
+.ab-out{font-size:1.05rem}
+.ab-out p{margin:0 0 .5em}
+.ab-out .verdict{font-weight:800;color:var(--p800);font-size:1.15rem}
+.ab-note{font-size:.9rem;color:var(--muted);margin:0}
+
+.site-footer{background:#170433;color:#d9cfee;font-size:.92rem;padding:2rem 0 2.4rem}
+.site-footer p{max-width:46rem;margin-bottom:.6em}
+.site-footer a{color:#fff}
+
+@media print{.top nav,.skip{display:none}.hero,.about,.site-footer{background:#fff!important;color:#000!important}.hero a,.about a{color:#000}main section{padding:1.5rem 0}a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em}}
+
+/* strategy page */
+.hero.small{padding:3.5rem 0 3rem}
+@media (min-width:900px){.hero.small{padding:4.5rem 0 4rem}}
+.hero.small h1{font-size:clamp(2.4rem,7vw,4rem);max-width:16ch;margin-bottom:1.6rem}
+.hero.small p{font-size:1.2rem;max-width:42rem}
+.badge{display:inline-block;font-size:.9rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:#fff3d6;color:#6b4500;border:1px solid #e8c56f;border-radius:999px;padding:.2rem .7rem;vertical-align:middle}
+.planner[hidden]{display:none!important}
+.planner{display:grid;gap:2rem 3rem;margin-top:1.6rem}
+@media (min-width:960px){.planner{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:start}.results{position:sticky;top:1rem}}
+.ctl{margin:0 0 1.4rem}
+.ctl label,.ctl legend{display:flex;justify-content:space-between;gap:1rem;font-weight:700;font-size:1.02rem;padding:0}
+.ctl output{font-variant-numeric:tabular-nums;color:var(--p800);font-weight:800;white-space:nowrap}
+.ctl .sub{display:block;font-size:1rem;color:var(--muted);font-weight:400;margin-top:.15rem;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;margin:.5rem 0 0;accent-color:var(--p600);height:2rem}
+input[type=range]:focus-visible{outline:3px solid var(--p600);outline-offset:3px}
+fieldset.scen{border:0;margin:0 0 1.6rem;padding:0}
+.scen .opts{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.6rem}
+.scen .opts label{display:inline-flex;align-items:center;gap:.4rem;font-weight:600;border:1px solid #8d8698;border-radius:999px;padding:.4rem .9rem;cursor:pointer;background:#fff}
+.scen .opts input{accent-color:var(--p600);margin:0}
+.scen .opts label:has(input:checked){background:var(--p50);border-color:var(--p600);color:var(--p800)}
+.scen .opts input:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
+.channels{border-top:1px solid var(--line);padding-top:1.2rem}
+.results{background:var(--p900);color:#f3eefc;border-radius:16px;padding:1.5rem 1.6rem}
+@media (max-width:959px){.results{order:-1;padding:1.1rem 1.2rem}.results dl{grid-template-columns:repeat(3,1fr);gap:.6rem}.results dd{font-size:1.5rem}.results dt{font-size:.95rem}}
+.results .badge{margin-bottom:1rem}
+.results dl{margin:0;display:grid;gap:.9rem}
+.results dt{font-size:1rem;color:#d9cfee}
+.results dd{margin:0;font-size:2.1rem;font-weight:800;letter-spacing:-.02em;color:#fff;font-variant-numeric:tabular-nums}
+.results p{font-size:1rem;color:#e6def5;margin:.9rem 0 0}
+.formula{font-size:1rem;color:var(--muted);max-width:var(--measure);margin-top:1.4rem}
+.cards{display:grid;gap:1.2rem;margin-top:1.6rem}
+@media (min-width:760px){.cards{grid-template-columns:1fr 1fr}}
+.cr{background:#fff;border:1px solid var(--line);border-top:4px solid var(--p600);border-radius:6px 6px 14px 14px;padding:1.3rem 1.4rem}
+.cr h3{font-size:1.25rem;margin-bottom:.3rem}
+.cr .fmt{font-size:1rem;font-weight:700;color:var(--p700);margin:0 0 .7rem}
+.cr dl{margin:0;display:grid;grid-template-columns:7.2rem 1fr;gap:.45rem .8rem;font-size:1rem}
+.cr dt{font-weight:700;color:var(--muted)}
+.cr dd{margin:0}
+.cr .hook{font-family:var(--serif);font-size:1.08rem}
+.cr .risk{font-size:1rem;color:var(--muted);margin:.8rem 0 0;border-left:3px solid var(--amber);padding-left:.6rem}
+@media (max-width:420px){.cr dl{grid-template-columns:1fr}.cr dt{margin-top:.3rem}}
+.plain{max-width:var(--measure);padding-left:1.2rem}
+.plain li{margin-bottom:.55rem}
+.needs{max-width:46rem;border-collapse:collapse;width:100%;font-size:1rem}
+.needs th,.needs td{text-align:left;padding:.7rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+.needs th{font-size:1rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="name" href="index.html">← Kitti Borissza</a>
+    <nav aria-label="On this page">
+      <ul>
+        <li><a href="#planner">Planner</a></li>
+        <li><a href="#creatives">Creatives</a></li>
+        <li><a href="#days">First 30 days</a></li>
+        <li><a href="#needs">What I’d need</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="hero small" id="top">
+  <div class="wrap">
+    <p class="kicker">Kitti Borissza · the plan behind my application</p>
+    <h1>The plan behind it</h1>
+    <p>Plenty of people in Czechia are curious about Bitcoin, yet the first purchase can feel like an exam they haven’t studied for. I want Invity’s social channels to make that step understandable, so people can decide calmly, yes or no.</p>
+    <p class="note-top">Independent application proposal. Not an official Invity page. Every number below is a synthetic example, not Invity data.</p>
+  </div>
+</div>
+
+<main id="main">
+
+<section id="planner" aria-labelledby="planner-h">
+  <div class="wrap">
+    <div class="col">
+      <p class="label">Where the money could go</p>
+      <h2 id="planner-h">A channel planner, built from the bottom up <span class="badge">Synthetic example</span></h2>
+      <p>Start from things you can check: money per channel, cost per install, the share who go on to buy. Move a slider and the others make room, so the shares always add up to 100%.</p>
+    </div>
+    <noscript><p class="formula"><b>This planner needs JavaScript.</b> In short: each channel gets a share of the monthly budget; installs = spend ÷ cost per install, which rises as a channel spends more; first buyers = installs × buy rate; referrals are capped at 150 installs a month.</p></noscript>
+    <form class="planner" id="planner-form" hidden>
+      <div>
+        <div class="ctl">
+          <label for="budget">Monthly budget <output id="o-budget" for="budget">€4,000</output></label>
+          <input id="budget" type="range" min="1000" max="20000" step="250" value="4000">
+        </div>
+        <fieldset class="scen">
+          <legend>Scenario</legend>
+          <div class="opts">
+            <label><input type="radio" name="scen" value="0.7"> Cautious</label>
+            <label><input type="radio" name="scen" value="1" checked> Base</label>
+            <label><input type="radio" name="scen" value="1.3"> Upside</label>
+          </div>
+        </fieldset>
+        <div class="channels">
+        <div class="ctl">
+          <label for="sh-search">Search ads <output id="o-search" for="sh-search">30%</output></label>
+          <input id="sh-search" type="range" min="0" max="100" step="1" value="30" aria-describedby="d-search">
+          <span class="sub" id="d-search">Google, only where Invity is certified. Synthetic: €8 per install, 15% buy. <span id="r-search"></span></span>
+        </div>
+        <div class="ctl">
+          <label for="sh-social">Paid social <output id="o-social" for="sh-social">30%</output></label>
+          <input id="sh-social" type="range" min="0" max="100" step="1" value="30" aria-describedby="d-social">
+          <span class="sub" id="d-social">Meta, only with written approval. Synthetic: €5 per install, 8% buy. <span id="r-social"></span></span>
+        </div>
+        <div class="ctl">
+          <label for="sh-creators">Creators and podcasts <output id="o-creators" for="sh-creators">15%</output></label>
+          <input id="sh-creators" type="range" min="0" max="100" step="1" value="15" aria-describedby="d-creators">
+          <span class="sub" id="d-creators">Czech Bitcoin voices, labelled as paid. Synthetic: €6 per install, 12% buy. <span id="r-creators"></span></span>
+        </div>
+        <div class="ctl">
+          <label for="sh-referral">Referrals <output id="o-referral" for="sh-referral">15%</output></label>
+          <input id="sh-referral" type="range" min="0" max="100" step="1" value="15" aria-describedby="d-referral">
+          <span class="sub" id="d-referral">Existing customers inviting friends. Synthetic: €3 per install, 22% buy; capped at 150 installs a month. <span id="r-referral"></span></span>
+        </div>
+        <div class="ctl">
+          <label for="sh-community">Newsletter and community <output id="o-community" for="sh-community">10%</output></label>
+          <input id="sh-community" type="range" min="0" max="100" step="1" value="10" aria-describedby="d-community">
+          <span class="sub" id="d-community">Meetups, newsletter sponsorships. Synthetic: €4 per install, 18% buy. <span id="r-community"></span></span>
+        </div>
+        </div>
+      </div>
+      <div class="results" role="status" aria-live="polite" aria-atomic="true">
+        <span class="badge">Synthetic example</span>
+        <dl>
+          <div><dt>Installs a month</dt><dd id="t-installs">–</dd></div>
+          <div><dt>First buyers a month</dt><dd id="t-buyers">–</dd></div>
+          <div><dt>Spend per first buyer</dt><dd id="t-per">–</dd></div>
+        </dl>
+        <p id="t-note"></p>
+      </div>
+    </form>
+    <p class="formula"><b>How it works.</b> Cost per install rises as a channel spends more: base × (1 + 0.15 × spend ÷ €1,000) ÷ scenario factor. First buyers = installs × buy rate, where the scenario factor (Cautious 0.7, Base 1, Upside 1.3) also scales the buy rate, capped at 100%. Referrals are capped at 150 installs a month, because only so many existing customers will invite someone; referral money beyond that is reported as unused. Media and rewards only: no salaries or production. A low spend per first buyer doesn’t prove profit or that the buyers wouldn’t have come anyway.</p>
+  </div>
+</section>
+
+<section id="creatives" aria-labelledby="cr-h">
+  <div class="wrap">
+    <div class="col">
+      <p class="label">What I’d test</p>
+      <h2 id="cr-h">Seven creatives, each with one question to answer</h2>
+      <p>Each has a hypothesis and one metric. Anything that shows the app or mentions fees, custody or risk goes through Invity’s review first.</p>
+    </div>
+    <div class="cards">
+      <article class="cr" aria-labelledby="c1">
+        <h3 id="c1">A real first purchase, every screen</h3>
+        <p class="fmt">Reel and Short, 35 seconds, plus a carousel</p>
+        <dl>
+          <dt>Idea</dt><dd>Film one real first purchase, from download to just after “confirm”.</dd>
+          <dt>Hook</dt><dd class="hook">“First time buying bitcoin. Here’s every screen, even the boring ones.”</dd>
+          <dt>Call to action</dt><dd>See every step in the Invity app</dd>
+          <dt>Hypothesis</dt><dd>Showing the fee and custody screens makes people more likely to start sign-up than a general product ad.</dd>
+          <dt>Metric</dt><dd>Share of viewers who watch past the fee screen</dd>
+        </dl>
+        <p class="risk">Bitcoin’s price can fall a lot. Only buy what you can hold through that.</p>
+      </article>
+      <article class="cr" aria-labelledby="c2">
+        <h3 id="c2">Questions people actually ask</h3>
+        <p class="fmt">Instagram carousel, weekly</p>
+        <dl>
+          <dt>Idea</dt><dd>One real question from support or comments, plain answer first.</dd>
+          <dt>Hook</dt><dd class="hook">“Can I move my bitcoin out of Invity?”</dd>
+          <dt>Call to action</dt><dd>Ask your question in the comments</dd>
+          <dt>Hypothesis</dt><dd>Real questions get saved more than statement posts on the same topic.</dd>
+          <dt>Metric</dt><dd>Saves per 1,000 people reached</dd>
+        </dl>
+      </article>
+      <article class="cr" aria-labelledby="c3">
+        <h3 id="c3">The meme, decoded: I AM HODLING</h3>
+        <p class="fmt">Reel, 25 seconds, plus a Story quiz</p>
+        <dl>
+          <dt>Idea</dt><dd>The 2013 forum typo behind “HODL”, and the patience it stands for. Built on my Bitcoin Meme Quiz.</dd>
+          <dt>Hook</dt><dd class="hook">“December 2013. A typo became Bitcoin’s most famous word.”</dd>
+          <dt>Call to action</dt><dd>Try the three-question meme quiz in Stories</dd>
+          <dt>Hypothesis</dt><dd>Culture posts reach more people who don’t follow Invity yet than educational posts do.</dd>
+          <dt>Metric</dt><dd>Share of reach from non-followers</dd>
+        </dl>
+      </article>
+      <article class="cr" aria-labelledby="c4">
+        <h3 id="c4">Where is my bitcoin?</h3>
+        <p class="fmt">Six-slide carousel</p>
+        <dl>
+          <dt>Idea</dt><dd>Custody in plain words: held by BitGo, separate from Invity’s own money, withdraw to your own wallet any time.</dd>
+          <dt>Hook</dt><dd class="hook">“You bought bitcoin. Where is it now?”</dd>
+          <dt>Call to action</dt><dd>Read how Invity holds it</dd>
+          <dt>Hypothesis</dt><dd>A plain custody explainer earns more clicks to the FAQ than a general trust post.</dd>
+          <dt>Metric</dt><dd>Click-through rate to the custody FAQ</dd>
+        </dl>
+      </article>
+      <article class="cr" aria-labelledby="c5">
+        <h3 id="c5">Five scams to spot</h3>
+        <p class="fmt">X thread and carousel</p>
+        <dl>
+          <dt>Idea</dt><dd>Five common phishing patterns, one per slide, with what to do instead.</dd>
+          <dt>Hook</dt><dd class="hook">“No real Bitcoin company will ever ask for your recovery words.”</dd>
+          <dt>Call to action</dt><dd>Send this to someone who just bought their first bitcoin</dd>
+          <dt>Hypothesis</dt><dd>Safety posts get shared more than any other topic.</dd>
+          <dt>Metric</dt><dd>Shares per 1,000 people reached</dd>
+        </dl>
+      </article>
+      <article class="cr" aria-labelledby="c6">
+        <h3 id="c6">Auto Buy: what it does and doesn’t</h3>
+        <p class="fmt">Carousel</p>
+        <dl>
+          <dt>Idea</dt><dd>It buys a set amount on a schedule you choose. It doesn’t time the market or promise a better result than a single purchase.</dd>
+          <dt>Hook</dt><dd class="hook">“Auto Buy, without the sales pitch.”</dd>
+          <dt>Call to action</dt><dd>See how Auto Buy works in the app</dd>
+          <dt>Hypothesis</dt><dd>An honest “does / doesn’t” post leads to more Auto Buy set-ups per visit than a benefits-only post.</dd>
+          <dt>Metric</dt><dd>Auto Buy set-ups per tracked visit</dd>
+        </dl>
+        <p class="risk">Regular buying doesn’t suit everyone and doesn’t protect you from losses.</p>
+      </article>
+      <article class="cr" aria-labelledby="c7">
+        <h3 id="c7">A Czech creator’s first setup</h3>
+        <p class="fmt">Creator video, clearly labelled as paid</p>
+        <dl>
+          <dt>Idea</dt><dd>A Czech Bitcoin educator sets up a first purchase on camera, in their own words, including what confused them.</dd>
+          <dt>Hook</dt><dd class="hook">“I did my first purchase on camera, including the bits I didn’t get.” (Czech version written by the creator)</dd>
+          <dt>Call to action</dt><dd>Questions? The Invity team answers in the comments</dd>
+          <dt>Hypothesis</dt><dd>Visitors from a creator buy at a higher rate than visitors from a brand-made video.</dd>
+          <dt>Metric</dt><dd>First purchases per tracked visit</dd>
+        </dl>
+        <p class="risk">Bitcoin’s price can fall a lot. Only buy what you can hold through that.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="days" aria-labelledby="days-h">
+  <div class="wrap"><div class="col">
+    <p class="label">First 30 days</p>
+    <h2 id="days-h">The first month</h2>
+    <ul class="plain">
+      <li>Weeks 1–2: talk to support and product, read the comments, review what’s already published.</li>
+      <li>Replace the synthetic numbers above with real ones, together with whoever owns analytics.</li>
+      <li>Pick two creatives from the list, not seven.</li>
+      <li>Weeks 3–4: publish them, with compliance review and native Czech help.</li>
+      <li>End of month: share what we learned and what I’d keep, change or drop.</li>
+    </ul>
+  </div></div>
+</section>
+
+<section id="needs" aria-labelledby="needs-h">
+  <div class="wrap"><div class="col">
+    <p class="label">What I’d need</p>
+    <h2 id="needs-h">What I’d need from Invity to replace the synthetic numbers</h2>
+    <table class="needs">
+      <thead><tr><th scope="col">Assumption</th><th scope="col">What would replace it</th></tr></thead>
+      <tbody>
+        <tr><td>Cost per install by channel</td><td>Past ad account data, and which platforms have approved Invity in Czechia</td></tr>
+        <tr><td>Share of installs who buy</td><td>Product analytics: install, sign-up, verification and first-purchase cohorts</td></tr>
+        <tr><td>Referral cap of 150 a month</td><td>Referral programme terms and how many customers actually invite</td></tr>
+        <tr><td>Creator costs and fit</td><td>Who Invity already works with, and its rules for paid partnerships</td></tr>
+        <tr><td>What counts as success</td><td>Revenue per retained customer and an agreed payback window</td></tr>
+        <tr><td>What we may say</td><td>Compliance review process, approved fee and custody wording</td></tr>
+      </tbody>
+    </table>
+  </div></div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>An independent application proposal by Kitti Borissza. Not an official Invity page and not endorsed by Invity. All numbers on this page are synthetic examples. Product details are from <a href="https://www.invity.io/" rel="noopener" target="_blank">invity.io</a> as of 9 November 2026.</p>
+    <p>Bitcoin’s price can rise and fall sharply and you can lose money. Nothing here is financial advice.</p>
+    <p>No cookies, trackers or analytics on this page. <a href="index.html">Back to the main page</a>.</p>
+  </div>
+</footer>
+<script id="plancalc">
+/* Channel planner maths: pure functions, no DOM. Exposed as PlanCalc (window) or module.exports (tests).
+   Model from the original Growth Desk planner; scenario factor 0.7 / 1 / 1.3; referral installs capped. */
+(function (root) {
+  var P = {};
+  P.SCENARIOS = { cautious: 0.7, base: 1, upside: 1.3 };
+  P.K = 0.15; // CPI rise per €1,000 of channel spend
+  P.CHANNELS = [
+    { id: 'search', name: 'Search ads', share: 30, cpi: 8, buy: 15 },
+    { id: 'social', name: 'Paid social', share: 30, cpi: 5, buy: 8 },
+    { id: 'creators', name: 'Creators and podcasts', share: 15, cpi: 6, buy: 12 },
+    { id: 'referral', name: 'Referrals', share: 15, cpi: 3, buy: 22, capInstalls: 150 },
+    { id: 'community', name: 'Newsletter and community', share: 10, cpi: 4, buy: 18 }
+  ];
+  // Integer split of `total` in proportion to raw weights (largest remainder). Always sums to total.
+  P.distribute = function (raw, total) {
+    var clean = raw.map(function (v) { return Number.isFinite(v) && v > 0 ? v : 0; });
+    var sum = clean.reduce(function (a, b) { return a + b; }, 0);
+    if (!(sum > 0)) clean = clean.map(function () { return 1; }), sum = clean.length;
+    var exact = clean.map(function (v) { return v * total / sum; });
+    var fl = exact.map(function (x) { return Math.floor(x + 1e-9); }), left = total - fl.reduce(function (a, b) { return a + b; }, 0);
+    var order = exact.map(function (x, k) { return [x - fl[k], k]; }).sort(function (a, b) { return b[0] - a[0] || a[1] - b[1]; });
+    for (var k = 0; k < left; k++) fl[order[k][1]]++;
+    return fl;
+  };
+  // Set channel i to v (0–100). The others keep their exact proportions and fill the rest,
+  // so shares always sum to 100. Kept as decimals internally to avoid rounding drift;
+  // P.display() gives whole percentages that also sum to 100.
+  P.rebalance = function (shares, i, v) {
+    v = Math.max(0, Math.min(100, Math.round(Number(v) || 0)));
+    var rest = 100 - v, osum = 0, n = 0, j;
+    for (j = 0; j < shares.length; j++) if (j !== i) { osum += Math.max(0, shares[j]); n++; }
+    var out = shares.slice();
+    for (j = 0; j < shares.length; j++) {
+      if (j === i) out[j] = v;
+      else out[j] = osum > 0 ? Math.max(0, shares[j]) * rest / osum : rest / n;
+    }
+    return out;
+  };
+  P.display = function (shares) { return P.distribute(shares, 100); };
+  P.model = function (budget, shares, factor, channels) {
+    channels = channels || P.CHANNELS; factor = factor || 1;
+    var rows = channels.map(function (c, i) {
+      var allocated = budget * (shares[i] || 0) / 100;
+      var cpi = c.cpi * (1 + P.K * allocated / 1000) / factor;
+      var installs = allocated > 0 ? allocated / cpi : 0;
+      var capped = false;
+      if (c.capInstalls != null && installs > c.capInstalls) { installs = c.capInstalls; capped = true; }
+      var spend = installs * cpi;
+      var buyers = installs * Math.min(c.buy * factor / 100, 1);
+      return { id: c.id, allocated: allocated, cpi: cpi, installs: installs, spend: spend, unused: allocated - spend, buyers: buyers, capped: capped };
+    });
+    var t = rows.reduce(function (a, r) { a.spend += r.spend; a.installs += r.installs; a.buyers += r.buyers; a.unused += r.unused; return a; }, { spend: 0, installs: 0, buyers: 0, unused: 0 });
+    t.perBuyer = t.buyers > 0 ? t.spend / t.buyers : null;
+    return { rows: rows, total: t };
+  };
+  root.PlanCalc = P;
+  if (typeof module !== 'undefined' && module.exports) module.exports = P;
+})(typeof window !== 'undefined' ? window : this);
+</script>
+<script>
+(function () {
+  var P = window.PlanCalc, f = document.getElementById('planner-form'); if (!P || !f) return;
+  f.hidden = false; f.addEventListener('submit', function (e) { e.preventDefault(); });
+  var shares = P.CHANNELS.map(function (c) { return c.share; });
+  var eur = function (v) { return '€' + Math.round(v).toLocaleString('en-GB'); };
+  var n = function (v) { return Math.round(v).toLocaleString('en-GB'); };
+  var budget = document.getElementById('budget');
+  function factor() { var r = f.querySelector('input[name=scen]:checked'); return r ? Number(r.value) : 1; }
+  function render() {
+    var b = Number(budget.value), m = P.model(b, shares, factor()), shown = P.display(shares);
+    document.getElementById('o-budget').textContent = eur(b);
+    budget.setAttribute('aria-valuetext', eur(b) + ' a month');
+    P.CHANNELS.forEach(function (c, i) {
+      var el = document.getElementById('sh-' + c.id), r = m.rows[i];
+      el.value = shown[i];
+      el.setAttribute('aria-valuetext', shown[i] + '%');
+      document.getElementById('o-' + c.id).textContent = shown[i] + '%';
+      document.getElementById('r-' + c.id).textContent = eur(r.spend) + ' → ' + n(r.installs) + ' installs → ' + n(r.buyers) + ' first buyers' + (r.capped ? ' (cap reached)' : '') + '.';
+    });
+    document.getElementById('t-installs').textContent = n(m.total.installs);
+    document.getElementById('t-buyers').textContent = n(m.total.buyers);
+    document.getElementById('t-per').textContent = m.total.perBuyer == null ? '–' : eur(m.total.perBuyer);
+    document.getElementById('t-note').textContent = m.total.unused >= 1
+      ? eur(m.total.unused) + ' of the referral share can’t be used: the 150-install cap is reached.'
+      : 'Shares add up to 100%. Not a forecast.';
+  }
+  budget.addEventListener('input', render);
+  f.querySelectorAll('input[name=scen]').forEach(function (r) { r.addEventListener('change', render); });
+  P.CHANNELS.forEach(function (c, i) {
+    document.getElementById('sh-' + c.id).addEventListener('input', function (e) { shares = P.rebalance(shares, i, e.target.value); render(); });
+  });
+  render();
+})();
+</script>
+</body>
+</html>
