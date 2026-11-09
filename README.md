@@ -13,3 +13,5 @@ Kitti Borissza's independent application microsite for Invity's Social Media Lea
 **Privacy:** no cookies, pixels or third-party trackers on this microsite.
 
 **Not published from this folder automatically** — push / Pages enablement is a separate step.
+
+Live at https://kittiborissza.github.io/the-patient-funnel/
