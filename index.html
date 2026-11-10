@@ -116,12 +116,13 @@ main section:first-child{border-top:0}
 .ab-form{display:grid;gap:1rem 2rem}
 .ab-form[hidden]{display:none}
 @media (min-width:640px){.ab-form{grid-template-columns:1fr 1fr}.ab-out,.ab-form .more{margin-top:2rem;font-weight:600}
-.ab-note{grid-column:1/-1}}
+.ab-note,.ab-mk{grid-column:1/-1}}
 .ab fieldset{border:0;margin:0;padding:0;display:grid;grid-template-columns:auto 7.5rem;gap:.5rem 1rem;align-items:center}
 .ab legend{font-weight:700;font-size:1rem;margin-bottom:.6rem;padding:0}
 .ab label{font-size:1rem;color:var(--muted)}
-.ab input{font:inherit;font-size:1.05rem;width:100%;padding:.45rem .6rem;border:1px solid #8d8698;border-radius:8px;background:#fff;color:var(--ink);font-variant-numeric:tabular-nums}
-.ab input:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
+.ab-mk{display:flex;gap:1rem;align-items:center}
+.ab select,.ab input{font:inherit;font-size:1.05rem;width:100%;padding:.45rem .6rem;border:1px solid #8d8698;border-radius:8px;background:#fff;color:var(--ink);font-variant-numeric:tabular-nums}
+.ab select:focus-visible,.ab input:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
 .ab-out{font-size:1.05rem}
 .ab-out p{margin:0 0 .5em}
 .ab-out .verdict{font-weight:800;color:var(--p800);font-size:1.15rem}
@@ -175,7 +176,7 @@ main section:first-child{border-top:0}
     <p class="label">The idea</p>
     <h2 id="idea-h">Start with the people who are already curious</h2>
     <p>My first guess at an audience: people who know what Bitcoin is, maybe bought a little once or have been “meaning to look into it” for years, but have no buying routine. They need to see what buying actually looks like, costs and risks included, then decide for themselves. Some will decide it isn’t for them. That’s fine too.</p>
-    <p>Czechia could be a sensible start, since Invity is from Prague and the local Bitcoin community is strong. But that’s a guess. Your customer data, what support hears, and limits like language and ad approvals might point elsewhere. I’d rather learn that in week two than defend my guess in month three.</p>
+    <p>Invity’s MiCA licence is Czech, and ESMA’s register lists it in Austria, Germany, Italy, Slovakia, Spain, the Netherlands and Poland too. I’d treat each country as its own market, and add Hungary if Invity can serve it, because I’m Hungarian and know that market, its language and its recent rule changes first-hand. Language, habits, local rules and ad approvals differ by country, so I’d read results market by market.</p>
     <p>Same with the product. Auto Buy is a natural focus, simple to explain and true to Invity’s long-term view. For some people, though, one small single purchase is the more honest first step. Regular buying doesn’t suit everyone, and the content shouldn’t suggest it does.</p>
   </div></div>
 </section>
@@ -262,13 +263,13 @@ main section:first-child{border-top:0}
     <ul class="steps">
       <li><b>Weeks 1–2: meet the people who know the customers.</b> Support, product, whoever reads the reviews. Review existing content and basic numbers. Read the comments for real questions.</li>
       <li><b>Weeks 2–3: pick one or two priorities.</b> Maybe an idea above, maybe something better. Agree what a good result looks like before anything goes out.</li>
-      <li><b>Weeks 3–4: make and publish a few things.</b> A handful of pieces done properly beats a full calendar at this stage.</li>
+      <li><b>Weeks 3–4: make and publish a few things.</b> The same few pieces in every market, localised, so results compare. A handful done properly beats a full calendar.</li>
       <li><b>End of the month: look back.</b> Decide honestly what to keep, change or drop.</li>
     </ul>
     <div class="two">
       <div>
         <h3>What I’d need from others</h3>
-        <p>Product and compliance, for what we can show and say about the app, fees and risk. Design, for templates. Native speakers for any Czech or German content (I’m Hungarian and work in English). And whoever knows the analytics setup.</p>
+        <p>Product and compliance, for what we can show and say about the app, fees and risk. Design, for templates. Native speakers in each market to check local copy (I’m Hungarian and work in English, so Hungarian is the only one I can check myself). And whoever knows the analytics setup.</p>
       </div>
       <div>
         <h3>What a month can and can’t tell us</h3>
@@ -284,11 +285,14 @@ main section:first-child{border-top:0}
     <h2 id="working-h">How I’d know if it’s working</h2>
     <p>Early on I’d watch the quality of questions, saves and shares on educational posts, and visits from social that actually explore. Where tracking exists: first purchases, Auto Buy set-ups and, later, retention.</p>
     <p>A purchase attributed to a post isn’t the same as one that happened because of it; some people would have bought anyway. Most organic posts can’t be traced to sales, and a bump in branded searches or fewer support tickets that week doesn’t prove a post worked.</p>
-    <p>Experiments would stay simple. Say, two versions of the walkthrough, one opening on fees and one on custody, to learn which worry matters more. I’d look at watch time and questions first, then first purchases from each version’s tracked link. Here’s the check I’d use:</p>
+    <p>Experiments would stay simple. Say, two versions of the walkthrough, one opening on fees and one on custody, to learn which worry matters more. I’d look at watch time and questions first, then first purchases from each version’s tracked link.</p>
+    <p>Significance testing would be routine, separately for every creative test in every market. Small samples often stay too close to call, and I’d say so. Many tests across many markets also make a fluke likelier somewhere, so I’d repeat a promising result before acting on it. Here’s the check I’d run each time:</p>
     <div class="ab" id="ab">
       <p class="ab-title" id="ab-title">Is the gap real? A quick check</p>
       <noscript><p class="ab-note">This check needs JavaScript. It compares first purchases per visit and only leans one way when the gap is clearly bigger than chance.</p></noscript>
       <form class="ab-form" id="ab-form" aria-labelledby="ab-title" hidden>
+        <div class="ab-mk"><label for="ab-mk">Market</label>
+          <select id="ab-mk"><option>Czechia</option><option>Austria</option><option>Germany</option><option>Italy</option><option>Slovakia</option><option>Spain</option><option>Netherlands</option><option>Poland</option><option>Hungary</option></select></div>
         <fieldset>
           <legend>Version A, opens on fees</legend>
           <label for="ab-na">Visits</label><input id="ab-na" type="number" inputmode="numeric" min="0" step="1" value="400">
@@ -300,7 +304,7 @@ main section:first-child{border-top:0}
           <label for="ab-xb">First purchases</label><input id="ab-xb" type="number" inputmode="numeric" min="0" step="1" value="14">
         </fieldset>
         <div class="ab-out" id="ab-out" role="status" aria-live="polite"></div>
-        <p class="ab-note">Example numbers; 95% range, 80% power. Attributed purchases, not proof the video caused them.</p>
+        <p class="ab-note">Example numbers. One market, one test at a time; 95% range, 80% power. Attributed purchases, not proof the video caused them.</p>
       </form>
     </div>
     <p class="more">Want the numbers side? A channel planner and seven creative tests are on <a href="strategy.html">The plan behind it</a>.</p>
@@ -395,14 +399,15 @@ main section:first-child{border-top:0}
     var v = ids.map(function (id) { var s = document.getElementById(id).value; return s === '' ? NaN : Number(s); });
     var r = C.compare(v[0], v[1], v[2], v[3]), html = '';
     if (r.status === 'invalid') { out.innerHTML = '<p class="verdict">Check the numbers.</p><p>Use whole numbers, at least one visit per version, and no more purchases than visits.</p>'; return; }
-    html += '<p>First purchases per visit: A ' + pct(r.pa) + ', B ' + pct(r.pb) + '.</p>';
+    html += '<p>' + document.getElementById('ab-mk').value + ', first purchases per visit: A ' + pct(r.pa) + ', B ' + pct(r.pb) + '.</p>';
     if (r.status === 'early') html += '<p class="verdict">Too early to say.</p><p>Below ' + C.MIN_PURCHASES + ' purchases per version, one or two sales swing the result.</p>';
     else if (r.status === 'close') html += '<p class="verdict">Too close to call.</p><p>B minus A could be anywhere from ' + pp(r.lo) + ' to ' + pp(r.hi) + ' points. That includes zero, so it may be chance.</p>';
-    else html += '<p class="verdict">Leaning towards ' + r.lean + '.</p><p>B minus A is likely ' + pp(r.lo) + ' to ' + pp(r.hi) + ' points. I’d run a second round before changing anything.</p>';
+    else html += '<p class="verdict">Leaning towards ' + r.lean + '.</p><p>B minus A is likely ' + pp(r.lo) + ' to ' + pp(r.hi) + ' points. With many markets and tests running, flukes like this happen, so I’d repeat it before changing anything.</p>';
     if (r.status !== 'leaning' && r.need) html += '<p>Telling these rates apart reliably would take roughly ' + fmt(r.need) + ' visits per version.</p>';
     out.innerHTML = html;
   }
   ids.forEach(function (id) { document.getElementById(id).addEventListener('input', render); });
+  document.getElementById('ab-mk').addEventListener('change', render);
   render();
 })();
 </script>

@@ -54,3 +54,24 @@ Previous version ("The Patient Funnel"). Preserved in `archive/v1.1.0/`; its cha
 - First 30 days (five lines) and a table of what Invity would need to share to replace each assumption.
 - Main page: nav link and one line pointing to the new page; A/B check unchanged.
 - No Turbo Buy, no fee figures, no “web3”, no requests to other sites.
+
+## 2.3.0 · 9 Nov 2026 (not pushed)
+
+Kitti's feedback on the live page: no single-country focus, results read per market, significance testing as routine.
+
+**Main page**
+- The Czechia-first paragraph is gone. "The idea" now lists the markets on Invity's MiCA register entry (licence from the Czech National Bank; listed in Austria, Germany, Italy, Slovakia, Spain, the Netherlands and Poland), treats each as its own market, and adds Hungary with one sentence on why (Kitti is Hungarian and knows that market first-hand), conditional on Invity being able to serve it.
+- First month: the same few pieces published in every market, localised, so results compare. "Native speakers for any Czech or German content" became native speakers in each market (Kitti can check Hungarian herself).
+- "How I'd know if it's working": new paragraph saying significance tests run for every creative test in every market, separately; small samples stay "too close to call"; many tests across many markets make a fluke likelier, so promising results are repeated before acting.
+- A/B check: market selector (labels the result; maths unchanged), note "One market, one test at a time", and the "Leaning" verdict now says flukes happen across many tests, so repeat before changing anything.
+
+**The plan behind it**
+- "The meaning" rewritten for every market Invity serves.
+- Channel planner is per market: market selector, each market with its own budget and channel mix (state kept when switching), a synthetic cost index per market applied to every channel's cost per install, and a synthetic referral cap per market. Hungary included and marked "to confirm". New "All markets side by side" table (budget, installs, first buyers, spend per first buyer, totals). Same maths as 2.2.0; shares still sum to 100% in every market.
+- Creatives: intro says each runs in every market with the same test; each card has a "Localising" line; card 7 is now "A local creator's first setup" (one creator per market).
+- First month rewritten: same measurement in every market at once, same tests in parallel, significance check per market per test.
+- "What would replace the assumptions": adds live market list (and Hungary), per-market ad approvals, per-market compliance and local marketing rules, per-market referral caps and costs.
+
+**Tests**
+- `plan.test.js`: 15 → 23 tests (markets list, per-market channels and caps, independence of plans, portfolio totals, cost index effect).
+- `test4.js`: market switching, plan kept per market, all-markets table, no-JS state.

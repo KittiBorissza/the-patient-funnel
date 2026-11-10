@@ -13,12 +13,12 @@ Things the main page treats as hypotheses, and what to ask the Invity team. Prod
 1. Can a real first purchase be filmed in the app, and which screens may be shown?
 2. Exact wording for fees on the confirmation screen, and whether there is any Invity fee on withdrawals beyond the Bitcoin network fee.
 3. How Invity wants custody and BitGo described in social content.
-4. Which audience and market the team would prioritise; is Czechia the right start?
+4. Which markets are live today (the sign-up list), whether Hungary is served or planned, and which audience to prioritise in each.
 5. Whether Auto Buy or a single first purchase should be the main call to action, and for whom.
 6. What tracking exists from social to install, sign-up, verification and first purchase; how attribution is handled.
 7. Where real customer questions can be collected (support tool, community, reviews) and how to use them with consent.
 8. Compliance review process and turnaround for social content; risk-warning wording.
-9. Who can provide native Czech/German review.
+9. Who can provide native-language review in each market (Kitti can check Hungarian).
 10. Why people drop out during sign-up or verification. Not assumed to be custody concerns; this needs data or interviews.
 
 ## Withdrawn from v1.1.0
