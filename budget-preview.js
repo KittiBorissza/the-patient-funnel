@@ -5,13 +5,17 @@ const previewBudget = document.getElementById('preview-budget');
 const previewResult = preview.querySelector('[role="status"]');
 const labLink = document.getElementById('budget-lab-link');
 const wholeNumber = new Intl.NumberFormat('en', { maximumFractionDigits: 0 });
-let decision = 'purchases';
+let decision = preview.dataset.decision || 'purchases';
 
 function renderBudgetPreview() {
   const budget = previewBudget.valueAsNumber;
   const valid = previewBudget.validity.valid && Number.isFinite(budget);
   for (const button of preview.querySelectorAll('[data-amount]')) {
     button.setAttribute('aria-pressed', String(valid && budget === Number(button.dataset.amount)));
+  }
+
+  for (const button of preview.querySelectorAll('button[name="decision"]')) {
+    button.setAttribute('aria-pressed', String(button.value === decision));
   }
 
   const query = new URLSearchParams({ decision });

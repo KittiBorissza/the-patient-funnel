@@ -1,12 +1,12 @@
 :root {
   color-scheme: light;
-  --paper: #faf8f2;
+  --paper: #faf7f1;
   --surface: #fffefa;
   --ink: #1d1425;
   --muted: #625768;
   --line: #ded6e0;
-  --purple: #581c9d;
-  --plum: #291346;
+  --purple: #5022b8;
+  --plum: #201038;
   --lilac: #eee6f7;
   --amber: #ffd27a;
   --serif: "Iowan Old Style", Charter, Georgia, serif;
@@ -27,12 +27,12 @@ main:focus, [tabindex="-1"]:focus:not(:focus-visible) { outline: none; }
 p, figure { margin: 0 0 1em; }
 p:last-child { margin-bottom: 0; }
 h1, h2, h3, h4 { margin: 0 0 .45em; line-height: 1.04; }
-h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -.046em; }
+h1, h2, h3 { font-family: var(--sans); font-weight: 740; letter-spacing: -.046em; }
 h1 { font-size: clamp(3rem, 8vw, 7.2rem); }
 h2 { font-size: clamp(2.15rem, 5.4vw, 4.65rem); }
 h3 { font-size: clamp(1.65rem, 3vw, 2.8rem); }
 h4 { font-size: 1.15rem; line-height: 1.25; }
-h1 em { color: var(--purple); font-weight: inherit; }
+h1 em { color: var(--purple); font-style: normal; font-weight: inherit; }
 .wrap { width: min(100% - 2rem, 76rem); margin-inline: auto; }
 .narrow-wrap { max-width: 51rem; }
 .eyebrow, .label, .tag {

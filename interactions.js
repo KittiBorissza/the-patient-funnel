@@ -37,6 +37,7 @@ for (const list of document.querySelectorAll('[role="tablist"]')) {
   const tabs = [...list.querySelectorAll('[role="tab"]')];
   const initial = tabs.find(tab => tab.getAttribute('aria-selected') === 'true');
   activateTab(initial);
+  if (list.closest('.homepage-concept')) list.hidden = false;
   if (list.closest('.concept-feed')) {
     const restorePlatform = () => {
       const active = tabs.find(tab => '#' + tab.getAttribute('aria-controls') === location.hash);
