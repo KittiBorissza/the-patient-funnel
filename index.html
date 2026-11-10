@@ -133,6 +133,14 @@ main section:first-child{border-top:0}
 .site-footer a{color:#fff}
 
 @media print{.top nav,.skip{display:none}.hero,.about,.site-footer{background:#fff!important;color:#000!important}.hero a,.about a{color:#000}main section{padding:1.5rem 0}a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em}}
+
+@media (max-width: 880px){
+  header.top .wrap{flex-wrap:wrap;align-items:center}
+  header.top nav{width:100%;margin-top:.15rem}
+  header.top nav ul{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:.9rem;padding:.15rem 0 .35rem}
+  header.top nav ul::-webkit-scrollbar{display:none}
+  header.top nav a{white-space:nowrap}
+}
 </style>
 </head>
 <body>
@@ -165,7 +173,7 @@ main section:first-child{border-top:0}
     <div class="hero-text">
     <p class="lede">Hi, I’m Kitti. A CV can’t show how I’d think about this job, so I made this page.</p>
     <p>Invity caught my eye because it’s narrow on purpose: Bitcoin only, built in Prague in the same family as Trezor, and talking about holding for years instead of trading. In a loud category, that’s a calm and believable thing to say.</p>
-    <p>Lots of people know roughly what Bitcoin is. Far fewer have bought any. The ones in between rarely need another speech about why it matters. They get stuck on small practical questions. What will I pay? Where does my bitcoin go? Can I get it out again? Social media is a good place to answer those honestly, in public, before anyone installs anything.</p>
+    <p>Many people know roughly what Bitcoin is but haven’t bought any. They rarely need another speech about why it matters, or another prediction about the price. They get stuck on small practical questions. What will I pay? Where does my bitcoin go? Can I get it out again? Social media is a good place to answer those honestly, in public, before anyone installs anything.</p>
     <p class="note-top">This is my own independent application proposal. I don’t work at Invity, I haven’t seen any internal data, and Invity hasn’t reviewed or endorsed this page.</p>
     </div>
   </div>
@@ -176,10 +184,11 @@ main section:first-child{border-top:0}
 <section id="idea" aria-labelledby="idea-h">
   <div class="wrap"><div class="col">
     <p class="label">The idea</p>
-    <h2 id="idea-h">Start with the people who are already curious</h2>
-    <p>My first guess at an audience: people who know what Bitcoin is, maybe bought a little once or have been “meaning to look into it” for years, but have no buying routine. They need to see what buying actually looks like, costs and risks included, then decide for themselves. Some will decide it isn’t for them. That’s fine too.</p>
-    <p>Invity’s MiCA licence is Czech, and ESMA’s register lists it in Austria, Germany, Italy, Slovakia, Spain, the Netherlands and Poland too. I’d treat each country as its own market, and add Hungary if Invity can serve it, because I’m Hungarian and know that market, its language and its recent rule changes first-hand. Language, habits, local rules and ad approvals differ by country, so I’d read results market by market.</p>
-    <p>Same with the product. Auto Buy is a natural focus, simple to explain and true to Invity’s long-term view. For some people, though, one small single purchase is the more honest first step. Regular buying doesn’t suit everyone, and the content shouldn’t suggest it does.</p>
+    <h2 id="idea-h">Start with the person who hasn’t bought yet</h2>
+    <p>My first audience is the Bitcoin-curious person who has never made a first purchase. They don’t need another prediction about the price. They need to understand what happens, what it costs, where their bitcoin goes, and whether they can change their mind. The spine of the work is simple: from “I’m curious, but I don’t know how this works” to “I understand enough to decide.” Some will decide it isn’t for them. That’s fine too.</p>
+    <p>I’d make the things people are usually expected to trust without seeing: the fee screen, the custody explanation, and the way out. If someone later told a friend about Invity, I’d want the reason to be: they showed me exactly what happens before I had to decide.</p>
+    <p>Recurring buying can be a second decision, once that first purchase is understood. Auto Buy is simple to explain and true to Invity’s long-term view, but it shouldn’t be the first story, and the content shouldn’t suggest it suits everyone.</p>
+    <p>Invity’s MiCA licence is Czech, and ESMA’s register lists it in Austria, Germany, Italy, Slovakia, Spain, the Netherlands and Poland too. I’d treat each country as its own market, with its own language version, and add Hungary if Invity can serve it, because I’m Hungarian and know that market, its language and its recent rule changes first-hand. A forecast across those markets is how I’d see where a test has enough volume, and how the same idea should be adapted, not as a reason to ignore local differences.</p>
   </div></div>
 </section>
 
@@ -195,7 +204,7 @@ main section:first-child{border-top:0}
       <div>
         <h3 id="a-h">A real first purchase, every screen</h3>
         <p>A short video and matching carousel following one real first purchase in the Invity app, from download to just after “confirm”. Nothing staged, nothing skipped.</p>
-        <p>Nerves peak right before “confirm”. Invity says fees are shown at that point, and that bitcoin is held with a regulated custodian, BitGo, and can be withdrawn to your own wallet any time. That’s where I’d slow down.</p>
+        <p>The confirm screen is one place people may hesitate. Invity’s public pages say fees are shown at that point, that bitcoin is held with a regulated custodian, BitGo, and that it can be withdrawn to your own wallet. Those details, including any limits, fees or conditions, need checking against the live app. That’s where I’d slow down.</p>
         <div class="meta">
           <p><b>Where:</b> Reels, YouTube Shorts, a pinned X thread, and a carousel for people who skip video.</p>
           <p><b>What I’d learn:</b> which screen people ask about most, how many watch past the fee screen, and whether custody needs its own video.</p>
@@ -208,10 +217,10 @@ main section:first-child{border-top:0}
           <li>“Yes, they ask for ID. Regulated app, part of the deal.”</li>
           <li>“Starting small. An amount I’d be fine seeing drop for a while.”</li>
           <li>“This is the screen to actually read. What I’ll pay, before I tap anything.” <span class="shot">Hold three seconds.</span></li>
-          <li>“Where is it now? With a custodian, separate from the company’s money. I can send it to my own wallet any time.”</li>
-          <li>“Bitcoin’s price can fall a lot. Only buy what you can hold through that.”</li>
+          <li>“Where is it now? With a custodian. Invity’s public pages say I can send it to my own wallet — that needs checking against the actual terms.”</li>
+          <li>“Bitcoin can lose value. Make sure you understand the risks before deciding whether to buy.”</li>
         </ol>
-        <p class="small">Wording to be checked against the live app with Invity.</p>
+        <p class="small">Wording to be checked against the live app with Invity, including custody terms, withdrawal limits, fees and conditions. Claims such as “any time” or “separate from the company’s money” should not go out until that review.</p>
       </figure>
     </article>
 
@@ -228,7 +237,7 @@ main section:first-child{border-top:0}
       <figure class="sample">
         <span class="tag">Sample carousel</span>
         <p>Slide 1: “Can I move my bitcoin out of Invity?”</p>
-        <p>Slide 2: “Yes, any time, to your own hardware wallet or any Bitcoin address. Auto Send can even do it automatically once your balance reaches an amount you choose.”</p>
+        <p>Slide 2: “Invity’s public FAQ says you can withdraw to a hardware wallet or any Bitcoin address you control. Check the current limits, fees and conditions first. Auto Send can do it automatically once your balance reaches an amount you choose.”</p>
         <p>Slide 3: “Moving bitcoin on the network comes with a small fee paid to miners. And holding your own keys means looking after your own backup.”</p>
         <p class="small">Format example, written from Invity’s public FAQ. The real series would start from real questions, never invented quotes.</p>
       </figure>
@@ -268,7 +277,7 @@ main section:first-child{border-top:0}
     <ul class="steps">
       <li><b>Weeks 1–2: meet the people who know the customers.</b> Support, product, whoever reads the reviews. Review existing content and basic numbers. Read the comments for real questions.</li>
       <li><b>Weeks 2–3: pick one or two priorities.</b> Maybe an idea above, maybe something better. Agree what a good result looks like before anything goes out.</li>
-      <li><b>Weeks 3–4: make and publish a few things.</b> The same few pieces in every market, localised, so results compare. A handful done properly beats a full calendar.</li>
+      <li><b>Weeks 3–4: make and publish a few things.</b> A handful done properly beats a full calendar. I’d plan the work across the markets Invity serves, with a local language version in each one, and use the forecast to see where a first comparison has enough volume — not to switch every market on at once.</li>
       <li><b>End of the month: look back.</b> Decide honestly what to keep, change or drop.</li>
     </ul>
     <div class="two">
@@ -290,29 +299,9 @@ main section:first-child{border-top:0}
     <h2 id="working-h">How I’d know if it’s working</h2>
     <p>Early on I’d watch the quality of questions, saves and shares on educational posts, and visits from social that actually explore. Where tracking exists: first purchases, Auto Buy set-ups and, later, retention.</p>
     <p>A purchase attributed to a post isn’t the same as one that happened because of it; some people would have bought anyway. Most organic posts can’t be traced to sales, and a bump in branded searches or fewer support tickets that week doesn’t prove a post worked.</p>
-    <p>Experiments would stay simple. Say, two versions of the walkthrough, one opening on fees and one on custody, to learn which worry matters more. I’d look at watch time and questions first, then first purchases from each version’s tracked link.</p>
-    <p>Significance testing would be routine, separately for every creative test in every market. Small samples often stay too close to call, and I’d say so. Many tests across many markets also make a fluke likelier somewhere, so I’d repeat a promising result before acting on it. Here’s the check I’d run each time:</p>
-    <div class="ab" id="ab">
-      <p class="ab-title" id="ab-title">Is the gap real? A quick check</p>
-      <noscript><p class="ab-note">This check needs JavaScript. It compares first purchases per visit and only leans one way when the gap is clearly bigger than chance.</p></noscript>
-      <form class="ab-form" id="ab-form" aria-labelledby="ab-title" hidden>
-        <div class="ab-mk"><label for="ab-mk">Market</label>
-          <select id="ab-mk"><option>Czechia</option><option>Austria</option><option>Germany</option><option>Italy</option><option>Slovakia</option><option>Spain</option><option>Netherlands</option><option>Poland</option><option>Hungary</option></select></div>
-        <fieldset>
-          <legend>Version A, opens on fees</legend>
-          <label for="ab-na">Visits</label><input id="ab-na" type="number" inputmode="numeric" min="0" step="1" value="400">
-          <label for="ab-xa">First purchases</label><input id="ab-xa" type="number" inputmode="numeric" min="0" step="1" value="9">
-        </fieldset>
-        <fieldset>
-          <legend>Version B, opens on custody</legend>
-          <label for="ab-nb">Visits</label><input id="ab-nb" type="number" inputmode="numeric" min="0" step="1" value="400">
-          <label for="ab-xb">First purchases</label><input id="ab-xb" type="number" inputmode="numeric" min="0" step="1" value="14">
-        </fieldset>
-        <div class="ab-out" id="ab-out" role="status" aria-live="polite"></div>
-        <p class="ab-note">Example numbers. One market, one test at a time; 95% range, 80% power. Attributed purchases, not proof the video caused them.</p>
-      </form>
-    </div>
-    <p class="more">Want the numbers side? A channel planner and seven creative tests are on <a href="strategy.html">The plan behind it</a>.</p>
+    <p id="ab">Experiments would stay simple. Say, two versions of the walkthrough: one opening on fees and one on custody. To isolate the wording, the opening visual would stay the same; only the first line would change. If we also cut to a different first screen, I would treat that as a package test, not as a clean test of the words. I’d look at watch time and questions first, then first purchases from each version’s tracked link.</p>
+    <p>I’d agree on what we want to learn before publishing. Some ideas will give us clear numbers; others will tell us what people are confused about. If the sample is too small, I’d say so and use the learning to shape the next test.</p>
+    <p class="more">The multi-market planning forecast — with average CPM, CTR and published industry ranges — is on <a href="strategy.html#forecast">The plan behind it</a>.</p>
   </div></div>
 </section>
 
@@ -320,7 +309,8 @@ main section:first-child{border-top:0}
   <div class="wrap"><div class="col">
     <p class="label">About me</p>
     <h2 id="about-h">A bit about me</h2>
-    <p>I’ve worked in communications and marketing for over 15 years. My social media grounding comes from my agency and freelance years, roughly 2009 to 2016: community management, moderation, publishing and paid social for brands, startups and nonprofits. To be honest, I haven’t had a full-time, hands-on social role for several years. Two things pulled me back: AI tools made the making part enjoyable again, and Invity is a Bitcoin company. Today I host the monthly Builder Calls in Bitvocation’s POW Lab, a community of people building on Bitcoin. Before that I ran blockchain developer programmes. I like making complicated things feel approachable and bringing slightly unsure people into the same room.</p>
+    <p>I’ve worked in communications and marketing for over 15 years. I started in agency and freelance social media, roughly 2009 to 2016, where I managed communities, content, moderation and paid campaigns for brands, startups and nonprofits. Since then I’ve worked with startups and international technology communities. Today I host the monthly Builder Calls in Bitvocation’s POW Lab, a community of people building on Bitcoin. Before that I ran blockchain developer programmes.</p>
+    <p>I’m drawn back to hands-on social media because I enjoy making things — AI tools have made that part enjoyable again — learning from the response, and having real conversations with people. The chance to do that for a Bitcoin company is what made this role stand out. I like making complicated things feel approachable, and bringing slightly unsure people into the same room — whether that room is a builder call, a Bitcoin conversation, or someone’s first encounter with an app.</p>
     <p>The details are in my CV. I’d love to talk.</p>
     <div class="cta">
       <a class="btn" href="cv/Kitti_Borissza_CV_Invity_2026-11.pdf">Read my CV (PDF)</a>
@@ -339,82 +329,5 @@ main section:first-child{border-top:0}
     <p>No cookies, trackers or analytics on this page.</p>
   </div>
 </footer>
-<script id="abcalc">
-/* A/B check: pure maths, no DOM. Exposed as ABCalc (window) or module.exports (tests). */
-(function (root) {
-  var C = {};
-  var Z = 1.959963984540054; // 95% two-sided
-  // Inverse normal CDF (Acklam), reused from the v1 calculators.
-  C.invNorm = function (p) {
-    if (p <= 0 || p >= 1) throw new RangeError('p must be in (0,1)');
-    var a = [-3.969683028665376e+01, 2.209460984245205e+02, -2.759285104469687e+02, 1.383577518672690e+02, -3.066479806614716e+01, 2.506628277459239e+00];
-    var b = [-5.447609879822406e+01, 1.615858368580409e+02, -1.556989798598866e+02, 6.680131188771972e+01, -1.328068155288572e+01];
-    var c = [-7.784894002430293e-03, -3.223964580411365e-01, -2.400758277161838e+00, -2.549732539343734e+00, 4.374664141464968e+00, 2.938163982698783e+00];
-    var d = [7.784695709041462e-03, 3.224671290700398e-01, 2.445134137142996e+00, 3.754408661907416e+00];
-    var pl = 0.02425, q, r;
-    if (p < pl) { q = Math.sqrt(-2 * Math.log(p)); return (((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5]) / ((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1); }
-    if (p > 1 - pl) { q = Math.sqrt(-2 * Math.log(1 - p)); return -(((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5]) / ((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1); }
-    q = p - 0.5; r = q * q;
-    return (((((a[0]*r+a[1])*r+a[2])*r+a[3])*r+a[4])*r+a[5])*q / (((((b[0]*r+b[1])*r+b[2])*r+b[3])*r+b[4])*r+1);
-  };
-  // Visits per version to detect p1 vs p2 (two-sided alpha, power), equal split. Reused from v1.
-  C.samplePerArm = function (p1, p2, alpha, power) {
-    if (!(p1 > 0 && p1 < 1 && p2 > 0 && p2 < 1 && p2 !== p1)) return null;
-    var za = C.invNorm(1 - alpha / 2), zb = C.invNorm(power), pbar = (p1 + p2) / 2;
-    var num = za * Math.sqrt(2 * pbar * (1 - pbar)) + zb * Math.sqrt(p1 * (1 - p1) + p2 * (1 - p2));
-    return Math.ceil(num * num / ((p2 - p1) * (p2 - p1)));
-  };
-  // Wilson score interval for one proportion.
-  C.wilson = function (x, n) {
-    var p = x / n, z2 = Z * Z, den = 1 + z2 / n;
-    var mid = (p + z2 / (2 * n)) / den, half = Z * Math.sqrt(p * (1 - p) / n + z2 / (4 * n * n)) / den;
-    return [Math.max(0, mid - half), Math.min(1, mid + half)];
-  };
-  // Newcombe (hybrid Wilson) 95% interval for pB - pA. Behaves well with small counts.
-  C.diffInterval = function (xa, na, xb, nb) {
-    var pa = xa / na, pb = xb / nb, wa = C.wilson(xa, na), wb = C.wilson(xb, nb), d = pb - pa;
-    return [d - Math.sqrt(Math.pow(pb - wb[0], 2) + Math.pow(wa[1] - pa, 2)),
-            d + Math.sqrt(Math.pow(wb[1] - pb, 2) + Math.pow(pa - wa[0], 2))];
-  };
-  C.MIN_PURCHASES = 5; // below ~5 events per group, one or two sales swing the rate; common rule of thumb for proportion tests
-  C.compare = function (na, xa, nb, xb) {
-    var ints = [na, xa, nb, xb].every(function (v) { return Number.isFinite(v) && v >= 0 && Math.floor(v) === v; });
-    if (!ints || na < 1 || nb < 1 || xa > na || xb > nb) return { status: 'invalid' };
-    var pa = xa / na, pb = xb / nb, ci = C.diffInterval(xa, na, xb, nb);
-    var need = C.samplePerArm(pa, pb, 0.05, 0.8);
-    var status;
-    if (xa < C.MIN_PURCHASES || xb < C.MIN_PURCHASES) status = 'early';
-    else if (ci[0] <= 0 && ci[1] >= 0) status = 'close';
-    else status = 'leaning';
-    return { status: status, pa: pa, pb: pb, lo: ci[0], hi: ci[1], lean: pb > pa ? 'B' : 'A', need: need };
-  };
-  root.ABCalc = C;
-  if (typeof module !== 'undefined' && module.exports) module.exports = C;
-})(typeof window !== 'undefined' ? window : this);
-</script>
-<script>
-(function () {
-  var C = window.ABCalc, f = document.getElementById('ab-form'); if (!C || !f) return;
-  f.hidden = false; f.addEventListener('submit', function (e) { e.preventDefault(); });
-  var ids = ['ab-na', 'ab-xa', 'ab-nb', 'ab-xb'], out = document.getElementById('ab-out');
-  function pct(v, dp) { return (v * 100).toFixed(dp == null ? 1 : dp) + '%'; }
-  function pp(v) { var s = Math.abs(v * 100).toFixed(1); return (v > 0 ? '+' : v < 0 ? '\u2212' : '') + s; }
-  function fmt(n) { return n.toLocaleString('en-GB'); }
-  function render() {
-    var v = ids.map(function (id) { var s = document.getElementById(id).value; return s === '' ? NaN : Number(s); });
-    var r = C.compare(v[0], v[1], v[2], v[3]), html = '';
-    if (r.status === 'invalid') { out.innerHTML = '<p class="verdict">Check the numbers.</p><p>Use whole numbers, at least one visit per version, and no more purchases than visits.</p>'; return; }
-    html += '<p>' + document.getElementById('ab-mk').value + ', first purchases per visit: A ' + pct(r.pa) + ', B ' + pct(r.pb) + '.</p>';
-    if (r.status === 'early') html += '<p class="verdict">Too early to say.</p><p>Below ' + C.MIN_PURCHASES + ' purchases per version, one or two sales swing the result.</p>';
-    else if (r.status === 'close') html += '<p class="verdict">Too close to call.</p><p>B minus A could be anywhere from ' + pp(r.lo) + ' to ' + pp(r.hi) + ' points. That includes zero, so it may be chance.</p>';
-    else html += '<p class="verdict">Leaning towards ' + r.lean + '.</p><p>B minus A is likely ' + pp(r.lo) + ' to ' + pp(r.hi) + ' points. With many markets and tests running, flukes like this happen, so I’d repeat it before changing anything.</p>';
-    if (r.status !== 'leaning' && r.need) html += '<p>Telling these rates apart reliably would take roughly ' + fmt(r.need) + ' visits per version.</p>';
-    out.innerHTML = html;
-  }
-  ids.forEach(function (id) { document.getElementById(id).addEventListener('input', render); });
-  document.getElementById('ab-mk').addEventListener('change', render);
-  render();
-})();
-</script>
 </body>
 </html>

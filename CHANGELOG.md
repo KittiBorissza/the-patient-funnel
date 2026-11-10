@@ -1,5 +1,34 @@
 # Changelog
 
+## 2.5.0 · 10 Nov 2026
+
+A tightening of the application around one idea, and an upgrade of the multi-market plan into a planning forecast that senior readers can measure against.
+
+**The idea**
+- The distinctive point is now unmistakable: Invity can earn attention by showing people the parts they need to see before they decide. The first audience is the Bitcoin-curious person who has not made a first purchase; Auto Buy is treated as a second decision.
+- A point-of-view sentence sits near the top of the homepage: the fee screen, the custody explanation, and the way out.
+- About me leads with the work (agency and freelance social, startups and technology communities, POW Lab Builder Calls, blockchain developer programmes), then the motivation, including that AI tools have made making enjoyable again. It does not lead with a gap in full-time social, and it does not add claims that were not already on the page.
+
+**Planning forecast** (`strategy.html#forecast`)
+- The €2,000-per-market tool stays in the application and is labelled a planning forecast, not a prediction of Invity’s results. Assumptions can be typed over and should be replaced with Invity data.
+- Paid social starts from average CPM and CTR. Country CPM defaults are 2026 AdSpendSpy estimates for a standard Meta campaign; the default CTR is adtribute’s September 2026 European DTC median of 1.19%. Both sources are cited, with the caveat that they are not a Bitcoin or regulated-finance panel, and that mixing a country CPM with a European DTC CTR can imply a cheaper click than adtribute’s median CPC.
+- Each market shows its language version, with a note where marketing language and the public app UI may differ.
+- The all-markets table puts budget, languages, social CPM, CTR, clicks, installs and first buyers in one view.
+- The first 30 days and the creatives still plan across every market; the forecast is how to see where a first comparison has enough volume, not a promise to switch every market on at once.
+- The homepage significance calculator has been removed so it no longer interrupts the story; the forecast is linked from “How I’d know if it’s working”.
+
+**Content Calendar and Ad Gallery**
+- 17 November is now “What should you check before buying your first bitcoin?” 19 November is a proposed Instagram Story poll (Fees / ID / Where it’s held / Something else). The WAGMI standby piece is unchanged.
+- Gallery cards lead with the mock-up, headline and short copy. Who it is for and what we want to learn sit immediately under that; production notes are behind a disclosure.
+- The A/B pair is described as a wording-only test if the opening visual stays the same, and as a package test if the first screen also changes.
+- A short “If someone wants more, let them choose” note sits before the stages: read the guide, ask a question, subscribe, or stop there.
+- The fees-first typographic mock-up now uses the same risk line as the site copy: “Bitcoin can lose value. Make sure you understand the risks before deciding whether to buy.” Unsupported product phrasing (including unconditional “any time” withdrawal, and “only buy what you can hold through that”) has been softened on the public pages, with public-page claims flagged for Invity to check.
+
+**Also**
+- On smaller screens, the top navigation is a single horizontally scrollable row, so it no longer wraps over the hero.
+- No cookies, trackers or analytics. Product details still pending verification.
+
+
 ## 2.4.1 · 10 Nov 2026
 
 A standby WAGMI piece for red-market days, added to the Content Calendar.
