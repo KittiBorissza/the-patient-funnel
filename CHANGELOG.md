@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.4.1 · 10 Nov 2026
+
+A standby WAGMI piece for red-market days, added to the Content Calendar.
+
+- A new “When the market is red” section, undated on purpose: there is no verified WAGMI anniversary the way there is for “I AM HODLING”.
+- A typographic 4:5 looping GIF (`assets/wagmi-4x5.gif`) that opens on an abstract red chart, slams into WAGMI, then settles on the fine print: a gym phrase crypto borrowed, not a promise about the price. A still of the last frame is saved as `assets/wagmi-still-4x5.png`. Labelled as an independent concept, not an Invity ad.
+- A seventh ready-to-review example: caption, spoken cut-down, and sources. The origin is reported by Vice (Ekin Genç, 4 May 2022); Aziz “Zyzz” Shavershian’s death was reported by the Sydney Morning Herald (11 August 2011). The piece does not treat the phrase as a forecast or a reason to buy.
+- Cross-links from the December 28 volatility carousel, the month navigation, and the how-to section.
+
 ## 2.4.0 · 10 Nov 2026
 
 Two new pages for the social application: a four-month Content Calendar and a Funnel Ad Gallery, written as independent concepts, in the same look and voice as the main site.
