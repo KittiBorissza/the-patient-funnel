@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The plan behind it · Kitti Borissza for Invity's Social Media Lead role</title>
-<meta name="description" content="A multi-market planning forecast for Kitti Borissza's independent Invity application: average CPM, CTR and published industry ranges, language versions, seven creatives, and what she would need from Invity.">
+<meta name="description" content="What can I learn with this budget? A Meta test planner inside a multi-market planning forecast for Kitti Borissza's independent Invity application: CPM, CTR and published industry ranges, language versions, sample sizes, seven creatives, and what she would need from Invity.">
 <meta name="author" content="Kitti Borissza">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="canonical" href="https://kittiborissza.github.io/the-patient-funnel/strategy.html">
@@ -16,6 +16,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://kittiborissza.github.io/the-patient-funnel/og.png">
 <meta name="theme-color" content="#24084c">
+<link rel="icon" href="data:,">
 <style>
 :root{
   --p900:#24084c;--p800:#380c7a;--p700:#4d11a3;--p600:#6016cc;--p500:#781cff;--p400:#8c3fff;--p100:#e4d1ff;--p50:#f4edff;
@@ -208,6 +209,104 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
   header.top nav ul::-webkit-scrollbar{display:none}
   header.top nav a{white-space:nowrap}
 }
+/* v2.6 combined forecast */
+.lead-q{font-family:var(--serif);font-size:1.4rem;line-height:1.35;color:var(--p800);border-left:4px solid var(--p600);padding-left:1rem;margin:0 0 1.1rem}
+.tool[hidden]{display:none!important}
+.tool-grid{display:grid;gap:1.6rem 3rem;margin-top:1.6rem;grid-template-areas:"a" "r" "m"}
+.tool-grid>.in-a{grid-area:a}.tool-grid>.results{grid-area:r}.tool-grid>.in-m{grid-area:m;margin-top:0}
+@media (min-width:960px){.tool-grid{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-areas:"a r" "m r";align-items:start}.tool-grid>.results{position:sticky;top:1rem}}
+fieldset.step{border:0;margin:0 0 1.6rem;padding:0;min-width:0}
+fieldset.step>legend{font-weight:800;font-size:1.15rem;color:var(--ink);padding:0;margin-bottom:.8rem;display:flex;align-items:center;gap:.6rem}
+.stepn{display:inline-block;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--p600);color:#fff;font:800 .9rem/1.7rem var(--sans);text-align:center}
+.purpose .opt{display:flex;gap:.7rem;align-items:flex-start;border:1px solid var(--line);background:#fff;border-radius:12px;padding:.8rem 1rem;margin-bottom:.6rem;cursor:pointer}
+.purpose .opt input{accent-color:var(--p600);margin:.35rem 0 0;flex:none;width:1.1rem;height:1.1rem}
+.purpose .opt:has(input:checked){border-color:var(--p600);background:var(--p50)}
+.purpose .opt b{display:block;font-size:1.02rem;line-height:1.35}
+.purpose .why{display:block;font-size:.95rem;color:var(--muted);line-height:1.45;margin-top:.2rem}
+.purpose .opt input:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
+.cmp[hidden]{display:none}
+.sub-scen{margin:.4rem 0 0 1rem}
+.sub-scen legend{font-weight:700;font-size:1rem}
+.fake-label{font-weight:700;font-size:1.02rem;margin:0 0 .5rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.9rem}
+.chip{font:inherit;font-size:1rem;font-weight:700;border:1px solid #8d8698;border-radius:999px;padding:.45rem 1rem;background:#fff;color:var(--ink);cursor:pointer}
+.chip span{font-weight:600;color:var(--muted);margin-left:.25rem;font-variant-numeric:tabular-nums}
+.chip[aria-pressed=true]{background:var(--p50);border-color:var(--p600);color:var(--p800);box-shadow:inset 0 0 0 1px var(--p600)}
+.chip[aria-pressed=true] span{color:var(--p800)}
+.chip:hover{border-color:var(--p600)}
+.chip:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
+.inline-l{font-weight:700!important;font-size:1rem!important;display:block!important;margin-bottom:.3rem}
+.tool input[type=number],.tool select:not(.mk){font:inherit;font-size:1.05rem;width:100%;max-width:16rem;padding:.45rem .6rem;border:1px solid #8d8698;border-radius:8px;background:#fff;color:var(--ink);font-variant-numeric:tabular-nums}
+.tool select:not(.mk){max-width:100%}
+.tool input[type=number]:focus-visible,.tool select:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
+.tool input[aria-invalid=true]{border-color:#b3261e;box-shadow:inset 0 0 0 1px #b3261e}
+.results .r-title{font-size:1.25rem;color:#fff;margin:0 0 .4rem}
+.results dl.rlines{grid-template-columns:1fr!important;gap:.85rem;margin-top:.4rem}
+.results .rlines dt{font-size:.8rem!important;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
+.results .rlines dd{font-size:1.02rem!important;font-weight:500;letter-spacing:0;line-height:1.5;color:#fff}
+.results .rlines dd b{font-size:1.3rem;font-weight:800}
+.r-missing{background:rgba(255,210,122,.12);border-left:3px solid var(--amber);padding:.6rem .8rem;border-radius:4px;font-size:1rem;margin:.6rem 0}
+.r-missing[hidden]{display:none}
+.r-missing ul{margin:.3rem 0 0;padding-left:1.1rem}
+.results #q-note{font-size:.92rem}
+.structure{margin-top:2rem;max-width:46rem;border-top:1px solid var(--line);padding-top:1.4rem}
+.struct-h{font-size:1.2rem}
+.adsets{margin:0 0 .8rem;padding-left:1.2rem;font-size:1rem;font-variant-numeric:tabular-nums}
+.adsets li{margin-bottom:.3rem}
+details.more{border:1px solid var(--line);border-radius:12px;background:#fff;padding:0 1.2rem;margin-top:1rem;max-width:68rem}
+details.more>summary{cursor:pointer;font-weight:800;padding:.9rem 0;color:var(--p800);list-style-position:inside}
+details.more>summary:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
+.more-body{padding:0 0 1.2rem}
+.note-s{font-size:.9rem;color:var(--muted);margin:.35rem 0 0;line-height:1.5}
+.fld{display:flex;flex-direction:column;gap:.3rem}
+.fld label{font-weight:700;font-size:.98rem}
+.fld-row,.fld-grid{display:grid;gap:1rem 1.6rem}
+@media (min-width:640px){.fld-row{grid-template-columns:auto 1fr}.fld-grid{grid-template-columns:1fr 1fr}}
+.split{display:flex;flex-wrap:wrap;gap:.6rem 1rem}
+.split label{display:flex;flex-direction:column;font-weight:600;font-size:.95rem;width:7rem}
+.split label[hidden]{display:none}
+.linkbtn{font:inherit;font-size:.95rem;background:none;border:0;padding:.3rem 0;color:var(--p600);text-decoration:underline;cursor:pointer;align-self:flex-start;margin-top:.4rem}
+.linkbtn:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
+.mode{margin-bottom:1.2rem}
+.agroups{display:grid;gap:1.2rem}
+@media (min-width:960px){.agroups{grid-template-columns:1.3fr 1fr 1fr}}
+.agroup{border-top:4px solid var(--p600);padding-top:.8rem}
+.agroup.ill{border-top-color:var(--amber)}
+.agroup.usr{border-top-color:#8d8698}
+.agroup h4{font-size:1.05rem;margin:0}
+.srcs{font-size:.92rem;margin:.8rem 0 0;line-height:1.5}
+.srcs dt{font-weight:800;margin-top:.7rem}
+.srcs dd{margin:.15rem 0 0;color:var(--muted)}
+.agroup .fld-grid{grid-template-columns:1fr;margin-top:.8rem}
+.ulist{font-size:.95rem;padding-left:1.1rem;margin:.8rem 0 0}
+.f-funnel[hidden],#f-cpa[hidden]{display:none}
+.need{display:grid;gap:1.4rem}
+@media (min-width:960px){.need{grid-template-columns:1fr 1fr}}
+.need-block{border-radius:10px;padding:1rem 1.1rem;background:var(--paper);border:1px solid var(--line)}
+.need-block.vol{border-left:5px solid var(--p600)}
+.need-block.exp{border-left:5px solid var(--amber)}
+.need-block h4{font-size:1.02rem;margin:0 0 .8rem}
+.tagl{font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--p700);margin:0 0 .3rem}
+.exp .tagl{color:#6b4500}
+.need-out{font-size:1rem;margin:1rem 0 0;font-variant-numeric:tabular-nums}
+.need-out ul{margin:.3rem 0 0;padding-left:1.1rem}
+.fullmonth{margin-top:3rem;border-top:1px solid var(--line);padding-top:2rem}
+.fullmonth h3{font-size:clamp(1.35rem,3vw,1.6rem)}
+.fullmonth>p{max-width:var(--measure)}
+.mixbox{background:var(--p50);border:1px solid var(--p100);border-radius:16px;padding:1.4rem 1.5rem}
+@media (min-width:960px){.mixbox{position:sticky;top:1rem}}
+.mixbox .badge{margin-bottom:.8rem}
+.mixbox .rmk{color:var(--p800)!important}
+.mixbox .langs{font-size:.95rem;color:var(--muted);margin:.15rem 0 1rem}
+.mixbox dl{margin:0;display:grid;gap:.7rem;grid-template-columns:repeat(3,1fr)}
+.mixbox dt{font-size:.92rem;color:var(--muted)}
+.mixbox dd{margin:0;font-size:1.6rem;font-weight:800;color:var(--p900);font-variant-numeric:tabular-nums}
+.mixbox .media-kpis{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--p100)}
+.mixbox .media-kpis dd{font-size:1.15rem}
+.mixbox p{font-size:.95rem;color:var(--ink);margin:.9rem 0 0}
+@media (max-width:480px){.mixbox dl{grid-template-columns:1fr 1fr}}
+@media print{.tool-grid{grid-template-columns:1fr;grid-template-areas:"a" "r" "m"}.tool-grid>.results,.mixbox{position:static}.results{background:#fff!important;color:#000!important;border:2px solid #000}.results *{color:#000!important}.chip,.purpose .opt{border-color:#000}details.more{border-color:#000}}
+@media (max-width:959px){.planner .mixbox{order:-1}}
 </style>
 </head>
 <body>
@@ -245,34 +344,85 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
   <div class="wrap">
     <div class="col">
       <p class="label">A planning forecast</p>
-      <h2 id="planner-h">What we could expect, market by market <span class="badge">Planning forecast</span></h2>
-      <p>This is a forecast I would use to measure ourselves against, and to think across several markets at once — not a prediction of Invity’s results. Paid social starts from average CPM and CTR, set against published industry ranges. Each market has its own language version, budget and costs. Installs and first buyers still use synthetic conversion assumptions, because I have not seen Invity’s account data. When I have those numbers, they replace the ones below. Move a slider and the others make room, so the shares always add up to 100%.</p>
+      <h2 id="planner-h">What can I learn with this budget? <span class="badge">Planning forecast</span></h2>
+      <p class="lead-q">Should the first-purchase walkthrough open on fees or on custody?</p>
+      <p>That is the first question I would want a Meta test to answer, and this tool asks one thing about it: what can I learn with this budget? Pick what you want to learn, a market and a monthly budget. The result says how much delivery that buys, what it could tell us, and what I would do next. Below it, the same market and budget sit inside the full monthly plan, market by market.</p>
+      <p>This is a planning forecast to measure ourselves against, not a prediction of Invity’s results. Media costs start from published industry ranges. Costs per first purchase and conversion rates are illustrative, because I have not seen Invity’s account data. Every number can be typed over, and Invity’s own numbers would replace them.</p>
     </div>
-    <noscript><p class="formula"><b>This planner needs JavaScript.</b> In short: each channel gets a share of the monthly budget; installs = spend ÷ cost per install, which rises as a channel spends more; first buyers = installs × buy rate; referrals are capped per market. Each market has its own plan.</p></noscript>
-    <form class="planner" id="planner-form" hidden>
-      <div>
-        <div class="ctl">
-          <label for="market">Market</label>
-          <select id="market" class="mk">
-            <option value="cz">Czechia</option><option value="at">Austria</option><option value="de">Germany</option><option value="it">Italy</option><option value="sk">Slovakia</option><option value="es">Spain</option><option value="nl">Netherlands</option><option value="pl">Poland</option><option value="hu">Hungary (to confirm)</option>
-          </select>
-          <span class="sub" id="mk-note"></span>
+    <noscript><div class="formula"><p><b>This forecast needs JavaScript to calculate.</b> In short: a monthly Meta budget buys impressions (budget ÷ CPM × 1,000) and clicks (impressions × CTR). At an illustrative €60 per first purchase, €1,500 a month supports about 25 first purchases, or about 12–13 in each of two equal test groups. Spotting a 3-point difference between two rates (25% vs 28%) needs about 3,390 people per group at 80% power and 5% significance. The full monthly plan splits a market’s budget across five channels, and each market has its own plan and language version.</p></div></noscript>
+
+    <form class="tool" id="planner-form" hidden>
+      <div class="tool-grid">
+        <div class="in-a">
+          <fieldset class="step purpose">
+            <legend><span class="stepn">1</span> What do you want to learn?</legend>
+            <label class="opt"><input type="radio" name="purpose" value="watch" checked> <span><b>Which opening keeps people watching</b> <span class="why">A fees hook against a custody hook. Informs which opening the first-purchase walkthrough should lead with.</span></span></label>
+            <label class="opt"><input type="radio" name="purpose" value="purchases"> <span><b>How many completed first purchases the budget could support</b> <span class="why">Informs whether the budget can show the path from ad to first purchase works, and what one purchase costs.</span></span></label>
+            <label class="opt"><input type="radio" name="purpose" value="compare"> <span><b>A controlled comparison between two openings or two markets</b> <span class="why">Informs which opening, or which market and language version, to put more budget behind next.</span></span></label>
+            <div class="cmp" id="cmp-wrap" hidden>
+              <fieldset class="scen sub-scen">
+                <legend>Compare</legend>
+                <div class="opts">
+                  <label><input type="radio" name="cmpkind" value="openings" checked> Two openings, one market</label>
+                  <label><input type="radio" name="cmpkind" value="markets"> Two markets</label>
+                </div>
+              </fieldset>
+            </div>
+          </fieldset>
+
+          <fieldset class="step">
+            <legend><span class="stepn">2</span> Where, and how much?</legend>
+            <div class="ctl">
+              <label for="market">Market</label>
+              <select id="market" class="mk">
+                <option value="cz">Czechia</option><option value="at">Austria</option><option value="de">Germany</option><option value="it">Italy</option><option value="sk">Slovakia</option><option value="es">Spain</option><option value="nl">Netherlands</option><option value="pl">Poland</option><option value="hu">Hungary (to confirm)</option>
+              </select>
+              <span class="sub" id="mk-note"></span>
+            </div>
+            <div class="ctl" id="m2-wrap" hidden>
+              <label for="market2">Second market</label>
+              <select id="market2" class="mk">
+                <option value="cz">Czechia</option><option value="at">Austria</option><option value="de" selected>Germany</option><option value="it">Italy</option><option value="sk">Slovakia</option><option value="es">Spain</option><option value="nl">Netherlands</option><option value="pl">Poland</option><option value="hu">Hungary (to confirm)</option>
+              </select>
+              <span class="sub" id="mk2-note"></span>
+            </div>
+            <div class="ctl">
+              <p class="fake-label" id="preset-l">Monthly Meta media budget <span class="muted">· example budgets, per month</span></p>
+              <div class="chips" role="group" aria-labelledby="preset-l">
+                <button type="button" class="chip" data-v="500" aria-pressed="false">Small <span>€500</span></button>
+                <button type="button" class="chip" data-v="1500" aria-pressed="true">Medium <span>€1,500</span></button>
+                <button type="button" class="chip" data-v="5000" aria-pressed="false">Large <span>€5,000</span></button>
+                <button type="button" class="chip" data-v="15000" aria-pressed="false">Growth <span>€15,000</span></button>
+              </div>
+              <label for="mbudget" class="inline-l">Or type a budget (€ per month)</label>
+              <input id="mbudget" type="number" inputmode="decimal" min="0" step="50" value="1500" aria-describedby="mbudget-note">
+              <span class="sub" id="mbudget-note">This is the Meta (paid-social) test budget for the market above, media only. In a comparison it is the total for both groups.</span>
+            </div>
+          </fieldset>
         </div>
-        <div class="ctl">
-          <label for="budget"><span>Monthly budget, <span id="mk-name">Czechia</span></span> <output id="o-budget" for="budget">€2,000</output></label>
-          <input id="budget" type="range" min="250" max="10000" step="250" value="2000">
+
+        <div class="results" id="q-results" role="status" aria-live="polite" aria-atomic="true" aria-labelledby="q-title">
+          <span class="badge">Planning forecast</span>
+          <h3 class="r-title" id="q-title">What this budget could teach us</h3>
+          <p class="rmk" id="q-market">Czechia · €1,500 a month</p>
+          <p class="langs" id="q-langs"></p>
+          <div id="q-missing" class="r-missing" hidden></div>
+          <dl class="rlines" id="q-lines">
+            <div><dt>Estimated volume</dt><dd id="q-volume">–</dd></div>
+            <div><dt>What you could learn</dt><dd id="q-learn">–</dd></div>
+            <div><dt>Next move</dt><dd id="q-next">–</dd></div>
+          </dl>
+          <dl class="media-kpis">
+            <div><dt>Impressions</dt><dd id="q-impr">–</dd></div>
+            <div><dt>Link clicks</dt><dd id="q-clicks">–</dd></div>
+            <div><dt>Implied CPC</dt><dd id="q-cpc">–</dd></div>
+          </dl>
+          <p id="q-note"></p>
         </div>
-        <fieldset class="scen">
-          <legend>Scenario</legend>
-          <div class="opts">
-            <label><input type="radio" name="scen" value="0.7"> Cautious</label>
-            <label><input type="radio" name="scen" value="1" checked> Base</label>
-            <label><input type="radio" name="scen" value="1.3"> Upside</label>
-          </div>
-        </fieldset>
-        <div class="media" id="media">
-          <h3 class="media-h">Paid social: CPM, CTR and the industry range</h3>
-          <p class="media-lead">These defaults forecast impressions and clicks for the paid-social share in this market. They are published industry figures, and you can type over them.</p>
+
+        <div class="in-m media" id="media">
+          <h3 class="media-h">Media rates for <span id="media-mk">Czechia</span>: CPM, CTR and the industry range</h3>
+          <p class="media-lead">These defaults turn the budget into impressions and clicks, here and in the full monthly plan below. They are published industry figures, and you can type over them for each market.</p>
           <div class="media-grid">
             <div class="ctl">
               <label for="cpm">Planning CPM <output id="o-cpm" for="cpm"></output></label>
@@ -280,56 +430,181 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
               <span class="sub" id="cpm-note"></span>
             </div>
             <div class="ctl">
-              <label for="ctr">Planning CTR <output id="o-ctr" for="ctr"></output></label>
+              <label for="ctr">Planning CTR, % <output id="o-ctr" for="ctr"></output></label>
               <input id="ctr" type="number" inputmode="decimal" min="0" max="20" step="0.01">
               <span class="sub" id="ctr-note"></span>
             </div>
           </div>
-          <p class="media-out" id="media-out"></p>
-        </div>
-        <div class="channels">
-        <div class="ctl">
-          <label for="sh-search">Search ads <output id="o-search" for="sh-search">30%</output></label>
-          <input id="sh-search" type="range" min="0" max="100" step="1" value="30" aria-describedby="d-search">
-          <span class="sub" id="d-search">Google, only where Invity is certified in that market. Synthetic: <span id="b-search">€8</span> per install, 15% buy. <span id="r-search"></span></span>
-        </div>
-        <div class="ctl">
-          <label for="sh-social">Paid social <output id="o-social" for="sh-social">30%</output></label>
-          <input id="sh-social" type="range" min="0" max="100" step="1" value="30" aria-describedby="d-social">
-          <span class="sub" id="d-social">Meta, only with written approval for that market. Synthetic: <span id="b-social">€5</span> per install, 8% buy. <span id="r-social"></span></span>
-        </div>
-        <div class="ctl">
-          <label for="sh-creators">Creators and podcasts <output id="o-creators" for="sh-creators">15%</output></label>
-          <input id="sh-creators" type="range" min="0" max="100" step="1" value="15" aria-describedby="d-creators">
-          <span class="sub" id="d-creators">Local Bitcoin voices, labelled as paid. Synthetic: <span id="b-creators">€6</span> per install, 12% buy. <span id="r-creators"></span></span>
-        </div>
-        <div class="ctl">
-          <label for="sh-referral">Referrals <output id="o-referral" for="sh-referral">15%</output></label>
-          <input id="sh-referral" type="range" min="0" max="100" step="1" value="15" aria-describedby="d-referral">
-          <span class="sub" id="d-referral">Existing customers inviting friends. Synthetic: <span id="b-referral">€3</span> per install, 22% buy; capped at <span id="cap-referral">150</span> installs a month in this market. <span id="r-referral"></span></span>
-        </div>
-        <div class="ctl">
-          <label for="sh-community">Newsletter and community <output id="o-community" for="sh-community">10%</output></label>
-          <input id="sh-community" type="range" min="0" max="100" step="1" value="10" aria-describedby="d-community">
-          <span class="sub" id="d-community">Meetups, newsletter sponsorships. Synthetic: <span id="b-community">€4</span> per install, 18% buy. <span id="r-community"></span></span>
-        </div>
         </div>
       </div>
-      <div class="results" role="status" aria-live="polite" aria-atomic="true">
-        <span class="badge">Planning forecast</span>
-        <p class="rmk" id="t-market">Czechia</p>
-        <p class="langs" id="t-langs"></p>
-        <dl>
-          <div><dt>Installs a month</dt><dd id="t-installs">–</dd></div>
-          <div><dt>First buyers a month</dt><dd id="t-buyers">–</dd></div>
-          <div><dt>Spend per first buyer</dt><dd id="t-per">–</dd></div>
-        </dl>
-        <dl class="media-kpis">
-          <div><dt>Social impressions</dt><dd id="t-impr">–</dd></div>
-          <div><dt>Social clicks</dt><dd id="t-clicks">–</dd></div>
-          <div><dt>Implied social CPC</dt><dd id="t-cpc">–</dd></div>
-        </dl>
-        <p id="t-note"></p>
+
+      <div class="structure">
+        <h3 class="struct-h">Campaign structure</h3>
+        <p id="q-structure"></p>
+        <ul class="adsets" id="q-adsets"></ul>
+        <details class="more" id="d-setup">
+          <summary>Adjust setup</summary>
+          <div class="more-body">
+            <div class="fld-row">
+              <div class="fld">
+                <label for="adsets">Ad sets</label>
+                <select id="adsets">
+                  <option value="auto" selected>As recommended</option>
+                  <option value="1">1 ad set</option>
+                  <option value="2">2 ad sets</option>
+                  <option value="3">3 ad sets</option>
+                </select>
+              </div>
+              <div class="fld" id="split-wrap">
+                <p class="fake-label" id="split-l">Budget split, % (default even)</p>
+                <div class="split" role="group" aria-labelledby="split-l">
+                  <label>Ad set 1 <input id="sp-0" type="number" inputmode="decimal" min="0" max="100" step="1"></label>
+                  <label>Ad set 2 <input id="sp-1" type="number" inputmode="decimal" min="0" max="100" step="1"></label>
+                  <label>Ad set 3 <input id="sp-2" type="number" inputmode="decimal" min="0" max="100" step="1"></label>
+                </div>
+                <button type="button" class="linkbtn" id="sp-even">Reset to an even split</button>
+              </div>
+            </div>
+            <p class="note-s">Shares that don’t add up to 100 are scaled so they do. Meta’s own delivery can still shift spend between ads inside one ad set.</p>
+          </div>
+        </details>
+      </div>
+
+      <details class="more" id="d-assume">
+        <summary>Assumptions</summary>
+        <div class="more-body">
+          <fieldset class="scen mode">
+            <legend>How to estimate first purchases</legend>
+            <div class="opts">
+              <label><input type="radio" name="mode" value="direct" checked> Direct cost per first purchase</label>
+              <label><input type="radio" name="mode" value="funnel"> Funnel breakdown</label>
+            </div>
+            <p class="note-s" id="mode-note"></p>
+          </fieldset>
+          <div class="agroups">
+            <div class="agroup pub">
+              <h4>Published benchmarks</h4>
+              <p class="note-s">Comparison context from published sources. None of these is Invity data.</p>
+              <dl class="srcs">
+                <dt>Country CPM (default Planning CPM)</dt>
+                <dd><a href="https://www.adspendspy.com/facebook-cpm-by-country" rel="noopener" target="_blank">AdSpendSpy</a>, 2026 estimates. Geography: by country. Channel: a standard Meta campaign (Facebook and Instagram). Metric: cost per 1,000 impressions, EUR. Model estimates, not quotes from Meta. This market: <span id="a-cpm"></span>.</dd>
+                <dt>European DTC medians (default Planning CTR)</dt>
+                <dd><a href="https://www.adtribute.io/data/benchmarks/meta-ads" rel="noopener" target="_blank">adtribute Meta Ads benchmarks</a>, September 2026. Geography: Europe. Channel: Meta, panel of European direct-to-consumer e-commerce brands. Metrics: median link CTR 1.19% (middle half 0.92%–1.48%), median CPM €12.76 (€9.19–€16.56), median CPC €1.06. Not a Bitcoin or regulated-finance panel.</dd>
+                <dt>Finance app benchmarks (context only)</dt>
+                <dd>Adjust, “The finance app insights report: 2025 edition”, data January 2023 – August 2025, USD as published. Channel: paid app installs across networks, finance apps including crypto. Metrics: cost per install (CPI) and CTR. Global finance CPI $1.51 (2024) → $1.13 (H1 2025); crypto apps $5.17 → $2.90; France $5.37 and Germany $7.71 in H1 2025; CTR in Europe 1% in H1 2025. Comparison context only: these are not Invity’s CPI, and they are not converted to euros. The report is listed on <a href="https://www.adjust.com/resources/ebooks/" rel="noopener" target="_blank">Adjust’s ebooks page</a> and was announced in <a href="https://www.businesswire.com/news/home/20251029280342/en/New-Adjust-Report-Finds-Global-Finance-App-Market-Shifting-From-Rapid-Expansion-to-Sustainable-Growth-In-2025" rel="noopener" target="_blank">Adjust’s press release of 29 October 2025</a>.</dd>
+              </dl>
+            </div>
+            <div class="agroup ill">
+              <h4>Illustrative inputs</h4>
+              <p class="note-s">Round planning figures to show the shape of the answer. They are not Invity data; type over them.</p>
+              <div class="fld-grid">
+                <div class="fld" id="f-cpa"><label for="cpa">Cost per first purchase, €</label><input id="cpa" type="number" inputmode="decimal" min="0" step="1" value="60"><span class="note-s">Used in direct mode. Close to the full monthly plan’s synthetic paid-social figure (€5 per install, 8% buy).</span></div>
+                <div class="fld"><label for="hold">Hook-hold rate, % of impressions</label><input id="hold" type="number" inputmode="decimal" min="0" max="100" step="1" value="25"><span class="note-s">Share of impressions where someone watches past the opening. Illustrative, not a published video benchmark.</span></div>
+                <div class="fld f-funnel"><label for="ci">Click to install, %</label><input id="ci" type="number" inputmode="decimal" min="0" max="100" step="1" value="20"><span class="note-s">Used in funnel mode.</span></div>
+                <div class="fld f-funnel"><label for="ip">Install to first purchase, %</label><input id="ip" type="number" inputmode="decimal" min="0" max="100" step="0.5" value="5"><span class="note-s">Used in funnel mode. With the default CTR, 20% × 5% gives about €51 per first purchase in Czechia and €79 in Germany.</span></div>
+              </div>
+            </div>
+            <div class="agroup usr">
+              <h4>User-entered</h4>
+              <p class="note-s">What you have typed or chosen on this page, shown as such.</p>
+              <ul id="a-user" class="ulist"></ul>
+            </div>
+          </div>
+        </div>
+      </details>
+
+      <details class="more" id="d-need">
+        <summary>Budget needed</summary>
+        <div class="more-body need">
+          <div class="need-block vol">
+            <p class="tagl">Meta delivery volume</p>
+            <h4>How much budget to deliver a number of first purchases</h4>
+            <div class="fld-grid">
+              <div class="fld"><label for="target">Target first purchases</label><input id="target" type="number" inputmode="numeric" min="0" step="1" value="50"></div>
+              <div class="fld"><label for="weeks">Time window, weeks</label><input id="weeks" type="number" inputmode="numeric" min="1" step="1" value="4"></div>
+            </div>
+            <p class="need-out" id="n-vol"></p>
+          </div>
+          <div class="need-block exp">
+            <p class="tagl">Experimental sample size</p>
+            <h4>How large each group needs to be for a controlled A/B test</h4>
+            <div class="fld-grid">
+              <div class="fld"><label for="abm">What the test compares</label>
+                <select id="abm"><option value="watch" selected>Watching past the opening (per impression)</option><option value="buy">First purchase (per link click)</option></select></div>
+              <div class="fld"><label for="abp1">Baseline rate, %</label><input id="abp1" type="number" inputmode="decimal" min="0" max="100" step="0.1" value="25"></div>
+              <div class="fld"><label for="abd">Minimum detectable effect, percentage points</label><input id="abd" type="number" inputmode="decimal" min="0" max="100" step="0.1" value="3"></div>
+              <div class="fld"><label for="aba">Share of the sample in group A, %</label><input id="aba" type="number" inputmode="decimal" min="1" max="99" step="1" value="50"></div>
+            </div>
+            <p class="need-out" id="n-exp"></p>
+            <p class="note-s">Two-proportion test, 80% power, 5% two-sided: n per group ≈ (1.96 + 0.84)² × (p₁(1 − p₁) + p₂(1 − p₂)) ÷ (p₁ − p₂)², adjusted for an uneven split. This is how many impressions or link clicks each group must reach before a difference means something. It is not the same as the delivery volume above, and Meta does not split delivery evenly unless you use its A/B test tool or separate ad sets.</p>
+          </div>
+        </div>
+      </details>
+
+      <div class="fullmonth">
+        <h3 id="mix-h">From one test to the full month, market by market <span class="badge">Planning forecast</span></h3>
+        <p>The test budget above is paid social only. A full month in a market also has search, creators, referrals and community. Here each market has its own total monthly budget and channel mix; the paid-social share of it is the same kind of Meta budget as the test above. Move a slider and the others make room, so the shares always add up to 100%. Installs and first buyers here use synthetic cost-per-install figures.</p>
+        <div class="planner">
+          <div>
+            <div class="ctl">
+              <label for="budget"><span>Total monthly budget, <span id="mk-name">Czechia</span></span> <output id="o-budget" for="budget">€2,000</output></label>
+              <input id="budget" type="range" min="250" max="10000" step="250" value="2000">
+              <span class="sub" id="bridge"></span>
+            </div>
+            <fieldset class="scen">
+              <legend>Scenario</legend>
+              <div class="opts">
+                <label><input type="radio" name="scen" value="0.7"> Cautious</label>
+                <label><input type="radio" name="scen" value="1" checked> Base</label>
+                <label><input type="radio" name="scen" value="1.3"> Upside</label>
+              </div>
+            </fieldset>
+            <div class="channels">
+            <div class="ctl">
+              <label for="sh-search">Search ads <output id="o-search" for="sh-search">30%</output></label>
+              <input id="sh-search" type="range" min="0" max="100" step="1" value="30" aria-describedby="d-search">
+              <span class="sub" id="d-search">Google, only where Invity is certified in that market. Synthetic: <span id="b-search">€8</span> per install, 15% buy. <span id="r-search"></span></span>
+            </div>
+            <div class="ctl">
+              <label for="sh-social">Paid social <output id="o-social" for="sh-social">30%</output></label>
+              <input id="sh-social" type="range" min="0" max="100" step="1" value="30" aria-describedby="d-social">
+              <span class="sub" id="d-social">Meta, only with written approval for that market. Synthetic: <span id="b-social">€5</span> per install, 8% buy. <span id="r-social"></span></span>
+            </div>
+            <div class="ctl">
+              <label for="sh-creators">Creators and podcasts <output id="o-creators" for="sh-creators">15%</output></label>
+              <input id="sh-creators" type="range" min="0" max="100" step="1" value="15" aria-describedby="d-creators">
+              <span class="sub" id="d-creators">Local Bitcoin voices, labelled as paid. Synthetic: <span id="b-creators">€6</span> per install, 12% buy. <span id="r-creators"></span></span>
+            </div>
+            <div class="ctl">
+              <label for="sh-referral">Referrals <output id="o-referral" for="sh-referral">15%</output></label>
+              <input id="sh-referral" type="range" min="0" max="100" step="1" value="15" aria-describedby="d-referral">
+              <span class="sub" id="d-referral">Existing customers inviting friends. Synthetic: <span id="b-referral">€3</span> per install, 22% buy; capped at <span id="cap-referral">150</span> installs a month in this market. <span id="r-referral"></span></span>
+            </div>
+            <div class="ctl">
+              <label for="sh-community">Newsletter and community <output id="o-community" for="sh-community">10%</output></label>
+              <input id="sh-community" type="range" min="0" max="100" step="1" value="10" aria-describedby="d-community">
+              <span class="sub" id="d-community">Meetups, newsletter sponsorships. Synthetic: <span id="b-community">€4</span> per install, 18% buy. <span id="r-community"></span></span>
+            </div>
+            </div>
+          </div>
+          <div class="mixbox" aria-live="polite" aria-atomic="true">
+            <span class="badge">Planning forecast</span>
+            <p class="rmk" id="t-market">Czechia · full month</p>
+            <p class="langs" id="t-langs"></p>
+            <dl>
+              <div><dt>Installs a month</dt><dd id="t-installs">–</dd></div>
+              <div><dt>First buyers a month</dt><dd id="t-buyers">–</dd></div>
+              <div><dt>Spend per first buyer</dt><dd id="t-per">–</dd></div>
+            </dl>
+            <dl class="media-kpis">
+              <div><dt>Paid-social impressions</dt><dd id="t-impr">–</dd></div>
+              <div><dt>Paid-social clicks</dt><dd id="t-clicks">–</dd></div>
+              <div><dt>Implied social CPC</dt><dd id="t-cpc">–</dd></div>
+            </dl>
+            <p class="mix-media" id="media-out"></p>
+            <p id="t-note"></p>
+          </div>
+        </div>
       </div>
     </form>
     <div class="allmk" id="allmk" hidden>
@@ -342,10 +617,10 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
           <tfoot><tr><th scope="row">All markets</th><td>—</td><td id="allmk-b"></td><td id="allmk-cpm"></td><td id="allmk-ctr"></td><td id="allmk-clicks"></td><td id="allmk-i"></td><td id="allmk-f"></td><td id="allmk-p"></td></tr></tfoot>
         </table>
       </div>
-      <p class="formula">* Hungary is to confirm with Invity. The scenario switch applies to all markets. Rows are rounded, so they may not add up exactly.</p>
+      <p class="formula">* Hungary is to confirm with Invity. Budget is each market’s total monthly budget across all five channels. The scenario switch applies to all markets. Rows are rounded, so they may not add up exactly.</p>
     </div>
-    <p class="formula"><b>How the forecast works.</b> For paid social, impressions = spend ÷ CPM × 1,000, and clicks = impressions × CTR. Implied CPC = spend ÷ clicks. Those media numbers are the ones I would compare with the industry ranges below. Installs and first buyers still use the synthetic conversion model: cost per install rises as a channel spends more (base × (1 + 0.15 × spend ÷ €1,000) ÷ scenario factor); first buyers = installs × buy rate, with the scenario factor (Cautious 0.7, Base 1, Upside 1.3) also scaling the buy rate, capped at 100%. Referrals are capped per market; referral money beyond that is reported as unused. Search, creators, referrals and community stay on synthetic cost-per-install figures, because a single honest CPM/CTR standard does not apply to them in the same way. Media and rewards only: no salaries or production. A low spend per first buyer doesn’t prove profit, or that the buyers wouldn’t have come anyway.</p>
-    <p class="formula"><b>Where the industry figures come from.</b> Country CPMs are 2026 estimates from <a href="https://www.adspendspy.com/facebook-cpm-by-country" rel="noopener" target="_blank">AdSpendSpy</a> for a standard Meta campaign (Facebook and Instagram). They are model estimates, not quotes from Meta. The European direct-to-consumer medians — €12.76 CPM and a 1.19% link CTR, with the middle half at €9.19–€16.56 and 0.92%–1.48% — are from <a href="https://www.adtribute.io/data/benchmarks/meta-ads" rel="noopener" target="_blank">adtribute’s Meta Ads benchmarks for September 2026</a>, from a panel of European e-commerce brands. That is not a Bitcoin or regulated-finance panel; a product like Invity can cost more in the same auction, which is why the planning CPM can be typed over. I do not have a published CTR for each country, so the same European median is the default in every market until Invity’s data replaces it. The country CPM and the European DTC CTR come from different sources: used together they can imply a cheaper click than adtribute’s median CPC of €1.06. If you want to plan for a more competitive auction, raise the CPM toward the DTC median.</p>
+    <p class="formula"><b>How the forecast works.</b> The test at the top starts from one market and one monthly Meta budget. Impressions = budget ÷ CPM × 1,000; link clicks = impressions × CTR; implied CPC = budget ÷ clicks. People who watch past the opening = impressions × the illustrative hook-hold rate. First purchases = budget ÷ cost per first purchase (direct mode, €60 by default), or clicks × click-to-install × install-to-first-purchase (funnel mode). When the budget funds more than one group, it is split by the ad-set shares, evenly by default; that even split is an assumption, not how Meta always delivers. “Budget needed” keeps two different things apart: the Meta delivery volume (how many first purchases a budget buys) and the experimental sample size (how many people each group needs before a difference means something). The full monthly plan below the test uses the synthetic conversion model: cost per install rises as a channel spends more (base × (1 + 0.15 × spend ÷ €1,000) ÷ scenario factor); first buyers = installs × buy rate, with the scenario factor (Cautious 0.7, Base 1, Upside 1.3) also scaling the buy rate, capped at 100%. Referrals are capped per market; referral money beyond that is reported as unused. Search, creators, referrals and community stay on synthetic cost-per-install figures, because a single honest CPM/CTR standard does not apply to them in the same way. Media and rewards only: no salaries or production. A low spend per first buyer doesn’t prove profit, or that the buyers wouldn’t have come anyway.</p>
+    <p class="formula"><b>Where the industry figures come from.</b> Country CPMs are 2026 estimates from <a href="https://www.adspendspy.com/facebook-cpm-by-country" rel="noopener" target="_blank">AdSpendSpy</a> for a standard Meta campaign (Facebook and Instagram). They are model estimates, not quotes from Meta. The European direct-to-consumer medians — €12.76 CPM and a 1.19% link CTR, with the middle half at €9.19–€16.56 and 0.92%–1.48% — are from <a href="https://www.adtribute.io/data/benchmarks/meta-ads" rel="noopener" target="_blank">adtribute’s Meta Ads benchmarks for September 2026</a>, from a panel of European e-commerce brands. That is not a Bitcoin or regulated-finance panel; a product like Invity can cost more in the same auction, which is why the planning CPM can be typed over. I do not have a published CTR for each country, so the same European median is the default in every market until Invity’s data replaces it. The country CPM and the European DTC CTR come from different sources: used together they can imply a cheaper click than adtribute’s median CPC of €1.06. If you want to plan for a more competitive auction, raise the CPM toward the DTC median. Adjust’s finance app report (in Assumptions) is quoted in US dollars as comparison context only. The €60 cost per first purchase and the hook-hold, click-to-install and install-to-first-purchase rates are illustrative, not published benchmarks and not Invity data.</p>
   </div>
 </section>
 
@@ -491,7 +766,7 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
   </div>
 </footer>
 <script id="plancalc">
-/* Channel planner maths: pure functions, no DOM. Exposed as PlanCalc (window) or module.exports (tests).
+/* Forecast maths (v2.6: test planner + channel planner): pure functions, no DOM. Exposed as PlanCalc (window) or module.exports (tests).
    Model from the original Growth Desk planner; scenario factor 0.7 / 1 / 1.3; referral installs capped. */
 (function (root) {
   var P = {};
@@ -608,6 +883,121 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
     t.perBuyer = t.buyers > 0 ? t.spend / t.buyers : null;
     return { markets: rows, total: t };
   };
+  // ---- v2.6: “What can I learn with this budget?” (pure; no DOM) ----
+  P.PRESETS = [
+    { id: 'small', label: 'Small', v: 500 },
+    { id: 'medium', label: 'Medium', v: 1500 },
+    { id: 'large', label: 'Large', v: 5000 },
+    { id: 'growth', label: 'Growth', v: 15000 }
+  ];
+  // Illustrative planning inputs. Not Invity data and not published benchmarks.
+  P.ILLUSTRATIVE = { budget: 1500, cpa: 60, hookHold: 25, clickInstall: 20, installPurchase: 5, mde: 3, buyBase: 1, buyMde: 0.5, alloc: 50, weeks: 4, target: 50 };
+  // Adjust, “The finance app insights report: 2025 edition” (data Jan 2023 – Aug 2025), USD as published. Context only.
+  P.ADJUST = { cpiFinance2024: 1.51, cpiFinanceH125: 1.13, cpiCrypto2024: 5.17, cpiCryptoH125: 2.90, cpiFranceH125: 5.37, cpiGermanyH125: 7.71, ctrEuropeH125: 1 };
+  P.Z_ALPHA = 1.96; // 5% two-sided
+  P.Z_POWER = 0.84; // 80% power
+  var ok = function (v) { return typeof v === 'number' && isFinite(v); };
+  // Number of events a budget buys at a cost per event.
+  P.events = function (budget, cost) { return ok(budget) && ok(cost) && budget > 0 && cost > 0 ? budget / cost : null; };
+  // Budget needed for a number of events.
+  P.budgetFor = function (count, cost) { return ok(count) && ok(cost) && count > 0 && cost > 0 ? count * cost : null; };
+  // Split a total by shares (any non-negative weights); even if none are usable.
+  P.splitBudget = function (total, shares) {
+    var w = shares.map(function (s) { return ok(s) && s > 0 ? s : 0; });
+    var sum = w.reduce(function (a, b) { return a + b; }, 0);
+    if (!(sum > 0)) { w = shares.map(function () { return 1; }); sum = w.length; }
+    return w.map(function (s) { return total * s / sum; });
+  };
+  // Required sample for a two-proportion test (rates in %). alloc = % of the sample in group A.
+  // n_total = (zα + zβ)² × (p1(1−p1)/a + p2(1−p2)/(1−a)) ÷ (p1−p2)². Even split → n per group = (zα+zβ)² (p1q1+p2q2)/(p1−p2)².
+  P.abSample = function (p1Pct, p2Pct, allocPct) {
+    allocPct = allocPct == null ? 50 : allocPct;
+    if (!ok(p1Pct) || !ok(p2Pct) || !ok(allocPct)) return null;
+    var p1 = p1Pct / 100, p2 = p2Pct / 100, a = allocPct / 100;
+    if (!(p1 > 0 && p1 < 1 && p2 > 0 && p2 < 1 && p1 !== p2 && a > 0 && a < 1)) return null;
+    var z = P.Z_ALPHA + P.Z_POWER, d = p1 - p2;
+    var total = z * z * (p1 * (1 - p1) / a + p2 * (1 - p2) / (1 - a)) / (d * d);
+    var nA = Math.ceil(total * a - 1e-9), nB = Math.ceil(total * (1 - a) - 1e-9);
+    return { perA: nA, perB: nB, total: nA + nB, perGroup: Math.max(nA, nB) };
+  };
+  // Funnel breakdown: CPM → CTR → click-to-install → install-to-first-purchase.
+  P.funnel = function (budget, cpm, ctrPct, ciPct, ipPct) {
+    var m = P.socialForecast(budget, cpm, ctrPct);
+    var installs = m.clicks * (ok(ciPct) ? ciPct : 0) / 100;
+    var purchases = installs * (ok(ipPct) ? ipPct : 0) / 100;
+    return { impressions: m.impressions, clicks: m.clicks, cpc: m.cpc, installs: installs, purchases: purchases, cpa: purchases > 0 ? budget / purchases : null };
+  };
+  // “About” rounding for display: tens, hundreds or thousands depending on size.
+  P.about = function (v) {
+    if (!ok(v)) return null;
+    var a = Math.abs(v), step = a < 100 ? 1 : a < 10000 ? 10 : a < 100000 ? 100 : 1000;
+    return Math.round(v / step) * step;
+  };
+  // One count shared by k equal groups, as a whole-number range (e.g. 25 ÷ 2 → 12–13).
+  P.perGroup = function (count, k) {
+    if (!ok(count) || !(k > 0)) return null;
+    var x = count / k;
+    return { exact: x, lo: Math.floor(x + 1e-9), hi: Math.ceil(x - 1e-9) };
+  };
+  // Recommended number of ad sets for a purpose.
+  P.recommendAdSets = function (purpose) { return purpose === 'compare' ? 2 : 1; };
+  // What is missing or invalid before a calculation can run. Returns plain-language items.
+  P.missing = function (s) {
+    var out = [];
+    var pos = function (v) { return ok(v) && v > 0; };
+    var pct = function (v) { return ok(v) && v > 0 && v < 100; };
+    if (!pos(s.budget)) out.push('a monthly Meta budget above €0');
+    if (!s.m1 || !pos(s.m1.cpm)) out.push('a planning CPM above €0 for ' + (s.m1 ? s.m1.name : 'the market'));
+    if (!s.m1 || !pos(s.m1.ctr) || s.m1.ctr >= 100) out.push('a planning CTR between 0% and 100% for ' + (s.m1 ? s.m1.name : 'the market'));
+    if (s.purpose === 'compare' && s.kind === 'markets') {
+      if (!s.m2 || !pos(s.m2.cpm)) out.push('a planning CPM above €0 for ' + (s.m2 ? s.m2.name : 'the second market'));
+      if (!s.m2 || !pos(s.m2.ctr) || s.m2.ctr >= 100) out.push('a planning CTR between 0% and 100% for ' + (s.m2 ? s.m2.name : 'the second market'));
+      if (s.m2 && s.m1 && s.m2.id === s.m1.id) out.push('a second market that differs from the first');
+    }
+    if (s.mode === 'funnel') {
+      if (!pct(s.clickInstall)) out.push('a click-to-install rate between 0% and 100%');
+      if (!pct(s.installPurchase)) out.push('an install-to-first-purchase rate between 0% and 100%');
+    } else if (!pos(s.cpa)) out.push('a cost per first purchase above €0');
+    if (!pct(s.hookHold)) out.push('a hook-hold rate between 0% and 100%');
+    if (!(ok(s.mde) && s.mde > 0 && s.hookHold + s.mde < 100)) out.push('a minimum detectable effect above 0 that keeps the second rate under 100%');
+    return out;
+  };
+  // The whole “what can I learn” estimate. s = { purpose, kind, budget, m1:{id,name,cpm,ctr}, m2, mode, cpa,
+  // hookHold, clickInstall, installPurchase, mde, buyBase, buyMde, alloc, adsets (number or null), shares:[...] }
+  P.learn = function (s) {
+    var miss = P.missing(s);
+    if (miss.length) return { missing: miss };
+    var rec = P.recommendAdSets(s.purpose), n = s.adsets || rec, notes = [];
+    if (s.purpose === 'compare' && n < 2) { n = 2; notes.push('A comparison needs at least two ad sets, so two are used.'); }
+    if (s.purpose === 'compare' && s.kind === 'markets' && n > 2) { n = 2; notes.push('A two-market comparison uses one ad set per market, so the third ad set is left out.'); }
+    var shares = (s.shares || []).slice(0, n); while (shares.length < n) shares.push(100 / n);
+    var budgets = P.splitBudget(s.budget, shares);
+    var one = function (b, m) {
+      var md = P.socialForecast(b, m.cpm, m.ctr), fu = P.funnel(b, m.cpm, m.ctr, s.clickInstall, s.installPurchase);
+      var cpa = s.mode === 'funnel' ? fu.cpa : s.cpa;
+      var purchases = s.mode === 'funnel' ? fu.purchases : P.events(b, s.cpa);
+      return { market: m.id, name: m.name, budget: b, impressions: md.impressions, clicks: md.clicks, cpc: md.cpc, watchers: md.impressions * s.hookHold / 100, purchases: purchases || 0, cpa: cpa };
+    };
+    var groups = budgets.map(function (b, i) { return one(b, (s.purpose === 'compare' && s.kind === 'markets' && i === 1) ? s.m2 : s.m1); });
+    var whole = one(s.budget, s.m1);
+    if (s.purpose === 'compare' && s.kind === 'markets') {
+      whole = groups.reduce(function (a, g) { a.impressions += g.impressions; a.clicks += g.clicks; a.watchers += g.watchers; a.purchases += g.purchases; return a; }, { impressions: 0, clicks: 0, watchers: 0, purchases: 0, budget: s.budget });
+      whole.cpc = whole.clicks > 0 ? s.budget / whole.clicks : null;
+      whole.cpa = whole.purchases > 0 ? s.budget / whole.purchases : null;
+    }
+    var watchNeed = P.abSample(s.hookHold, s.hookHold + s.mde, 50);
+    var buyBase = ok(s.buyBase) ? s.buyBase : P.ILLUSTRATIVE.buyBase, buyMde = ok(s.buyMde) ? s.buyMde : P.ILLUSTRATIVE.buyMde;
+    var buyNeed = P.abSample(buyBase, buyBase + buyMde, 50);
+    var minImpr = Math.min.apply(null, groups.map(function (g) { return g.impressions; }));
+    var minClicks = Math.min.apply(null, groups.map(function (g) { return g.clicks; }));
+    var twoEqual = P.perGroup(whole.purchases, 2);
+    return {
+      missing: [], whole: whole, groups: groups, adsets: n, recommended: rec, notes: notes,
+      twoEqual: twoEqual, watchNeed: watchNeed, buyNeed: buyNeed,
+      watchEnough: !!watchNeed && (groups.length > 1 ? minImpr : whole.impressions / 2) >= watchNeed.perGroup,
+      buyEnough: !!buyNeed && (groups.length > 1 ? minClicks : whole.clicks / 2) >= buyNeed.perGroup
+    };
+  };
   root.PlanCalc = P;
   if (typeof module !== 'undefined' && module.exports) module.exports = P;
 })(typeof window !== 'undefined' ? window : this);
@@ -617,55 +1007,250 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
   var P = window.PlanCalc, f = document.getElementById('planner-form'); if (!P || !f) return;
   f.hidden = false; document.getElementById('allmk').hidden = false;
   f.addEventListener('submit', function (e) { e.preventDefault(); });
-  var plans = P.initialPlans(), cur = 'cz';
+  var $ = function (id) { return document.getElementById(id); };
+  var plans = P.initialPlans(), cur = 'cz', I = P.ILLUSTRATIVE;
+  var st = { purpose: 'watch', kind: 'openings', m2: 'de', budget: I.budget, mode: 'direct', cpa: I.cpa, hold: I.hookHold, ci: I.clickInstall, ip: I.installPurchase,
+    mde: I.mde, buyBase: I.buyBase, buyMde: I.buyMde, aba: I.alloc, abm: 'watch', target: I.target, weeks: I.weeks, adsets: null, shares: null };
   var eur = function (v) { return '€' + Math.round(v).toLocaleString('en-GB'); };
   var eur2 = function (v) { return '€' + (Math.round(v * 10) / 10).toLocaleString('en-GB'); };
   var eurCpm = function (v) { return '€' + (Math.round(v * 100) / 100).toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
   var pct = function (v) { return (Math.round(v * 100) / 100).toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%'; };
+  var pc = function (v) { return (Math.round(v * 100) / 100).toLocaleString('en-GB') + '%'; };
   var n = function (v) { return Math.round(v).toLocaleString('en-GB'); };
-  var budget = document.getElementById('budget'), sel = document.getElementById('market');
-  var cpmEl = document.getElementById('cpm'), ctrEl = document.getElementById('ctr');
+  var ab = function (v) { return n(P.about(v)); };
+  var eurAbout = function (v) { return '€' + n(P.about(v)); };
+  var rng = function (pg) { return !pg ? '–' : pg.lo >= 20 ? n(P.about(pg.exact != null ? pg.exact : pg.lo)) : pg.lo === pg.hi ? n(pg.lo) : pg.lo + '–' + pg.hi; };
+  var cnt = function (v) { var pg = { lo: Math.floor(v + 1e-9), hi: Math.ceil(v - 1e-9), exact: v }; return v >= 20 ? n(P.about(v)) : rng(pg); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var budget = $('budget'), sel = $('market'), sel2 = $('market2');
+  var cpmEl = $('cpm'), ctrEl = $('ctr');
   function mk(id) { return P.MARKETS.filter(function (m) { return m.id === id; })[0]; }
   function factor() { var r = f.querySelector('input[name=scen]:checked'); return r ? Number(r.value) : 1; }
+  function num(el) { var v = el.value.trim(); return v === '' ? NaN : Number(v); }
+  function mObj(id) { var m = mk(id); return { id: id, name: m.name, cpm: plans[id].cpm, ctr: plans[id].ctr }; }
+  function timeText(cost, monthly) {
+    if (!(cost > 0) || !(monthly > 0)) return '';
+    var days = cost / (monthly / 30.4);
+    if (days < 1) return 'under a day';
+    if (days < 14) return 'about ' + Math.round(days) + (Math.round(days) === 1 ? ' day' : ' days');
+    if (days < 61) return 'about ' + Math.round(days / 7) + ' weeks';
+    return 'about ' + (Math.round(days / 30.4 * 10) / 10).toLocaleString('en-GB') + ' months';
+  }
+  function evenShares(k) { return P.distribute(new Array(k).fill(1), 100); }
+  var PURPOSE = { watch: 'Which opening keeps people watching', purchases: 'How many completed first purchases the budget could support', compare: 'A controlled comparison' };
+
+  function renderLearn() {
+    var m = mk(cur), m2 = mk(st.m2), s = {
+      purpose: st.purpose, kind: st.kind, budget: st.budget, m1: mObj(cur), m2: mObj(st.m2), mode: st.mode, cpa: st.cpa,
+      hookHold: st.hold, clickInstall: st.ci, installPurchase: st.ip, mde: st.mde, buyBase: st.buyBase, buyMde: st.buyMde,
+      adsets: st.adsets, shares: st.shares
+    };
+    var twoMk = st.purpose === 'compare' && st.kind === 'markets';
+    $('cmp-wrap').hidden = st.purpose !== 'compare';
+    $('m2-wrap').hidden = !twoMk;
+    $('mk2-note').textContent = m2.langNote + (m2.toConfirm ? ' Not on Invity’s passport list in ESMA’s register.' : '');
+    $('q-market').textContent = (twoMk ? m.name + ' vs ' + m2.name : m.name) + ' · ' + (st.budget > 0 ? eur(st.budget) : '€–') + ' a month';
+    $('q-langs').textContent = twoMk
+      ? 'Language versions: ' + m.name + ' ' + m.langShort + ', ' + m2.name + ' ' + m2.langShort + '. ' + m.langNote + ' ' + m2.langNote
+      : 'Language version: ' + m.langShort + '. ' + m.langNote;
+    $('mode-note').textContent = st.mode === 'funnel'
+      ? 'Funnel breakdown: impressions from the market’s CPM, clicks from its CTR, then the two illustrative rates below. The cost per first purchase follows from those, so it differs by market.'
+      : 'Direct: budget ÷ an assumed cost per first purchase. Simple, and the same in every market. Switch to the funnel breakdown to see the steps.';
+    var r = P.learn(s), miss = $('q-missing'), lines = $('q-lines');
+    // invalid markers
+    [['mbudget', !(st.budget > 0)], ['cpm', !(plans[cur].cpm > 0)], ['ctr', !(plans[cur].ctr > 0 && plans[cur].ctr < 100)], ['cpa', st.mode === 'direct' && !(st.cpa > 0)],
+     ['hold', !(st.hold > 0 && st.hold < 100)], ['ci', st.mode === 'funnel' && !(st.ci > 0 && st.ci < 100)], ['ip', st.mode === 'funnel' && !(st.ip > 0 && st.ip < 100)]]
+      .forEach(function (x) { if (x[1]) $(x[0]).setAttribute('aria-invalid', 'true'); else $(x[0]).removeAttribute('aria-invalid'); });
+    if (r.missing.length) {
+      miss.hidden = false; lines.hidden = true;
+      miss.innerHTML = '<b>To estimate this, I still need:</b><ul>' + r.missing.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>';
+      ['q-impr', 'q-clicks', 'q-cpc'].forEach(function (id) { $(id).textContent = '–'; });
+      $('q-note').textContent = 'Nothing is calculated until these are filled in.';
+      $('q-structure').textContent = 'Fill in the missing inputs to see a recommended structure.'; $('q-adsets').innerHTML = '';
+      renderNeed(null); return r;
+    }
+    miss.hidden = true; lines.hidden = false;
+    var w = r.whole, g = r.groups, k = g.length, hold = st.hold, hold2 = hold + st.mde;
+    var cpaTxt = st.mode === 'funnel' ? (w.cpa ? eur(w.cpa) + ' per first purchase, implied by the funnel' : 'no first purchases at these rates') : eur(st.cpa) + ' assumed per first purchase';
+    var labels = twoMk ? [m.name, m2.name] : st.purpose === 'compare' ? ['Opening A (fees)', 'Opening B (custody)', 'Opening C'] : ['Ad set 1', 'Ad set 2', 'Ad set 3'];
+    var even = !st.shares;
+    var vol, learn, next;
+    var daily = st.budget;
+    if (st.purpose === 'watch') {
+      var perOpen = k > 1 ? Math.min.apply(null, g.map(function (x) { return x.impressions; })) : w.impressions / 2;
+      var wn = r.watchNeed;
+      vol = 'About <b>' + ab(w.impressions) + '</b> impressions in ' + esc(m.name) + '. At an illustrative ' + pc(hold) + ' hook-hold rate, about <b>' + ab(w.watchers) + '</b> people watch past the opening.';
+      learn = (k > 1 ? 'Across ' + k + ' ad sets, the smallest gets about ' + ab(perOpen) + ' impressions. ' : 'Split evenly between a fees opening and a custody opening (an assumption), each gets about ' + ab(perOpen) + ' impressions. ')
+        + 'Detecting a change from ' + pc(hold) + ' to ' + pc(hold2) + ' hold needs about ' + n(wn.perGroup) + ' impressions per opening' + (r.watchEnough
+          ? ', which this budget reaches in ' + timeText(wn.total * plans[cur].cpm / 1000, daily) + '. So it can show which opening keeps people watching' + (k > 1 ? '.' : ' — as a direction, because one ad set does not split delivery evenly.')
+          : '. This budget falls short, so expect a hint, not an answer.');
+      next = r.watchEnough
+        ? 'Run the fees and custody openings as two ads in one ad set for about two weeks, then lead the first-purchase walkthrough with the opening that holds more people. If the gap is small, repeat it as a controlled comparison.'
+        : 'Raise the budget, run for longer, or test openings that differ more, before reading a winner.';
+    } else if (st.purpose === 'purchases') {
+      var p = w.purchases;
+      vol = 'About <b>' + cnt(p) + '</b> completed first purchases a month: ' + eur(st.budget) + ' at ' + cpaTxt + '.'
+        + (st.mode === 'funnel' ? ' That comes from about ' + ab(w.clicks) + ' clicks and ' + ab(w.clicks * st.ci / 100) + ' installs.' : '');
+      var tier = p < 10 ? 'Too few to read a reliable cost per first purchase; treat it as a check that the path works end to end.'
+        : p < 100 ? 'Enough to check that the path from ad to first purchase works and to see where people drop off, but not to tell two openings apart on purchases.'
+        : 'Enough to read a fairly steady cost per first purchase in this market.';
+      learn = tier + ' If the same budget funded two equal test groups, each would get about ' + rng(r.twoEqual) + ' first purchases — the even split is an assumption.'
+        + ' Comparing first purchases properly (' + pc(st.buyBase) + ' vs ' + pc(st.buyBase + st.buyMde) + ' of clicks) needs about ' + n(r.buyNeed.perGroup) + ' clicks per group; this budget gives about ' + ab(w.clicks / 2) + ' per group' + (r.buyEnough ? ', which is enough.' : ', which is not enough.');
+      next = p < 100
+        ? 'Keep one market and one ad set, read the cost per first purchase after two to four weeks, and compare openings on watching or clicks rather than purchases.'
+        : 'Read the cost per first purchase each week. If it holds, use “Budget needed” to size a controlled purchase comparison.';
+    } else {
+      var parts = g.map(function (x, i) { return labels[i] + ': ' + eur(x.budget) + ', about ' + ab(x.impressions) + ' impressions, ' + ab(x.watchers) + ' past the opening and ' + cnt(x.purchases) + ' first purchases'; });
+      vol = (even && k === 2 && !twoMk ? 'Each opening gets ' + eur(g[0].budget) + ': about <b>' + ab(g[0].impressions) + '</b> impressions, ' + ab(g[0].watchers) + ' people past the opening and about ' + cnt(g[0].purchases) + ' first purchases (even split assumed).' : parts.join('; ') + '.');
+      var wn2 = r.watchNeed, bn = r.buyNeed;
+      learn = (twoMk ? 'This compares markets and language versions together (' + m.langShort + ' vs ' + m2.langShort + '), not only the opening. ' : '')
+        + 'Watching: each group needs about ' + n(wn2.perGroup) + ' impressions to tell ' + pc(hold) + ' from ' + pc(hold2) + (r.watchEnough ? ' — this budget gets there.' : ' — this budget falls short.')
+        + ' First purchases: each group needs about ' + n(bn.perGroup) + ' clicks to tell ' + pc(st.buyBase) + ' from ' + pc(st.buyBase + st.buyMde) + (r.buyEnough ? ' — this budget gets there.' : ' — this budget falls short, so read purchases as a direction only.');
+      next = twoMk
+        ? 'Run one ad set per market, each in its own language version with a native-speaker check, with the same opening and the budget split shown. Compare watching first.'
+        : 'Run two ad sets (or Meta’s A/B test) with the same audience and budget, changing only the opening. Read watching first; read purchases only once each group has enough clicks.';
+    }
+    $('q-volume').innerHTML = vol; $('q-learn').innerHTML = learn; $('q-next').innerHTML = esc(next);
+    $('q-impr').textContent = ab(w.impressions); $('q-clicks').textContent = ab(w.clicks);
+    $('q-cpc').textContent = w.cpc == null ? '–' : eurCpm(w.cpc);
+    $('q-note').textContent = (r.notes.length ? r.notes.join(' ') + ' ' : '')
+      + (k > 1 ? (even ? 'Budget split evenly across ' + k + ' ad sets, as an assumption. ' : 'Budget split as set under “Adjust setup”. ') : '')
+      + (twoMk ? 'Impressions and clicks are summed across both markets, each at its own CPM and CTR. ' : 'Impressions and clicks use ' + m.name + '’s planning CPM and CTR. ')
+      + 'A planning forecast, not Invity’s results.';
+    // campaign structure
+    var shown = P.splitBudget(100, g.map(function (x) { return x.budget; }));
+    var sp = shown.map(function (x) { return Math.round(x) + '%'; }).join(' / ');
+    var t;
+    if (st.purpose === 'compare') t = twoMk
+      ? 'Two ad sets, one in ' + m.name + ' (' + m.langShort + ') and one in ' + m2.name + ' (' + m2.langShort + '), each with its own budget (' + sp + ') and its own language version. A separate market is a good reason for a separate ad set.'
+      : 'Two ad sets in ' + m.name + ', same audience and objective, budget split ' + sp + '; only the opening changes. A controlled comparison is a good reason for a second ad set. Meta’s A/B test tool does the same with a cleaner split.';
+    else if (k === 1) t = 'Start with one market and one acquisition ad set: ' + m.name + ', ' + eur(st.budget) + ' a month, in its local language version (' + m.langShort.split(',')[0] + ').'
+      + (st.purpose === 'watch' ? ' Put the fees opening and the custody opening inside it as two ads.' : '')
+      + ' Add a second ad set only when you pick a separate market, a controlled audience or opening comparison, or a distinct objective that needs its own budget.';
+    else t = 'You chose ' + k + ' ad sets. With one market and one objective, one ad set is usually enough: extra ad sets split the budget and slow learning. Use them for a separate market, a controlled comparison, or a distinct objective that needs its own budget.';
+    $('q-structure').textContent = t;
+    $('q-adsets').innerHTML = g.map(function (x, i) {
+      return '<li><b>' + esc(labels[i]) + '</b>' + (twoMk ? '' : ' · ' + esc(x.name)) + ' · ' + eur(x.budget) + ' (' + Math.round(shown[i]) + '%) → about ' + ab(x.impressions) + ' impressions, ' + ab(x.clicks) + ' clicks, ' + cnt(x.purchases) + ' first purchases</li>';
+    }).join('');
+    renderNeed(r);
+    return r;
+  }
+
+  function renderNeed(r) {
+    // (i) Meta delivery volume
+    var cost = st.mode === 'funnel' ? P.funnel(1000, plans[cur].cpm, plans[cur].ctr, st.ci, st.ip).cpa : st.cpa;
+    var need = [];
+    if (!(st.target > 0)) need.push('a target number of first purchases above 0');
+    if (!(st.weeks >= 1)) need.push('a time window of at least one week');
+    if (!(cost > 0)) need.push(st.mode === 'funnel' ? 'valid CPM, CTR and funnel rates' : 'a cost per first purchase above €0');
+    var mn = mk(cur).name;
+    if (need.length) $('n-vol').innerHTML = '<b>To calculate this, I need:</b><ul>' + need.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>';
+    else {
+      var b = P.budgetFor(st.target, cost);
+      $('n-vol').innerHTML = n(st.target) + ' first purchases × ' + eur(cost) + ' = about <b>' + eurAbout(b) + '</b> of Meta media in ' + esc(mn) + '. Over ' + n(st.weeks) + (st.weeks === 1 ? ' week' : ' weeks') + ' that is about ' + eurAbout(b / st.weeks) + ' a week'
+        + (st.budget > 0 ? '. At ' + eur(st.budget) + ' a month it would take ' + timeText(b, st.budget) + '.' : '.');
+    }
+    // (ii) experimental sample size
+    var watch = st.abm === 'watch', p1 = watch ? st.hold : st.buyBase, d = watch ? st.mde : st.buyMde;
+    var need2 = [];
+    if (!(p1 > 0 && p1 < 100)) need2.push('a baseline rate between 0% and 100%');
+    if (!(d > 0) || !(p1 + d < 100)) need2.push('a minimum detectable effect above 0 that keeps the second rate under 100%');
+    if (!(st.aba > 0 && st.aba < 100)) need2.push('a share for group A between 1% and 99%');
+    if (!(st.weeks >= 1)) need2.push('a time window of at least one week');
+    var unit = watch ? plans[cur].cpm / 1000 : (plans[cur].cpm > 0 && plans[cur].ctr > 0 ? plans[cur].cpm / 1000 / (plans[cur].ctr / 100) : NaN);
+    if (!(unit > 0)) need2.push('a planning CPM and CTR for ' + mn);
+    ['abp1', 'abd', 'aba', 'weeks', 'target'].forEach(function (id) { $(id).removeAttribute('aria-invalid'); });
+    if (need2.length) { $('n-exp').innerHTML = '<b>To calculate this, I need:</b><ul>' + need2.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'; return; }
+    var s = P.abSample(p1, p1 + d, st.aba), u = watch ? 'impressions' : 'link clicks', c = s.total * unit;
+    $('n-exp').innerHTML = 'To tell ' + pc(p1) + ' from ' + pc(p1 + d) + ': about <b>' + n(s.perA) + '</b> ' + u + ' in group A and <b>' + n(s.perB) + '</b> in group B (' + n(s.total) + ' in total). '
+      + 'Reaching them in ' + esc(mn) + ' costs about ' + eurAbout(c) + ' at ' + (watch ? 'a ' + eurCpm(plans[cur].cpm) + ' CPM' : 'an implied ' + eurCpm(unit) + ' per click')
+      + '; over ' + n(st.weeks) + (st.weeks === 1 ? ' week' : ' weeks') + ', about ' + eurAbout(c / st.weeks) + ' a week'
+      + (st.budget > 0 ? '. At ' + eur(st.budget) + ' a month that takes ' + timeText(c, st.budget) + '.' : '.');
+  }
+
+  function renderUser() {
+    var m = mk(cur), items = [], pre = P.PRESETS.filter(function (x) { return x.v === st.budget; })[0];
+    items.push('Question: ' + PURPOSE[st.purpose] + (st.purpose === 'compare' ? (st.kind === 'markets' ? ' between two markets' : ' between two openings') : '') + '.');
+    items.push('Market: ' + m.name + (st.purpose === 'compare' && st.kind === 'markets' ? '; second market: ' + mk(st.m2).name : '') + '.');
+    items.push('Monthly Meta budget: ' + (st.budget > 0 ? eur(st.budget) : 'not set') + (pre ? ' (example budget “' + pre.label + '”).' : ' (typed).'));
+    P.MARKETS.forEach(function (x) {
+      var b = P.BENCH.cpm[x.id];
+      if (plans[x.id].cpm !== b.mid) items.push('Planning CPM in ' + x.name + ': ' + (plans[x.id].cpm > 0 ? eurCpm(plans[x.id].cpm) : 'not set') + ' (default ' + eurCpm(b.mid) + ').');
+      if (plans[x.id].ctr !== P.BENCH.euDtcCtr) items.push('Planning CTR in ' + x.name + ': ' + (plans[x.id].ctr > 0 ? pct(plans[x.id].ctr) : 'not set') + ' (default 1.19%).');
+    });
+    if (st.mode === 'funnel') items.push('Estimate mode: funnel breakdown.');
+    [['cpa', 'Cost per first purchase', '€', ''], ['hold', 'Hook-hold rate', '', '%'], ['ci', 'Click to install', '', '%'], ['ip', 'Install to first purchase', '', '%'], ['mde', 'Minimum detectable effect (watching)', '', ' points'], ['buyBase', 'Baseline first-purchase rate per click', '', '%'], ['buyMde', 'Minimum detectable effect (purchases)', '', ' points'], ['aba', 'Share in group A', '', '%'], ['target', 'Target first purchases', '', ''], ['weeks', 'Time window', '', ' weeks']]
+      .forEach(function (x) {
+        var key = { hold: 'hookHold', ci: 'clickInstall', ip: 'installPurchase', aba: 'alloc' }[x[0]] || x[0];
+        if (st[x[0]] !== I[key]) items.push(x[1] + ': ' + (isFinite(st[x[0]]) ? x[2] + (Math.round(st[x[0]] * 100) / 100).toLocaleString('en-GB') + x[3] : 'not set') + ' (default ' + x[2] + I[key] + x[3] + ').');
+      });
+    if (st.adsets) items.push('Ad sets: ' + st.adsets + '.');
+    if (st.shares) items.push('Budget split: ' + st.shares.slice(0, st.adsets || P.recommendAdSets(st.purpose)).map(function (v) { return isFinite(v) ? v + '%' : '–'; }).join(' / ') + '.');
+    var fac = factor(); if (fac !== 1) items.push('Scenario: ' + (fac < 1 ? 'Cautious' : 'Upside') + '.');
+    P.MARKETS.forEach(function (x) {
+      var pl = plans[x.id], ds = P.CHANNELS.map(function (c) { return c.share; });
+      if (pl.budget !== x.budget) items.push('Full-month budget in ' + x.name + ': ' + eur(pl.budget) + ' (default ' + eur(x.budget) + ').');
+      if (P.display(pl.shares).join() !== ds.join()) items.push('Channel mix in ' + x.name + ': ' + P.display(pl.shares).join(' / ') + '%.');
+    });
+    if (items.length <= 3) items.push('Everything else is a default.');
+    $('a-user').innerHTML = items.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('');
+    $('a-cpm').textContent = m.name + ' ' + eurCpm(P.BENCH.cpm[cur].mid) + ' (' + eurCpm(P.BENCH.cpm[cur].lo) + '–' + eurCpm(P.BENCH.cpm[cur].hi) + ')';
+  }
+
+  function renderSetup() {
+    var k = st.adsets || P.recommendAdSets(st.purpose);
+    if (st.purpose === 'compare' && k < 2) k = 2;
+    if (st.purpose === 'compare' && st.kind === 'markets' && k > 2) k = 2;
+    var ev = evenShares(k);
+    for (var i = 0; i < 3; i++) {
+      var el = $('sp-' + i); el.parentNode.hidden = i >= k;
+      if (document.activeElement !== el) el.value = st.shares ? (isFinite(st.shares[i]) ? st.shares[i] : '') : (i < k ? ev[i] : '');
+    }
+    $('split-wrap').hidden = k < 2;
+    $('adsets').value = st.adsets ? String(st.adsets) : 'auto';
+  }
+
   function render() {
     var m = mk(cur), pl = plans[cur], ch = P.marketChannels(m), fac = factor();
     var r = P.model(pl.budget, pl.shares, fac, ch), shown = P.display(pl.shares);
     budget.value = pl.budget;
-    document.getElementById('mk-name').textContent = m.name;
-    document.getElementById('mk-note').textContent = m.langNote + (m.toConfirm
-      ? ' Not on Invity’s passport list in ESMA’s register.'
-      : '');
-    document.getElementById('o-budget').textContent = eur(pl.budget);
+    $('mk-name').textContent = m.name;
+    $('media-mk').textContent = m.name;
+    $('mk-note').textContent = 'Language version: ' + m.langShort + '. ' + m.langNote + (m.toConfirm ? ' Not on Invity’s passport list in ESMA’s register.' : '');
+    $('o-budget').textContent = eur(pl.budget);
     budget.setAttribute('aria-valuetext', eur(pl.budget) + ' a month in ' + m.name);
     P.CHANNELS.forEach(function (c, i) {
-      var el = document.getElementById('sh-' + c.id), row = r.rows[i];
+      var el = $('sh-' + c.id), row = r.rows[i];
       el.value = shown[i];
       el.setAttribute('aria-valuetext', shown[i] + '% in ' + m.name);
-      document.getElementById('o-' + c.id).textContent = shown[i] + '%';
-      document.getElementById('b-' + c.id).textContent = eur2(ch[i].cpi);
-      document.getElementById('r-' + c.id).textContent = eur(row.spend) + ' → ' + n(row.installs) + ' installs → ' + n(row.buyers) + ' first buyers' + (row.capped ? ' (cap reached)' : '') + '.';
+      $('o-' + c.id).textContent = shown[i] + '%';
+      $('b-' + c.id).textContent = eur2(ch[i].cpi);
+      $('r-' + c.id).textContent = eur(row.spend) + ' → ' + n(row.installs) + ' installs → ' + n(row.buyers) + ' first buyers' + (row.capped ? ' (cap reached)' : '') + '.';
     });
-    document.getElementById('cap-referral').textContent = m.refCap;
-    document.getElementById('t-market').textContent = m.name;
-    document.getElementById('t-langs').textContent = m.langNote;
-    document.getElementById('t-installs').textContent = n(r.total.installs);
-    document.getElementById('t-buyers').textContent = n(r.total.buyers);
-    document.getElementById('t-per').textContent = r.total.perBuyer == null ? '–' : eur(r.total.perBuyer);
+    $('cap-referral').textContent = m.refCap;
+    $('t-market').textContent = m.name + ' · full month';
+    $('t-langs').textContent = 'Language version: ' + m.langShort + '. ' + m.langNote;
+    $('t-installs').textContent = n(r.total.installs);
+    $('t-buyers').textContent = n(r.total.buyers);
+    $('t-per').textContent = r.total.perBuyer == null ? '–' : eur(r.total.perBuyer);
     var socialRow = r.rows.filter(function (row) { return row.id === 'social'; })[0] || r.rows[1];
     var socialSpend = socialRow ? socialRow.spend : 0;
     var cpmVal = pl.cpm, ctrVal = pl.ctr, b = P.BENCH.cpm[m.id];
-    cpmEl.value = cpmVal;
-    ctrEl.value = ctrVal;
-    document.getElementById('o-cpm').textContent = eurCpm(cpmVal);
-    document.getElementById('o-ctr').textContent = pct(ctrVal);
-    document.getElementById('cpm-note').textContent = 'Industry estimate for this market: ' + eurCpm(b.mid) + ' (' + eurCpm(b.lo) + '–' + eurCpm(b.hi) + ') for a standard Meta campaign (AdSpendSpy, 2026). European DTC median: ' + eurCpm(P.BENCH.euDtcCpm) + ' (' + eurCpm(P.BENCH.euDtcCpmLo) + '–' + eurCpm(P.BENCH.euDtcCpmHi) + '), September 2026 (adtribute). A Bitcoin app may sit higher in the auction.';
-    document.getElementById('ctr-note').textContent = 'Default is the European DTC median link CTR of 1.19% (middle half 0.92%–1.48%), September 2026, adtribute. A country-level CTR was not published there, so the same default is used in every market until Invity’s data replaces it.';
+    if (document.activeElement !== cpmEl) cpmEl.value = isFinite(cpmVal) ? cpmVal : '';
+    if (document.activeElement !== ctrEl) ctrEl.value = isFinite(ctrVal) ? ctrVal : '';
+    $('o-cpm').textContent = cpmVal > 0 ? eurCpm(cpmVal) : '–';
+    $('o-ctr').textContent = ctrVal > 0 ? pct(ctrVal) : '–';
+    $('cpm-note').textContent = 'Industry estimate for this market: ' + eurCpm(b.mid) + ' (' + eurCpm(b.lo) + '–' + eurCpm(b.hi) + ') for a standard Meta campaign (AdSpendSpy, 2026). European DTC median: ' + eurCpm(P.BENCH.euDtcCpm) + ' (' + eurCpm(P.BENCH.euDtcCpmLo) + '–' + eurCpm(P.BENCH.euDtcCpmHi) + '), September 2026 (adtribute). A Bitcoin app may sit higher in the auction.';
+    $('ctr-note').textContent = 'Default is the European DTC median link CTR of 1.19% (middle half 0.92%–1.48%), September 2026, adtribute. A country-level CTR was not published there, so the same default is used in every market until Invity’s data replaces it.';
     var media = P.socialForecast(socialSpend, cpmVal, ctrVal);
-    document.getElementById('t-impr').textContent = n(media.impressions);
-    document.getElementById('t-clicks').textContent = n(media.clicks);
-    document.getElementById('t-cpc').textContent = media.cpc == null ? '–' : eurCpm(media.cpc);
+    $('t-impr').textContent = n(media.impressions);
+    $('t-clicks').textContent = n(media.clicks);
+    $('t-cpc').textContent = media.cpc == null ? '–' : eurCpm(media.cpc);
     var cpmFlag = (cpmVal < b.lo || cpmVal > b.hi) ? ' This CPM sits outside the published range for this market.' : '';
-    document.getElementById('media-out').textContent = 'At this month’s paid-social spend of ' + eur(socialSpend) + ': ' + n(media.impressions) + ' impressions, ' + n(media.clicks) + ' clicks, implied CPC ' + (media.cpc == null ? '–' : eurCpm(media.cpc)) + '. That CPC is a media number, not a cost per install.' + cpmFlag;
+    $('media-out').textContent = 'At this month’s paid-social spend of ' + eur(socialSpend) + ': ' + n(media.impressions) + ' impressions, ' + n(media.clicks) + ' clicks, implied CPC ' + (media.cpc == null ? '–' : eurCpm(media.cpc)) + '. That CPC is a media number, not a cost per install.' + cpmFlag;
+    var sShare = shown[1];
+    $('bridge').textContent = 'The Meta test above is ' + (st.budget > 0 ? eur(st.budget) : '€–') + ' a month. Here, paid social is ' + sShare + '% of ' + eur(pl.budget) + ', so ' + eur(pl.budget * sShare / 100) + '.'
+      + (sShare > 0 && st.budget > 0 ? ' If the test budget were this plan’s paid-social share, the full month in ' + m.name + ' would be about ' + eurAbout(st.budget / (sShare / 100)) + ' at these shares.' : '');
     var pf = P.portfolio(plans, fac);
     var clickSum = 0, spendSocial = 0, imprSum = 0;
     var rowsHtml = pf.markets.map(function (x) {
@@ -674,31 +1259,58 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
       var srow = rx.rows.filter(function (row) { return row.id === 'social'; })[0];
       var ssp = srow ? srow.spend : 0;
       var sm = P.socialForecast(ssp, plans[x.id].cpm, plans[x.id].ctr);
-      clickSum += sm.clicks;
-      spendSocial += ssp;
-      imprSum += sm.impressions;
-      return '<tr' + (x.id === cur ? ' class="on"' : '') + '><th scope="row">' + x.name + (mk(x.id).toConfirm ? ' *' : '') + '</th><td>' + mk(x.id).langShort + '</td><td>' + eur(x.budget) + '</td><td>' + eurCpm(plans[x.id].cpm) + '</td><td>' + pct(plans[x.id].ctr) + '</td><td>' + n(sm.clicks) + '</td><td>' + n(x.total.installs) + '</td><td>' + n(x.total.buyers) + '</td><td>' + (x.total.perBuyer == null ? '–' : eur(x.total.perBuyer)) + '</td></tr>';
+      clickSum += sm.clicks; spendSocial += ssp; imprSum += sm.impressions;
+      return '<tr' + (x.id === cur ? ' class="on"' : '') + '><th scope="row">' + x.name + (mk(x.id).toConfirm ? ' *' : '') + '</th><td>' + mk(x.id).langShort + '</td><td>' + eur(x.budget) + '</td><td>' + (plans[x.id].cpm > 0 ? eurCpm(plans[x.id].cpm) : '–') + '</td><td>' + (plans[x.id].ctr > 0 ? pct(plans[x.id].ctr) : '–') + '</td><td>' + n(sm.clicks) + '</td><td>' + n(x.total.installs) + '</td><td>' + n(x.total.buyers) + '</td><td>' + (x.total.perBuyer == null ? '–' : eur(x.total.perBuyer)) + '</td></tr>';
     }).join('');
-    document.getElementById('allmk-body').innerHTML = rowsHtml;
-    document.getElementById('allmk-b').textContent = eur(pf.total.budget);
-    document.getElementById('allmk-cpm').textContent = imprSum > 0 ? eurCpm(spendSocial * 1000 / imprSum) : '–';
-    document.getElementById('allmk-ctr').textContent = imprSum > 0 ? pct(clickSum / imprSum * 100) : '–';
-    document.getElementById('allmk-clicks').textContent = n(clickSum);
-    document.getElementById('allmk-i').textContent = n(pf.total.installs);
-    document.getElementById('allmk-f').textContent = n(pf.total.buyers);
-    document.getElementById('allmk-p').textContent = pf.total.perBuyer == null ? '–' : eur(pf.total.perBuyer);
-    document.getElementById('t-note').textContent = (r.total.unused >= 1
+    $('allmk-body').innerHTML = rowsHtml;
+    $('allmk-b').textContent = eur(pf.total.budget);
+    $('allmk-cpm').textContent = imprSum > 0 ? eurCpm(spendSocial * 1000 / imprSum) : '–';
+    $('allmk-ctr').textContent = imprSum > 0 ? pct(clickSum / imprSum * 100) : '–';
+    $('allmk-clicks').textContent = n(clickSum);
+    $('allmk-i').textContent = n(pf.total.installs);
+    $('allmk-f').textContent = n(pf.total.buyers);
+    $('allmk-p').textContent = pf.total.perBuyer == null ? '–' : eur(pf.total.perBuyer);
+    $('t-note').textContent = (r.total.unused >= 1
       ? eur(r.total.unused) + ' of the referral share can’t be used here: the ' + m.refCap + '-install cap is reached. '
       : 'Shares add up to 100%. ') + 'All markets: ' + n(pf.total.buyers) + ' first buyers a month. This is a planning forecast, not Invity’s results.';
+    renderSetup();
+    renderLearn();
+    renderUser();
+    // keep the A/B fields in step with the chosen metric
+    var watch = st.abm === 'watch';
+    if (document.activeElement !== $('abp1')) $('abp1').value = watch ? st.hold : st.buyBase;
+    if (document.activeElement !== $('abd')) $('abd').value = watch ? st.mde : st.buyMde;
+    if (document.activeElement !== $('hold')) $('hold').value = isFinite(st.hold) ? st.hold : '';
+    document.querySelectorAll('.chip').forEach(function (c) { c.setAttribute('aria-pressed', Number(c.dataset.v) === st.budget ? 'true' : 'false'); });
   }
+
+  // events
+  f.querySelectorAll('input[name=purpose]').forEach(function (x) { x.addEventListener('change', function () { st.purpose = x.value; render(); }); });
+  f.querySelectorAll('input[name=cmpkind]').forEach(function (x) { x.addEventListener('change', function () { st.kind = x.value; render(); }); });
+  f.querySelectorAll('input[name=mode]').forEach(function (x) { x.addEventListener('change', function () { st.mode = x.value; render(); }); });
+  document.querySelectorAll('.chip').forEach(function (c) { c.addEventListener('click', function () { st.budget = Number(c.dataset.v); $('mbudget').value = st.budget; render(); }); });
+  $('mbudget').addEventListener('input', function () { st.budget = num($('mbudget')); render(); });
   sel.addEventListener('change', function () { cur = sel.value; render(); });
+  sel2.addEventListener('change', function () { st.m2 = sel2.value; render(); });
   budget.addEventListener('input', function () { plans[cur].budget = Number(budget.value); render(); });
-  cpmEl.addEventListener('input', function () { var v = Number(cpmEl.value); if (v >= 0) plans[cur].cpm = v; render(); });
-  ctrEl.addEventListener('input', function () { var v = Number(ctrEl.value); if (v >= 0) plans[cur].ctr = v; render(); });
+  cpmEl.addEventListener('input', function () { plans[cur].cpm = num(cpmEl); render(); });
+  ctrEl.addEventListener('input', function () { plans[cur].ctr = num(ctrEl); render(); });
+  [['cpa', 'cpa'], ['hold', 'hold'], ['ci', 'ci'], ['ip', 'ip'], ['target', 'target'], ['weeks', 'weeks'], ['aba', 'aba']].forEach(function (x) {
+    $(x[0]).addEventListener('input', function () { st[x[1]] = num($(x[0])); render(); });
+  });
+  $('abp1').addEventListener('input', function () { var v = num($('abp1')); if (st.abm === 'watch') st.hold = v; else st.buyBase = v; render(); });
+  $('abd').addEventListener('input', function () { var v = num($('abd')); if (st.abm === 'watch') st.mde = v; else st.buyMde = v; render(); });
+  $('abm').addEventListener('change', function () { st.abm = $('abm').value; render(); });
+  $('adsets').addEventListener('change', function () { var v = $('adsets').value; st.adsets = v === 'auto' ? null : Number(v); st.shares = null; render(); });
+  [0, 1, 2].forEach(function (i) { $('sp-' + i).addEventListener('input', function () {
+    var k = st.adsets || P.recommendAdSets(st.purpose);
+    st.shares = [0, 1, 2].map(function (j) { return num($('sp-' + j)); }).slice(0, Math.max(k, 2)); render(); }); });
+  $('sp-even').addEventListener('click', function () { st.shares = null; render(); });
   f.querySelectorAll('input[name=scen]').forEach(function (x) { x.addEventListener('change', render); });
   P.CHANNELS.forEach(function (c, i) {
-    document.getElementById('sh-' + c.id).addEventListener('input', function (e) { plans[cur].shares = P.rebalance(plans[cur].shares, i, e.target.value); render(); });
+    $('sh-' + c.id).addEventListener('input', function (e) { plans[cur].shares = P.rebalance(plans[cur].shares, i, e.target.value); render(); });
   });
+  window.addEventListener('beforeprint', function () { document.querySelectorAll('details').forEach(function (d) { d.open = true; }); });
   render();
 })();
 </script>
