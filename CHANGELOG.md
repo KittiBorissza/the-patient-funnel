@@ -1,5 +1,29 @@
 # Changelog
 
+## 2.4.0 · 10 Nov 2026
+
+Two new pages for the social application: a four-month Content Calendar and a Funnel Ad Gallery, written as independent concepts, in the same look and voice as the main site.
+
+**Content Calendar** (`content-calendar.html`)
+- Plan from 10 November 2026 to the end of February 2027, starting with a realistic partial first month (listening days, then one pre-written Taproot note).
+- A theme and a marked “if I only had time for one” piece each month; most weeks have two or three entries.
+- Each entry has a date, primary channel, opening line, the question it answers, one metric, and flags for product review, local adaptation, or an approved app recording.
+- Six ready-to-review examples written in full (first-purchase walkthrough with fees-first and custody-first openings, first halving, withdrawal FAQ, I AM HODLING, Genesis Block and Proof of Keys, Auto Buy without the sales pitch).
+- Culture dates only when verified, with sources; unsourced meme days and generic holidays left out. Newsletter angles only from editions actually read (April, July, August and September 2026, plus the 17 August 2026 bear-market article).
+- A few Czech, German, Spanish and Polish localisation notes, only where the product language or a documented extra step (Bank iD in Czechia) makes them real. Market-specific claims stay pending verification.
+
+**Funnel Ad Gallery** (`ad-gallery.html`)
+- Eight independent ad concepts across four stages: cold, engaged, high intent, and after a first purchase.
+- One genuine A/B pair: the same first-purchase film, fees hook versus custody hook, with the measurement rule already on the homepage.
+- A non-personalised high-intent version of the confirm-screen message, and an Auto Buy card that prefers newsletter or in-app over paid social.
+- Three typographic 4:5 mock-ups (`assets/mock-hodl-4x5.png`, `assets/mock-withdraw-4x5.png`, `assets/mock-fees-4x5.png`), labelled as independent concepts, because no campaign images were supplied. Production briefs for each. No invented app screens.
+- Remarketing and event audiences described as proposed setups, not as audiences Invity already runs.
+
+**Also**
+- Nav links and a short cross-link from the homepage `#make` section, and nav links from the strategy page. The two new pages link to each other.
+- No cookies, trackers or analytics. Product details still pending verification.
+
+
 ## 2.0.0 · 9 Nov 2026 (draft, not published)
 
 A rewrite to make the page shorter, more personal and easier to judge in a few minutes.
