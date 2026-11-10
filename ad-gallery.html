@@ -184,13 +184,29 @@ main section:first-child{border-top:0}
 }
 
 html{scroll-padding-top:4.5rem}
-main section,.entry,.ad-card,.priority,.example-block,.listen{scroll-margin-top:4.5rem}
+main section,.entry,.ad-card,.priority,.example-block,.listen{scroll-margin-top:5.75rem}
 @media (max-width:699px){
   .month-nav .wrap{flex-wrap:nowrap;overflow-x:auto;gap:.35rem 1rem;-webkit-overflow-scrolling:touch}
   .month-nav a{white-space:nowrap}
 }
 @media print{.month-nav{position:static}}
 
+
+.creative{background:var(--p50);border-radius:12px;padding:1.05rem 1.1rem 1.1rem;margin:0 0 1rem}
+.creative .headline{font-family:Iowan Old Style,Palatino Linotype,Palatino,Charter,Georgia,serif;font-size:1.45rem;line-height:1.2;font-weight:700;margin:0 0 .55rem;color:var(--ink);letter-spacing:-.02em}
+.creative .copy{margin:0;font-size:1.02rem;color:var(--ink)}
+.ad-card .visual{margin:0 0 1.1rem}
+details.notes{margin-top:1.05rem;border-top:1px solid var(--line);padding-top:.75rem}
+details.notes summary{cursor:pointer;font-weight:800;color:var(--p800)}
+details.notes summary:focus-visible{outline:2px solid var(--p700);outline-offset:3px}
+details.notes .row{margin:.7rem 0}
+@media (max-width: 880px){
+  header.top .wrap{flex-wrap:wrap;align-items:center}
+  header.top nav{width:100%;margin-top:.15rem}
+  header.top nav ul{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:.9rem;padding:.15rem 0 .35rem}
+  header.top nav ul::-webkit-scrollbar{display:none}
+  header.top nav a{white-space:nowrap}
+}
 </style>
 </head>
 <body>
@@ -251,11 +267,22 @@ main section,.entry,.ad-card,.priority,.example-block,.listen{scroll-margin-top:
 </section>
 
 
+<section id="permission" aria-labelledby="perm-h">
+  <div class="wrap"><div class="col">
+    <p class="label">After someone engages</p>
+    <h2 id="perm-h">If someone wants more, let them choose</h2>
+    <p>Watching a video or reading a post is not the same as asking for a sequence of ads, or subscribing to a newsletter. If someone wants more, let them choose: read the guide, ask a question, subscribe to the newsletter, or stop there.</p>
+    <p>The stages below are a way to think about the next useful message, not a path every person should be walked through. Remarketing audiences remain proposed setups, and they depend on consent, platform rules and the data you actually have.</p>
+  </div></div>
+</section>
+
+
+
 <section id="ab-test" aria-labelledby="ab-h">
   <div class="wrap"><div class="col">
     <p class="label">The only A/B test</p>
     <h2 id="ab-h">Same film, two hooks: fees or custody</h2>
-    <p>The test already described on the homepage is the only one in this gallery that I would call a real A/B pair. The footage is the first-purchase walkthrough. The only thing that changes is the opening line.</p>
+    <p>The test already described on the homepage is the only one in this gallery that I would call a real A/B pair. The footage is the first-purchase walkthrough. To isolate the wording, the opening visual stays the same, and only the first line changes. If we also cut to a different first screen, I would treat that as a package test, not as a clean test of the words.</p>
     <div class="two">
       <div>
         <h3>Fees-first</h3>
@@ -266,7 +293,7 @@ main section,.entry,.ad-card,.priority,.example-block,.listen{scroll-margin-top:
         <p>“Where is your bitcoin after you buy? With a custodian, separate from the company’s money.”</p>
       </div>
     </div>
-    <p>Measure first: watch time past the hook, watch time past the fee screen, and the questions people ask. If first purchases can be tied to tracked links, look at those second, per market. Use the same discipline already on this site: too early, too close, or leaning — never a winner on a small sample, and not until the test has been repeated. A hook that wins attention and muddles the product is not the hook to keep.</p>
+    <p>Measure first: watch time past the hook, watch time past the fee screen, and the questions people ask. If first purchases can be tied to tracked links, look at those second, per market. Never call a winner on a small sample, and not until the test has been repeated. A hook that wins attention and muddles the product is not the hook to keep.</p>
     <p>The two cards are <a href="#ad-fees">A first purchase, fees-first</a> and <a href="#ad-custody-hook">The same first purchase, custody-first</a>. The organic film is in the <a href="content-calendar.html#ex-walkthrough">Content Calendar</a>.</p>
   </div></div>
 </section>
@@ -278,53 +305,45 @@ main section,.entry,.ad-card,.priority,.example-block,.listen{scroll-margin-top:
 <p>Someone who already has a rough idea what bitcoin is, and has not spent time with Invity. The job is to be interesting and honest enough to earn a watch, not to force a download. Culture leads one idea; a practical first purchase leads the other, tested two ways.</p>
 <article class="ad-card" id="ad-hodl">
 <h3>The typo, for people who don’t yet know Invity</h3>
-<p class="row"><span class="k">Audience signal.</span> A proposed culture-led prospecting set: people interested in Bitcoin history, language, or a first plain explanation. This is a targeting idea, not a statement that Invity already runs this audience.</p>
-<p class="row"><span class="k">The hesitation.</span> What does HODL actually mean, and is this just insider language I’m not in on?</p>
-<div class="pair">
-<p class="row"><span class="k">Headline.</span> I AM HODLING</p>
-<p class="row"><span class="k">Primary text.</span> A typo from 18 December 2013, written while the price was falling. Today it means: I’m not trying to time this. The fine print: holding doesn’t protect you from losses.</p>
-</div>
-<p class="row"><span class="k">Call to action.</span> Watch the story</p>
-<p class="row"><span class="k">Destination.</span> The 25-second film, or a simple page that carries the same script and a link to the original Bitcointalk thread. Not a hard install, and not a buy button.</p>
-<p class="row"><span class="k">Visual.</span> Typographic 4:5 still: the words I AM HODLING, the date, and the fine print about losses. No meme merch, no rocket, no price. A finished independent mock-up is on this page. A motion version can be the first frames of the Reel.</p>
-<p class="row"><span class="k">Placement.</span> Instagram and Facebook feed at 4:5, and Reels or Advantage+ placements that can take the same vertical film. LinkedIn only if the typo is told as a short history, not as slang for its own sake.</p>
-<p class="row"><span class="k">Main success metric.</span> Hold rate to the fine-print line, and clicks to the explainer. Purchases are the wrong main measure at this stage.</p>
-<p class="row"><span class="k">Why this stage.</span> Cold audiences need a reason to stop that does not depend on already trusting the app. The typo is famous enough to do that, and the fine print is how this account introduces itself.</p>
-<p class="row"><a href="content-calendar.html#d18">Organic version in the Content Calendar</a></p>
 <figure class="visual"><img src="assets/mock-hodl-4x5.png" width="1080" height="1350" alt="Typographic 4:5 mock-up reading I AM HODLING, a typo dated 18 December 2013, with the line: holding doesn’t protect you from losses. Labelled an independent concept."><figcaption>A typographic mock-up, 1080 × 1350, made as an independent concept. Not an Invity asset, and not a picture of the app.</figcaption></figure>
+<div class="creative">
+<p class="headline">I AM HODLING</p>
+<p class="copy">A typo from 18 December 2013, written while the price was falling. Today it means: I’m not trying to time this. The fine print: holding doesn’t protect you from losses.</p>
+</div>
+<p class="row"><span class="k">Who it is for.</span> People who are curious about Bitcoin language or history, and may not yet know Invity. This is a proposed targeting idea, not an audience Invity already runs.</p>
+<p class="row"><span class="k">What we want to learn.</span> Whether people stay to the fine-print line, and whether they click the explainer. Purchases are the wrong main measure here.</p>
+<details class="notes">
+<summary>Production notes</summary>
+<p class="row"><span class="k">Audience signal.</span> A proposed culture-led prospecting set: people interested in Bitcoin history, language, or a first plain explanation. This is a targeting idea, not a statement that Invity already runs this audience.</p><p class="row"><span class="k">The hesitation.</span> What does HODL actually mean, and is this just insider language I’m not in on?</p><p class="row"><span class="k">Call to action.</span> Watch the story</p><p class="row"><span class="k">Destination.</span> The 25-second film, or a simple page that carries the same script and a link to the original Bitcointalk thread. Not a hard install, and not a buy button.</p><p class="row"><span class="k">Visual.</span> Typographic 4:5 still: the words I AM HODLING, the date, and the fine print about losses. No meme merch, no rocket, no price. A finished independent mock-up is on this page. A motion version can be the first frames of the Reel.</p><p class="row"><span class="k">Placement.</span> Instagram and Facebook feed at 4:5, and Reels or Advantage+ placements that can take the same vertical film. LinkedIn only if the typo is told as a short history, not as slang for its own sake.</p><p class="row"><span class="k">Main success metric.</span> Hold rate to the fine-print line, and clicks to the explainer. Purchases are the wrong main measure at this stage.</p><p class="row"><span class="k">Why this stage.</span> Cold audiences need a reason to stop that does not depend on already trusting the app. The typo is famous enough to do that, and the fine print is how this account introduces itself.</p><p class="row"><a href="content-calendar.html#d18">Organic version in the Content Calendar</a></p>
+</details>
 </article>
 <article class="ad-card" id="ad-fees">
 <h3>A first purchase, fees-first</h3>
-<p class="row"><span class="k">Audience signal.</span> People who know roughly what bitcoin is and have not engaged with Invity. Broad interest prospecting, or a lookalike built later from viewers of the walkthrough — both are proposed, not existing Invity audiences.</p>
-<p class="row"><span class="k">The hesitation.</span> What will it actually cost me to buy, and will I see that before I’m committed?</p>
-<div class="pair">
-<p class="row"><span class="k">Headline.</span> This is the screen to actually read.</p>
-<p class="row"><span class="k">Primary text.</span> What you’ll pay, before you tap anything. A first bitcoin purchase, every screen, including the fee line. Bitcoin’s price can fall a lot. Only buy what you can hold through that.</p>
-</div>
-<p class="row"><span class="k">Call to action.</span> Watch the walkthrough</p>
-<p class="row"><span class="k">Destination.</span> The 35-second film, or a page that also says, plainly, who holds the bitcoin afterwards and that it can be withdrawn. The film should be able to stand alone if the click never happens.</p>
-<p class="row"><span class="k">Visual.</span> Typographic 4:5 still with the headline, until an approved recording exists. When it does, a single still from the fee line — a real screen, never a reconstructed one — can replace the typography as the cover. A typographic mock-up is on this page.</p>
-<p class="row"><span class="k">Placement.</span> Reels and Shorts first, with the same opening as a 4:5 feed still. This is half of the only genuine A/B test in the gallery.</p>
-<p class="row"><span class="k">Main success metric.</span> Watch time past the hook, and past the fee screen, plus the questions people ask. First purchases from tracked links come second, per market, and only with the same ‘too early / too close / leaning’ rule already on the homepage.</p>
-<p class="row"><span class="k">Why this stage.</span> Fees are the most practical objection at the moment of a first purchase. Leading with them is a way to be useful before anyone has a reason to trust the brand.</p>
-<p class="row"><a href="content-calendar.html#n24">Organic version in the Content Calendar</a> · <a href="#ab-test">How the A/B pair is measured</a></p>
 <figure class="visual"><img src="assets/mock-fees-4x5.png" width="1080" height="1350" alt="Typographic 4:5 mock-up reading: This is the screen to actually read. What you’ll pay, before you tap anything. Labelled an independent concept."><figcaption>A typographic mock-up, 1080 × 1350, made as an independent concept. Not an Invity asset, and not a picture of the app.</figcaption></figure>
+<div class="creative">
+<p class="headline">This is the screen to actually read.</p>
+<p class="copy">What you’ll pay, before you tap anything. A first bitcoin purchase, every screen, including the fee line. Bitcoin can lose value. Make sure you understand the risks before deciding whether to buy.</p>
+</div>
+<p class="row"><span class="k">Who it is for.</span> People who know roughly what bitcoin is and have not engaged with Invity — a proposed cold audience, not an existing one. This is one half of a pair, not a test to run in every market at once.</p>
+<p class="row"><span class="k">What we want to learn.</span> Whether a fees-first opening holds attention past the hook and the fee screen, and what questions people ask. First purchases from tracked links come second, and only once the sample can support a comparison.</p>
+<details class="notes">
+<summary>Production notes</summary>
+<p class="row"><span class="k">Audience signal.</span> People who know roughly what bitcoin is and have not engaged with Invity. Broad interest prospecting, or a lookalike built later from viewers of the walkthrough — both are proposed, not existing Invity audiences.</p><p class="row"><span class="k">The hesitation.</span> What will it actually cost me to buy, and will I see that before I’m committed?</p><p class="row"><span class="k">Call to action.</span> Watch the walkthrough</p><p class="row"><span class="k">Destination.</span> The 35-second film, or a page that also says, plainly, who holds the bitcoin afterwards and that it can be withdrawn. The film should be able to stand alone if the click never happens.</p><p class="row"><span class="k">Visual.</span> Typographic 4:5 still with the headline, until an approved recording exists. When it does, a single still from the fee line — a real screen, never a reconstructed one — can replace the typography as the cover. A typographic mock-up is on this page.</p><p class="row"><span class="k">Placement.</span> Reels and Shorts first, with the same opening as a 4:5 feed still. This is half of the only genuine A/B test in the gallery.</p><p class="row"><span class="k">Main success metric.</span> Watch time past the hook, and past the fee screen, plus the questions people ask. First purchases from tracked links come second, per market, and only once the sample can support a comparison — never a winner on a small sample.</p><p class="row"><span class="k">Why this stage.</span> Fees are one practical question a first-time buyer may have. Leading with them is a way to be useful before anyone has a reason to trust the brand.</p><p class="row"><a href="content-calendar.html#n24">Organic version in the Content Calendar</a> · <a href="#ab-test">How the A/B pair is measured</a></p>
+</details>
 </article>
 <article class="ad-card" id="ad-custody-hook">
 <h3>The same first purchase, custody-first</h3>
-<p class="row"><span class="k">Audience signal.</span> The same proposed cold audience as the fees-first film. The two ads should run as a pair, not as two unrelated ideas, and not in every market at once.</p>
-<p class="row"><span class="k">The hesitation.</span> Once I buy, where is the bitcoin, and is it mixed with the company’s money?</p>
-<div class="pair">
-<p class="row"><span class="k">Headline.</span> Where is your bitcoin after you buy?</p>
-<p class="row"><span class="k">Primary text.</span> With a custodian, separate from the company’s money. You can send it to your own wallet any time. The film still shows the fee line, and it still says that bitcoin’s price can fall a lot.</p>
+
+<div class="creative">
+<p class="headline">Where is your bitcoin after you buy?</p>
+<p class="copy">Invity’s public pages describe a custodian, separate from the company’s money, and withdrawal to your own wallet. Those terms, including any limits, fees or conditions, need checking before this runs. The film still shows the fee line, and it still says that bitcoin can lose value.</p>
 </div>
-<p class="row"><span class="k">Call to action.</span> Watch the walkthrough</p>
-<p class="row"><span class="k">Destination.</span> The same film and the same page as the fees-first ad, so the only changed thing is the hook.</p>
-<p class="row"><span class="k">Visual.</span> The same typographic system, with this headline in place of the fee line. Do not change the colour, the end card, or the footage after the opening. When an approved recording exists, the cover can be a real custody or withdrawal screen, never a mock interface.</p>
-<p class="row"><span class="k">Placement.</span> The same placements as the fees-first ad, split evenly, same dates, same markets.</p>
-<p class="row"><span class="k">Main success metric.</span> The same measures, read as a pair. A hook that holds attention but leaves people confused about fees or custody is not the one to keep, even if it is ‘ahead’ on watch time.</p>
-<p class="row"><span class="k">Why this stage.</span> This is the other half of the test already described on the homepage. If both hooks are not running against the same film, it is not a test, it is two campaigns.</p>
-<p class="row"><a href="content-calendar.html#n24">Organic version in the Content Calendar</a> · <a href="#ab-test">How the A/B pair is measured</a></p>
+<p class="row"><span class="k">Who it is for.</span> The same proposed cold audience as the fees-first film. The two ads should run as a pair, not as two unrelated ideas, and not in every market at once.</p>
+<p class="row"><span class="k">What we want to learn.</span> The same measures, read as a pair. A hook that holds attention but leaves people confused is not the one to keep.</p>
+<details class="notes">
+<summary>Production notes</summary>
+<p class="row"><span class="k">Audience signal.</span> The same proposed cold audience as the fees-first film. The two ads should run as a pair, not as two unrelated ideas, and not in every market at once.</p><p class="row"><span class="k">The hesitation.</span> Once I buy, where is the bitcoin, and is it mixed with the company’s money?</p><p class="row"><span class="k">Call to action.</span> Watch the walkthrough</p><p class="row"><span class="k">Destination.</span> The same film and the same page as the fees-first ad, so the opening visual stays the same and only the first line changes. If the first screen also changes, treat it as a package test.</p><p class="row"><span class="k">Visual.</span> The same typographic system, with this headline in place of the fee line. Do not change the colour, the end card, or the footage after the opening. When an approved recording exists, the cover can be a real custody or withdrawal screen, never a mock interface.</p><p class="row"><span class="k">Placement.</span> The same placements as the fees-first ad, split evenly, same dates, same markets.</p><p class="row"><span class="k">Main success metric.</span> The same measures, read as a pair. A hook that holds attention but leaves people confused about fees or custody is not the one to keep, even if it is ‘ahead’ on watch time.</p><p class="row"><span class="k">Why this stage.</span> This is the other half of the test already described on the homepage. If both hooks are not running against the same film, it is not a test, it is two campaigns.</p><p class="row"><a href="content-calendar.html#n24">Organic version in the Content Calendar</a> · <a href="#ab-test">How the A/B pair is measured</a></p>
+</details>
 </article>
 </div></div></section>
 <section id="engaged" class="stage" aria-labelledby="engaged-h">
@@ -334,36 +353,31 @@ main section,.entry,.ad-card,.priority,.example-block,.listen{scroll-margin-top:
 <p>Someone who watched, saved or clicked an explainer. The next hesitation is usually about getting bitcoin out, or about who holds it in the meantime. Audiences built from those actions are a proposed setup. They would depend on consent, on what the platforms allow, and on whether the data is actually there. I am not describing an audience Invity already runs.</p>
 <article class="ad-card" id="ad-withdraw">
 <h3>Can I move my bitcoin out?</h3>
-<p class="row"><span class="k">Audience signal.</span> A proposed remarketing set: people who watched, saved or clicked the walkthrough or the HODL explainer, and have not made a first purchase. Building that set depends on consent, platform rules and the data you actually have.</p>
-<p class="row"><span class="k">The hesitation.</span> If I buy, can I get the bitcoin out, or is it stuck in the app?</p>
-<div class="pair">
-<p class="row"><span class="k">Headline.</span> Can I move my bitcoin out of Invity?</p>
-<p class="row"><span class="k">Primary text.</span> Yes. Any time, to a hardware wallet or any Bitcoin address you control. Moving it comes with a miner fee. Check the address twice, and send a small test first if the wallet is new.</p>
+<figure class="visual"><img src="assets/mock-withdraw-4x5.png" width="1080" height="1350" alt="Typographic 4:5 mock-up asking: Can I move my bitcoin out of Invity? and answering: Yes. Any time. Labelled an independent concept. The short answer is a public claim that still needs checking for limits, fees and conditions."><figcaption>A typographic mock-up, 1080 × 1350, made as an independent concept. Not an Invity asset, and not a picture of the app.</figcaption></figure>
+<div class="creative">
+<p class="headline">Can I move my bitcoin out of Invity?</p>
+<p class="copy">Invity’s public pages say you can withdraw to a hardware wallet or any Bitcoin address you control. That needs checking for current limits, fees and conditions. Moving it comes with a miner fee. Check the address twice, and send a small test first if the wallet is new.</p>
 </div>
-<p class="row"><span class="k">Call to action.</span> See how withdrawal works</p>
-<p class="row"><span class="k">Destination.</span> The six-slide carousel, or Invity’s public withdrawal guide. Auto Send can be a later slide, attributed to the August 2026 newsletter, not the hook.</p>
-<p class="row"><span class="k">Visual.</span> Typographic 4:5 still that is the question, then the word Yes. A finished independent mock-up is on this page. App screens only if they are approved recordings.</p>
-<p class="row"><span class="k">Placement.</span> Feed at 4:5, and Stories or Reels cut from the same carousel. Frequency capped, because these people have already given us some attention.</p>
-<p class="row"><span class="k">Main success metric.</span> Saves and clicks to the guide. If withdrawals or onboarding continued among this group can be measured with consent, look at those second, on a small sample, and never as a guarantee the ad ‘caused’ them.</p>
-<p class="row"><span class="k">Why this stage.</span> After a first explainer, the useful objection is usually not ‘what is bitcoin?’ It is ‘can I leave?’ Answering that is how an engaged person decides whether a purchase is safe to try.</p>
-<p class="row"><span class="k">From a newsletter I actually read.</span> The August 2026 newsletter’s Auto Send explanation belongs on a later slide, including the reason for waiting until a set amount. The koruna figure in that issue stays a Czech illustration, pending verification.</p>
-<p class="row"><a href="content-calendar.html#d01">Organic version in the Content Calendar</a></p>
-<figure class="visual"><img src="assets/mock-withdraw-4x5.png" width="1080" height="1350" alt="Typographic 4:5 mock-up asking: Can I move my bitcoin out of Invity? and answering: Yes. Any time. Labelled an independent concept."><figcaption>A typographic mock-up, 1080 × 1350, made as an independent concept. Not an Invity asset, and not a picture of the app.</figcaption></figure>
+<p class="row"><span class="k">Who it is for.</span> People who watched, saved or clicked a first explainer and have not made a first purchase — a proposed remarketing set, only if consent, platform rules and the data allow it.</p>
+<p class="row"><span class="k">What we want to learn.</span> Whether the “can I leave?” answer gets saved or clicked through to the guide.</p>
+<details class="notes">
+<summary>Production notes</summary>
+<p class="row"><span class="k">Audience signal.</span> A proposed remarketing set: people who watched, saved or clicked the walkthrough or the HODL explainer, and have not made a first purchase. Building that set depends on consent, platform rules and the data you actually have.</p><p class="row"><span class="k">The hesitation.</span> If I buy, can I get the bitcoin out, or is it stuck in the app?</p><p class="row"><span class="k">Call to action.</span> See how withdrawal works</p><p class="row"><span class="k">Destination.</span> The six-slide carousel, or Invity’s public withdrawal guide. Auto Send can be a later slide, attributed to the August 2026 newsletter, not the hook.</p><p class="row"><span class="k">Visual.</span> Typographic 4:5 still that is the question, then the word Yes. A finished independent mock-up is on this page. App screens only if they are approved recordings.</p><p class="row"><span class="k">Placement.</span> Feed at 4:5, and Stories or Reels cut from the same carousel. Frequency capped, because these people have already given us some attention.</p><p class="row"><span class="k">Main success metric.</span> Saves and clicks to the guide. If withdrawals or onboarding continued among this group can be measured with consent, look at those second, on a small sample, and never as a guarantee the ad ‘caused’ them.</p><p class="row"><span class="k">Why this stage.</span> After a first explainer, a useful next question to investigate is whether people still want to know if they can leave. Answering that is how an engaged person may decide whether a purchase is safe to try.</p><p class="row"><a href="content-calendar.html#d01">Organic version in the Content Calendar</a></p>
+</details>
 </article>
 <article class="ad-card" id="ad-custody">
 <h3>Who holds it in the meantime</h3>
-<p class="row"><span class="k">Audience signal.</span> The same proposed engaged set, especially people who watched the walkthrough but dropped around the custody line, or who clicked and did not continue.</p>
-<p class="row"><span class="k">The hesitation.</span> Who is holding my bitcoin after I buy, and is it separate from the company’s money?</p>
-<div class="pair">
-<p class="row"><span class="k">Headline.</span> Held with a custodian, separate from the company’s money.</p>
-<p class="row"><span class="k">Primary text.</span> After you buy, Invity says your bitcoin is held with BitGo, a regulated custodian, not mixed with the company’s money. You can withdraw it any time. That is the public product claim, and it should be checked before this runs.</p>
+
+<div class="creative">
+<p class="headline">Held with a custodian, separate from the company’s money.</p>
+<p class="copy">After you buy, Invity says your bitcoin is held with BitGo, a regulated custodian, not mixed with the company’s money. Withdrawal is described as available on the public pages, and should be checked for current limits, fees and conditions before this runs.</p>
 </div>
-<p class="row"><span class="k">Call to action.</span> Read how custody works</p>
-<p class="row"><span class="k">Destination.</span> Invity’s public custody explainer, or a short film that does not skip withdrawals or the line about losses.</p>
-<p class="row"><span class="k">Visual.</span> A typographic still, or a simple approved diagram, not a fake dashboard and not a reconstructed app screen. On-image type should be the headline and, in smaller letters, “You can withdraw it any time.”</p>
-<p class="row"><span class="k">Placement.</span> Feed at 4:5, and in-stream or Reel placements if the film exists. Do not run this and the withdrawal question as two competing hooks to the same person in the same week if frequency is already tight; they are complementary, not a test.</p>
-<p class="row"><span class="k">Main success metric.</span> Clicks to the custody page, and whether the questions that come back are more specific than “is this safe?”</p>
-<p class="row"><span class="k">Why this stage.</span> Fees and withdrawals do not cover the trust question on their own. This is the fuller custody answer, for someone who already cared enough to watch.</p>
+<p class="row"><span class="k">Who it is for.</span> The same proposed engaged set, especially people who watched the walkthrough but dropped around the custody line.</p>
+<p class="row"><span class="k">What we want to learn.</span> Whether clicks to the custody page lead to more specific questions than “is this safe?”</p>
+<details class="notes">
+<summary>Production notes</summary>
+<p class="row"><span class="k">Audience signal.</span> The same proposed engaged set, especially people who watched the walkthrough but dropped around the custody line, or who clicked and did not continue.</p><p class="row"><span class="k">The hesitation.</span> Who is holding my bitcoin after I buy, and is it separate from the company’s money?</p><p class="row"><span class="k">Call to action.</span> Read how custody works</p><p class="row"><span class="k">Destination.</span> Invity’s public custody explainer, or a short film that does not skip withdrawals or the line about losses.</p><p class="row"><span class="k">Visual.</span> A typographic still, or a simple approved diagram, not a fake dashboard and not a reconstructed app screen. On-image type should be the headline and, in smaller letters, “You can withdraw it any time.”</p><p class="row"><span class="k">Placement.</span> Feed at 4:5, and in-stream or Reel placements if the film exists. Do not run this and the withdrawal question as two competing hooks to the same person in the same week if frequency is already tight; they are complementary, not a test.</p><p class="row"><span class="k">Main success metric.</span> Clicks to the custody page, and whether the questions that come back are more specific than “is this safe?”</p><p class="row"><span class="k">Why this stage.</span> Fees and withdrawals do not cover the trust question on their own. This is the fuller custody answer, for someone who already cared enough to watch.</p>
+</details>
 </article>
 </div></div></section>
 <section id="intent" class="stage" aria-labelledby="intent-h">
@@ -373,34 +387,31 @@ main section,.entry,.ad-card,.priority,.example-block,.listen{scroll-margin-top:
 <p>Someone who has looked at the product, or started in the app, without completing a first purchase. If app events can be used, the message can meet them at the confirm screen. If those events are not available, the same message still has to work as an ordinary ad. Both versions are below.</p>
 <article class="ad-card" id="ad-confirm">
 <h3>The confirm screen, if we can reach people there</h3>
-<p class="row"><span class="k">Audience signal.</span> A proposed event-based set: people who opened the app, started onboarding, or reached a confirm screen without a first transaction. This depends on consent, on whether those events are available and allowed in ads, and on platform eligibility. It is a setup to ask for, not an audience I am claiming already exists.</p>
-<p class="row"><span class="k">The hesitation.</span> I’m at the confirm screen, or close to it, and I’m hesitating.</p>
-<div class="pair">
-<p class="row"><span class="k">Headline.</span> Before you confirm, read three things.</p>
-<p class="row"><span class="k">Primary text.</span> The amount, the fee, and where the bitcoin will be held. There is no prize for tapping quickly. Bitcoin’s price can fall a lot; only buy what you can hold through that.</p>
+
+<div class="creative">
+<p class="headline">Before you confirm, read three things.</p>
+<p class="copy">The amount, the fee, and where the bitcoin will be held. There is no prize for tapping quickly. Bitcoin can lose value. Make sure you understand the risks before deciding whether to buy.</p>
 </div>
-<p class="row"><span class="k">Call to action.</span> See the three checks</p>
-<p class="row"><span class="k">Destination.</span> A short checklist carousel, or the walkthrough starting at the confirm screen. Not a countdown, and not a ‘complete your purchase’ push.</p>
-<p class="row"><span class="k">Visual.</span> Typographic checklist on 4:5: Amount. Fee. Where it is held. If an approved confirm-screen recording exists, it can sit under the type. Never invent that screen.</p>
-<p class="row"><span class="k">Placement.</span> Feed and Stories, low frequency, limited date range, so it does not follow someone around after they have decided not to buy.</p>
-<p class="row"><span class="k">Main success metric.</span> Completed first purchases among people who saw the ad, compared with a holdout if a holdout is possible. If it isn’t, use return-to-app and completed first purchases with the same significance rule as the hook test. Click-through rate is not enough.</p>
-<p class="row"><span class="k">Why this stage.</span> At this stage the person already found the product. The useful message is how to read the last screen, not another introduction to bitcoin.</p>
-<p class="row"><a href="content-calendar.html#d03">Organic version in the Content Calendar</a></p>
+<p class="row"><span class="k">Who it is for.</span> People who opened the app, started onboarding, or reached a confirm screen without a first transaction — a proposed event-based set that depends on consent and whether those events can be used in ads.</p>
+<p class="row"><span class="k">What we want to learn.</span> Whether people who see this complete a first purchase, compared with a holdout if one is possible, and never as a winner on a small sample.</p>
+<details class="notes">
+<summary>Production notes</summary>
+<p class="row"><span class="k">Audience signal.</span> A proposed event-based set: people who opened the app, started onboarding, or reached a confirm screen without a first transaction. This depends on consent, on whether those events are available and allowed in ads, and on platform eligibility. It is a setup to ask for, not an audience I am claiming already exists.</p><p class="row"><span class="k">The hesitation.</span> I’m at the confirm screen, or close to it, and I’m hesitating.</p><p class="row"><span class="k">Call to action.</span> See the three checks</p><p class="row"><span class="k">Destination.</span> A short checklist carousel, or the walkthrough starting at the confirm screen. Not a countdown, and not a ‘complete your purchase’ push.</p><p class="row"><span class="k">Visual.</span> Typographic checklist on 4:5: Amount. Fee. Where it is held. If an approved confirm-screen recording exists, it can sit under the type. Never invent that screen.</p><p class="row"><span class="k">Placement.</span> Feed and Stories, low frequency, limited date range, so it does not follow someone around after they have decided not to buy.</p><p class="row"><span class="k">Main success metric.</span> Completed first purchases among people who saw the ad, compared with a holdout if a holdout is possible. If it isn’t, use return-to-app and completed first purchases, and never call a winner on a small sample. Click-through rate is not enough.</p><p class="row"><span class="k">Why this stage.</span> At this stage the person already found the product. The useful message is how to read the last screen, not another introduction to bitcoin.</p><p class="row"><a href="content-calendar.html#d03">Organic version in the Content Calendar</a></p>
+</details>
 </article>
 <article class="ad-card" id="ad-confirm-open">
 <h3>The same three checks, with no event targeting</h3>
-<p class="row"><span class="k">Audience signal.</span> Anyone we can reach without in-app events: people who visited the site or the app store listing, or simply the same first-purchase creative mix. This version exists because event-based audiences are often unavailable, or not yet allowed.</p>
-<p class="row"><span class="k">The hesitation.</span> If I’m about to buy bitcoin for the first time, what should I read before I confirm?</p>
-<div class="pair">
-<p class="row"><span class="k">Headline.</span> Before you confirm, read three things.</p>
-<p class="row"><span class="k">Primary text.</span> If you’re about to buy bitcoin for the first time, stop on the confirm screen. Read the amount, the fee, and where the bitcoin will be held. There is no prize for tapping quickly.</p>
+
+<div class="creative">
+<p class="headline">Before you confirm, read three things.</p>
+<p class="copy">If you’re about to buy bitcoin for the first time, stop on the confirm screen. Read the amount, the fee, and where the bitcoin will be held. There is no prize for tapping quickly.</p>
 </div>
-<p class="row"><span class="k">Call to action.</span> See the three checks</p>
-<p class="row"><span class="k">Destination.</span> The same checklist or the same point in the walkthrough as the event-based ad, so the message is identical even if the targeting is not.</p>
-<p class="row"><span class="k">Visual.</span> The same typographic checklist. Do not add ‘we noticed you started a purchase’ language, because this version cannot know that.</p>
-<p class="row"><span class="k">Placement.</span> In the same feed and Reel mix as the cold walkthrough, or as the last frames of that film. It can also live on the landing page, where no audience targeting is required.</p>
-<p class="row"><span class="k">Main success metric.</span> Scroll or watch-through to the three checks, and first purchases from the shared tracked link, knowing this cannot be isolated as cleanly as the event-based version. The point is whether the message still works when we cannot be clever about who sees it.</p>
-<p class="row"><span class="k">Why this stage.</span> A high-intent idea that only works with a perfect event audience is fragile. This is the version I would run if all we had was the film and a page.</p>
+<p class="row"><span class="k">Who it is for.</span> Anyone we can reach without in-app events, because event-based audiences are often unavailable.</p>
+<p class="row"><span class="k">What we want to learn.</span> Whether the same three-checks message still helps when we cannot be precise about who sees it.</p>
+<details class="notes">
+<summary>Production notes</summary>
+<p class="row"><span class="k">Audience signal.</span> Anyone we can reach without in-app events: people who visited the site or the app store listing, or simply the same first-purchase creative mix. This version exists because event-based audiences are often unavailable, or not yet allowed.</p><p class="row"><span class="k">The hesitation.</span> If I’m about to buy bitcoin for the first time, what should I read before I confirm?</p><p class="row"><span class="k">Call to action.</span> See the three checks</p><p class="row"><span class="k">Destination.</span> The same checklist or the same point in the walkthrough as the event-based ad, so the message is identical even if the targeting is not.</p><p class="row"><span class="k">Visual.</span> The same typographic checklist. Do not add ‘we noticed you started a purchase’ language, because this version cannot know that.</p><p class="row"><span class="k">Placement.</span> In the same feed and Reel mix as the cold walkthrough, or as the last frames of that film. It can also live on the landing page, where no audience targeting is required.</p><p class="row"><span class="k">Main success metric.</span> Scroll or watch-through to the three checks, and first purchases from the shared tracked link, knowing this cannot be isolated as cleanly as the event-based version. The point is whether the message still works when we cannot be clever about who sees it.</p><p class="row"><span class="k">Why this stage.</span> A high-intent idea that only works with a perfect event audience is fragile. This is the version I would run if all we had was the film and a page.</p>
+</details>
 </article>
 </div></div></section>
 <section id="after" class="stage" aria-labelledby="after-h">
@@ -410,20 +421,17 @@ main section,.entry,.ad-card,.priority,.example-block,.listen{scroll-margin-top:
 <p>Someone who has already bought. Auto Buy is a later decision, not a reason to buy the first time. A newsletter or in-app note is the right first home for it. Paid social is only a fallback.</p>
 <article class="ad-card" id="ad-autobuy">
 <h3>Auto Buy, said to people who already bought</h3>
-<p class="row"><span class="k">Audience signal.</span> People who have completed a first purchase. The first place to speak to them is the newsletter or the app. A purchasers remarketing audience for paid social is only a proposed fallback, and would depend on consent, platform rules and whether that audience can be built at all. I am not describing an audience Invity already runs.</p>
-<p class="row"><span class="k">The hesitation.</span> Should I set up a routine now, and what would I be signing up for?</p>
-<div class="pair">
-<p class="row"><span class="k">Headline.</span> Auto Buy, without the sales pitch.</p>
-<p class="row"><span class="k">Primary text.</span> You choose an amount and a rhythm. It does not time the market, it does not promise a better price than buying once, and it does not protect you from losses. If you would rather buy once, that is fine.</p>
+
+<div class="creative">
+<p class="headline">Auto Buy, without the sales pitch.</p>
+<p class="copy">You choose an amount and a rhythm. It does not time the market, it does not promise a better price than buying once, and it does not protect you from losses. If you would rather buy once, that is fine.</p>
 </div>
-<p class="row"><span class="k">Call to action.</span> Read what it does, and what it doesn’t</p>
-<p class="row"><span class="k">Destination.</span> The does-and-doesn’t carousel, preferably inside a newsletter issue or an in-app story. A paid landing page only if the owned channel cannot carry it.</p>
-<p class="row"><span class="k">Visual.</span> Typographic 4:5, two columns or two slides: What it does. What it doesn’t. No upward chart, no ‘set and forget’ smile, no forecast. On-image type should include the line about losses.</p>
-<p class="row"><span class="k">Placement.</span> Newsletter and in-app first. Paid feed or Stories only as a limited test, only to people who already purchased, and only if that is allowed. This is the wrong message to put in front of cold buyers as a reason to download the app.</p>
-<p class="row"><span class="k">Main success metric.</span> Auto Buy set-ups among purchasers who saw the note. An honest “this isn’t for me” reply is a useful result, not a failure. If a paid test runs, click-through rate is not the main measure.</p>
-<p class="row"><span class="k">Why this stage.</span> Recurring buying is a second decision. It should not follow someone who has never bought, and it should not be shouted at someone who has just bought as if the first purchase were incomplete.</p>
-<p class="row"><span class="k">From a newsletter I actually read.</span> The September 2026 newsletter is the source for a daily frequency being added, pending a check against the live app. I have not used that issue’s comments on moving averages, a golden cross, Turbo Buy, or card cashback.</p>
-<p class="row"><a href="content-calendar.html#f02">Organic version in the Content Calendar</a></p>
+<p class="row"><span class="k">Who it is for.</span> People who have completed a first purchase. Talk to them in the newsletter or the app first; paid remarketing is only a proposed fallback, and only with consent.</p>
+<p class="row"><span class="k">What we want to learn.</span> Auto Buy set-ups among people who saw the note. An honest “this isn’t for me” is a useful result, not a failure.</p>
+<details class="notes">
+<summary>Production notes</summary>
+<p class="row"><span class="k">Audience signal.</span> People who have completed a first purchase. The first place to speak to them is the newsletter or the app. A purchasers remarketing audience for paid social is only a proposed fallback, and would depend on consent, platform rules and whether that audience can be built at all. I am not describing an audience Invity already runs.</p><p class="row"><span class="k">The hesitation.</span> Should I set up a routine now, and what would I be signing up for?</p><p class="row"><span class="k">Call to action.</span> Read what it does, and what it doesn’t</p><p class="row"><span class="k">Destination.</span> The does-and-doesn’t carousel, preferably inside a newsletter issue or an in-app story. A paid landing page only if the owned channel cannot carry it.</p><p class="row"><span class="k">Visual.</span> Typographic 4:5, two columns or two slides: What it does. What it doesn’t. No upward chart, no ‘set and forget’ smile, no forecast. On-image type should include the line about losses.</p><p class="row"><span class="k">Placement.</span> Newsletter and in-app first. Paid feed or Stories only as a limited test, only to people who already purchased, and only if that is allowed. This is the wrong message to put in front of cold buyers as a reason to download the app.</p><p class="row"><span class="k">Main success metric.</span> Auto Buy set-ups among purchasers who saw the note. An honest “this isn’t for me” reply is a useful result, not a failure. If a paid test runs, click-through rate is not the main measure.</p><p class="row"><span class="k">Why this stage.</span> Recurring buying is a second decision. It should not follow someone who has never bought, and it should not be shouted at someone who has just bought as if the first purchase were incomplete.</p><p class="row"><a href="content-calendar.html#f02">Organic version in the Content Calendar</a></p>
+</details>
 </article>
 </div></div></section>
 

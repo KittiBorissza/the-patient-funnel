@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The plan behind it · Kitti Borissza for Invity's Social Media Lead role</title>
-<meta name="description" content="The numbers side of Kitti Borissza's independent application for Invity: a per-market channel planner built on synthetic assumptions, seven testable creatives, and what she would need from Invity.">
+<meta name="description" content="A multi-market planning forecast for Kitti Borissza's independent Invity application: average CPM, CTR and published industry ranges, language versions, seven creatives, and what she would need from Invity.">
 <meta name="author" content="Kitti Borissza">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="canonical" href="https://kittiborissza.github.io/the-patient-funnel/strategy.html">
@@ -188,6 +188,26 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
 .mk-table tr.on th,.mk-table tr.on td{background:var(--p50)}
 .mk-table tfoot th,.mk-table tfoot td{font-weight:800;border-top:2px solid var(--p100)}
 .needs th{font-size:1rem;color:var(--muted)}
+
+.media{border-top:1px solid var(--line);padding-top:1.15rem;margin-top:1.15rem}
+.media-h{font-size:1.05rem;margin:0 0 .4rem}
+.media-lead{font-size:.95rem;color:var(--muted);margin:0 0 1rem;max-width:46rem}
+.media-grid{display:grid;gap:1rem}
+@media (min-width:640px){.media-grid{grid-template-columns:1fr 1fr;gap:1.2rem 1.6rem}}
+.media-out{font-size:.95rem;color:var(--muted);margin:1rem 0 0;max-width:46rem}
+.results .langs{margin:.15rem 0 1rem;font-size:.95rem;color:#d9cfee}
+.results .media-kpis{margin:1.1rem 0 0;padding-top:1rem;border-top:1px solid rgba(255,255,255,.14);display:grid;gap:.7rem}
+.results .media-kpis dt{font-size:.9rem;color:#d9cfee}
+.results .media-kpis dd{margin:0;font-size:1.25rem;font-weight:700;color:#fff;font-variant-numeric:tabular-nums}
+@media (min-width:640px){.results .media-kpis{grid-template-columns:repeat(3,1fr);gap:.7rem}}
+.allmk{max-width:none}
+@media (max-width: 880px){
+  header.top .wrap{flex-wrap:wrap;align-items:center}
+  header.top nav{width:100%;margin-top:.15rem}
+  header.top nav ul{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:.9rem;padding:.15rem 0 .35rem}
+  header.top nav ul::-webkit-scrollbar{display:none}
+  header.top nav a{white-space:nowrap}
+}
 </style>
 </head>
 <body>
@@ -198,7 +218,7 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
     <a class="name" href="index.html">← Kitti Borissza</a>
     <nav aria-label="On this page">
       <ul>
-        <li><a href="#planner">Planner</a></li>
+        <li><a href="#forecast">Forecast</a></li>
         <li><a href="#creatives">Creatives</a></li>
         <li><a href="#days">First 30 days</a></li>
         <li><a href="#needs">What I’d need</a></li>
@@ -213,19 +233,20 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
   <div class="wrap">
     <p class="kicker">Kitti Borissza · the plan behind my application</p>
     <h1>The plan behind it</h1>
-    <p>In every market Invity serves, plenty of people are curious about Bitcoin, yet the first purchase can feel like an exam they haven’t studied for. I want Invity’s social channels to make that step understandable in each market’s own language and context, so people can decide calmly, yes or no.</p>
-    <p class="note-top">Independent application proposal. Not an official Invity page. Every number below is a synthetic example, not Invity data.</p>
+    <p>Invity can earn attention by showing people the parts they need to see before they decide. I would plan that work across every market it serves, in each market’s own language, with a forecast we can measure ourselves against.</p>
+    <p class="note-top">Independent application proposal. Not an official Invity page. The media figures below are a planning forecast from published industry ranges. Conversion figures are synthetic. None of it is Invity’s account data.</p>
   </div>
 </div>
 
 <main id="main">
 
-<section id="planner" aria-labelledby="planner-h">
+<section id="forecast" aria-labelledby="planner-h">
+  <div id="planner"></div>
   <div class="wrap">
     <div class="col">
-      <p class="label">Where the money could go</p>
-      <h2 id="planner-h">A channel plan for each market, built from the bottom up <span class="badge">Synthetic example</span></h2>
-      <p>Each market gets its own budget and channel mix, because costs, habits, language and ad approvals differ from place to place. Start from things you can check: money per channel, cost per install, the share who go on to buy. Move a slider and the others make room, so the shares always add up to 100%.</p>
+      <p class="label">A planning forecast</p>
+      <h2 id="planner-h">What we could expect, market by market <span class="badge">Planning forecast</span></h2>
+      <p>This is a forecast I would use to measure ourselves against, and to think across several markets at once — not a prediction of Invity’s results. Paid social starts from average CPM and CTR, set against published industry ranges. Each market has its own language version, budget and costs. Installs and first buyers still use synthetic conversion assumptions, because I have not seen Invity’s account data. When I have those numbers, they replace the ones below. Move a slider and the others make room, so the shares always add up to 100%.</p>
     </div>
     <noscript><p class="formula"><b>This planner needs JavaScript.</b> In short: each channel gets a share of the monthly budget; installs = spend ÷ cost per install, which rises as a channel spends more; first buyers = installs × buy rate; referrals are capped per market. Each market has its own plan.</p></noscript>
     <form class="planner" id="planner-form" hidden>
@@ -249,6 +270,23 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
             <label><input type="radio" name="scen" value="1.3"> Upside</label>
           </div>
         </fieldset>
+        <div class="media" id="media">
+          <h3 class="media-h">Paid social: CPM, CTR and the industry range</h3>
+          <p class="media-lead">These defaults forecast impressions and clicks for the paid-social share in this market. They are published industry figures, and you can type over them.</p>
+          <div class="media-grid">
+            <div class="ctl">
+              <label for="cpm">Planning CPM <output id="o-cpm" for="cpm"></output></label>
+              <input id="cpm" type="number" inputmode="decimal" min="0" step="0.01">
+              <span class="sub" id="cpm-note"></span>
+            </div>
+            <div class="ctl">
+              <label for="ctr">Planning CTR <output id="o-ctr" for="ctr"></output></label>
+              <input id="ctr" type="number" inputmode="decimal" min="0" max="20" step="0.01">
+              <span class="sub" id="ctr-note"></span>
+            </div>
+          </div>
+          <p class="media-out" id="media-out"></p>
+        </div>
         <div class="channels">
         <div class="ctl">
           <label for="sh-search">Search ads <output id="o-search" for="sh-search">30%</output></label>
@@ -278,29 +316,36 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
         </div>
       </div>
       <div class="results" role="status" aria-live="polite" aria-atomic="true">
-        <span class="badge">Synthetic example</span>
+        <span class="badge">Planning forecast</span>
         <p class="rmk" id="t-market">Czechia</p>
+        <p class="langs" id="t-langs"></p>
         <dl>
           <div><dt>Installs a month</dt><dd id="t-installs">–</dd></div>
           <div><dt>First buyers a month</dt><dd id="t-buyers">–</dd></div>
           <div><dt>Spend per first buyer</dt><dd id="t-per">–</dd></div>
         </dl>
+        <dl class="media-kpis">
+          <div><dt>Social impressions</dt><dd id="t-impr">–</dd></div>
+          <div><dt>Social clicks</dt><dd id="t-clicks">–</dd></div>
+          <div><dt>Implied social CPC</dt><dd id="t-cpc">–</dd></div>
+        </dl>
         <p id="t-note"></p>
       </div>
     </form>
     <div class="allmk" id="allmk" hidden>
-      <h3 id="allmk-h">All markets side by side <span class="badge">Synthetic example</span></h3>
-      <p>This is the view I’d want every month with real numbers: the same channels, read market by market.</p>
+      <h3 id="allmk-h">All markets side by side <span class="badge">Planning forecast</span></h3>
+      <p>This is the view I’d want every month with real numbers: the same idea, read market by market, with its language version, media rates and results in one place.</p>
       <div class="tablewrap" role="region" aria-labelledby="allmk-h" tabindex="0">
         <table class="needs mk-table">
-          <thead><tr><th scope="col">Market</th><th scope="col">Budget</th><th scope="col">Installs</th><th scope="col">First buyers</th><th scope="col">Per first buyer</th></tr></thead>
+          <thead><tr><th scope="col">Market</th><th scope="col">Languages</th><th scope="col">Budget</th><th scope="col">Social CPM</th><th scope="col">Social CTR</th><th scope="col">Social clicks</th><th scope="col">Installs</th><th scope="col">First buyers</th><th scope="col">Per first buyer</th></tr></thead>
           <tbody id="allmk-body"></tbody>
-          <tfoot><tr><th scope="row">All markets</th><td id="allmk-b"></td><td id="allmk-i"></td><td id="allmk-f"></td><td id="allmk-p"></td></tr></tfoot>
+          <tfoot><tr><th scope="row">All markets</th><td>—</td><td id="allmk-b"></td><td id="allmk-cpm"></td><td id="allmk-ctr"></td><td id="allmk-clicks"></td><td id="allmk-i"></td><td id="allmk-f"></td><td id="allmk-p"></td></tr></tfoot>
         </table>
       </div>
       <p class="formula">* Hungary is to confirm with Invity. The scenario switch applies to all markets. Rows are rounded, so they may not add up exactly.</p>
     </div>
-    <p class="formula"><b>How it works.</b> Cost per install rises as a channel spends more: base × (1 + 0.15 × spend ÷ €1,000) ÷ scenario factor. First buyers = installs × buy rate, where the scenario factor (Cautious 0.7, Base 1, Upside 1.3) also scales the buy rate, capped at 100%. Referrals are capped per market, because only so many existing customers will invite someone; referral money beyond that is reported as unused. Each market multiplies the base cost per install by its own synthetic cost index. Local rules and ad approvals differ, so each market’s channels need checking before any money moves. Media and rewards only: no salaries or production. A low spend per first buyer doesn’t prove profit or that the buyers wouldn’t have come anyway.</p>
+    <p class="formula"><b>How the forecast works.</b> For paid social, impressions = spend ÷ CPM × 1,000, and clicks = impressions × CTR. Implied CPC = spend ÷ clicks. Those media numbers are the ones I would compare with the industry ranges below. Installs and first buyers still use the synthetic conversion model: cost per install rises as a channel spends more (base × (1 + 0.15 × spend ÷ €1,000) ÷ scenario factor); first buyers = installs × buy rate, with the scenario factor (Cautious 0.7, Base 1, Upside 1.3) also scaling the buy rate, capped at 100%. Referrals are capped per market; referral money beyond that is reported as unused. Search, creators, referrals and community stay on synthetic cost-per-install figures, because a single honest CPM/CTR standard does not apply to them in the same way. Media and rewards only: no salaries or production. A low spend per first buyer doesn’t prove profit, or that the buyers wouldn’t have come anyway.</p>
+    <p class="formula"><b>Where the industry figures come from.</b> Country CPMs are 2026 estimates from <a href="https://www.adspendspy.com/facebook-cpm-by-country" rel="noopener" target="_blank">AdSpendSpy</a> for a standard Meta campaign (Facebook and Instagram). They are model estimates, not quotes from Meta. The European direct-to-consumer medians — €12.76 CPM and a 1.19% link CTR, with the middle half at €9.19–€16.56 and 0.92%–1.48% — are from <a href="https://www.adtribute.io/data/benchmarks/meta-ads" rel="noopener" target="_blank">adtribute’s Meta Ads benchmarks for September 2026</a>, from a panel of European e-commerce brands. That is not a Bitcoin or regulated-finance panel; a product like Invity can cost more in the same auction, which is why the planning CPM can be typed over. I do not have a published CTR for each country, so the same European median is the default in every market until Invity’s data replaces it. The country CPM and the European DTC CTR come from different sources: used together they can imply a cheaper click than adtribute’s median CPC of €1.06. If you want to plan for a more competitive auction, raise the CPM toward the DTC median.</p>
   </div>
 </section>
 
@@ -309,7 +354,7 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
     <div class="col">
       <p class="label">What I’d test</p>
       <h2 id="cr-h">Seven creatives, each with one question to answer</h2>
-      <p>Each has a hypothesis and one metric, and each runs in every market with the same test so results can be compared. Copy is localised per market: a native speaker checks every local version, Invity’s compliance checks claims, and ad approvals are checked per platform and market. Hungarian is the one language I can check myself.</p>
+      <p>Each has a hypothesis and one metric. I would write the work so the same test can be compared across markets, with a local language version in each one. A native speaker would check every local version, Invity’s compliance would check claims, and ad approvals would be checked per platform and market. The forecast is how I’d see where we have the volume and the review capacity to run a comparison — not a promise to switch every market on at once. Hungarian is the one language I can check myself.</p>
     </div>
     <div class="cards">
       <article class="cr" aria-labelledby="c1">
@@ -323,7 +368,7 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
           <dt>Metric</dt><dd>Share of viewers who watch past the fee screen</dd>
           <dt>Localising</dt><dd>Recorded in the app language each market can use; the app interface lists Czech, English, German, Spanish and Portuguese, so elsewhere it may show English.</dd>
         </dl>
-        <p class="risk">Bitcoin’s price can fall a lot. Only buy what you can hold through that.</p>
+        <p class="risk">Bitcoin can lose value. Make sure you understand the risks before deciding whether to buy.</p>
       </article>
       <article class="cr" aria-labelledby="c2">
         <h3 id="c2">Questions people actually ask</h3>
@@ -353,7 +398,7 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
         <h3 id="c4">Where is my bitcoin?</h3>
         <p class="fmt">Six-slide carousel</p>
         <dl>
-          <dt>Idea</dt><dd>Custody in plain words: held by BitGo, separate from Invity’s own money, withdraw to your own wallet any time.</dd>
+          <dt>Idea</dt><dd>Custody in plain words, from Invity’s public pages and pending verification: held by BitGo, described as separate from Invity’s own money, with withdrawal subject to current limits, fees and conditions.</dd>
           <dt>Hook</dt><dd class="hook">“You bought bitcoin. Where is it now?”</dd>
           <dt>Call to action</dt><dd>Read how Invity holds it</dd>
           <dt>Hypothesis</dt><dd>A plain custody explainer earns more clicks to the FAQ than a general trust post.</dd>
@@ -390,14 +435,14 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
         <h3 id="c7">A local creator’s first setup</h3>
         <p class="fmt">Creator video, clearly labelled as paid</p>
         <dl>
-          <dt>Idea</dt><dd>A local Bitcoin educator in each market sets up a first purchase on camera, in their own words, including what confused them.</dd>
+          <dt>Idea</dt><dd>A local Bitcoin educator, in the language of that market, sets up a first purchase on camera, in their own words, including what confused them.</dd>
           <dt>Hook</dt><dd class="hook">“I did my first purchase on camera, including the bits I didn’t get.” (written by each creator in their own language)</dd>
           <dt>Call to action</dt><dd>Questions? The Invity team answers in the comments</dd>
           <dt>Hypothesis</dt><dd>Visitors from a creator buy at a higher rate than visitors from a brand-made video, and the gap differs by market.</dd>
           <dt>Metric</dt><dd>First purchases per tracked visit</dd>
-          <dt>Localising</dt><dd>One creator per market, writing in their own language; paid-partnership rules checked per market.</dd>
+          <dt>Localising</dt><dd>A language version in each market we adapt it to, written by the creator; paid-partnership rules checked per market. Start where the forecast and review capacity make sense.</dd>
         </dl>
-        <p class="risk">Bitcoin’s price can fall a lot. Only buy what you can hold through that.</p>
+        <p class="risk">Bitcoin can lose value. Make sure you understand the risks before deciding whether to buy.</p>
       </article>
     </div>
   </div>
@@ -409,10 +454,10 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
     <h2 id="days-h">The first month</h2>
     <ul class="plain">
       <li>Weeks 1–2: talk to support, product and the people who know each market; read the comments in every language we can.</li>
-      <li>Set up the same measurement in every market at once, with whoever owns analytics, so results can be compared.</li>
-      <li>Pick two creatives and run the same tests in every market in parallel, localised and checked by native speakers and compliance.</li>
-      <li>Run a significance check per market, per test, and treat small samples as too close to call.</li>
-      <li>End of month: share what worked where, what didn’t, and what I’d repeat before acting on it.</li>
+      <li>Build a multi-market forecast we can measure against — with CPM, CTR and language versions in one view — and replace the industry defaults with Invity’s account data as soon as it is available.</li>
+      <li>Agree what we want to learn from one useful comparison, and set up measurement so the same test can later be read market by market.</li>
+      <li>Make and review that comparison in the first market where the forecast shows enough volume, with a native-language check and a compliance check. Then decide where to adapt it.</li>
+      <li>End of month: share what we learned, what the sample can and cannot tell us, and which markets are ready for a language version next.</li>
     </ul>
   </div></div>
 </section>
@@ -420,7 +465,7 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
 <section id="needs" aria-labelledby="needs-h">
   <div class="wrap"><div class="col">
     <p class="label">What I’d need</p>
-    <h2 id="needs-h">What I’d need from Invity to replace the synthetic numbers</h2>
+    <h2 id="needs-h">What I’d need from Invity to replace these planning figures</h2>
     <table class="needs">
       <thead><tr><th scope="col">Assumption</th><th scope="col">What would replace it</th></tr></thead>
       <tbody>
@@ -440,7 +485,7 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>An independent application proposal by Kitti Borissza. Not an official Invity page and not endorsed by Invity. All numbers on this page are synthetic examples. Product details are from <a href="https://www.invity.io/" rel="noopener" target="_blank">invity.io</a> as of 9 November 2026.</p>
+    <p>An independent application proposal by Kitti Borissza. Not an official Invity page and not endorsed by Invity. Media ranges are from published industry sources, cited above. Conversion figures are synthetic examples. Product details are from <a href="https://www.invity.io/" rel="noopener" target="_blank">invity.io</a> as of 9 November 2026.</p>
     <p>Bitcoin’s price can rise and fall sharply and you can lose money. Nothing here is financial advice.</p>
     <p>No cookies, trackers or analytics on this page. <a href="index.html">Back to the main page</a>.</p>
   </div>
@@ -506,16 +551,39 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
   // cost = synthetic cost index applied to every channel's base cost per install; refCap = synthetic referral cap
   // (installs a month); budget = synthetic starting budget. None of these are Invity data.
   P.MARKETS = [
-    { id: 'cz', name: 'Czechia', cost: 1.0, refCap: 150, budget: 2000 },
-    { id: 'at', name: 'Austria', cost: 1.4, refCap: 40, budget: 1000 },
-    { id: 'de', name: 'Germany', cost: 1.5, refCap: 80, budget: 2000 },
-    { id: 'it', name: 'Italy', cost: 1.2, refCap: 50, budget: 1000 },
-    { id: 'sk', name: 'Slovakia', cost: 0.9, refCap: 40, budget: 750 },
-    { id: 'es', name: 'Spain', cost: 1.1, refCap: 60, budget: 1000 },
-    { id: 'nl', name: 'Netherlands', cost: 1.5, refCap: 40, budget: 1000 },
-    { id: 'pl', name: 'Poland', cost: 0.9, refCap: 60, budget: 1000 },
-    { id: 'hu', name: 'Hungary', cost: 0.9, refCap: 30, budget: 750, toConfirm: true }
+    { id: 'cz', name: 'Czechia', cost: 1.0, refCap: 150, budget: 2000, langShort: 'CS, EN', langNote: 'Marketing in Czech. The public app UI lists Czech and English.' },
+    { id: 'at', name: 'Austria', cost: 1.4, refCap: 40, budget: 1000, langShort: 'DE, EN', langNote: 'Marketing in German. The public app UI lists German and English.' },
+    { id: 'de', name: 'Germany', cost: 1.5, refCap: 80, budget: 2000, langShort: 'DE, EN', langNote: 'Marketing in German. The public app UI lists German and English.' },
+    { id: 'it', name: 'Italy', cost: 1.2, refCap: 50, budget: 1000, langShort: 'IT, EN', langNote: 'Marketing in Italian. Italian is not listed in the public app UI languages, so the app may show English until that is confirmed.' },
+    { id: 'sk', name: 'Slovakia', cost: 0.9, refCap: 40, budget: 750, langShort: 'SK, EN', langNote: 'Marketing in Slovak. Slovak is not listed in the public app UI languages, so the app may show English or Czech until that is confirmed.' },
+    { id: 'es', name: 'Spain', cost: 1.1, refCap: 60, budget: 1000, langShort: 'ES, EN', langNote: 'Marketing in Spanish. The public app UI lists Spanish and English.' },
+    { id: 'nl', name: 'Netherlands', cost: 1.5, refCap: 40, budget: 1000, langShort: 'NL, EN', langNote: 'Marketing in Dutch. Dutch is not listed in the public app UI languages, so the app may show English until that is confirmed.' },
+    { id: 'pl', name: 'Poland', cost: 0.9, refCap: 60, budget: 1000, langShort: 'PL, EN', langNote: 'Marketing in Polish. Polish is not listed in the public app UI languages, and should be confirmed before an in-app recording is planned.' },
+    { id: 'hu', name: 'Hungary', cost: 0.9, refCap: 30, budget: 750, toConfirm: true, langShort: 'HU, EN', langNote: 'Marketing in Hungarian, which I can check myself. Whether Hungary is served, and whether the app has a Hungarian UI, is to confirm with Invity.' }
   ];
+  // Country CPMs: AdSpendSpy 2026 estimates for a standard Meta campaign (EUR).
+  // European DTC medians: adtribute, September 2026.
+  P.BENCH = {
+    cpm: {
+      cz: { mid: 6.04, lo: 5.02, hi: 6.72 },
+      at: { mid: 8.09, lo: 6.73, hi: 9.01 },
+      de: { mid: 9.37, lo: 7.79, hi: 10.43 },
+      it: { mid: 6.96, lo: 5.78, hi: 7.74 },
+      sk: { mid: 5.25, lo: 4.37, hi: 5.85 },
+      es: { mid: 7.10, lo: 5.90, hi: 7.90 },
+      nl: { mid: 8.52, lo: 7.08, hi: 9.48 },
+      pl: { mid: 5.33, lo: 4.43, hi: 5.93 },
+      hu: { mid: 5.11, lo: 4.25, hi: 5.69 }
+    },
+    euDtcCpm: 12.76, euDtcCpmLo: 9.19, euDtcCpmHi: 16.56,
+    euDtcCtr: 1.19, euDtcCtrLo: 0.92, euDtcCtrHi: 1.48
+  };
+  P.socialForecast = function (spend, cpm, ctrPct) {
+    if (!(spend > 0) || !(cpm > 0) || !(ctrPct > 0)) return { impressions: 0, clicks: 0, cpc: null };
+    var impressions = spend * 1000 / cpm;
+    var clicks = impressions * (ctrPct / 100);
+    return { impressions: impressions, clicks: clicks, cpc: spend / clicks };
+  };
   // The five channels for one market: base CPI × market cost index; the referral cap is the market's own.
   P.marketChannels = function (m) {
     return P.CHANNELS.map(function (c) {
@@ -527,7 +595,7 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
   // Fresh, independent plan per market: its own budget and its own channel shares.
   P.initialPlans = function () {
     var out = {};
-    P.MARKETS.forEach(function (m) { out[m.id] = { budget: m.budget, shares: P.CHANNELS.map(function (c) { return c.share; }) }; });
+    P.MARKETS.forEach(function (m) { out[m.id] = { budget: m.budget, shares: P.CHANNELS.map(function (c) { return c.share; }), cpm: P.BENCH.cpm[m.id].mid, ctr: P.BENCH.euDtcCtr }; });
     return out;
   };
   // Every market modelled separately with the same maths, plus the sum across markets.
@@ -552,8 +620,11 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
   var plans = P.initialPlans(), cur = 'cz';
   var eur = function (v) { return '€' + Math.round(v).toLocaleString('en-GB'); };
   var eur2 = function (v) { return '€' + (Math.round(v * 10) / 10).toLocaleString('en-GB'); };
+  var eurCpm = function (v) { return '€' + (Math.round(v * 100) / 100).toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
+  var pct = function (v) { return (Math.round(v * 100) / 100).toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + '%'; };
   var n = function (v) { return Math.round(v).toLocaleString('en-GB'); };
   var budget = document.getElementById('budget'), sel = document.getElementById('market');
+  var cpmEl = document.getElementById('cpm'), ctrEl = document.getElementById('ctr');
   function mk(id) { return P.MARKETS.filter(function (m) { return m.id === id; })[0]; }
   function factor() { var r = f.querySelector('input[name=scen]:checked'); return r ? Number(r.value) : 1; }
   function render() {
@@ -561,9 +632,9 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
     var r = P.model(pl.budget, pl.shares, fac, ch), shown = P.display(pl.shares);
     budget.value = pl.budget;
     document.getElementById('mk-name').textContent = m.name;
-    document.getElementById('mk-note').textContent = m.toConfirm
-      ? 'Hungary is my addition: I know the market first-hand. Not on Invity’s passport list in ESMA’s register, so to confirm with Invity. Synthetic cost index ' + m.cost + '.'
-      : 'Synthetic cost index ' + m.cost + ' (Czechia = 1). Not real media costs.';
+    document.getElementById('mk-note').textContent = m.langNote + (m.toConfirm
+      ? ' Not on Invity’s passport list in ESMA’s register.'
+      : '');
     document.getElementById('o-budget').textContent = eur(pl.budget);
     budget.setAttribute('aria-valuetext', eur(pl.budget) + ' a month in ' + m.name);
     P.CHANNELS.forEach(function (c, i) {
@@ -576,23 +647,54 @@ select.mk:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
     });
     document.getElementById('cap-referral').textContent = m.refCap;
     document.getElementById('t-market').textContent = m.name;
+    document.getElementById('t-langs').textContent = m.langNote;
     document.getElementById('t-installs').textContent = n(r.total.installs);
     document.getElementById('t-buyers').textContent = n(r.total.buyers);
     document.getElementById('t-per').textContent = r.total.perBuyer == null ? '–' : eur(r.total.perBuyer);
+    var socialRow = r.rows.filter(function (row) { return row.id === 'social'; })[0] || r.rows[1];
+    var socialSpend = socialRow ? socialRow.spend : 0;
+    var cpmVal = pl.cpm, ctrVal = pl.ctr, b = P.BENCH.cpm[m.id];
+    cpmEl.value = cpmVal;
+    ctrEl.value = ctrVal;
+    document.getElementById('o-cpm').textContent = eurCpm(cpmVal);
+    document.getElementById('o-ctr').textContent = pct(ctrVal);
+    document.getElementById('cpm-note').textContent = 'Industry estimate for this market: ' + eurCpm(b.mid) + ' (' + eurCpm(b.lo) + '–' + eurCpm(b.hi) + ') for a standard Meta campaign (AdSpendSpy, 2026). European DTC median: ' + eurCpm(P.BENCH.euDtcCpm) + ' (' + eurCpm(P.BENCH.euDtcCpmLo) + '–' + eurCpm(P.BENCH.euDtcCpmHi) + '), September 2026 (adtribute). A Bitcoin app may sit higher in the auction.';
+    document.getElementById('ctr-note').textContent = 'Default is the European DTC median link CTR of 1.19% (middle half 0.92%–1.48%), September 2026, adtribute. A country-level CTR was not published there, so the same default is used in every market until Invity’s data replaces it.';
+    var media = P.socialForecast(socialSpend, cpmVal, ctrVal);
+    document.getElementById('t-impr').textContent = n(media.impressions);
+    document.getElementById('t-clicks').textContent = n(media.clicks);
+    document.getElementById('t-cpc').textContent = media.cpc == null ? '–' : eurCpm(media.cpc);
+    var cpmFlag = (cpmVal < b.lo || cpmVal > b.hi) ? ' This CPM sits outside the published range for this market.' : '';
+    document.getElementById('media-out').textContent = 'At this month’s paid-social spend of ' + eur(socialSpend) + ': ' + n(media.impressions) + ' impressions, ' + n(media.clicks) + ' clicks, implied CPC ' + (media.cpc == null ? '–' : eurCpm(media.cpc)) + '. That CPC is a media number, not a cost per install.' + cpmFlag;
     var pf = P.portfolio(plans, fac);
-    document.getElementById('t-note').textContent = (r.total.unused >= 1
-      ? eur(r.total.unused) + ' of the referral share can’t be used here: the ' + m.refCap + '-install cap is reached. '
-      : 'Shares add up to 100%. ') + 'All markets: ' + n(pf.total.buyers) + ' first buyers a month. Not a forecast.';
-    document.getElementById('allmk-body').innerHTML = pf.markets.map(function (x) {
-      return '<tr' + (x.id === cur ? ' class="on"' : '') + '><th scope="row">' + x.name + (mk(x.id).toConfirm ? ' *' : '') + '</th><td>' + eur(x.budget) + '</td><td>' + n(x.total.installs) + '</td><td>' + n(x.total.buyers) + '</td><td>' + (x.total.perBuyer == null ? '–' : eur(x.total.perBuyer)) + '</td></tr>';
+    var clickSum = 0, spendSocial = 0, imprSum = 0;
+    var rowsHtml = pf.markets.map(function (x) {
+      var chx = P.marketChannels(mk(x.id));
+      var rx = P.model(x.budget, plans[x.id].shares, fac, chx);
+      var srow = rx.rows.filter(function (row) { return row.id === 'social'; })[0];
+      var ssp = srow ? srow.spend : 0;
+      var sm = P.socialForecast(ssp, plans[x.id].cpm, plans[x.id].ctr);
+      clickSum += sm.clicks;
+      spendSocial += ssp;
+      imprSum += sm.impressions;
+      return '<tr' + (x.id === cur ? ' class="on"' : '') + '><th scope="row">' + x.name + (mk(x.id).toConfirm ? ' *' : '') + '</th><td>' + mk(x.id).langShort + '</td><td>' + eur(x.budget) + '</td><td>' + eurCpm(plans[x.id].cpm) + '</td><td>' + pct(plans[x.id].ctr) + '</td><td>' + n(sm.clicks) + '</td><td>' + n(x.total.installs) + '</td><td>' + n(x.total.buyers) + '</td><td>' + (x.total.perBuyer == null ? '–' : eur(x.total.perBuyer)) + '</td></tr>';
     }).join('');
+    document.getElementById('allmk-body').innerHTML = rowsHtml;
     document.getElementById('allmk-b').textContent = eur(pf.total.budget);
+    document.getElementById('allmk-cpm').textContent = imprSum > 0 ? eurCpm(spendSocial * 1000 / imprSum) : '–';
+    document.getElementById('allmk-ctr').textContent = imprSum > 0 ? pct(clickSum / imprSum * 100) : '–';
+    document.getElementById('allmk-clicks').textContent = n(clickSum);
     document.getElementById('allmk-i').textContent = n(pf.total.installs);
     document.getElementById('allmk-f').textContent = n(pf.total.buyers);
     document.getElementById('allmk-p').textContent = pf.total.perBuyer == null ? '–' : eur(pf.total.perBuyer);
+    document.getElementById('t-note').textContent = (r.total.unused >= 1
+      ? eur(r.total.unused) + ' of the referral share can’t be used here: the ' + m.refCap + '-install cap is reached. '
+      : 'Shares add up to 100%. ') + 'All markets: ' + n(pf.total.buyers) + ' first buyers a month. This is a planning forecast, not Invity’s results.';
   }
   sel.addEventListener('change', function () { cur = sel.value; render(); });
   budget.addEventListener('input', function () { plans[cur].budget = Number(budget.value); render(); });
+  cpmEl.addEventListener('input', function () { var v = Number(cpmEl.value); if (v >= 0) plans[cur].cpm = v; render(); });
+  ctrEl.addEventListener('input', function () { var v = Number(ctrEl.value); if (v >= 0) plans[cur].ctr = v; render(); });
   f.querySelectorAll('input[name=scen]').forEach(function (x) { x.addEventListener('change', render); });
   P.CHANNELS.forEach(function (c, i) {
     document.getElementById('sh-' + c.id).addEventListener('input', function (e) { plans[cur].shares = P.rebalance(plans[cur].shares, i, e.target.value); render(); });
