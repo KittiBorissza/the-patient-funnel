@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.6.0 · 10 Nov 2026
+
+One forecast instead of two: the “What can I learn with this budget?” Meta test planner and the multi-market planning forecast are now a single tool on `strategy.html#forecast`.
+
+**What can I learn with this budget?**
+- The section opens with the concrete question — should the first-purchase walkthrough open on fees or on custody? — and the tool asks one thing: what can I learn with this budget?
+- Choose what you want to learn: which opening keeps people watching, how many completed first purchases the budget could support, or a controlled comparison between two openings or two markets. Each choice says what decision it informs.
+- The market selector is shared by the whole forecast and still shows each market’s language version. The monthly Meta budget has four example budgets (Small €500, Medium €1,500, Large €5,000, Growth €15,000) and a field to type your own.
+- One result panel answers in three lines: estimated volume, what you could learn, and the next move, with impressions, link clicks and implied CPC from that market’s planning CPM and CTR. With the defaults, €1,500 at an assumed €60 per first purchase is about 25 first purchases a month, or about 12–13 in each of two equal test groups; the even split is stated as an assumption.
+- A short campaign-structure recommendation: start with one market and one acquisition ad set, and add a second only for a separate market, a controlled comparison, or a distinct objective. “Adjust setup” lets you set one to three ad sets and the budget split (even by default).
+- “Assumptions” separates published benchmarks (AdSpendSpy 2026 country CPMs; adtribute’s September 2026 European DTC Meta medians; Adjust’s finance app insights report 2025, quoted in US dollars as context only, not as Invity’s cost per install), illustrative inputs (€60 per first purchase, hook-hold, click-to-install and install-to-first-purchase rates), and what you have typed. You can switch between a direct cost per first purchase and a funnel breakdown.
+- “Budget needed” keeps Meta delivery volume (how much budget buys a number of first purchases) apart from experimental sample size (how large each group needs to be for a controlled A/B test at 80% power and 5% significance). If an input is missing, it lists what is needed instead of calculating.
+
+**Kept from 2.5.0**
+- Multi-market thinking, editable planning CPM and CTR with the published ranges and caveats, the five channel sliders with synthetic costs per install, Cautious/Base/Upside, and the all-markets table now sit under “From one test to the full month, market by market”. That section explains how the Meta test budget relates to each market’s paid-social share.
+- Still labelled a planning forecast. No number on the page is Invity data. No cookies, trackers, analytics or external scripts; works without JavaScript (an explanation is shown), and every control is keyboard accessible.
+
+
 ## 2.5.0 · 10 Nov 2026
 
 A tightening of the application around one idea, and an upgrade of the multi-market plan into a planning forecast that senior readers can measure against.
