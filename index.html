@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Make Bitcoin feel within reach · Kitti Borissza for Invity's Social Media Lead role</title>
+<title>Make Bitcoin feel within reach · The Patient Funnel</title>
 <meta name="description" content="An independent application proposal by Kitti Borissza for the Social Media Lead role at Invity: who I would talk to first, three things I would make, and how I would spend the first month.">
 <meta name="author" content="Kitti Borissza">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -19,315 +19,70 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://kittiborissza.github.io/the-patient-funnel/og.png">
 <meta name="theme-color" content="#24084c">
-<style>
-:root{
-  --p900:#24084c;--p800:#380c7a;--p700:#4d11a3;--p600:#6016cc;--p500:#781cff;--p400:#8c3fff;--p100:#e4d1ff;--p50:#f4edff;
-  --ink:#16121f;--muted:#4f4a5a;--line:#e3dde9;--paper:#fcfbf8;--amber:#ffd27a;
-  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-  --serif:"Iowan Old Style","Charter","Bitstream Charter","Palatino Linotype",Palatino,Georgia,serif;
-  --measure:40rem;
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-padding-top:1rem}
-@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-body{margin:0;background:var(--paper);color:var(--ink);font:1.125rem/1.65 var(--sans)}
-@media (min-width:700px){body{font-size:1.1875rem}}
-a{color:var(--p600);text-decoration-thickness:1px;text-underline-offset:.18em}
-a:hover{color:var(--p800);text-decoration-thickness:2px}
-:focus-visible{outline:3px solid var(--p600);outline-offset:3px;border-radius:4px}
-.hero :focus-visible,.site-footer :focus-visible{outline-color:var(--amber)}
-.skip{position:absolute;left:-9999px;top:.75rem;z-index:10;background:#fff;color:var(--p800);padding:.6rem 1rem;border-radius:999px;font-weight:700}
-.skip:focus{left:.75rem}
-p{margin:0 0 1.05em}
-h1,h2,h3{line-height:1.12;letter-spacing:-.02em;margin:0}
-h2{font-size:clamp(1.85rem,4.6vw,2.6rem);font-weight:800;margin-bottom:.7em;max-width:22ch}
-h3{font-size:clamp(1.35rem,3vw,1.6rem);font-weight:800;margin-bottom:.55em}
-.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
-.col{max-width:var(--measure)}
+<link rel="stylesheet" href="styles.css">
+<script src="interactions.js" defer></script>
 
-/* top line */
-.top{background:var(--p900);color:#fff;font-size:.9rem}
-.top .wrap{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;align-items:center;justify-content:space-between;padding-top:.7rem;padding-bottom:.7rem}
-.top a{color:#fff;text-decoration:none;font-weight:600}
-.top a:hover{text-decoration:underline;color:#fff}
-.top nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.15rem 1.1rem}
-.top .name{font-weight:800;letter-spacing:-.01em}
-
-/* hero */
-.hero{background:linear-gradient(170deg,#8c3fff 0%,#781cff 30%,#6016cc 65%,#4d11a3 100%);color:#fff;padding:4.5rem 0 4rem}
-@media (min-width:900px){.hero{padding:6.5rem 0 5.5rem}}
-.kicker{font-size:.95rem;font-weight:700;letter-spacing:.04em;margin:0 0 1.2rem;opacity:.95}
-.hero h1{font-size:clamp(2.7rem,8.5vw,4.7rem);font-weight:800;letter-spacing:-.035em;max-width:11ch;margin-bottom:2.2rem}
-.hero h1 span{text-decoration:underline;text-decoration-color:var(--amber);text-decoration-thickness:.075em;text-underline-offset:.14em;text-decoration-skip-ink:none}
-.hero .lede{font-size:1.2rem;line-height:1.6;max-width:36rem}
-@media (min-width:700px){.hero .lede{font-size:1.32rem}}
-.hero p{max-width:36rem}
-.hero a{color:#fff}
-.hero-grid{display:grid;gap:0 4rem}
-@media (min-width:1000px){.hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:start}.hero-text{padding-top:2.6rem}.hero h1{margin-bottom:0}.hero-text .lede{margin-top:0}}
-.hero .note-top{display:inline-block;margin-top:.6rem;font-size:.95rem;border-left:3px solid var(--amber);padding-left:.8rem;max-width:34rem}
-
-/* sections */
-main section{padding:4.25rem 0;border-top:1px solid var(--line)}
-main section:first-child{border-top:0}
-.label{font-size:.85rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--p700);margin:0 0 .9rem}
-.muted{color:var(--muted)}
-
-/* ideas */
-.idea{display:grid;gap:1.2rem 3rem;padding:2.8rem 0;border-top:1px solid var(--line)}
-.idea:first-of-type{border-top:0;padding-top:.6rem}
-@media (min-width:900px){.idea{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}}
-.idea .meta{font-size:1rem;color:var(--muted);margin-top:1.2rem}
-.idea .meta p{margin-bottom:.6em}
-.idea .meta b{color:var(--ink)}
-.sample{margin:0;background:#fff;border:1px solid var(--line);border-left:4px solid var(--p600);border-radius:4px 14px 14px 4px;padding:1.4rem 1.5rem}
-.sample .tag{display:block;font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--p700);margin-bottom:.8rem}
-.sample p,.sample li{font-family:var(--serif);font-size:1.12rem;line-height:1.55}
-.sample p:last-child{margin-bottom:0}
-.frames{list-style:none;margin:0;padding:0;counter-reset:f}
-.frames li{counter-increment:f;position:relative;padding:0 0 .9rem 2.4rem}
-.frames li:last-child{padding-bottom:0}
-.frames li::before{content:counter(f);position:absolute;left:0;top:.15rem;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--p50);color:var(--p700);font:800 .85rem/1.6rem var(--sans);text-align:center}
-.frames .shot{display:block;font-family:var(--sans);font-size:.88rem;color:var(--muted);line-height:1.45}
-.sample .small{font-family:var(--sans);font-size:.92rem;color:var(--muted);margin-top:1rem}
-
-/* month */
-.steps{list-style:none;margin:1.6rem 0 2rem;padding:0;max-width:var(--measure)}
-.steps li{padding:1rem 0 1rem 0;border-top:1px solid var(--line)}
-.steps li:first-child{border-top:0}
-.steps b{display:block;font-size:1.05rem;color:var(--p800)}
-.two{display:grid;gap:1.5rem 3rem;margin-top:1rem}
-@media (min-width:900px){.two{grid-template-columns:1fr 1fr}}
-.two h3{font-size:1.2rem}
-
-/* about */
-.about{background:var(--p900);color:#f3eefc;border-top:0!important}
-.about h2{color:#fff}
-.about .label{color:var(--amber)}
-.about a{color:#fff}
-.about :focus-visible{outline-color:var(--amber)}
-.cta{display:flex;flex-wrap:wrap;gap:.9rem 1.4rem;align-items:center;margin-top:1.8rem}
-.btn{display:inline-block;background:var(--amber);color:var(--p900)!important;text-decoration:none;font-weight:800;padding:.85rem 1.4rem;border-radius:999px}
-.btn:hover{background:#ffe2a6}
-
-/* A/B check */
-.ab{margin:2.2rem 0 0;padding:1.6rem 0 0;border-top:2px solid var(--p100)}
-.ab-title{font-weight:800;font-size:1.2rem;margin:0 0 1rem;color:var(--p800)}
-.ab-form{display:grid;gap:1rem 2rem}
-.ab-form[hidden]{display:none}
-@media (min-width:640px){.ab-form{grid-template-columns:1fr 1fr}.ab-out,.ab-form .more{margin-top:2rem;font-weight:600}
-.ab-note,.ab-mk{grid-column:1/-1}}
-.ab fieldset{border:0;margin:0;padding:0;display:grid;grid-template-columns:auto 7.5rem;gap:.5rem 1rem;align-items:center}
-.ab legend{font-weight:700;font-size:1rem;margin-bottom:.6rem;padding:0}
-.ab label{font-size:1rem;color:var(--muted)}
-.ab-mk{display:flex;gap:1rem;align-items:center}
-.ab select,.ab input{font:inherit;font-size:1.05rem;width:100%;padding:.45rem .6rem;border:1px solid #8d8698;border-radius:8px;background:#fff;color:var(--ink);font-variant-numeric:tabular-nums}
-.ab select:focus-visible,.ab input:focus-visible{outline:3px solid var(--p600);outline-offset:2px}
-.ab-out{font-size:1.05rem}
-.ab-out p{margin:0 0 .5em}
-.ab-out .verdict{font-weight:800;color:var(--p800);font-size:1.15rem}
-.ab-note{font-size:.9rem;color:var(--muted);margin:0}
-
-.site-footer{background:#170433;color:#d9cfee;font-size:.92rem;padding:2rem 0 2.4rem}
-.site-footer p{max-width:46rem;margin-bottom:.6em}
-.site-footer a{color:#fff}
-
-@media print{.top nav,.skip{display:none}.hero,.about,.site-footer{background:#fff!important;color:#000!important}.hero a,.about a{color:#000}main section{padding:1.5rem 0}a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em}}
-
-@media (max-width: 880px){
-  header.top .wrap{flex-wrap:wrap;align-items:center}
-  header.top nav{width:100%;margin-top:.15rem}
-  header.top nav ul{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:.9rem;padding:.15rem 0 .35rem}
-  header.top nav ul::-webkit-scrollbar{display:none}
-  header.top nav a{white-space:nowrap}
-}
-</style>
 </head>
-<body>
+<body class="index">
 <a class="skip" href="#main">Skip to content</a>
-
-<header class="top">
-  <div class="wrap">
-    <a class="name" href="#top">Kitti Borissza</a>
-    <nav aria-label="On this page">
-      <ul>
-        <li><a href="#idea">The idea</a></li>
-        <li><a href="#make">What I’d make</a></li>
-        <li><a href="#start">First month</a></li>
-        <li><a href="#working">Is it working?</a></li>
-        <li><a href="#about">About me</a></li>
-        <li><a href="content-calendar.html">Content Calendar</a></li>
-        <li><a href="ad-gallery.html">Funnel Ad Gallery</a></li>
-        <li><a href="strategy.html">The plan behind it</a></li>
-      </ul>
-    </nav>
-  </div>
+<header class="site-head"><div class="wrap head-inner">
+  <a class="wordmark" href="index.html"><span class="monogram" aria-hidden="true">PF</span><span>The Patient Funnel<small>KITTI BORISSZA</small></span></a>
+  <nav aria-label="Main navigation"><a href="index.html" aria-current=page>Overview</a><a href="ad-gallery.html">Ad gallery</a><a href="content-calendar.html">Calendar</a><a href="strategy.html">Strategy</a></nav>
+</div></header>
+<main id="main" tabindex="-1">
+<header class="home-hero wrap" id="top">
+  <div id="idea"><p class="eyebrow">Independent application / Invity Social Media Lead</p>
+  <h1>Make Bitcoin feel <em>within reach.</em></h1>
+  <p class="hero-deck">Hi, I’m Kitti. I’d start with someone who knows a little about Bitcoin and is weighing a first purchase. Show them the fee screen, where their bitcoin goes and how to withdraw it. Then give them room to decide.</p>
+  <div class="actions"><a class="button primary" href="#make">See the creative <span aria-hidden="true">↓</span></a><a class="text-link" href="#about">Meet Kitti <span aria-hidden="true">↓</span></a></div></div>
+  <aside class="hero-aside" aria-label="The first buyer’s questions"><p class="eyebrow">The first buyer’s questions</p><ol><li>What will I pay?</li><li>Where does it go?</li><li>Can I move it out?</li></ol></aside>
 </header>
-
-<div class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div class="hero-head">
-    <p class="kicker">Kitti Borissza · application for Social Media Lead at Invity</p>
-    <h1>Make Bitcoin feel <span>within reach.</span></h1>
-    </div>
-    <div class="hero-text">
-    <p class="lede">Hi, I’m Kitti. A CV can’t show how I’d think about this job, so I made this page.</p>
-    <p>Invity caught my eye because it’s narrow on purpose: Bitcoin only, built in Prague in the same family as Trezor, and talking about holding for years instead of trading. In a loud category, that’s a calm and believable thing to say.</p>
-    <p>Many people know roughly what Bitcoin is but haven’t bought any. They rarely need another speech about why it matters, or another prediction about the price. They get stuck on small practical questions. What will I pay? Where does my bitcoin go? Can I get it out again? Social media is a good place to answer those honestly, in public, before anyone installs anything.</p>
-    <p class="note-top">This is my own independent application proposal. I don’t work at Invity, I haven’t seen any internal data, and Invity hasn’t reviewed or endorsed this page.</p>
-    </div>
+<section class="section-band work-band" id="make" aria-labelledby="make-h"><div class="wrap">
+  <div class="section-head"><div><p class="eyebrow">01 / Creative portfolio</p><h2 id="make-h">What I’d make</h2></div><p>Three ways into the conversation. Each answers a question someone could send to a friend.</p></div>
+  <div class="work-grid">
+  <article class="home-card home-fees">
+      <a class="home-art" href="ad-gallery.html#ad-fees" aria-label="See the first-purchase concept in the ad gallery"><span class="mini-feed mini-facebook"><span class="mini-feedbar" aria-hidden="true"><span class="mini-avatar">PF</span><span>The Patient Funnel<small>Facebook · Concept preview</small></span></span><img src="assets/mock-fees-4x5.png" width="1080" height="1350" alt="Purple artwork reading “This is the screen to actually read” and “What you’ll pay, before you tap anything.”"></span></a>
+      <div class="card-copy"><p class="eyebrow">01 / Facebook preview</p><h3>A first purchase, every screen</h3><p>A 35-second walkthrough that slows down at the fee screen.</p>
+      <a class="text-link" href="ad-gallery.html#ad-fees">See Facebook concept</a>
+      <a class="quiet-link" href="content-calendar.html#ex-walkthrough">Read the 35-second script</a></div>
+    </article>
+  <article class="home-card home-withdraw">
+      <a class="home-art" href="ad-gallery.html#ad-withdraw" aria-label="See the withdrawal concept in the ad gallery"><span class="mini-feed mini-linkedin"><span class="mini-feedbar" aria-hidden="true"><span class="mini-avatar">PF</span><span>The Patient Funnel<small>LinkedIn · Concept preview</small></span></span><img src="assets/mock-withdraw-4x5.png" width="1080" height="1350" alt="Paper artwork asking whether bitcoin can be moved out of Invity. The draft answer includes the unverified wording “Any time.”" loading="lazy"></span></a>
+      <div class="card-copy"><p class="eyebrow">02 / LinkedIn preview</p><h3>Can I move it out?</h3><p>A plain-language carousel on withdrawing to a wallet you control.</p><p class="note">Withdrawal wording pending product review.</p>
+      <a class="text-link" href="ad-gallery.html#ad-withdraw">See LinkedIn concept</a>
+      <a class="quiet-link" href="content-calendar.html#ex-withdraw">Read the withdrawal carousel</a></div>
+    </article>
+  <article class="home-card home-hodl">
+      <a class="home-art" href="ad-gallery.html#ad-hodl" aria-label="See The typo that stuck in the ad gallery"><span class="mini-feed mini-x"><span class="mini-feedbar" aria-hidden="true"><span class="mini-avatar">PF</span><span>The Patient Funnel<small>X · Concept preview</small></span></span><img src="assets/mock-hodl-4x5.png" width="1080" height="1350" alt="Deep purple artwork reading “I AM HODLING” with the date 18 December 2013 and a risk note about holding." loading="lazy"></span></a>
+      <div class="card-copy"><p class="eyebrow">03 / X preview</p><h3>The typo that stuck</h3><p>The story behind HODL, with room for someone new to get the joke.</p>
+      <a class="text-link" href="ad-gallery.html#ad-hodl">See X concept</a>
+      <a class="quiet-link" href="content-calendar.html#ex-hodl">Read the HODL script</a></div>
+    </article>
   </div>
-</div>
-
-<main id="main">
-
-<section id="idea" aria-labelledby="idea-h">
-  <div class="wrap"><div class="col">
-    <p class="label">The idea</p>
-    <h2 id="idea-h">Start with the person who hasn’t bought yet</h2>
-    <p>My first audience is the Bitcoin-curious person who has never made a first purchase. They don’t need another prediction about the price. They need to understand what happens, what it costs, where their bitcoin goes, and whether they can change their mind. The spine of the work is simple: from “I’m curious, but I don’t know how this works” to “I understand enough to decide.” Some will decide it isn’t for them. That’s fine too.</p>
-    <p>I’d make the things people are usually expected to trust without seeing: the fee screen, the custody explanation, and the way out. If someone later told a friend about Invity, I’d want the reason to be: they showed me exactly what happens before I had to decide.</p>
-    <p>Recurring buying can be a second decision, once that first purchase is understood. Auto Buy is simple to explain and true to Invity’s long-term view, but it shouldn’t be the first story, and the content shouldn’t suggest it suits everyone.</p>
-    <p>Invity’s MiCA licence is Czech, and ESMA’s register lists it in Austria, Germany, Italy, Slovakia, Spain, the Netherlands and Poland too. I’d treat each country as its own market, with its own language version, and add Hungary if Invity can serve it, because I’m Hungarian and know that market, its language and its recent rule changes first-hand. A forecast across those markets is how I’d see where a test has enough volume, and how the same idea should be adapted, not as a reason to ignore local differences.</p>
-  </div></div>
-</section>
-
-<section id="make" aria-labelledby="make-h">
-  <div class="wrap">
-    <div class="col">
-      <p class="label">What I’d make</p>
-      <h2 id="make-h">Three things I’d want to make first</h2>
-      <p>Starting points to test. Anything about the app, fees, custody or risk would go through Invity’s review first.</p>
-    </div>
-
-    <article class="idea" aria-labelledby="a-h">
-      <div>
-        <h3 id="a-h">A real first purchase, every screen</h3>
-        <p>A short video and matching carousel following one real first purchase in the Invity app, from download to just after “confirm”. Nothing staged, nothing skipped.</p>
-        <p>The confirm screen is one place people may hesitate. Invity’s public pages say fees are shown at that point, that bitcoin is held with a regulated custodian, BitGo, and that it can be withdrawn to your own wallet. Those details, including any limits, fees or conditions, need checking against the live app. That’s where I’d slow down.</p>
-        <div class="meta">
-          <p><b>Where:</b> Reels, YouTube Shorts, a pinned X thread, and a carousel for people who skip video.</p>
-          <p><b>What I’d learn:</b> which screen people ask about most, how many watch past the fee screen, and whether custody needs its own video.</p>
-        </div>
-      </div>
-      <figure class="sample">
-        <span class="tag">Storyboard, about 35 seconds</span>
-        <ol class="frames">
-          <li>“First time buying bitcoin. Here’s every screen, even the boring ones.” <span class="shot">Phone on a kitchen table, real account.</span></li>
-          <li>“Yes, they ask for ID. Regulated app, part of the deal.”</li>
-          <li>“Starting small. An amount I’d be fine seeing drop for a while.”</li>
-          <li>“This is the screen to actually read. What I’ll pay, before I tap anything.” <span class="shot">Hold three seconds.</span></li>
-          <li>“Where is it now? With a custodian. Invity’s public pages say I can send it to my own wallet — that needs checking against the actual terms.”</li>
-          <li>“Bitcoin can lose value. Make sure you understand the risks before deciding whether to buy.”</li>
-        </ol>
-        <p class="small">Wording to be checked against the live app with Invity, including custody terms, withdrawal limits, fees and conditions. Claims such as “any time” or “separate from the company’s money” should not go out until that review.</p>
-      </figure>
-    </article>
-
-    <article class="idea" aria-labelledby="b-h">
-      <div>
-        <h3 id="b-h">Questions people actually ask</h3>
-        <p>A recurring format built from real questions in support chats, comments, community groups and customer interviews. One question per post, plain answer first.</p>
-        <p>The question is the hook: if one person typed it into a support chat, plenty of others are quietly wondering the same.</p>
-        <div class="meta">
-          <p><b>Where:</b> Instagram carousels, Shorts, X, and LinkedIn for questions about regulation and trust.</p>
-          <p><b>What I’d learn:</b> which questions keep coming back, and which ones the app or website could answer earlier.</p>
-        </div>
-      </div>
-      <figure class="sample">
-        <span class="tag">Sample carousel</span>
-        <p>Slide 1: “Can I move my bitcoin out of Invity?”</p>
-        <p>Slide 2: “Invity’s public FAQ says you can withdraw to a hardware wallet or any Bitcoin address you control. Check the current limits, fees and conditions first. Auto Send can do it automatically once your balance reaches an amount you choose.”</p>
-        <p>Slide 3: “Moving bitcoin on the network comes with a small fee paid to miners. And holding your own keys means looking after your own backup.”</p>
-        <p class="small">Format example, written from Invity’s public FAQ. The real series would start from real questions, never invented quotes.</p>
-      </figure>
-    </article>
-
-    <article class="idea" aria-labelledby="c-h">
-      <div>
-        <h3 id="c-h">The meme, decoded</h3>
-        <p>Bitcoin’s in-jokes can feel like a locked door to newcomers. I recently built a <a href="https://bitcoin-meme-21.borisszakitti.chatgpt.site/" rel="noopener" target="_blank">Bitcoin Meme Quiz</a> for the POW Lab community after wondering whether I really knew them all. This takes it further: once a month, one meme, its story and the real idea underneath, told kindly.</p>
-        <p>Insiders enjoy it and newcomers get a way in. Sometimes it would cover a meme we’d never use, like “have fun staying poor”, and why lines like that stop people asking their first question.</p>
-        <div class="meta">
-          <p><b>Where:</b> Reels, Shorts, Story quizzes, X, and a live quiz night at a Bitcoin meetup.</p>
-          <p><b>What I’d learn:</b> whether these posts reach new people or mostly entertain existing Bitcoiners. Both are useful, but they’re different jobs.</p>
-        </div>
-      </div>
-      <figure class="sample">
-        <span class="tag">Script, about 25 seconds</span>
-        <p>“December 2013. The price is falling. A guy on the Bitcointalk forum, by his own account a bad trader and a few whiskies in, posts a thread titled I AM HODLING.”</p>
-        <p>“It’s a typo. It stuck anyway.”</p>
-        <p>“Today HODL means: I’m not trying to time this.”</p>
-        <p>“The idea behind it is patience. The fine print: holding doesn’t protect you from losses. It just means you decided not to trade.”</p>
-      </figure>
-    </article>
-    <div class="col">
-      <p>The four-month plan is on the <a href="content-calendar.html">Content Calendar</a>. Paid versions of the same ideas are in the <a href="ad-gallery.html">Funnel Ad Gallery</a>.</p>
-    </div>
-  </div>
-</section>
-
-<section id="start" aria-labelledby="start-h">
-  <div class="wrap">
-    <div class="col">
-      <p class="label">How I’d start</p>
-      <h2 id="start-h">The first month is mostly listening</h2>
-      <p>I’d arrive with ideas, not a finished plan. Roughly:</p>
-    </div>
-    <ul class="steps">
-      <li><b>Weeks 1–2: meet the people who know the customers.</b> Support, product, whoever reads the reviews. Review existing content and basic numbers. Read the comments for real questions.</li>
-      <li><b>Weeks 2–3: pick one or two priorities.</b> Maybe an idea above, maybe something better. Agree what a good result looks like before anything goes out.</li>
-      <li><b>Weeks 3–4: make and publish a few things.</b> A handful done properly beats a full calendar. I’d plan the work across the markets Invity serves, with a local language version in each one, and use the forecast to see where a first comparison has enough volume — not to switch every market on at once.</li>
-      <li><b>End of the month: look back.</b> Decide honestly what to keep, change or drop.</li>
-    </ul>
-    <div class="two">
-      <div>
+  <div class="work-links"><a class="text-link" href="ad-gallery.html">Explore the ad gallery</a><a class="text-link" href="content-calendar.html">See the four-month calendar</a></div>
+</div></section>
+<section class="section-band" id="start" aria-labelledby="start-h"><div class="wrap">
+  <div class="section-head"><div><p class="eyebrow">02 / First 30 days</p><h2 id="start-h">Listen, make, review.</h2></div><p>I’d start with a few well-made pieces and one clear question to test.</p></div>
+  <ol class="month-steps">
+    <li><span>Weeks 1–2</span><strong>Find the real questions.</strong><p>Talk to support and product. Read the comments, reviews and existing numbers.</p></li>
+    <li><span>Weeks 2–3</span><strong>Pick one useful test.</strong><p>Agree what we want to learn, then choose the market, the recording and the opening.</p></li>
+    <li><span>Weeks 3–4</span><strong>Publish a small batch.</strong><p>Review the questions and watch-through. Decide what to keep, change or drop.</p></li>
+  </ol>
+  <div class="home-disclosures" id="working">
+    <details class="disclosure"><summary>See review and production dependencies</summary><div class="detail-body">
         <h3>What I’d need from others</h3>
         <p>Product and compliance, for what we can show and say about the app, fees and risk. Design, for templates. Native speakers in each market to check local copy (I’m Hungarian and work in English, so Hungarian is the only one I can check myself). And whoever knows the analytics setup.</p>
-      </div>
-      <div>
-        <h3>What a month can and can’t tell us</h3>
-        <p>In thirty days we can learn which topics land, which questions repeat, and whether visits from social look like real interest. Whether that month’s buyers are still around a month later needs more time, and so does judging what social adds on top of everything else.</p>
-      </div>
-    </div>
+      <p><a href="strategy.html#needs">See the data and approvals I’d ask Invity for</a>.</p></div></details>
+    <details class="disclosure"><summary>See what I’d measure in month one</summary><div class="detail-body"><p>I’d look at saves, shares, recurring questions and visits that explore the guide. Where tracking exists, I’d also look at first purchases, Auto Buy set-ups and later retention.</p><p>Attribution describes the path someone took. A controlled comparison can help us estimate what changed because of the creative. Retention and incrementality need a longer window.</p><p id="ab"><a href="ad-gallery.html#ab-test">See the fees-versus-custody test setup</a> or <a href="strategy.html#forecast">try the budget forecast</a>.</p></div></details>
+    <details class="disclosure"><summary>See market and localisation notes</summary><div class="detail-body"><p>I’d plan language versions for the markets Invity serves, then start where we have review coverage and enough volume. Hungary is an option to confirm with Invity.</p><p><a href="strategy.html#market-plan">Explore the market plan</a> or <a href="content-calendar.html#local">read the localisation notes</a>.</p></div></details>
   </div>
-</section>
-
-<section id="working" aria-labelledby="working-h">
-  <div class="wrap"><div class="col">
-    <p class="label">Is it working?</p>
-    <h2 id="working-h">How I’d know if it’s working</h2>
-    <p>Early on I’d watch the quality of questions, saves and shares on educational posts, and visits from social that actually explore. Where tracking exists: first purchases, Auto Buy set-ups and, later, retention.</p>
-    <p>A purchase attributed to a post isn’t the same as one that happened because of it; some people would have bought anyway. Most organic posts can’t be traced to sales, and a bump in branded searches or fewer support tickets that week doesn’t prove a post worked.</p>
-    <p id="ab">Experiments would stay simple. Say, two versions of the walkthrough: one opening on fees and one on custody. To isolate the wording, the opening visual would stay the same; only the first line would change. If we also cut to a different first screen, I would treat that as a package test, not as a clean test of the words. I’d look at watch time and questions first, then first purchases from each version’s tracked link.</p>
-    <p>I’d agree on what we want to learn before publishing. Some ideas will give us clear numbers; others will tell us what people are confused about. If the sample is too small, I’d say so and use the learning to shape the next test.</p>
-    <p class="more">The multi-market planning forecast — with average CPM, CTR and published industry ranges — is on <a href="strategy.html#forecast">The plan behind it</a>.</p>
-  </div></div>
-</section>
-
-<section id="about" class="about" aria-labelledby="about-h">
-  <div class="wrap"><div class="col">
-    <p class="label">About me</p>
-    <h2 id="about-h">A bit about me</h2>
-    <p>I’ve worked in communications and marketing for over 15 years. I started in agency and freelance social media, roughly 2009 to 2016, where I managed communities, content, moderation and paid campaigns for brands, startups and nonprofits. Since then I’ve worked with startups and international technology communities. Today I host the monthly Builder Calls in Bitvocation’s POW Lab, a community of people building on Bitcoin. Before that I ran blockchain developer programmes.</p>
-    <p>I’m drawn back to hands-on social media because I enjoy making things — AI tools have made that part enjoyable again — learning from the response, and having real conversations with people. The chance to do that for a Bitcoin company is what made this role stand out. I like making complicated things feel approachable, and bringing slightly unsure people into the same room — whether that room is a builder call, a Bitcoin conversation, or someone’s first encounter with an app.</p>
-    <p>The details are in my CV. I’d love to talk.</p>
-    <div class="cta">
-      <a class="btn" href="cv/Kitti_Borissza_CV_Invity_2026-11.pdf">Read my CV (PDF)</a>
-      <a href="mailto:borisszakitti@gmail.com">borisszakitti@gmail.com</a>
-      <a href="https://www.linkedin.com/in/kittiborissza" rel="noopener" target="_blank">LinkedIn</a>
-    </div>
-  </div></div>
-</section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <p>An independent application proposal by Kitti Borissza. Not an official Invity page and not endorsed by Invity. Product details are from <a href="https://www.invity.io/" rel="noopener" target="_blank">invity.io</a> as of 9 November 2026 and may have changed.</p>
-    <p>Bitcoin’s price can rise and fall sharply and you can lose money. Nothing here is financial advice.</p>
-    <p>No cookies, trackers or analytics on this page.</p>
-  </div>
-</footer>
-</body>
-</html>
+</div></section>
+<section class="section-band about-band" id="about" aria-labelledby="about-h"><div class="wrap about-grid">
+  <div><p class="eyebrow">03 / About</p><h2 id="about-h">Hi, I’m Kitti.</h2><a class="button primary" href="https://docs.google.com/document/d/17P7y7bK2-5z9oyH28ubbuVsrokn4dXX_iWoMK5nzAkA/edit">Read my CV</a></div>
+  <div><p>I started in social media agencies, where I managed brand communities, wrote social strategies and trained junior community managers. Through TomorrowPeople, I worked hands-on on paid campaigns, tracking and reporting for startups and nonprofits.</p>
+  <p>I’ve followed Bitcoin since 2017. I facilitated a communications workshop with the Wasabi Wallet team in 2018, and since October 2026 I’ve hosted Builder Calls at Bitvocation’s POW Lab. I also made a <a href="https://bitcoin-meme-21.borisszakitti.chatgpt.site/">Bitcoin Meme Quiz</a> for the community.</p>
+  <details class="disclosure"><summary>More about my work</summary><div class="detail-body"><ul class="career-list"><li><b>2023–present</b> Host &amp; Community Programme Designer. I host POW Lab Builder Calls, Data Science Klub and Data Café, and MC’d the Compass AI &amp; Tech Summit Data Stage.</li><li><b>2023</b> Marketing &amp; Community, Circles Entropy.</li><li><b>2021–2023</b> Adoption &amp; Community Lead, TZ Connect / Tezos. I built hackathons, education programmes and incubation for developers.</li><li><b>2018–2021</b> Co-founder &amp; Product Owner, Climate Game On. I led app development and acquisition with eight NGO partners.</li><li><b>2015–2022</b> Co-founder &amp; Growth Marketing Strategist, TomorrowPeople.</li><li><b>2014–2015</b> Co-founder &amp; Head of Strategy, priSMa.</li><li><b>2009–2015</b> Senior Community Manager &amp; Team Lead, Karmamedia.</li></ul></div></details>
+  <details class="disclosure"><summary>Why I’m applying to Invity</summary><div class="detail-body"><p>I like that Invity is Bitcoin-only and talks about holding for years. It gives social a concrete job: show how things work and give people enough context to make their own decision.</p><p>I left agency life to work with startups and tech communities. AI tools now take some of the repetitive production out of hands-on social, and I want to spend that time making things, reading the response and talking to people.</p></div></details>
+  </div></div></section></main>
+<footer class="site-foot"><div class="wrap foot-inner"><div><strong>The Patient Funnel</strong><p>An independent application by Kitti Borissza for Invity’s Social Media Lead role.</p></div><div><a href="index.html#about">About Kitti</a><a href="mailto:borisszakitti@gmail.com">Email Kitti</a><a href="https://www.linkedin.com/in/kittiborissza">LinkedIn</a></div></div><div class="wrap fineprint">Invity product details and creative concepts are pending review. Bitcoin can lose value. This portfolio contains no financial advice.</div></footer>
+</body></html>
