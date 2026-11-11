@@ -332,13 +332,13 @@ p.calc-fit { color: var(--muted); font-size: .85rem; }
 .concept-feed > [role="tabpanel"] > article { height: 100%; }
 
 /* Clickable cards lift slightly on hover. */
-.post-cards a, .evidence-image, .plan-sample, .touch-art, .performance-preview > a, .lifecycle-entries button {
+.post-cards a, .route-cards a, .evidence-image, .plan-sample, .touch-art, .performance-preview > a, .lifecycle-entries button {
   transition-property: scale, border-color, background-color, color;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
 }
 @media (hover: hover) {
-  .post-cards a:hover, .evidence-image:hover, .plan-sample:hover, .touch-art:hover, .performance-preview > a:hover, .lifecycle-entries button:hover { scale: 1.02; }
+  .post-cards a:hover, .route-cards a:hover, .evidence-image:hover, .plan-sample:hover, .touch-art:hover, .performance-preview > a:hover, .lifecycle-entries button:hover { scale: 1.02; }
 }
 
 /* Accordions slide open and closed where the browser can animate to auto height. */
