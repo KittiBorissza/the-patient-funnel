@@ -44,6 +44,7 @@
   </div>
   <div class="iv-picker" hidden role="group" aria-label="Creative">
     <button class="cursor-interaction" type="button" data-work="wagmi" aria-pressed="false"><img data-image="wagmi" alt=""><b>WAGMI</b><small>GIF</small></button>
+    <button class="cursor-interaction" type="button" data-work="sats" aria-pressed="false"><img data-image="sats" alt=""><b>Same sats</b><small>Static + copy</small></button>
     <button class="cursor-interaction" type="button" data-work="hodl" aria-pressed="false"><img data-image="hodl" alt=""><b>I AM HODLING</b><small>Static + copy</small></button>
     <button class="cursor-interaction" type="button" id="carousel-autosend" data-work="autosend" aria-pressed="true"><img data-image="autosend" alt=""><b>Auto Send</b><small>Carousel · 5 slides</small></button>
     <button class="cursor-interaction" type="button" id="carousel-compare" data-work="compare" aria-pressed="false"><img data-image="compare" alt=""><b>The €100 test</b><small>Carousel · 5 slides</small></button>
@@ -64,8 +65,9 @@
   <noscript><ul>
     <li><a href="assets/wagmi-still-4x5.png">WAGMI artwork</a> · <a href="content-calendar.html#ex-wagmi">WAGMI script</a></li>
     <li><a href="assets/hodl-creative.webp">HODL artwork</a> · <a href="#ad-hodl">HODL creative brief</a></li>
-    <li><a href="assets/auto-send.png">Auto Send artwork</a> · <a href="research.html#claims">Auto Send review notes</a></li>
-    <li><a href="assets/euro-100.png">€100 test artwork</a> · <a href="research.html#quote-method">€100 test method</a></li>
+    <li><a href="assets/same-sats-creative.webp">Same sats artwork</a> · <a href="#brief-sats">Creative brief</a></li>
+    <li><a href="assets/auto-send-creative.webp">Auto Send artwork</a> · <a href="#brief-autosend">Creative brief</a></li>
+    <li><a href="assets/euro-100-creative.webp">€100 test artwork</a> · <a href="research.html#quote-method">€100 test method</a></li>
   </ul></noscript>
 </section>
 <style>
@@ -111,21 +113,25 @@
 .brief-poster small{margin-top:auto}
 .confirm-poster{aspect-ratio:4/5;max-width:24rem}
 .confirm-poster ol{padding-left:1.35rem;margin:0}
+.brief-with-art{display:grid;grid-template-columns:minmax(0,7rem) minmax(0,1fr);align-items:start;gap:.85rem}
+.brief-with-art img{display:block;width:100%;height:auto;border-radius:.55rem}
+.brief-with-art h3{margin-top:0}
 </style>
 <script>
 (() => {
   const root = document.getElementById('invity-gallery-sample');
-  const assets = {wagmi:'assets/wagmi-still-4x5.png',wagmiMotion:'assets/wagmi-4x5.gif',hodl:'assets/hodl-creative.webp',autosend:'assets/auto-send.png',compare:'assets/euro-100.png',withdraw:'assets/withdraw-creative.webp',autobuy:'assets/auto-buy-creative.webp',turbo:'assets/turbo-buy-creative.webp'};
+  const assets = {wagmi:'assets/wagmi-still-4x5.png',wagmiMotion:'assets/wagmi-4x5.gif',sats:'assets/same-sats-creative.webp',hodl:'assets/hodl-creative.webp',autosend:'assets/auto-send-creative.webp',compare:'assets/euro-100-creative.webp',withdraw:'assets/withdraw-creative.webp',autobuy:'assets/auto-buy-creative.webp',turbo:'assets/turbo-buy-creative.webp'};
   const entries = {
     wagmi: {format:'Animated concept',caption:'The chart is red. Someone posts WAGMI. Four letters can keep you company. The price can still do its own thing.',alt:'WAGMI artwork about Bitcoin culture on a red day.'},
+    sats: {format:'Static X post concept',caption:'Your sats can stay the same while their euro value moves. What do you pay attention to on a red day?',alt:'Same sats. Different day.'},
     hodl: {format:'Static post concept',caption:'December 2013. Bitcoin was down. A typo in a forum post became one of Bitcoin’s most persistent memes.',alt:'I AM HODLING, with the date of the original 2013 forum post.'},
-    autosend: {format:'Instagram carousel concept',caption:'From your stack to a wallet you control. Here’s what Auto Send does and what to check before enabling it.',alt:'From your stack to your wallet. Explore Auto Send.',slides:[
+    autosend: {format:'Instagram carousel concept',caption:'From your stack to a wallet you control. Here’s what Auto Send does and what to check before enabling it.',alt:'From your stack to your wallet.',slides:[
       ['01 / 04','01','Choose the destination.','Use a Bitcoin address for a wallet you control. Review it before confirming.'],
       ['02 / 04','02','Set a threshold.','Choose a value in a currency available in the app; confirm local conditions.'],
       ['03 / 04','03','Check the details.','Review the address, threshold and any fee or conditions shown in the app.'],
       ['04 / 04','↗','Know what happens next.','When the balance reaches the threshold, Auto Send can trigger the transfer.','Explore Auto Send','research.html#claims']
     ]},
-    compare: {format:'Instagram carousel concept',caption:'What does €100 actually buy? This carousel shows the test method. App quotes and received amounts are pending.',alt:'What does €100 actually buy? See the €100 test.',slides:[
+    compare: {format:'Instagram carousel concept',caption:'What does €100 actually buy? This carousel shows the test method. App quotes and received amounts are pending.',alt:'What does €100 actually buy?',slides:[
       ['01 / 04','€100','Start with the same €100.','Match the market, payment method and time window.'],
       ['02 / 04','SAT','Capture the quote.','Record the quoted sats and the purchase fee. Keep the timestamp.'],
       ['03 / 04','↗','Follow it to the wallet.','Where a separate transfer is needed, record its cost and the sats that arrive.'],
@@ -157,8 +163,9 @@
   const briefs = {
     wagmi: 'content-calendar.html#ex-wagmi',
     hodl: '#ad-hodl',
-    autosend: 'research.html#claims',
-    compare: 'research.html#quote-method',
+    sats: '#brief-sats',
+    autosend: '#brief-autosend',
+    compare: '#brief-compare',
     withdraw: '#ad-withdraw',
     autobuy: '#ad-autobuy',
     turbo: '#turbo-buy'
@@ -206,7 +213,7 @@
   }
 
   function restoreCreative(scroll = false) {
-    const match = /^#creative-(wagmi|hodl|autosend|compare|withdraw|autobuy|turbo)-([1-6])$/.exec(location.hash);
+    const match = /^#creative-(wagmi|sats|hodl|autosend|compare|withdraw|autobuy|turbo)-([1-6])$/.exec(location.hash);
     const legacy = { '#carousel-autosend': 'autosend', '#carousel-compare': 'compare' };
     selectCreative(match?.[1] || legacy[location.hash] || 'autosend', match ? Number(match[2]) - 1 : 0);
     if (match && scroll) root.scrollIntoView({ block: 'start' });
@@ -242,7 +249,7 @@
   }, {passive:true});
   root.querySelector('.iv-picker').hidden = false;
   root.querySelector('.iv-post').hidden = false;
-  addEventListener('hashchange', () => restoreCreative());
+  addEventListener('hashchange', () => restoreCreative(true));
   restoreCreative(true);
 })();
 </script>
@@ -411,9 +418,9 @@
     fees: 'assets/fees-creative.webp',
     hodl: 'assets/hodl-creative.webp',
     wagmi: 'assets/wagmi-still-4x5.png',
-    sats: 'assets/same-sats.png',
+    sats: 'assets/same-sats-creative.webp',
     withdraw: 'assets/withdraw-creative.webp',
-    compare: 'assets/euro-100.png',
+    compare: 'assets/euro-100-creative.webp',
     routine: 'assets/auto-buy-creative.webp',
     turbo: 'assets/turbo-buy-creative.webp'
   };
@@ -425,13 +432,13 @@
     { key:'li', name:'LinkedIn', type:'Feed concept', caption:'li', top:'Concept page · feed preview' }
   ];
   const links = {
-    sats: 'index.html#top',
+    sats: '#brief-sats',
     wagmi: 'content-calendar.html#ex-wagmi',
     hodl: '#ad-hodl',
     routine: '#ad-autobuy',
     fees: 'content-calendar.html#ex-walkthrough',
     withdraw: 'content-calendar.html#ex-withdraw',
-    compare: '#carousel-compare',
+    compare: '#brief-compare',
     keys: '#carousel-autosend',
     turbo: '#turbo-buy'
   };
@@ -476,7 +483,7 @@
   }
   selector.addEventListener('change', choosePreview);
   platform.addEventListener('change', choosePreview);
-  addEventListener('hashchange', () => restorePreview());
+  addEventListener('hashchange', () => restorePreview(true));
   root.addEventListener('click', event => {
     const button = event.target.closest('.pf-action');
     if (!button) return;
@@ -530,7 +537,7 @@
 <p class="copy">A typo from 18 December 2013, written while the price was falling. Today it means: I’m not trying to time this. The fine print: holding doesn’t protect you from losses.</p>
 </div><p class="row"><span class="k">Who it is for.</span> People who are curious about Bitcoin language or history, and may not yet know Invity. This is a proposed targeting idea, not an audience Invity already runs.</p><p class="row"><span class="k">What we want to learn.</span> Whether people stay to the fine-print line, and whether they click the explainer. Purchases are the wrong main measure here.</p><p class="row"><span class="k">Audience signal.</span> A proposed culture-led prospecting set: people interested in Bitcoin history, language, or a first plain explanation. This is a targeting idea, not a statement that Invity already runs this audience.</p><p class="row"><span class="k">The hesitation.</span> What does HODL actually mean, and is this just insider language I’m not in on?</p><p class="row"><span class="k">Call to action.</span> Watch the story</p><p class="row"><span class="k">Destination.</span> The 25-second film, or a simple page that carries the same script and a link to the original Bitcointalk thread. Not a hard install, and not a buy button.</p><p class="row"><span class="k">Visual.</span> Typographic 4:5 still: the words I AM HODLING, the date, and the fine print about losses. No meme merch, no rocket, no price. A finished independent mock-up is on this page. A motion version can be the first frames of the Reel.</p><p class="row"><span class="k">Placement.</span> Instagram and Facebook feed at 4:5, and Reels or Advantage+ placements that can take the same vertical film. LinkedIn only if the typo is told as a short history, not as slang for its own sake.</p><p class="row"><span class="k">Main success metric.</span> Hold rate to the fine-print line, and clicks to the explainer. Purchases are the wrong main measure at this stage.</p><p class="row"><span class="k">Why this stage.</span> Cold audiences need a reason to stop that does not depend on already trusting the app. The typo is famous enough to do that, and the fine print is how this account introduces itself.</p><p class="row"><a href="content-calendar.html#d18">Organic version in the Content Calendar</a></p></div></details></div>
       </div></div></article>
-<article class="text-concept" id="ad-custody-hook"><div><h3>The custody-first opening</h3><p>The second opening for the same first-purchase walkthrough.</p><a href="#ab-test">See both designed opening frames</a></div><details class="disclosure"><summary>Open creative brief</summary><div class="detail-body"><div class="creative">
+<article class="text-concept" id="ad-custody-hook"><div><h3>The custody-first opening</h3><p>The second opening for the same first-purchase walkthrough.</p><div class="brief-poster"><span>B / Custody</span><strong>Where does your bitcoin go after you buy?</strong><p>Let’s look at who holds it.</p><small>Independent concept</small></div><p><a href="#ab-test">Compare both opening frames</a></p></div><details class="disclosure"><summary>Open creative brief</summary><div class="detail-body"><div class="creative">
 <p class="headline">Where is your bitcoin after you buy?</p>
 <p class="copy">Invity’s public pages describe a custodian, separate from the company’s money, and withdrawal to your own wallet. Those terms, including any limits, fees or conditions, need checking before this runs. The film still shows the fee line, and it still says that bitcoin can lose value.</p>
 </div><p class="row"><span class="k">Who it is for.</span> The same proposed cold audience as the fees-first film. The two ads should run as a pair, not as two unrelated ideas, and not in every market at once.</p><p class="row"><span class="k">What we want to learn.</span> The same measures, read as a pair. A hook that holds attention but leaves people confused is not the one to keep.</p><p class="row"><span class="k">Audience signal.</span> The same proposed cold audience as the fees-first film. The two ads should run as a pair, not as two unrelated ideas, and not in every market at once.</p><p class="row"><span class="k">The hesitation.</span> Once I buy, where is the bitcoin, and is it mixed with the company’s money?</p><p class="row"><span class="k">Call to action.</span> Watch the walkthrough</p><p class="row"><span class="k">Destination.</span> The same film and the same page as the fees-first ad, so the opening visual stays the same and only the first line changes. If the first screen also changes, treat it as a package test.</p><p class="row"><span class="k">Visual.</span> The same typographic system, with this headline in place of the fee line. Do not change the colour, the end card, or the footage after the opening. When an approved recording exists, the cover can be a real custody or withdrawal screen, never a mock interface.</p><p class="row"><span class="k">Placement.</span> The same placements as the fees-first ad, split evenly, same dates, same markets.</p><p class="row"><span class="k">Main success metric.</span> The same measures, read as a pair. A hook that holds attention but leaves people confused about fees or custody is not the one to keep, even if it is ‘ahead’ on watch time.</p><p class="row"><span class="k">Why this stage.</span> This is the other half of the test already described on the homepage. If both hooks are not running against the same film, it is not a test, it is two campaigns.</p><p class="row"><a href="content-calendar.html#n24">Organic version in the Content Calendar</a> · <a href="#ab-test">How the A/B pair is measured</a></p></div></details></article></div></section>
@@ -562,7 +569,7 @@
 <p class="headline">Before you confirm, read three things.</p>
 <p class="copy">The amount, the fee, and where the bitcoin will be held. There is no prize for tapping quickly. Bitcoin can lose value. Make sure you understand the risks before deciding whether to buy.</p>
 </div><p class="row"><span class="k">Who it is for.</span> People who opened the app, started onboarding, or reached a confirm screen without a first transaction — a proposed event-based set that depends on consent and whether those events can be used in ads.</p><p class="row"><span class="k">What we want to learn.</span> Whether people who see this complete a first purchase, compared with a holdout if one is possible, and never as a winner on a small sample.</p><p class="row"><span class="k">Audience signal.</span> A proposed event-based set: people who opened the app, started onboarding, or reached a confirm screen without a first transaction. This depends on consent, on whether those events are available and allowed in ads, and on platform eligibility. It is a setup to ask for, not an audience I am claiming already exists.</p><p class="row"><span class="k">The hesitation.</span> I’m at the confirm screen, or close to it, and I’m hesitating.</p><p class="row"><span class="k">Call to action.</span> See the three checks</p><p class="row"><span class="k">Destination.</span> A short checklist carousel, or the walkthrough starting at the confirm screen. Not a countdown, and not a ‘complete your purchase’ push.</p><p class="row"><span class="k">Visual.</span> Typographic checklist on 4:5: Amount. Fee. Where it is held. If an approved confirm-screen recording exists, it can sit under the type. Never invent that screen.</p><p class="row"><span class="k">Placement.</span> Feed and Stories, low frequency, limited date range, so it does not follow someone around after they have decided not to buy.</p><p class="row"><span class="k">Main success metric.</span> Completed first purchases among people who saw the ad, compared with a holdout if a holdout is possible. If it isn’t, use return-to-app and completed first purchases, and never call a winner on a small sample. Click-through rate is not enough.</p><p class="row"><span class="k">Why this stage.</span> At this stage the person already found the product. The useful message is how to read the last screen, not another introduction to bitcoin.</p><p class="row"><a href="content-calendar.html#d03">Organic version in the Content Calendar</a></p></div></details></article>
-<article class="text-concept" id="ad-confirm-open"><div><h3>Three checks anyone can use</h3><p>An open-audience version if in-app events are unavailable.</p><a href="#ad-confirm">See the shared three-check creative</a></div><details class="disclosure"><summary>Open creative brief</summary><div class="detail-body"><div class="creative">
+<article class="text-concept" id="ad-confirm-open"><div><h3>Three checks anyone can use</h3><p>An open-audience version if in-app events are unavailable.</p><div class="brief-poster confirm-poster"><span>First purchase</span><strong>Before you confirm, read three things.</strong><ol><li>Purchase amount</li><li>Transaction fee</li><li>Where the bitcoin will be held</li></ol><small>Independent concept · Bitcoin can lose value</small></div><p><a href="#ad-confirm">See the event-based variant</a></p></div><details class="disclosure"><summary>Open creative brief</summary><div class="detail-body"><div class="creative">
 <p class="headline">Before you confirm, read three things.</p>
 <p class="copy">If you’re about to buy bitcoin for the first time, stop on the confirm screen. Read the amount, the fee, and where the bitcoin will be held. There is no prize for tapping quickly.</p>
 </div><p class="row"><span class="k">Who it is for.</span> Anyone we can reach without in-app events, because event-based audiences are often unavailable.</p><p class="row"><span class="k">What we want to learn.</span> Whether the same three-checks message still helps when we cannot be precise about who sees it.</p><p class="row"><span class="k">Audience signal.</span> Anyone we can reach without in-app events: people who visited the site or the app store listing, or simply the same first-purchase creative mix. This version exists because event-based audiences are often unavailable, or not yet allowed.</p><p class="row"><span class="k">The hesitation.</span> If I’m about to buy bitcoin for the first time, what should I read before I confirm?</p><p class="row"><span class="k">Call to action.</span> See the three checks</p><p class="row"><span class="k">Destination.</span> The same checklist or the same point in the walkthrough as the event-based ad, so the message is identical even if the targeting is not.</p><p class="row"><span class="k">Visual.</span> The same typographic checklist. Do not add ‘we noticed you started a purchase’ language, because this version cannot know that.</p><p class="row"><span class="k">Placement.</span> In the same feed and Reel mix as the cold walkthrough, or as the last frames of that film. It can also live on the landing page, where no audience targeting is required.</p><p class="row"><span class="k">Main success metric.</span> Scroll or watch-through to the three checks, and first purchases from the shared tracked link, knowing this cannot be isolated as cleanly as the event-based version. The point is whether the message still works when we cannot be clever about who sees it.</p><p class="row"><span class="k">Why this stage.</span> A high-intent idea that only works with a perfect event audience is fragile. This is the version I would run if all we had was the film and a page.</p></div></details></article></div></section>
@@ -597,21 +604,33 @@
     <p class="label">If these go into production</p>
     <h2 id="briefs-h">Production briefs for the new stills</h2>
     <p>Use these notes to adapt the artwork for production. <a href="#art-direction">See the brand references and palette</a>.</p>
-    <article class="entry">
-      <h3>HODL</h3>
-      <p class="brief">Lead with “I AM HODLING” and the date. A paper reference connects the cover to the original forum post. Explain the typo and the risk of losses in the caption.</p>
+    <article class="entry brief-with-art" id="brief-sats">
+      <a href="assets/same-sats-creative.webp" aria-label="Open full artwork for Same sats. Different day."><img src="assets/same-sats-creative.webp" width="1080" height="1350" loading="lazy" alt="Same sats. Different day."></a>
+      <div><h3>Same sats. Different day.</h3><p class="brief">One Bitcoin medallion under two tones of violet. Use the caption to contrast a fixed sat balance with its changing fiat value.</p><p><a href="#preview-sats-x">Open the X preview</a></p></div>
     </article>
-    <article class="entry">
-      <h3>Withdrawal</h3>
-      <p class="brief">Open with “Can I move my bitcoin out of Invity?” Use a hardware wallet and a transfer arrow. Explain the address, fee and applicable limits in the follow-up.</p>
+    <article class="entry brief-with-art" id="brief-autosend">
+      <a href="assets/auto-send-creative.webp" aria-label="Open full artwork for From your stack to your wallet."><img src="assets/auto-send-creative.webp" width="1080" height="1350" loading="lazy" alt="From your stack to your wallet."></a>
+      <div><h3>From your stack to your wallet.</h3><p class="brief">A violet path leads to a hardware wallet. The carousel explains the destination, threshold and review steps.</p><p><a href="#creative-autosend-1">Open the five-slide carousel</a></p></div>
     </article>
-    <article class="entry">
-      <h3>First purchase</h3>
-      <p class="brief">Lead with “Read this screen before you buy.” A phone silhouette and an abstract receipt set up the walkthrough. Use a real confirm screen once an approved recording is available.</p>
+    <article class="entry brief-with-art" id="brief-compare">
+      <a href="assets/euro-100-creative.webp" aria-label="Open full artwork for What does €100 actually buy?"><img src="assets/euro-100-creative.webp" width="1080" height="1350" loading="lazy" alt="What does €100 actually buy?"></a>
+      <div><h3>What does €100 actually buy?</h3><p class="brief">A single receipt sits between two translucent frames. The carousel shows the matched comparison method. Add results after capturing real quotes.</p><p><a href="#creative-compare-1">Open the five-slide carousel</a></p></div>
     </article>
-    <article class="entry">
-      <h3>Turbo Buy</h3>
-      <p class="brief">Use the settlement question on the cover and an abstract stacked object for the extra buying power. The three follow-up cards explain fees, collateral and automatic settlement.</p>
+    <article class="entry brief-with-art" id="brief-production-hodl">
+      <a href="assets/hodl-creative.webp" aria-label="Open full artwork for HODL"><img src="assets/hodl-creative.webp" width="1080" height="1350" loading="lazy" alt="I AM HODLING"></a>
+      <div><h3>HODL</h3><p class="brief">A paper reference connects the cover to the original forum post. Explain the typo and risk of losses in the caption.</p><p><a href="#ad-hodl">See the funnel concept</a></p></div>
+    </article>
+    <article class="entry brief-with-art" id="brief-production-withdraw">
+      <a href="assets/withdraw-creative.webp" aria-label="Open full artwork for Withdrawal"><img src="assets/withdraw-creative.webp" width="1080" height="1350" loading="lazy" alt="Can I move my bitcoin out of Invity?"></a>
+      <div><h3>Withdrawal</h3><p class="brief">A hardware wallet and transfer arrow set up the question. Explain the address, fee and applicable limits in the follow-up.</p><p><a href="#creative-withdraw-1">Open the six-slide carousel</a></p></div>
+    </article>
+    <article class="entry brief-with-art" id="brief-production-first">
+      <a href="assets/fees-creative.webp" aria-label="Open full artwork for First purchase"><img src="assets/fees-creative.webp" width="1080" height="1350" loading="lazy" alt="Read this screen before you buy."></a>
+      <div><h3>First purchase</h3><p class="brief">A phone silhouette and abstract receipt set up the walkthrough. Use a real confirm screen when an approved recording is available.</p><p><a href="#ad-fees">See the funnel concept</a></p></div>
+    </article>
+    <article class="entry brief-with-art" id="brief-production-turbo">
+      <a href="assets/turbo-buy-creative.webp" aria-label="Open full artwork for Turbo Buy"><img src="assets/turbo-buy-creative.webp" width="1080" height="1350" loading="lazy" alt="Turbo Buy. What happens at settlement?"></a>
+      <div><h3>Turbo Buy</h3><p class="brief">A stacked object illustrates extra buying power. The follow-up cards explain fees, collateral and automatic settlement.</p><p><a href="#creative-turbo-1">Open the four-slide carousel</a></p></div>
     </article>
     <p>For any walkthrough or confirm-screen ad, the moving image has to be an approved or supplied recording of a real purchase. I have not made one, and I would not stand a designed ‘app’ up in its place. Local versions should be recut in the language the app actually shows in that market, once that is confirmed.</p>
   </div></details>
