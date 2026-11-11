@@ -146,7 +146,6 @@
 .budget-shell .button[aria-pressed="true"] { background: var(--plum); color: #fff; }
 .budget-shell #budget-lab-link { padding-inline: 0; }
 
-.plan-deck { max-width: 58ch; margin-bottom: 1.4rem; }
 .plan-tabs { display: grid; gap: .55rem; margin: 0; }
 .plan-tabs button {
   display: grid;
@@ -184,22 +183,9 @@
   background: var(--surface);
 }
 .plan-panel[hidden] { display: none; }
-.plan-time-panel ul, .plan-listening ul, #paid-setup ul { margin: 0; padding-left: 1.2rem; }
-.plan-time-panel li + li, .plan-listening li + li, #paid-setup li + li { margin-top: .28rem; }
+.plan-time-panel ul, #paid-setup ul { margin: 0; padding-left: 1.2rem; }
+.plan-time-panel li + li, #paid-setup li + li { margin-top: .28rem; }
 .plan-time-panel p { margin: .45rem 0 0; }
-.plan-listening {
-  display: grid;
-  gap: .85rem 1.75rem;
-  margin-block: 1.5rem;
-  padding: clamp(1rem, 3vw, 1.7rem);
-  background: #eee6fb;
-  color: #261844;
-  border-radius: .6rem;
-}
-.plan-listening h3 { margin-bottom: .42rem; }
-.plan-listening p:not(.eyebrow) { margin-bottom: .35rem; }
-.plan-listening-flow { font-weight: 750; }
-.plan-listening .disclosure { margin: .4rem 0 0; }
 .plan-section { margin-block: 1.8rem; padding-top: 1rem; border-top: 1px solid var(--line); }
 .plan-section h3 { margin-bottom: .4rem; }
 .plan-channel-tabs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -249,7 +235,7 @@
   .plan-time-tabs { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .plan-channel-tabs { grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .plan-channel-panel { grid-template-columns: minmax(0, 1fr) minmax(8rem, .38fr); }
-  .plan-listening { grid-template-columns: 1.3fr 1fr; align-items: center; }
+  .loop-steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .touch-steps { grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
   .touch-steps button { grid-template-columns: 1fr; }
   .touch-panel { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
@@ -324,3 +310,19 @@
   .summary-loop li + li { position: relative; }
   .summary-loop li + li::before { content: "→"; position: absolute; left: -.875rem; top: 1.1rem; transform: translateX(-50%); color: var(--purple); font-weight: 700; }
 }
+
+/* 100-day outcomes and the worked listening-to-decision loop. */
+.plan-outcomes { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.6rem; padding: 0; list-style: none; }
+.plan-outcomes li { padding: .45rem .75rem; border-radius: 99px; background: #eee6fb; color: #261844; font-size: .92rem; font-weight: 650; }
+.plan-loop { margin-block: 2rem 1.5rem; padding: clamp(1rem, 3vw, 1.8rem); border-radius: .6rem; background: #201038; color: #fff; }
+.plan-loop .eyebrow, .plan-loop a { color: #e6dbff; }
+.plan-loop h3 { max-width: 24ch; margin-bottom: .35rem; }
+.plan-loop-deck { color: #e6dbff; }
+.plan-loop :focus-visible { outline-color: #e7be72; }
+.loop-steps { display: grid; gap: .75rem; margin: 1.3rem 0 0; padding: 0; list-style: none; }
+.loop-steps > li { display: grid; align-content: start; gap: .2rem; padding: 1rem; border-radius: .5rem; background: #2f1a52; }
+.loop-steps h4 { margin: 0 0 .35rem; font-size: 1.35rem; letter-spacing: -.03em; }
+.loop-when { margin: 0; color: #e7be72; font: 650 .72rem/1.4 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+.loop-steps dl { display: grid; gap: .55rem; margin: .7rem 0 0; padding-top: .7rem; border-top: 1px solid #4d3478; font-size: .9rem; }
+.loop-steps dt { color: #cdb9f0; font-size: .78rem; font-weight: 750; }
+.loop-steps dd { margin: .05rem 0 0; }
