@@ -54,17 +54,14 @@ h1 em { color: var(--purple); font-style: normal; font-weight: inherit; }
 .page-intro { display: grid; gap: 1rem; padding-block: clamp(1.6rem, 4vw, 2.9rem); }
 .page-intro h1 { font-size: clamp(2.4rem, 5.6vw, 4.6rem); }
 .intro-copy { font-size: clamp(1rem, 1.85vw, 1.25rem); max-width: 42rem; }
-.actions, .work-links { display: flex; flex-wrap: wrap; gap: .65rem 1.15rem; align-items: center; }
+.actions { display: flex; flex-wrap: wrap; gap: .65rem 1.15rem; align-items: center; }
 .button { display: inline-flex; align-items: center; gap: .6em; min-height: 2.75rem; padding: .58rem .85rem; border: 1px solid transparent; border-radius: .25rem; font-weight: 700; text-decoration: none; }
 .primary { background: var(--plum); color: white; }
 .primary:hover { background: var(--purple); color: white; }
 .outline { color: var(--purple); background: var(--surface); border-color: var(--line); }
 .text-link { font-size: .92rem; font-weight: 730; }
 .section-band { border-top: 1px solid var(--line); padding-block: clamp(2.35rem, 6vw, 5rem); }
-.section-head { display: grid; gap: .5rem 1.5rem; margin-bottom: 1.55rem; }
-.section-head h2, .page-intro h1 { margin-bottom: 0; }
-.section-head > p { max-width: 30ch; color: var(--muted); }
-.work-links { margin-top: 1.4rem; }
+.page-intro h1 { margin-bottom: 0; }
 .career-list li { margin-bottom: .65rem; }
 .site-foot { padding-block: 2rem; background: var(--plum); color: #f1e8f8; }
 .foot-inner { display: grid; gap: 1rem; }
@@ -220,7 +217,6 @@ thead, tfoot { background: #f0e9f6; }
   .site-head nav { margin-inline-start: auto; }
   .page-intro { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); align-items: end; gap: 1rem 3.5rem; }
   .page-intro .intro-copy { padding-bottom: .2rem; }
-  .section-head { grid-template-columns: minmax(0, 1fr) auto; align-items: end; }
   .foot-inner { grid-template-columns: 1fr auto; align-items: center; }
   .foot-inner a { margin-inline: .85rem 0; }
   .concept-showcase { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
@@ -316,7 +312,7 @@ p.calc-fit { color: var(--muted); font-size: .85rem; }
 
 /* Interaction feedback: smooth in-page scrolling, quick color changes, a slight press. */
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
-.button, .budget-presets button, .tablist button, .plan-tabs button, .jump-links a, .market-picks label, .post-cards a, .disclosure > summary, .site-head nav a {
+.button, .budget-presets button, .tablist button, .plan-tabs button, .jump-links a, .market-picks label, .disclosure > summary, .site-head nav a {
   transition-property: background-color, border-color, color, scale;
   transition-duration: 150ms;
   transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
@@ -332,13 +328,13 @@ p.calc-fit { color: var(--muted); font-size: .85rem; }
 .concept-feed > [role="tabpanel"] > article { height: 100%; }
 
 /* Clickable cards lift slightly on hover. */
-.post-cards a, .route-cards a, .evidence-image, .plan-sample, .touch-art, .performance-preview > a, .lifecycle-entries button {
+.evidence-image, .plan-sample, .touch-art, .performance-preview > a, .lifecycle-entries button {
   transition-property: scale, border-color, background-color, color;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
 }
 @media (hover: hover) {
-  .post-cards a:hover, .route-cards a:hover, .evidence-image:hover, .plan-sample:hover, .touch-art:hover, .performance-preview > a:hover, .lifecycle-entries button:hover { scale: 1.02; }
+  .evidence-image:hover, .plan-sample:hover, .touch-art:hover, .performance-preview > a:hover, .lifecycle-entries button:hover { scale: 1.02; }
 }
 
 /* Accordions slide open and closed where the browser can animate to auto height. */
