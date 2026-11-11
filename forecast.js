@@ -278,15 +278,13 @@ function renderBudgetCalc() {
   const focus = result.focused;
   write('calc-focus-title', focus.name + ' · ' + wholeEuro(focus.spend));
   get('calc-focus-line').innerHTML = `<p class="calc-value">${estimateCell(focus)}</p>
-    <p>${wholeEuro(focus.perMarket)} per market.</p><p><b>What it answers</b> ${focus.decision.text}</p>
+    <p>${wholeEuro(focus.perMarket)} per market.</p><p><b>${focus.decision.label}.</b> ${focus.decision.text}</p>
     <p class="calc-fit" data-fit="${focus.fitLevel}">${focus.fit}</p>`;
-  const funded = result.spread.filter(line => line.spend > 0);
-  const answered = funded.filter(line => line.decision.enough).length;
-  write('calc-spread-title', answered + ' of ' + funded.length + (funded.length === 1 ? ' channel gets' : ' channels get') + ' enough volume to compare versions');
+  write('calc-spread-title', 'Delivery by campaign line');
   get('calc-spread').innerHTML = result.spread.map(line => `<tr><th scope="row">${line.name}</th>
     <td>${wholeEuro(line.spend)}<small>${wholeEuro(line.perMarket)} per market</small></td>
     <td>${estimateCell(line)}<small class="calc-fit" data-fit="${line.fitLevel}">${line.fit}</small></td>
-    <td>${line.decision.text}</td></tr>`).join('');
+    <td><b>${line.decision.label}.</b> ${line.decision.text}</td></tr>`).join('');
   lastForecast = result;
   const spendOf = (row, ids) => row.lines.filter(line => ids.includes(line.id)).reduce((sum, line) => sum + line.spend, 0);
   get('calc-markets').innerHTML = result.byMarket.map(row => `<tr><th scope="row">${market(row.id).name}<small>${market(row.id).langShort}</small></th>
