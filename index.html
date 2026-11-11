@@ -187,27 +187,21 @@
       <a class="text-link" href="ad-gallery.html#ab-test">Read the experiment brief</a>
     </div>
     <div class="budget-shell">
-      <h3>How much reach would I need?</h3>
-      <p class="note">Illustrative Meta budget over 30 days. Compare estimated reach with what the test would need.</p>
-  <form class="budget-preview" action="strategy.html#forecast" method="get" data-decision="compare" hidden>
-    <label for="preview-budget">Monthly Meta budget (€)</label>
-    <input type="number" min="0.01" step="any" value="500" name="budget" id="preview-budget" required>
-    <div class="budget-presets" aria-label="Example monthly budgets">
-      <button type="button" data-amount="500">€500</button>
-      <button type="button" data-amount="1500">€1,500</button>
-      <button type="button" data-amount="5000">€5,000</button>
-      <button type="button" data-amount="15000">€15,000</button>
-    </div>
-    <div class="actions">
-      <button class="button outline" name="decision" value="compare" aria-pressed="true">Check sample size</button>
-      <button class="button outline" name="decision" value="purchases" aria-pressed="false">Estimate first purchases</button>
-    </div>
-    <p class="budget-preview-result" role="status"></p>
-    <details><summary>Example assumptions</summary>
-      <p>30 days in Czechia, one ad set. Delivery assumes €60 per first purchase. The controlled comparison uses the Czechia planning CPM from the Strategy Lab, 1.2 impressions per reached person, a 25% baseline, a 3-point lift, a 50/50 split, 5% significance and 80% power.</p>
-    </details>
-  </form>
-  <a class="button" id="budget-lab-link" href="strategy.html#forecast">Open the Strategy Lab</a>
+      <h3>What could this budget answer?</h3>
+      <p class="note">Planning estimate. Suggested monthly media budget per market, for four markets: Czechia, Germany, Spain and Poland.</p>
+      <form class="budget-preview" action="strategy.html" method="get" hidden>
+        <div class="budget-presets" role="group" aria-label="Suggested monthly budgets per market"></div>
+        <label for="preview-budget">Monthly budget per market (€)</label>
+        <input type="number" min="0" step="any" value="1000" name="budget" id="preview-budget" inputmode="decimal" required>
+        <p class="budget-total" id="preview-total"></p>
+        <div class="scenario-pair" aria-live="polite">
+          <div class="scenario"><p class="eyebrow">Focused / one channel</p><p class="scenario-value" id="preview-focus-value"></p><p id="preview-focus-decision"></p></div>
+          <div class="scenario"><p class="eyebrow">Spread / four channels</p><ul class="scenario-lines" id="preview-spread"></ul></div>
+        </div>
+        <p class="note">Ranges, not promises. Each one rests on a benchmark of different quality, shown in the Strategy Lab.</p>
+      </form>
+      <noscript><p>Turn on JavaScript to use the calculator, or open the Strategy Lab.</p></noscript>
+      <a class="button primary" id="budget-lab-link" href="strategy.html#budget">See the channel breakdown and sources</a>
     </div>
   </div>
 </div></section>

@@ -29,9 +29,39 @@
   <nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="index.html#days100">100 days</a><a href="ad-gallery.html">Ad Gallery</a><a href="content-calendar.html">Calendar</a><a href="strategy.html" aria-current="page">Strategy Lab</a><a href="research.html">Research</a><a href="index.html#about">About / CV</a></nav>
 </div></header>
 <main id="main" tabindex="-1">
-<div id="forecast"><header class="page-intro wrap" id="top"><div><p class="eyebrow">04 / Strategy &amp; forecast</p><h1>What can I learn <em>with this budget?</em></h1></div><div class="intro-copy"><p>Take the first-purchase walkthrough. Pick one decision, then see what a monthly Meta budget could help you learn.</p><a class="text-link" href="ad-gallery.html#ab-test">See the creative comparison</a></div></header>
+<div id="forecast"><header class="page-intro wrap" id="top"><div><p class="eyebrow">04 / Strategy &amp; forecast</p><h1>What can I learn <em>with this budget?</em></h1></div><div class="intro-copy"><p>Pick a monthly budget per market. See what one focused test, or several smaller channel tests, could answer. Then plan a single Meta test in detail.</p><a class="text-link" href="#planner-h">Go to the Meta test planner</a></div></header>
+
+<section class="section-band budget-band" id="budget" aria-labelledby="budget-h"><div class="wrap">
+<p class="eyebrow">Budget Forecast Calculator / Planning estimate</p>
+<h2 id="budget-h">Same money, two ways to spend it</h2>
+<form class="budget-calc" id="budget-calc">
+<div class="budget-calc-inputs">
+<div class="budget-presets" role="group" aria-label="Suggested monthly budgets per market"></div>
+<div class="field-grid">
+<div class="field"><label for="calc-budget">Monthly budget per market (€)</label><input id="calc-budget" type="number" min="0" step="any" value="1000" inputmode="decimal" required><small>Suggested media budget. €0 means no paid test.</small></div>
+<div class="field"><label for="calc-focus">Focused scenario channel</label><select id="calc-focus"></select><small>The whole budget goes here.</small></div>
+<div class="field"><label for="calc-purchase">Click to first purchase (%)</label><input id="calc-purchase" type="number" min="0" max="100" step="any" inputmode="decimal" placeholder="Not set"><small>Optional. Leave empty to skip first-purchase estimates.</small></div>
+</div>
+<fieldset class="market-picks"><legend>Markets</legend><label><input type="checkbox" name="market" value="cz" checked> Czechia</label><label><input type="checkbox" name="market" value="at"> Austria</label><label><input type="checkbox" name="market" value="de" checked> Germany</label><label><input type="checkbox" name="market" value="it"> Italy</label><label><input type="checkbox" name="market" value="sk"> Slovakia</label><label><input type="checkbox" name="market" value="es" checked> Spain</label><label><input type="checkbox" name="market" value="nl"> Netherlands</label><label><input type="checkbox" name="market" value="pl" checked> Poland</label><label><input type="checkbox" name="market" value="hu"> Hungary · to confirm</label></fieldset>
+<fieldset class="share-picks"><legend>Spread scenario split (%)</legend><div class="field-grid" id="calc-shares"></div></fieldset>
+</div>
+</form>
+<p class="budget-total" id="calc-total" aria-live="polite"></p>
+<div class="calc-scenarios" aria-live="polite">
+<article class="calc-scenario"><p class="eyebrow">Focused / one channel</p><h3 id="calc-focus-title"></h3><div id="calc-focus-line"></div></article>
+<article class="calc-scenario"><p class="eyebrow">Spread / four channels</p><h3 id="calc-spread-title"></h3><div class="table-scroll" tabindex="0" role="region" aria-label="Spread scenario by channel"><table class="calc-table"><thead><tr><th scope="col">Channel</th><th scope="col">Spend</th><th scope="col">Estimate</th><th scope="col">What it answers</th></tr></thead><tbody id="calc-spread"></tbody></table></div></article>
+</div>
+<details class="disclosure" id="calc-sources"><summary>Sources, source fit and assumptions</summary><div class="detail-body"><dl class="bench-list">
+<dt>Meta CPM by country / Close</dt><dd><a href="https://www.adspendspy.com/facebook-cpm-by-country">AdSpendSpy</a> 2026 country estimates for a standard Meta campaign, low and high. Same platform and market; not Bitcoin-specific.</dd>
+<dt>Meta link CTR / Partial</dt><dd><a href="https://www.adtribute.io/data/benchmarks/meta-ads">adtribute</a>, September 2026, European direct-to-consumer e-commerce: middle half 0.92%–1.48%. Right region and platform, different sector.</dd>
+<dt>View past the opening / Assumption</dt><dd>20%–30% of Meta impressions. My planning assumption; the first test replaces it.</dd>
+<dt>Google Search cost per click / Loose</dt><dd>US finance and insurance search benchmarks range from about $3 to $7+ per click (<a href="https://www.wordstream.com/blog/2025-google-ads-benchmarks">WordStream 2025</a> and the trade press that reports it). Used as €3–€7. Different market and broader sector.</dd>
+<dt>YouTube cost per view / Loose</dt><dd>Vendor and agency estimates of about $0.01–$0.03 per view, mostly global or US (for example <a href="https://strikesocial.com/blog/2025-youtube-ads-benchmark-report/">Strike Social 2025</a>). Widened to €0.01–€0.05.</dd>
+<dt>What it answers</dt><dd>A controlled opening test needs about 3,400 reached people per version per market (25% baseline, 3-point lift, 5% significance, 80% power, 1.2 impressions per person, highest CPM in the selection). Click channels need about 300 clicks and YouTube about 2,000 views at the low end of the range before versions are compared.</dd>
+</dl><p class="note">Ranges use each market’s own CPM where one exists and split the budget evenly across the selected markets. Search and YouTube use the same cost range in every market. None of this is Invity data.</p></div></details>
+</div></section>
 <section class="section-band forecast-band" aria-labelledby="planner-h"><div class="wrap">
-<h2 id="planner-h" class="sr-only">Meta budget planner</h2>
+<p class="eyebrow">Meta test planner</p><h2 id="planner-h">Plan one Meta test in detail</h2>
 <div class="planner-grid"><div class="planner-controls">
 <fieldset class="decisions"><legend>What do you want to decide?</legend><label><input type="radio" name="decision" value="attention" checked><span><b>01</b> Which opening holds attention?</span></label><label><input type="radio" name="decision" value="purchases"><span><b>02</b> How many first purchases?</span></label><label><input type="radio" name="decision" value="compare"><span><b>03</b> Can I run a controlled test?</span></label></fieldset>
 <div class="budget-controls"><p class="eyebrow">Monthly Meta media budget</p><p class="note">Example scenarios in EUR, prorated from a 30-day month.</p><div class="budget-presets" aria-label="Example monthly budgets"><button type="button" data-budget="500" aria-pressed="false">€500</button><button type="button" data-budget="1500" aria-pressed="true">€1,500</button><button type="button" data-budget="5000" aria-pressed="false">€5,000</button><button type="button" data-budget="15000" aria-pressed="false">€15,000</button></div>

@@ -149,9 +149,21 @@
 .budget-shell { min-width: 0; padding: clamp(1rem, 3vw, 1.65rem); background: #f0e8ff; color: var(--ink); }
 .budget-shell .note { margin-bottom: .8rem; }
 .budget-shell .budget-preview { margin: .75rem 0; }
-.budget-shell .actions { gap: .45rem; }
-.budget-shell .button[aria-pressed="true"] { background: var(--plum); color: #fff; }
-.budget-shell #budget-lab-link { padding-inline: 0; }
+.budget-shell .budget-presets { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .4rem; margin-bottom: .9rem; }
+.budget-shell .budget-presets button { display: grid; text-align: left; line-height: 1.25; }
+.budget-shell .budget-presets b { font-size: .74rem; font-weight: 650; }
+.budget-shell label { display: block; font-weight: 700; font-size: .9rem; margin-bottom: .25rem; }
+.budget-shell input { width: 100%; max-width: 12rem; min-height: 2.75rem; padding: .4rem .6rem; border: 1px solid #b9a7d3; border-radius: .25rem; background: #fff; }
+.budget-shell input[aria-invalid="true"] { border-color: #b3261e; }
+.budget-total { margin: .7rem 0; font-weight: 750; }
+.scenario-pair { display: grid; gap: .6rem; margin-bottom: .7rem; }
+.scenario { padding: .8rem .9rem; border-radius: .4rem; background: #fff; }
+.scenario .eyebrow { margin-bottom: .35rem; color: var(--purple); }
+.scenario-value { font-weight: 750; margin-bottom: .35rem; }
+.scenario-lines { margin: 0; padding: 0; list-style: none; font-size: .88rem; }
+.scenario-lines li + li { margin-top: .45rem; padding-top: .45rem; border-top: 1px solid #ece4f6; }
+.scenario-lines b { display: block; }
+.scenario-lines span { display: block; color: var(--purple); font-size: .78rem; font-weight: 700; }
 
 .plan-tabs { display: grid; gap: .55rem; margin: 0; }
 .plan-tabs button {

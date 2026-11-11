@@ -165,3 +165,82 @@ model.sampleSize = function ({ baseline, lift, allocation, alpha, power }) {
   const total = ((critical + sensitivity) / lift) ** 2;
   return { a: Math.ceil(total * allocation), b: Math.ceil(total * b) };
 };
+
+// Budget Forecast Calculator: one monthly budget per market, two ways to spend it.
+model.PRESETS = [
+  { name: 'Minimum', amount: 250 },
+  { name: 'Medium', amount: 500 },
+  { name: 'Optimum', amount: 1000 },
+  { name: 'Growth Machine', amount: 1500 }
+];
+model.DEFAULT_MARKETS = ['cz', 'de', 'es', 'pl'];
+const HOLD = { lo: 0.2, hi: 0.3 };
+const viaCpm = rate => (spend, id) => {
+  const cpm = model.BENCH.cpm[id];
+  return { lo: spend * 1000 / cpm.hi * rate.lo, hi: spend * 1000 / cpm.lo * rate.hi };
+};
+const perUnit = cost => spend => ({ lo: spend / cost.hi, hi: spend / cost.lo });
+model.TEST_CHANNELS = [
+  {
+    id: 'reels', name: 'Meta Reels video', unit: 'views past the opening', share: 40, estimate: viaCpm(HOLD),
+    fit: 'Cost from country Meta CPMs, 2026. The 20–30% view rate past the opening is my assumption.', fitLevel: 'close'
+  },
+  {
+    id: 'meta-link', name: 'Meta link ads', unit: 'link clicks', share: 20, clicks: true,
+    estimate: viaCpm({ lo: model.BENCH.euDtcCtrLo / 100, hi: model.BENCH.euDtcCtrHi / 100 }),
+    fit: 'Country Meta CPMs with European e-commerce link CTR. Right region and platform, different sector.', fitLevel: 'partial'
+  },
+  {
+    id: 'search', name: 'Google Search', unit: 'clicks', share: 20, clicks: true, estimate: perUnit({ lo: 3, hi: 7 }),
+    fit: 'US finance and insurance search CPCs (about $3–$7), used as a €3–€7 planning range.', fitLevel: 'loose'
+  },
+  {
+    id: 'youtube', name: 'YouTube in-stream', unit: 'views', share: 20, estimate: perUnit({ lo: 0.01, hi: 0.05 }),
+    fit: 'Global vendor estimates of about $0.01–$0.03 per view, widened to €0.01–€0.05.', fitLevel: 'loose'
+  }
+];
+
+// What a result of this size lets the team decide, judged on the low end of the range.
+// shortcut: fixed volume thresholds for clicks and views, replace with Invity's own test history.
+model.testDecision = function (channelId, spend, markets, low) {
+  if (!(spend > 0)) return { enough: false, text: 'No paid test. Organic publishing and listening still run.' };
+  if (channelId === 'reels') {
+    const reachedPerArm = spend * 1000 / Math.max(...markets.map(id => model.BENCH.cpm[id].hi)) / 1.2 / 2 / markets.length;
+    const needed = model.sampleSize({ baseline: 0.25, lift: 0.03, allocation: 0.5, alpha: 0.05, power: 0.8 }).a;
+    return reachedPerArm >= needed
+      ? { enough: true, text: 'Shows which opening holds attention better in each market. Comparing first purchases needs more data.' }
+      : { enough: false, text: 'Shows where viewers drop off, but not which opening wins in each market. Run one version or pool markets.' };
+  }
+  if (channelId === 'youtube') return low >= 2000
+    ? { enough: true, text: 'Shows whether a walkthrough keeps viewers to the fee screen.' }
+    : { enough: false, text: 'A format check only: too few views to compare versions.' };
+  return low >= 300
+    ? { enough: true, text: 'Shows which messages bring people to the app page.' }
+    : { enough: false, text: 'A landing-page check only: too few clicks to compare messages.' };
+};
+
+model.budgetForecast = function ({ perMarket, markets, focus = 'reels', shares, purchaseRate }) {
+  const total = perMarket * markets.length;
+  const channels = model.TEST_CHANNELS;
+  const weights = shares || channels.map(channel => channel.share);
+  const line = (channel, spend) => {
+    const range = { lo: 0, hi: 0 };
+    for (const id of markets) {
+      const one = channel.estimate(spend / markets.length, id);
+      range.lo += one.lo;
+      range.hi += one.hi;
+    }
+    const purchases = channel.clicks && purchaseRate > 0 ? { lo: range.lo * purchaseRate, hi: range.hi * purchaseRate } : null;
+    const decision = model.testDecision(channel.id, spend, markets, range.lo);
+    if (channel.clicks && spend > 0 && !purchases) decision.text += ' First purchases need a conversion assumption.';
+    return { id: channel.id, name: channel.name, unit: channel.unit, fit: channel.fit, fitLevel: channel.fitLevel,
+      spend, perMarket: spend / markets.length, ...range, purchases,
+      decision };
+  };
+  const sum = weights.reduce((a, b) => a + b, 0) || 1;
+  return {
+    total,
+    focused: line(channels.find(channel => channel.id === focus), total),
+    spread: channels.map((channel, i) => line(channel, total * weights[i] / sum))
+  };
+};

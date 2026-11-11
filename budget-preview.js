@@ -2,44 +2,36 @@
 
 const preview = document.querySelector('.budget-preview');
 const previewBudget = document.getElementById('preview-budget');
-const previewResult = preview.querySelector('[role="status"]');
 const labLink = document.getElementById('budget-lab-link');
-const wholeNumber = new Intl.NumberFormat('en', { maximumFractionDigits: 0 });
-let decision = preview.dataset.decision || 'purchases';
+const plan = window.PlanCalc;
+const whole = new Intl.NumberFormat('en', { maximumFractionDigits: 0 });
+const euros = value => '€' + whole.format(value);
+const range = line => whole.format(line.lo) + '–' + whole.format(line.hi);
+const show = (id, text) => { document.getElementById(id).textContent = text; };
+
+preview.querySelector('.budget-presets').innerHTML = plan.PRESETS.map(preset =>
+  `<button type="button" data-amount="${preset.amount}"><b>${preset.name}</b> €${whole.format(preset.amount)}</button>`).join('');
 
 function renderBudgetPreview() {
-  const budget = previewBudget.valueAsNumber;
-  const valid = previewBudget.validity.valid && Number.isFinite(budget);
+  const perMarket = previewBudget.valueAsNumber;
+  const valid = previewBudget.validity.valid && Number.isFinite(perMarket);
   for (const button of preview.querySelectorAll('[data-amount]')) {
-    button.setAttribute('aria-pressed', String(valid && budget === Number(button.dataset.amount)));
+    button.setAttribute('aria-pressed', String(valid && perMarket === Number(button.dataset.amount)));
   }
-
-  for (const button of preview.querySelectorAll('button[name="decision"]')) {
-    button.setAttribute('aria-pressed', String(button.value === decision));
-  }
-
-  const query = new URLSearchParams({ decision });
-  if (valid) query.set('budget', previewBudget.value);
-  labLink.href = 'strategy.html?' + query + '#forecast';
-
+  previewBudget.setAttribute('aria-invalid', String(!valid));
   if (!valid) {
-    previewResult.textContent = 'Enter a positive monthly budget.';
+    show('preview-total', 'Enter a monthly budget of €0 or more.');
     return;
   }
-  if (decision === 'purchases') {
-    const purchases = budget / 60;
-    const estimate = purchases < 1 ? 'Fewer than one' : 'About ' + wholeNumber.format(purchases);
-    previewResult.textContent = estimate + ' first purchases over 30 days at an illustrative €60 per purchase.';
-    return;
-  }
-
-  const model = window.PlanCalc;
-  const impressions = model.socialForecast(budget, model.BENCH.cpm.cz.mid, 0).impressions;
-  const perGroup = Math.floor(impressions / 1.2 / 2);
-  const required = model.sampleSize({ baseline: 0.25, lift: 0.03, allocation: 0.5, alpha: 0.05, power: 0.8 }).a;
-  previewResult.textContent = 'About ' + wholeNumber.format(perGroup) + ' reached people per group. '
-    + 'The comparison needs ' + wholeNumber.format(required) + ' per group under these assumptions. '
-    + (perGroup >= required ? 'Check eligible reach and randomisation before launch.' : 'Start with a delivery test.');
+  labLink.href = 'strategy.html?' + new URLSearchParams({ budget: previewBudget.value }) + '#budget';
+  const markets = plan.DEFAULT_MARKETS;
+  const result = plan.budgetForecast({ perMarket, markets });
+  show('preview-total', markets.length + ' markets × ' + euros(perMarket) + ' = ' + euros(result.total) + ' a month in total');
+  const focus = result.focused;
+  show('preview-focus-value', perMarket > 0 ? range(focus) + ' ' + focus.unit + ' on ' + focus.name + ', all ' + euros(focus.spend) : 'No paid test');
+  show('preview-focus-decision', focus.decision.text);
+  document.getElementById('preview-spread').innerHTML = result.spread.map(line =>
+    `<li><b>${line.name}</b> ${euros(line.spend)} · ${perMarket > 0 ? range(line) + ' ' + line.unit : 'no spend'}<span>${line.decision.enough ? 'Can compare versions' : 'Check only'}</span></li>`).join('');
 }
 
 preview.addEventListener('input', renderBudgetPreview);
@@ -49,10 +41,6 @@ preview.addEventListener('click', event => {
   previewBudget.value = preset.dataset.amount;
   renderBudgetPreview();
 });
-preview.addEventListener('submit', event => {
-  event.preventDefault();
-  decision = event.submitter?.value || 'purchases';
-  renderBudgetPreview();
-});
+preview.addEventListener('submit', event => event.preventDefault());
 renderBudgetPreview();
 preview.hidden = false;

@@ -344,3 +344,35 @@ thead, tfoot { background: #f0e9f6; }
 .page-intro { padding-block: clamp(1.6rem, 4vw, 2.9rem); }
 .page-intro h1 { font-size: clamp(2.4rem, 5.6vw, 4.6rem); }
 .month-heading h2 { font-size: clamp(1.9rem, 3.8vw, 3rem); }
+
+/* Budget Forecast Calculator. */
+.budget-band { background: #f5f0fb; }
+.budget-calc-inputs { display: grid; gap: 1rem; padding: 1rem; border: 1px solid var(--line); background: var(--surface); }
+.budget-calc .budget-presets { display: flex; flex-wrap: wrap; gap: .4rem; }
+.budget-calc .budget-presets button { display: grid; text-align: left; line-height: 1.25; }
+.budget-calc .budget-presets b { font-size: .74rem; font-weight: 650; }
+.market-picks, .share-picks { margin: 0; padding: 0; border: 0; min-inline-size: 0; }
+.market-picks legend, .share-picks legend { margin-bottom: .45rem; padding: 0; font-weight: 730; }
+.market-picks { display: flex; flex-wrap: wrap; gap: .4rem; }
+.market-picks label { display: inline-flex; align-items: center; gap: .4rem; min-height: 2.75rem; padding: .3rem .7rem; border: 1px solid var(--line); border-radius: .25rem; background: #fff; font-size: .9rem; cursor: pointer; }
+.market-picks label:has(:checked) { border-color: var(--purple); background: #f1e8ff; }
+.budget-band .budget-total { margin: 1.2rem 0 .8rem; font-size: 1.1rem; font-weight: 750; }
+.calc-scenarios { display: grid; gap: 1rem; margin-bottom: 1rem; }
+.calc-scenario { min-width: 0; padding: 1rem 1.1rem; border: 1px solid var(--line); background: var(--surface); }
+.calc-scenario h3 { font-size: clamp(1.3rem, 2.4vw, 1.75rem); letter-spacing: -.03em; }
+.calc-value { font-size: 1.3rem; font-weight: 750; }
+.calc-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.calc-table th, .calc-table td { padding: .6rem .5rem .6rem 0; border-top: 1px solid var(--line); text-align: left; vertical-align: top; }
+.calc-table thead th { border-top: 0; font-size: .78rem; color: var(--muted); }
+.calc-table small { display: block; margin-top: .2rem; color: var(--muted); font-size: .78rem; }
+.calc-fit::before { content: attr(data-fit); display: inline-block; margin-right: .4rem; padding: 0 .35rem; border-radius: .2rem; background: #ece2f6; color: var(--plum); font: 650 .66rem/1.6 var(--mono); text-transform: uppercase; }
+.calc-fit[data-fit="loose"]::before { background: #fff0d2; }
+p.calc-fit { color: var(--muted); font-size: .85rem; }
+@media (min-width: 60rem) { .calc-scenarios { grid-template-columns: minmax(0, .8fr) minmax(0, 1.6fr); } }
+@media (max-width: 40rem) {
+  .calc-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .calc-table tr { display: grid; grid-template-columns: 1fr auto; gap: .3rem 1rem; padding: .7rem 0; border-top: 1px solid var(--line); }
+  .calc-table th, .calc-table td { padding: 0; border: 0; }
+  .calc-table td:nth-child(2) { text-align: right; }
+  .calc-table td:nth-child(n+3) { grid-column: 1 / -1; }
+}
