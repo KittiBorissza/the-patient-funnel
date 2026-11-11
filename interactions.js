@@ -11,28 +11,6 @@ function activateTab(tab, focus = false) {
   if (focus) tab.focus();
 }
 
-const funnelStages = document.querySelector('.funnel-stages');
-if (funnelStages) {
-  funnelStages.setAttribute('role', 'tablist');
-  for (const link of funnelStages.querySelectorAll('a')) {
-    const panel = document.getElementById(link.hash.slice(1));
-    link.setAttribute('role', 'tab');
-    link.setAttribute('aria-controls', panel.id);
-    link.setAttribute('aria-selected', String(link.id === 'stage-cold'));
-    panel.setAttribute('role', 'tabpanel');
-    panel.setAttribute('aria-labelledby', link.id);
-    panel.tabIndex = 0;
-  }
-
-  const restoreStage = () => {
-    const links = [...funnelStages.querySelectorAll('[role="tab"]')];
-    const selected = links.find(link => link.hash === location.hash);
-    activateTab(selected || links[0]);
-  };
-  addEventListener('hashchange', restoreStage);
-  restoreStage();
-}
-
 for (const list of document.querySelectorAll('[role="tablist"]')) {
   const tabs = [...list.querySelectorAll('[role="tab"]')];
   const initial = tabs.find(tab => tab.getAttribute('aria-selected') === 'true');
@@ -54,9 +32,6 @@ for (const list of document.querySelectorAll('[role="tablist"]')) {
   }
   const select = tab => {
     activateTab(tab, true);
-    if (list === funnelStages && location.hash !== tab.hash) {
-      history.pushState(null, '', tab.hash);
-    }
     if (list.closest('.concept-feed')) {
       const hash = '#' + tab.getAttribute('aria-controls');
       if (location.hash !== hash) history.pushState(null, '', hash);
@@ -68,13 +43,7 @@ for (const list of document.querySelectorAll('[role="tablist"]')) {
   };
 
   for (const tab of tabs) {
-    tab.addEventListener('click', event => {
-      if (list === funnelStages) {
-        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-        event.preventDefault();
-      }
-      select(tab);
-    });
+    tab.addEventListener('click', () => select(tab));
     tab.addEventListener('keydown', event => {
       const index = tabs.indexOf(tab);
       const vertical = list.getAttribute('aria-orientation') === 'vertical';
@@ -135,7 +104,7 @@ function revealFragment() {
 
   if (id === 'ab-test') target.querySelector('details').open = true;
   const heading = document.getElementById(id + '-heading');
-  if (id !== originalId || heading || month || lifecyclePath || planPanel || details || target.matches('.funnel-panel, .concept-feed [role=tabpanel]') || target.closest('details') || id === 'ab-test') {
+  if (id !== originalId || heading || month || lifecyclePath || planPanel || details || target.matches('.concept-feed [role=tabpanel]') || target.closest('details') || id === 'ab-test') {
     requestAnimationFrame(() => {
       (heading || target).scrollIntoView({ block: 'start' });
       if (heading) heading.focus({ preventScroll: true });
@@ -188,7 +157,7 @@ if (mainNav) {
   const quick = document.createElement('a');
   quick.className = 'mobile-campaign';
   quick.href = 'ad-gallery.html';
-  quick.textContent = 'Campaign';
+  quick.textContent = 'Ad Gallery';
 
   const toggle = document.createElement('button');
   toggle.type = 'button';
