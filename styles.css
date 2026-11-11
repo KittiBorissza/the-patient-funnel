@@ -247,7 +247,7 @@ thead, tfoot { background: #f0e9f6; }
 .forecast-result a { color: var(--amber); }
 .forecast-result a:focus-visible { outline-color: var(--amber); }
 /* Portfolio pitch additions */
-.funnel-cards{display:grid;grid-template-columns:1fr;gap:1rem}.funnel-cards>a,.funnel-cards>div{background:#f1e8ff;border:1px solid #ddc8fa;border-radius:.8rem;padding:1.25rem;color:#291141;text-decoration:none}.funnel-cards small,.funnel-cards strong,.funnel-cards span{display:block}.funnel-cards strong{font-size:1.35rem;line-height:1.15;margin:.8rem 0}.funnel-cards small{color:#6016cc;font-weight:700}.concept-intro{padding-block:2rem}.concept-intro #invity-gallery-sample{max-width:70rem;margin:auto}.site-head nav a{font-size:.8rem;padding-inline:.45rem}@media(min-width:45rem){.funnel-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(min-width:70rem){.funnel-cards{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.funnel-cards{display:grid;grid-template-columns:1fr;gap:1rem}.funnel-cards>div{display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:0}.funnel-cards>a,.funnel-cards>div{background:#f1e8ff;border:1px solid #ddc8fa;border-radius:.8rem;padding:1.25rem;color:#291141;text-decoration:none}.funnel-cards small,.funnel-cards strong,.funnel-cards span{display:block}.funnel-cards strong{font-size:1.35rem;line-height:1.15;margin:.8rem 0}.funnel-cards small{color:#6016cc;font-weight:700}.concept-intro{padding-block:2rem}.concept-intro #invity-gallery-sample{max-width:70rem;margin:auto}.site-head nav a{font-size:.8rem;padding-inline:.45rem}@media(min-width:45rem){.funnel-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(min-width:70rem){.funnel-cards{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
 .research-filter { display: grid; gap: .35rem; max-width: 19rem; margin-block: 1rem; }
 .research-filter label { font-weight: 700; }
@@ -327,3 +327,35 @@ p.calc-fit { color: var(--muted); font-size: .85rem; }
 .button:active, .budget-presets button:active, .tablist button:active, .plan-tabs button:active, .jump-links a:active { scale: .96; }
 .calc-scenario .table-scroll { --scroll-cover: var(--surface); }
 .market-band .table-scroll { --scroll-cover: #f2edf5; }
+
+/* Platform tabs share one cell, so switching never changes the height. */
+.concept-feed { display: grid; }
+.concept-feed > [role="tabpanel"] { grid-area: 2 / 1; }
+.concept-feed > [role="tabpanel"][hidden] { display: block !important; visibility: hidden; }
+.concept-feed > [role="tabpanel"] > article { height: 100%; }
+
+/* Clickable cards lift slightly on hover. */
+.creative-index a, .pitch-samples article > a, .evidence-image, .plan-sample, .touch-art, .performance-preview > a, .lifecycle-entries button {
+  transition-property: scale, border-color, background-color, color;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+@media (hover: hover) {
+  .creative-index a:hover, .pitch-samples article > a:hover, .evidence-image:hover, .plan-sample:hover, .touch-art:hover, .performance-preview > a:hover, .lifecycle-entries button:hover { scale: 1.02; }
+}
+
+/* Accordions slide open and closed where the browser can animate to auto height. */
+@supports (interpolate-size: allow-keywords) {
+  @media (prefers-reduced-motion: no-preference) {
+    :root { interpolate-size: allow-keywords; }
+    details::details-content { block-size: 0; overflow-y: clip; transition: block-size 280ms cubic-bezier(0.2, 0, 0, 1), content-visibility 280ms allow-discrete; }
+    details[open]::details-content { block-size: auto; }
+  }
+}
+
+/* Cross-page view transitions: the header stays put while the page crossfades. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
+  .site-head { view-transition-name: site-head; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 240ms; animation-timing-function: cubic-bezier(0.2, 0, 0, 1); }
+}

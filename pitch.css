@@ -50,6 +50,8 @@
   background: #201038;
 }
 .evidence-image img { width: 100%; }
+.evidence-grid { align-items: stretch; }
+.evidence-item { display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
 .evidence-item .eyebrow { margin-bottom: .45rem; }
 .evidence-item h3 { margin-bottom: .55rem; }
 .evidence-lead h3 { font-size: clamp(1.55rem, 3vw, 2.35rem); }
@@ -60,7 +62,6 @@
 .creative-context h3 { font-size: clamp(1.7rem, 3.6vw, 3.2rem); }
 .creative-context > p { max-width: 39ch; }
 .homepage-concept { max-width: 43rem; }
-.home-platform-panel + .home-platform-panel:not([hidden]) { margin-top: .75rem; }
 .homepage-concept .feed-controls { margin-bottom: .7rem; }
 .homepage-concept .tablist button { min-width: 5.25rem; }
 .x-thread, .ig-preview {
@@ -105,9 +106,9 @@
 .ig-frames span { font: 650 .7rem var(--mono); text-transform: uppercase; }
 .ig-frames strong { font-size: clamp(.95rem, 3.1vw, 2.15rem); line-height: 1.05; letter-spacing: -.035em; }
 
-.pitch-samples { align-items: start; }
-.pitch-samples article { min-width: 0; }
-.pitch-samples article > a { display: block; color: inherit; text-decoration: none; }
+.pitch-samples { align-items: stretch; }
+.pitch-samples article { display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; min-width: 0; }
+.pitch-samples article > a { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; align-content: start; color: inherit; text-decoration: none; }
 .pitch-samples article > a:hover h3 { text-decoration: underline; text-decoration-thickness: .08em; text-underline-offset: .14em; }
 .pitch-samples img {
   width: 100%;
@@ -123,7 +124,8 @@
 
 .pitch-funnel .section-head > p { max-width: 34ch; }
 .creative-index { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .85rem; margin: 0; padding: 0; list-style: none; }
-.creative-index a { display: grid; gap: .3rem; height: 100%; padding: .75rem; border: 1px solid #ddc8fa; border-radius: 1.1rem; background: #f8f3ff; color: var(--ink); text-decoration: none; }
+.creative-index li { display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; }
+.creative-index a { display: grid; grid-row: 1 / -1; grid-template-rows: subgrid; row-gap: .3rem; padding: .75rem; border: 1px solid #ddc8fa; border-radius: 1.1rem; background: #f8f3ff; color: var(--ink); text-decoration: none; }
 .creative-index a:hover { border-color: var(--purple); }
 .creative-index img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; margin-bottom: .4rem; border-radius: .35rem; outline: 1px solid rgba(0, 0, 0, .1); outline-offset: -1px; background: #2d124d; }
 .creative-index small { color: var(--purple); font: 650 .7rem/1.4 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
@@ -304,7 +306,7 @@
 .performance-preview img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: .6rem; }
 .performance-preview figcaption { margin-top: .55rem; font-size: .86rem; }
 .performance-cards { display: grid; gap: 1rem; }
-.performance-cards article { padding: 1.1rem 1.2rem; border-radius: .6rem; }
+.performance-cards article { display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; align-content: start; padding: 1.1rem 1.2rem; border-radius: .6rem; }
 .performance-cards h4 { margin-bottom: .45rem; font-size: 1.3rem; letter-spacing: -.02em; }
 .performance-cards p:not(.eyebrow) { margin-bottom: .6rem; }
 .next-decision { background: #201038; color: #fff; }
@@ -319,7 +321,7 @@
 .pitch-summary { border-top: 0; background: #eee6fb; }
 .pitch-summary h2 { max-width: 18ch; }
 .summary-loop { display: grid; gap: 1rem; margin: 1.6rem 0; padding: 0; list-style: none; }
-.summary-loop li { padding: 1.1rem 1.2rem; border-radius: .6rem; background: var(--surface); border: 1px solid #dccdf3; }
+.summary-loop li { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: 0; padding: 1.1rem 1.2rem; border-radius: .6rem; background: var(--surface); border: 1px solid #dccdf3; }
 .summary-loop span { display: block; color: var(--purple); font: 650 .73rem/1.4 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
 .summary-loop strong { display: block; margin: .2rem 0 .45rem; font-size: clamp(1.45rem, 2.6vw, 2rem); letter-spacing: -.04em; line-height: 1.05; }
 .summary-loop p { margin: 0; color: var(--muted); }
@@ -332,18 +334,25 @@
 }
 
 /* 100-day outcomes and the worked listening-to-decision loop. */
-.plan-outcomes { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.6rem; padding: 0; list-style: none; }
-.plan-outcomes li { padding: .45rem .75rem; border-radius: 99px; background: #eee6fb; color: #261844; font-size: .92rem; font-weight: 650; }
+.plan-outcomes { max-width: 62ch; margin: 0 0 1.6rem; padding-inline-start: 1.2rem; font-size: 1.05rem; }
+.plan-outcomes li + li { margin-top: .3rem; }
+.plan-outcomes li::marker { color: var(--purple); }
 .plan-loop { margin-block: 2rem 1.5rem; padding: clamp(1rem, 3vw, 1.8rem); border-radius: .6rem; background: #201038; color: #fff; }
 .plan-loop .eyebrow, .plan-loop a { color: #e6dbff; }
 .plan-loop h3 { max-width: 24ch; margin-bottom: .35rem; }
 .plan-loop-deck { color: #e6dbff; }
 .plan-loop :focus-visible { outline-color: #e7be72; }
 .loop-steps { display: grid; gap: .75rem; margin: 1.3rem 0 0; padding: 0; list-style: none; }
-.loop-steps > li { display: grid; align-content: start; gap: .2rem; padding: 1rem; border-radius: .5rem; background: #2f1a52; }
+.loop-steps > li { display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: .2rem; padding: 1rem; border-radius: .5rem; background: #2f1a52; }
 .loop-steps h4 { margin: 0 0 .35rem; font-size: 1.35rem; letter-spacing: -.03em; }
 .loop-when { margin: 0; color: #e7be72; font: 650 .72rem/1.4 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
-.loop-steps dl { display: grid; gap: .55rem; margin: .7rem 0 0; padding-top: .7rem; border-top: 1px solid #4d3478; font-size: .9rem; }
+.loop-steps dl { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: .55rem; margin: .7rem 0 0; padding-top: .7rem; border-top: 1px solid #4d3478; font-size: .9rem; }
 .loop-steps dt { color: #cdb9f0; font-size: .78rem; font-weight: 750; }
 .loop-steps dd { margin: .05rem 0 0; }
 .evidence-note { color: #e6dbff; font-size: .9rem; }
+
+/* Equal image frames in the feed row, so the text below lines up. */
+@media (min-width: 45rem) {
+  .evidence-image { height: clamp(12rem, 19vw, 17rem); }
+  .evidence-image img { height: 100%; object-fit: contain; }
+}
