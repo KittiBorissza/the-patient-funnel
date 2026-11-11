@@ -301,8 +301,8 @@ thead, tfoot { background: #f0e9f6; }
 .calc-scenarios { display: grid; gap: 1rem; margin-bottom: 1rem; }
 .calc-scenario { min-width: 0; padding: 1rem 1.1rem; border: 1px solid var(--line); background: var(--surface); }
 .calc-scenario h3 { font-size: clamp(1.3rem, 2.4vw, 1.75rem); letter-spacing: -.03em; }
-.calc-value { font-size: 1.3rem; font-weight: 750; }
-.calc-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.calc-value { font-size: 1.3rem; font-weight: 750; font-variant-numeric: tabular-nums; }
+.calc-table { width: 100%; border-collapse: collapse; font-size: .9rem; font-variant-numeric: tabular-nums; }
 .calc-table th, .calc-table td { padding: .6rem .5rem .6rem 0; border-top: 1px solid var(--line); text-align: left; vertical-align: top; }
 .calc-table thead th { border-top: 0; font-size: .78rem; color: var(--muted); }
 .calc-table small { display: block; margin-top: .2rem; color: var(--muted); font-size: .78rem; }

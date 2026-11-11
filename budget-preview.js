@@ -19,6 +19,7 @@ function renderBudgetPreview() {
     button.setAttribute('aria-pressed', String(valid && perMarket === Number(button.dataset.amount)));
   }
   previewBudget.setAttribute('aria-invalid', String(!valid));
+  document.getElementById('preview-scenarios').hidden = !valid;
   if (!valid) {
     show('preview-total', 'Enter a monthly budget of €0 or more.');
     return;

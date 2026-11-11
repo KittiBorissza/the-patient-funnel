@@ -344,6 +344,7 @@ function renderBudgetCalc() {
     : !purchase.validity.valid ? 'Enter a conversion between 0% and 100%, or leave it empty.'
     : shareInputs.some(input => !input.validity.valid || input.value === '') ? 'Enter a split between 0% and 100% for each channel.'
     : null;
+  get('calc-scenarios').hidden = Boolean(problem);
   if (problem) {
     write('calc-total', problem);
     return;

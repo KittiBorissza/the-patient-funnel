@@ -38,7 +38,7 @@
 <div class="budget-calc-inputs">
 <div class="budget-presets" role="group" aria-label="Suggested monthly budgets per market"></div>
 <div class="field-grid">
-<div class="field"><label for="calc-budget">Monthly budget per market (€)</label><input id="calc-budget" type="number" min="0" step="any" value="1000" inputmode="decimal" required><small>Suggested media budget. €0 means no paid test.</small></div>
+<div class="field"><label for="calc-budget">Monthly budget per market (€)</label><input id="calc-budget" type="number" min="0" step="any" value="1000" inputmode="decimal" required aria-describedby="calc-total"><small>Suggested media budget. €0 means no paid test.</small></div>
 <div class="field"><label for="calc-focus">Focused scenario channel</label><select id="calc-focus"></select><small>The whole budget goes here.</small></div>
 <div class="field"><label for="calc-purchase">Click to first purchase (%)</label><input id="calc-purchase" type="number" min="0" max="100" step="any" inputmode="decimal" placeholder="Not set"><small>Optional. Leave empty to skip first-purchase estimates.</small></div>
 </div>
@@ -46,8 +46,8 @@
 <fieldset class="share-picks"><legend>Spread scenario split (%)</legend><div class="field-grid" id="calc-shares"></div></fieldset>
 </div>
 </form>
-<p class="budget-total" id="calc-total" aria-live="polite"></p>
-<div class="calc-scenarios" aria-live="polite">
+<p class="budget-total" id="calc-total" role="status"></p>
+<div class="calc-scenarios" id="calc-scenarios">
 <article class="calc-scenario"><p class="eyebrow">Focused / one channel</p><h3 id="calc-focus-title"></h3><div id="calc-focus-line"></div></article>
 <article class="calc-scenario"><p class="eyebrow">Spread / four channels</p><h3 id="calc-spread-title"></h3><div class="table-scroll" tabindex="0" role="region" aria-label="Spread scenario by channel"><table class="calc-table"><thead><tr><th scope="col">Channel</th><th scope="col">Spend</th><th scope="col">Estimate</th><th scope="col">What it answers</th></tr></thead><tbody id="calc-spread"></tbody></table></div></article>
 </div>

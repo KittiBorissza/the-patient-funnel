@@ -192,9 +192,9 @@
       <form class="budget-preview" action="strategy.html" method="get" hidden>
         <div class="budget-presets" role="group" aria-label="Suggested monthly budgets per market"></div>
         <label for="preview-budget">Monthly budget per market (€)</label>
-        <input type="number" min="0" step="any" value="1000" name="budget" id="preview-budget" inputmode="decimal" required>
-        <p class="budget-total" id="preview-total"></p>
-        <div class="scenario-pair" aria-live="polite">
+        <input type="number" min="0" step="any" value="1000" name="budget" id="preview-budget" inputmode="decimal" required aria-describedby="preview-total">
+        <p class="budget-total" id="preview-total" role="status"></p>
+        <div class="scenario-pair" id="preview-scenarios">
           <div class="scenario"><p class="eyebrow">Focused / one channel</p><p class="scenario-value" id="preview-focus-value"></p><p id="preview-focus-decision"></p></div>
           <div class="scenario"><p class="eyebrow">Spread / four channels</p><ul class="scenario-lines" id="preview-spread"></ul></div>
         </div>
