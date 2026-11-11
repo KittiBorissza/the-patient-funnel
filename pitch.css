@@ -90,21 +90,20 @@
 .x-reply p:last-child { margin-bottom: 0; }
 .ig-preview { background: var(--surface); }
 .ig-preview > p { margin-top: 1rem; }
-.ig-frames { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; }
+.ig-frames { display: grid; grid-template-columns: repeat(2, minmax(0, 8.5rem)); gap: .65rem; }
 .ig-frames > div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: .65rem;
-  min-height: 9rem;
   aspect-ratio: 4 / 5;
-  padding: clamp(.65rem, 2.4vw, 1.3rem);
+  padding: .7rem;
   background: #3d1384;
   color: #fff;
 }
 .ig-frames > div + div { background: #e6dbff; color: #201038; }
 .ig-frames span { font: 650 .7rem var(--mono); text-transform: uppercase; }
-.ig-frames strong { font-size: clamp(.95rem, 3.1vw, 2.15rem); line-height: 1.05; letter-spacing: -.035em; }
+.ig-frames strong { font-size: 1.05rem; line-height: 1.1; letter-spacing: -.03em; }
 
 .pitch-samples { align-items: stretch; }
 .pitch-samples article { display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; min-width: 0; }
