@@ -213,17 +213,46 @@
 .plan-markets { margin-top: .85rem; }
 .plan-markets .disclosure { margin-block: .4rem; }
 .plan-language { font-size: .82em; font-weight: 500; }
-.plan-funnel-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.plan-funnel-tabs button small { order: 1; }
-.plan-funnel-tabs button span { order: 2; font-weight: 700; }
-.plan-funnel-panel .plan-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .plan-maintenance { margin: .85rem 0 .4rem; font-size: .92rem; }
+.lifecycle-entries { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.lifecycle-entries button { gap: .4rem; min-height: 7.5rem; }
+.entry-icon { position: relative; display: block; width: 1.5rem; height: 1.8rem; margin-bottom: .15rem; border: 2px solid currentColor; }
+.entry-phone { width: 1rem; border-radius: .25rem; }
+.entry-phone::after { content: ""; position: absolute; inset: auto 24% .14rem; border-top: 2px solid currentColor; }
+.entry-book { border-radius: .15rem .35rem .35rem .15rem; }
+.entry-book::after { content: ""; position: absolute; inset: 0 auto 0 .24rem; border-left: 1px solid currentColor; }
+.lifecycle-path { margin-top: .8rem; }
+.lifecycle-path[hidden], .touch-panel[hidden] { display: none; }
+.touch-steps { gap: .35rem; }
+.touch-steps button { grid-template-columns: 1.7rem 1fr; align-items: center; padding: .5rem .65rem; }
+.touch-steps button span { font-family: var(--mono); }
+.touch-panel { display: grid; gap: 1rem 1.3rem; background: #f2ecfb; }
+.touch-preview { display: grid; gap: .65rem; align-content: start; }
+.touch-message, .touch-art { min-width: 0; padding: .85rem; border: 1px solid #dfd2f2; border-radius: .55rem; background: var(--surface); }
+.touch-message > .eyebrow { margin: 0 0 .35rem; }
+.touch-message > strong, .touch-book strong { display: block; font-size: 1.12rem; line-height: 1.25; }
+.touch-message p:not(.eyebrow) { margin: .35rem 0 .55rem; }
+.touch-message a, .touch-art { font-size: .88rem; font-weight: 700; }
+.touch-book { background: #24084c; color: #fff; }
+.touch-book .eyebrow, .touch-book a { color: #e4d1ff; }
+.touch-book strong { font-size: 1.45rem; max-width: 18ch; }
+.touch-art { display: flex; align-items: center; gap: .7rem; }
+.touch-art img { width: clamp(3.25rem, 15vw, 5rem); height: auto; flex: 0 0 auto; }
+.touch-copy h4 { font-size: clamp(1.15rem, 2.6vw, 1.55rem); line-height: 1.18; margin: 0 0 .6rem; }
+.touch-copy .eyebrow { margin-bottom: .35rem; }
+.touch-copy p { margin-bottom: .55rem; }
+.touch-copy .disclosure { margin-bottom: 0; }
+.touch-channels { width: fit-content; border-radius: 99px; padding: .23rem .58rem; background: #e4d1ff; color: #24084c; font-size: .8rem; font-weight: 700; }
+.touch-handoff { margin: .65rem 0 0; }
+.lifecycle-measurement { margin-top: .8rem; }
 @media (min-width: 48rem) {
-  .plan-time-tabs, .plan-funnel-tabs { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .plan-time-tabs { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .plan-channel-tabs { grid-template-columns: repeat(5, minmax(0, 1fr)); }
   .plan-channel-panel { grid-template-columns: minmax(0, 1fr) minmax(8rem, .38fr); }
   .plan-listening { grid-template-columns: 1.3fr 1fr; align-items: center; }
-  .plan-funnel-panel .plan-fields { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .touch-steps { grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
+  .touch-steps button { grid-template-columns: 1fr; }
+  .touch-panel { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
 }
 .approval-list, .proof-list { margin: 0; }
 .approval-list > div, .proof-list > div { display: grid; gap: .2rem; padding: .7rem 0; }

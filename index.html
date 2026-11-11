@@ -20,8 +20,8 @@
 <meta name="twitter:image" content="https://kittiborissza.github.io/the-patient-funnel/og.png">
 <meta name="theme-color" content="#24084c">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="pitch.css?v=days100">
-<script src="interactions.js?v=days100" defer></script>
+<link rel="stylesheet" href="pitch.css?v=lifecycle">
+<script src="interactions.js?v=lifecycle" defer></script>
 <script src="forecast-model.js" defer></script>
 <script src="budget-preview.js" defer></script>
 
@@ -333,37 +333,92 @@
       </div></details>
     </section>
 
-    <section class="plan-section" aria-labelledby="days-funnel-heading">
+    <section class="plan-section lifecycle-funnel" aria-labelledby="days-funnel-heading">
       <h3 id="days-funnel-heading">The always-on funnel</h3>
-      <p>One job for each stage, from the first impression to the next useful action.</p>
-      <div class="plan-tabs plan-funnel-tabs" role="tablist" aria-label="Always-on funnel stages" data-plan-tabs="funnel">
-        <button type="button" id="days-discover-tab" role="tab" aria-controls="days-discover" aria-selected="true" tabindex="0">
-          <small>What changed on a red day?</small><strong>Discover</strong><span>Same sats creator Reel</span>
-        </button>
-        <button type="button" id="days-learn-tab" role="tab" aria-controls="days-learn" aria-selected="false" tabindex="-1">
-          <small>Can I move bitcoin to my own wallet?</small><strong>Learn</strong><span>Wallet FAQ or walkthrough</span>
-        </button>
-        <button type="button" id="days-purchase-tab" role="tab" aria-controls="days-purchase" aria-selected="false" tabindex="-1">
-          <small>What should I check before I buy?</small><strong>First purchase</strong><span>First-buy walkthrough</span>
-        </button>
-        <button type="button" id="days-lifecycle-tab" role="tab" aria-controls="days-lifecycle" aria-selected="false" tabindex="-1">
-          <small>What can I do with the bitcoin I bought?</small><strong>After purchase</strong><span>Auto Buy, withdrawal or Auto Send</span>
-        </button>
+      <p>Two ways in. Show the next useful touch.</p>
+      <div class="plan-tabs lifecycle-entries" role="tablist" aria-label="Funnel entry routes" data-plan-tabs="lifecycle-entries">
+        <button type="button" id="entry-app-tab" role="tab" aria-controls="entry-app" aria-selected="true" tabindex="0"><span class="entry-icon entry-phone" aria-hidden="true"></span><strong>Downloaded the app</strong><span>Help them take the next step.</span></button>
+        <button type="button" id="entry-ebook-tab" role="tab" aria-controls="entry-ebook" aria-selected="false" tabindex="-1"><span class="entry-icon entry-book" aria-hidden="true"></span><strong>Requested the e-book</strong><span>Give readers a reason to try the app.</span></button>
       </div>
-      <div class="plan-panel plan-funnel-panel" id="days-discover" role="tabpanel" aria-labelledby="days-discover-tab" tabindex="0">
-        <dl class="plan-fields"><div><dt>Campaign or trigger</dt><dd>Organic or creator Reel, with paid amplification where eligible.</dd></div><div><dt>Destination</dt><dd><a href="content-calendar.html#creator-sats">Reel and campaign explainer</a>.</dd></div><div><dt>Measurement</dt><dd>Qualified engagement and tracked visits.</dd></div><div><dt>Owner</dt><dd>Social and creator.</dd></div></dl>
+      <div class="lifecycle-path" id="entry-app" role="tabpanel" aria-labelledby="entry-app-tab" tabindex="0">
+        <div class="plan-tabs touch-steps" role="tablist" aria-label="App onboarding steps" data-plan-tabs="lifecycle-steps">
+            <button type="button" id="days-first-open-tab" role="tab" aria-controls="days-first-open" aria-selected="true" tabindex="0"><span aria-hidden="true">01</span><strong>First open</strong></button>
+            <button type="button" id="days-setup-resume-tab" role="tab" aria-controls="days-setup-resume" aria-selected="false" tabindex="-1"><span aria-hidden="true">02</span><strong>Finish setup</strong></button>
+            <button type="button" id="days-purchase-tab" role="tab" aria-controls="days-purchase" aria-selected="false" tabindex="-1"><span aria-hidden="true">03</span><strong>First purchase</strong></button>
+            <button type="button" id="days-lifecycle-tab" role="tab" aria-controls="days-lifecycle" aria-selected="false" tabindex="-1"><span aria-hidden="true">04</span><strong>Keep using</strong></button>
+            <button type="button" id="days-refer-tab" role="tab" aria-controls="days-refer" aria-selected="false" tabindex="-1"><span aria-hidden="true">05</span><strong>Invite a friend</strong></button>
+        </div>
+          <div class="plan-panel touch-panel" id="days-first-open" role="tabpanel" aria-labelledby="days-first-open-tab" tabindex="0">
+            <div class="touch-preview"><div class="touch-message"><p class="eyebrow">In-app · Independent sample</p><strong>Let’s get you set up.</strong><p>See what you’ll need and pick up when you’re ready.</p><a href="content-calendar.html#ex-walkthrough">See the first-buy walkthrough →</a></div></div>
+            <div class="touch-copy"><p class="eyebrow">See the next touch</p><h4>Make the first session useful.</h4><p class="touch-channels">In-app</p><p><strong>Measure</strong> · First open → setup start</p>
+              <details class="disclosure"><summary>How it works</summary><div class="detail-body"><dl class="plan-fields"><div><dt>Trigger</dt><dd>First recorded app open.</dd></div><div><dt>Timing and eligibility</dt><dd>At first open, show a short setup guide.</dd></div><div><dt>Stop when</dt><dd>Setup begins.</dd></div><div><dt>Owner</dt><dd>Product and CRM.</dd></div></dl></div></details>
+            </div>
+          </div>
+          <div class="plan-panel touch-panel" id="days-setup-resume" role="tabpanel" aria-labelledby="days-setup-resume-tab" tabindex="0" hidden>
+            <div class="touch-preview"><div class="touch-message"><p class="eyebrow">Email · Independent sample</p><strong>Ready to finish setting up?</strong><p>Pick up where you left off, or ask Support if you’re stuck.</p><a href="content-calendar.html#ex-walkthrough">See the setup walkthrough →</a></div></div>
+            <div class="touch-copy"><p class="eyebrow">See the next touch</p><h4>Help them pick up where they stopped.</h4><p class="touch-channels">In-app · CRM</p><p><strong>Measure</strong> · Setup completion</p>
+              <details class="disclosure"><summary>How it works</summary><div class="detail-body"><dl class="plan-fields"><div><dt>Trigger</dt><dd>Setup started and is still incomplete.</dd></div><div><dt>Timing and eligibility</dt><dd>Start with an in-app prompt. Test one CRM reminder for eligible contacts. Keep verification details in owned channels.</dd></div><div><dt>Stop when</dt><dd>Setup completes or the reminder window ends.</dd></div><div><dt>Owner</dt><dd>CRM and Support.</dd></div></dl></div></details>
+            </div>
+          </div>
+          <div class="plan-panel touch-panel" id="days-purchase" role="tabpanel" aria-labelledby="days-purchase-tab" tabindex="0" hidden>
+            <div class="touch-preview"><a class="touch-art" href="ad-gallery.html#ad-fees"><img src="assets/fees-creative.webp" width="1080" height="1350" loading="lazy" alt="First purchase concept cover about checking the amount, fee and custody"><span>See the fees creative →</span></a><div class="touch-message"><p class="eyebrow">Email · Independent sample</p><strong>Three things to check before you buy</strong><p>Take a moment to check the amount, the fee and where your bitcoin goes.</p><a href="content-calendar.html#ex-walkthrough">See the first-buy walkthrough →</a></div></div>
+            <div class="touch-copy"><p class="eyebrow">See the next touch</p><h4>Answer the questions that hold up a first buy.</h4><p class="touch-channels">Email · Meta test</p><p><strong>Measure</strong> · First completed purchase</p>
+              <details class="disclosure"><summary>How it works</summary><div class="detail-body"><dl class="plan-fields"><div><dt>Trigger</dt><dd>Setup complete, with no first completed purchase.</dd></div><div><dt>Timing and eligibility</dt><dd>Send the guide to eligible CRM contacts. Test fees versus custody on Facebook and Instagram if audience, events and campaign approvals allow.</dd></div><div><dt>Stop when</dt><dd>First purchase completes or the test window ends.</dd></div><div><dt>Owner</dt><dd>Paid Social, CRM and Analytics.</dd></div></dl></div></details>
+            </div>
+          </div>
+          <div class="plan-panel touch-panel" id="days-lifecycle" role="tabpanel" aria-labelledby="days-lifecycle-tab" tabindex="0" hidden>
+            <div class="touch-preview"><a class="touch-art" href="ad-gallery.html#creative-autosend-1"><img src="assets/auto-send-creative.webp" width="1080" height="1350" loading="lazy" alt="From your stack to your wallet"><span>See the Auto Send carousel →</span></a></div>
+            <div class="touch-copy"><p class="eyebrow">See the next touch</p><h4>Offer one next step that fits how they use the app.</h4><p class="touch-channels">In-app · Email</p><p><strong>Measure</strong> · Next feature used</p>
+              <details class="disclosure"><summary>How it works</summary><div class="detail-body"><dl class="plan-fields"><div><dt>Trigger</dt><dd>First purchase completed.</dd></div><div><dt>Timing and eligibility</dt><dd>Follow up with relevant education on withdrawal, Auto Send or Auto Buy. Link to the matching product guide.</dd></div><div><dt>Stop when</dt><dd>The relevant feature is used or the sequence ends.</dd></div><div><dt>Owner</dt><dd>CRM and Product.</dd></div></dl></div></details>
+            </div>
+          </div>
+          <div class="plan-panel touch-panel" id="days-refer" role="tabpanel" aria-labelledby="days-refer-tab" tabindex="0" hidden>
+            <div class="touch-preview"><div class="touch-message"><p class="eyebrow">In-app · Independent sample</p><strong>Know someone curious about Bitcoin?</strong><p>If you’re eligible, you can share your personal invite from the app.</p><a href="https://www.invity.io/referral">See Invity’s referral programme →</a></div></div>
+            <div class="touch-copy"><p class="eyebrow">See the next touch</p><h4>Ask after the customer has had time to use the app.</h4><p class="touch-channels">In-app · CRM</p><p><strong>Measure</strong> · First eligible referred purchase</p>
+              <details class="disclosure"><summary>How it works</summary><div class="detail-body"><dl class="plan-fields"><div><dt>Trigger</dt><dd>A returning customer meets the current referral criteria.</dd></div><div><dt>Timing and eligibility</dt><dd>Offer the personal invite after a useful product moment. Apply current market and programme terms.</dd></div><div><dt>Stop when</dt><dd>The customer shares an invite or the prompt expires.</dd></div><div><dt>Owner</dt><dd>CRM and Partnerships.</dd></div></dl></div></details>
+            </div>
+          </div>
       </div>
-      <div class="plan-panel plan-funnel-panel" id="days-learn" role="tabpanel" aria-labelledby="days-learn-tab" tabindex="0" hidden>
-        <dl class="plan-fields"><div><dt>Campaign or trigger</dt><dd>Follow up on an education post or eligible engaged audience.</dd></div><div><dt>Destination</dt><dd><a href="ad-gallery.html#ad-withdraw">Wallet FAQ</a> or searchable YouTube guide.</dd></div><div><dt>Measurement</dt><dd>Guide engagement and progression to the next step.</dd></div><div><dt>Owner</dt><dd>Social and Product.</dd></div></dl>
+      <div class="lifecycle-path" id="entry-ebook" role="tabpanel" aria-labelledby="entry-ebook-tab" tabindex="0" hidden>
+        <div class="plan-tabs touch-steps" role="tablist" aria-label="E-book steps" data-plan-tabs="lifecycle-steps">
+            <button type="button" id="days-discover-tab" role="tab" aria-controls="days-discover" aria-selected="true" tabindex="0"><span aria-hidden="true">01</span><strong>Read the sample</strong></button>
+            <button type="button" id="days-ebook-request-tab" role="tab" aria-controls="days-ebook-request" aria-selected="false" tabindex="-1"><span aria-hidden="true">02</span><strong>Request the PDF</strong></button>
+            <button type="button" id="days-learn-tab" role="tab" aria-controls="days-learn" aria-selected="false" tabindex="-1"><span aria-hidden="true">03</span><strong>Explore the app</strong></button>
+            <button type="button" id="days-ebook-open-tab" role="tab" aria-controls="days-ebook-open" aria-selected="false" tabindex="-1"><span aria-hidden="true">04</span><strong>First open</strong></button>
+        </div>
+          <div class="plan-panel touch-panel" id="days-discover" role="tabpanel" aria-labelledby="days-discover-tab" tabindex="0">
+            <div class="touch-preview"><div class="touch-message touch-book"><p class="eyebrow">Independent concept</p><div><strong>Why does money change over time?</strong><p>Explore the history of money in Invity’s free guide.</p></div><a href="https://downloadapp.invity.io/broken-money-and-the-way-out">Get the full guide →</a></div></div>
+            <div class="touch-copy"><p class="eyebrow">See the next touch</p><h4>Give readers a reason to get the full guide.</h4><p class="touch-channels">Facebook · Instagram</p><p><strong>Measure</strong> · Full PDF requests</p>
+              <details class="disclosure"><summary>How it works</summary><div class="detail-body"><dl class="plan-fields"><div><dt>Trigger</dt><dd>Sample page viewed, with no full-PDF request recorded.</dd></div><div><dt>Timing and eligibility</dt><dd>Test a chapter-led creative with an eligible Meta web audience. Send people back to the e-book landing page.</dd></div><div><dt>Stop when</dt><dd>Full PDF is requested, or the audience window ends.</dd></div><div><dt>Owner</dt><dd>Paid Social.</dd></div></dl></div></details>
+            </div>
+          </div>
+          <div class="plan-panel touch-panel" id="days-ebook-request" role="tabpanel" aria-labelledby="days-ebook-request-tab" tabindex="0" hidden>
+            <div class="touch-preview"><div class="touch-message"><p class="eyebrow">Email · Independent sample</p><strong>Your Bitcoin reading guide</strong><p>Start with one question from the book: what do you actually own when you buy Bitcoin?</p><a href="https://downloadapp.invity.io/broken-money-and-the-way-out">Read the guide →</a></div></div>
+            <div class="touch-copy"><p class="eyebrow">See the next touch</p><h4>Deliver the guide and follow up with one useful question.</h4><p class="touch-channels">Email · Instagram test</p><p><strong>Measure</strong> · Guide clicks and app interest</p>
+              <details class="disclosure"><summary>How it works</summary><div class="detail-body"><dl class="plan-fields"><div><dt>Trigger</dt><dd>Full PDF requested through the form.</dd></div><div><dt>Timing and eligibility</dt><dd>Make the PDF available first. For eligible CRM contacts, test an educational follow-up. An Instagram Reel is an optional paid touch for an eligible audience. <a href="content-calendar.html#creator-sats">See the creator format</a>.</dd></div><div><dt>Stop when</dt><dd>A known app open or the follow-up window ends.</dd></div><div><dt>Owner</dt><dd>CRM and Social.</dd></div></dl></div></details>
+            </div>
+          </div>
+          <div class="plan-panel touch-panel" id="days-learn" role="tabpanel" aria-labelledby="days-learn-tab" tabindex="0" hidden>
+            <div class="touch-preview"><a class="touch-art" href="content-calendar.html#ex-walkthrough"><img src="assets/fees-creative.webp" width="1080" height="1350" loading="lazy" alt="First purchase concept cover about checking the amount, fee and custody"><span>See the first-buy walkthrough →</span></a></div>
+            <div class="touch-copy"><p class="eyebrow">See the next touch</p><h4>Show what a first purchase actually looks like.</h4><p class="touch-channels">Email · Meta test</p><p><strong>Measure</strong> · App CTA and matched first opens</p>
+              <details class="disclosure"><summary>How it works</summary><div class="detail-body"><dl class="plan-fields"><div><dt>Trigger</dt><dd>The reader engages with the app guide or clicks the app CTA.</dd></div><div><dt>Timing and eligibility</dt><dd>Use the walkthrough, then offer the reviewed local app destination. Suppress people already known to have opened the app where supported.</dd></div><div><dt>Stop when</dt><dd>A matched first app open or the test window ends.</dd></div><div><dt>Owner</dt><dd>CRM and Paid Social.</dd></div></dl></div></details>
+            </div>
+          </div>
+          <div class="plan-panel touch-panel" id="days-ebook-open" role="tabpanel" aria-labelledby="days-ebook-open-tab" tabindex="0" hidden>
+            <div class="touch-preview"><div class="touch-message"><p class="eyebrow">In-app · Independent sample</p><strong>Take your first look around.</strong><p>See the setup steps when you’re ready.</p><a href="#days-first-open">See the app onboarding path →</a></div></div>
+            <div class="touch-copy"><p class="eyebrow">See the next touch</p><h4>Hand off to app onboarding when the two paths can be matched.</h4><p class="touch-channels">In-app</p><p><strong>Measure</strong> · Matched first opens</p>
+              <details class="disclosure"><summary>How it works</summary><div class="detail-body"><dl class="plan-fields"><div><dt>Trigger</dt><dd>A first app open is recorded and can be linked to the e-book path.</dd></div><div><dt>Timing and eligibility</dt><dd>Move to app onboarding. Keep unmatched opens visible in reporting.</dd></div><div><dt>Stop when</dt><dd>Exit the e-book sequence at the matched first open.</dd></div><div><dt>Owner</dt><dd>Product and Analytics.</dd></div></dl></div></details>
+            </div>
+          </div>
+        <p class="touch-handoff"><a class="text-link" href="#days-first-open">Continue to app onboarding →</a></p>
       </div>
-      <div class="plan-panel plan-funnel-panel" id="days-purchase" role="tabpanel" aria-labelledby="days-purchase-tab" tabindex="0" hidden>
-        <dl class="plan-fields"><div><dt>Campaign or trigger</dt><dd>Local first-buy campaign, with eligible audience and exclusions.</dd></div><div><dt>Destination</dt><dd><a href="content-calendar.html#ex-walkthrough">First-buy walkthrough</a> and reviewed local landing page.</dd></div><div><dt>Measurement</dt><dd>First transactions and cost per first transaction where tracking supports them.</dd></div><div><dt>Owner</dt><dd>Paid Social and Analytics.</dd></div></dl>
-      </div>
-      <div class="plan-panel plan-funnel-panel" id="days-lifecycle" role="tabpanel" aria-labelledby="days-lifecycle-tab" tabindex="0" hidden>
-        <dl class="plan-fields"><div><dt>Campaign or trigger</dt><dd>A confirmed purchase and a relevant next-step message.</dd></div><div><dt>Destination</dt><dd><a href="ad-gallery.html#ad-autobuy">Product and CRM education</a>.</dd></div><div><dt>Measurement</dt><dd>Recurring-buy setup or engagement with the relevant guide.</dd></div><div><dt>Owner</dt><dd>CRM and Product.</dd></div></dl>
-      </div>
+      <details class="disclosure lifecycle-measurement"><summary>PDF requests → Matched first opens → First purchases</summary><div class="detail-body">
+        <p>Track sample views, PDF requests, app CTA clicks, installs and first opens as separate events. Show opens that cannot be linked to a reader as <strong>Unmatched</strong>.</p>
+        <p>Check eligible Facebook and Instagram audiences and remove people from the preceding sequence when they progress, where supported. Consider Google/YouTube app re-engagement as a second test if the account and audience qualify.</p>
+        <p>Creator affiliates can bring readers in through an approved link or code. Customer referrals are a separate touch after product use.</p>
+        <p><a href="https://downloadapp.invity.io/broken-money-and-the-way-out">Invity’s e-book</a> · <a href="strategy.html#forecast">Strategy Lab</a> · <a href="ad-gallery.html">Funnel Ad Gallery</a></p>
+      </div></details>
       <p class="plan-maintenance">Weekly: check spend, tracking and creative performance. Update when the data, customer questions or product changes give us a reason.</p>
-      <p><a class="text-link" href="ad-gallery.html">Explore the Funnel Ad Gallery →</a></p>
     </section>
 
     <div class="home-disclosures" id="working">

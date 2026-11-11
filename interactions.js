@@ -37,7 +37,7 @@ for (const list of document.querySelectorAll('[role="tablist"]')) {
   const tabs = [...list.querySelectorAll('[role="tab"]')];
   const initial = tabs.find(tab => tab.getAttribute('aria-selected') === 'true');
   activateTab(initial);
-  if (list.dataset.planTabs === 'timeline') {
+  if (['timeline', 'lifecycle-steps'].includes(list.dataset.planTabs)) {
     const narrowTimeline = matchMedia('(max-width: 47.999rem)');
     const setOrientation = () => list.setAttribute('aria-orientation', narrowTimeline.matches ? 'vertical' : 'horizontal');
     narrowTimeline.addEventListener('change', setOrientation);
@@ -115,6 +115,9 @@ function revealFragment() {
   const target = document.getElementById(id);
   if (!target) return;
 
+  const lifecyclePath = target.closest('.lifecycle-path');
+  if (lifecyclePath) activateTab(document.getElementById(lifecyclePath.getAttribute('aria-labelledby')));
+
   const planPanel = target.closest('.plan-panel');
   if (planPanel) activateTab(document.getElementById(planPanel.getAttribute('aria-labelledby')));
 
@@ -132,7 +135,7 @@ function revealFragment() {
 
   if (id === 'ab-test') target.querySelector('details').open = true;
   const heading = document.getElementById(id + '-heading');
-  if (id !== originalId || heading || month || planPanel || details || target.matches('.funnel-panel, .concept-feed [role=tabpanel]') || target.closest('details') || id === 'ab-test') {
+  if (id !== originalId || heading || month || lifecyclePath || planPanel || details || target.matches('.funnel-panel, .concept-feed [role=tabpanel]') || target.closest('details') || id === 'ab-test') {
     requestAnimationFrame(() => {
       (heading || target).scrollIntoView({ block: 'start' });
       if (heading) heading.focus({ preventScroll: true });
