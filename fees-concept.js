@@ -1,6 +1,6 @@
 'use strict';
 
-// "Before you hit Buy": the fees concept's five platform previews and AI before/after demo in Content Studio.
+// "Before you hit Buy": the fees concept's platform previews, in Content Studio and on the homepage.
 (() => {
   const view = document.getElementById('fees-concept');
   if (!view) return;
@@ -291,13 +291,17 @@
       started = performance.now();
       frame = requestAnimationFrame(tick);
     });
+    const setFrames = open => {
+      frames.hidden = !open;
+      framesButton.setAttribute('aria-expanded', String(open));
+      framesButton.textContent = open ? 'Hide the frames' : 'Show the frames';
+    };
     framesButton.addEventListener('click', () => {
-      frames.hidden = !frames.hidden;
-      framesButton.setAttribute('aria-expanded', String(!frames.hidden));
-      framesButton.textContent = frames.hidden ? 'Show the frames' : 'Hide the frames';
+      setFrames(frames.hidden);
       if (!frames.hidden) { revealChange(frames); scrollToChange(frames); }
     });
-    if (reducedMotion.matches) framesButton.click();
+    // Reduced motion opens the keyframes without scrolling the reader away from the format they picked.
+    if (reducedMotion.matches) setFrames(true);
     setButton('poster');
     return { stop: () => { cancelAnimationFrame(frame); } };
   }
@@ -337,6 +341,16 @@
       render(current, index);
     }
   });
+
+  // The homepage drives the previews with its own format buttons; Content Studio calls render itself.
+  const formatButtons = [...document.querySelectorAll('[data-bh-format]')];
+  for (const button of formatButtons) button.addEventListener('click', () => {
+    if (button.getAttribute('aria-pressed') === 'true') return;
+    for (const other of formatButtons) other.setAttribute('aria-pressed', String(other === button));
+    render(button.dataset.bhFormat, 0, true);
+  });
+  const initialFormat = formatButtons.find(button => button.getAttribute('aria-pressed') === 'true');
+  if (initialFormat) render(initialFormat.dataset.bhFormat);
 
   renderOutputs();
   window.feesConcept = { render };

@@ -1,4 +1,7 @@
-/* The Overview: hero, three finished posts, the First 100 days, the proposal map and the closing proof. */
+/* The one-page pitch: hero, one campaign, three finished posts, the First 100 days, proof and the close. */
+.head-cv { display: inline-flex; align-items: center; min-height: 44px; padding-inline: .5rem; color: var(--purple); font-size: .85rem; font-weight: 700; text-decoration: none; }
+.head-cv:hover { text-decoration: underline; }
+@media (max-width: 58rem) { .head-inner { flex-wrap: nowrap; } }
 .pitch-hero {
   background: #201038;
   color: #fff;
@@ -24,19 +27,6 @@
 }
 .pitch-hero .primary:hover, .pitch-about .primary:hover { background: #e6dbff; }
 .pitch-byline { margin-bottom: 1.1rem; font-weight: 750; font-size: 1.2rem; }
-.pitch-loop {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .3rem .55rem;
-  margin: 1.1rem 0 0;
-  padding: 0;
-  list-style: none;
-  color: #e6dbff;
-  font: 650 .78rem/1.4 var(--mono);
-  letter-spacing: .07em;
-  text-transform: uppercase;
-}
-.pitch-loop li + li::before { content: "→"; margin-inline-end: .55rem; color: #e7be72; }
 .pitch-cover {
   display: grid;
   justify-items: start;
@@ -47,45 +37,27 @@
 .pitch-cover figcaption { color: #e6dbff; font-size: .8rem; }
 
 .index h2 { font-size: clamp(2.05rem, 4.8vw, 4.15rem); text-wrap: balance; }
-.index h3 { font-size: clamp(1.28rem, 2.5vw, 2rem); }
 
 .pitch-creative { background: #eee6fb; }
-.post-cards { display: grid; gap: .85rem; margin: 1.4rem 0 0; padding: 0; list-style: none; }
-.post-cards li { display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; }
-.post-cards a { display: grid; grid-row: 1 / -1; grid-template-rows: subgrid; row-gap: .3rem; padding: .75rem; border: 1px solid #ddc8fa; border-radius: 1.1rem; background: #f8f3ff; color: var(--ink); text-decoration: none; }
-.post-cards a:hover { border-color: var(--purple); }
+.post-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.4rem, 1.5vw, .85rem); margin: 1.4rem 0 0; padding: 0; list-style: none; }
+.post-cards li { display: grid; grid-row: span 3; grid-template-rows: subgrid; row-gap: .3rem; padding: clamp(.35rem, 1.5vw, .75rem); border: 1px solid #ddc8fa; border-radius: clamp(.6rem, 2vw, 1.1rem); background: #f8f3ff; }
 .post-cards img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; margin-bottom: .4rem; border-radius: .35rem; outline: 1px solid rgba(0, 0, 0, .1); outline-offset: -1px; background: #2d124d; }
-.post-cards small { color: var(--purple); font: 650 .7rem/1.4 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
-.post-cards strong { font-size: 1.25rem; line-height: 1.2; }
-.post-cards span { color: var(--purple); font-size: .88rem; font-weight: 700; }
-@media (min-width: 40rem) { .post-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.post-cards small { color: var(--purple); font: 650 clamp(.58rem, 1.4vw, .7rem)/1.4 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+.post-cards strong { font-size: clamp(.85rem, 2.2vw, 1.25rem); line-height: 1.2; }
 
-.day-rows { max-width: 48rem; margin-top: 1.4rem; }
-.day-row > summary { min-height: 4.5rem; }
-.day-row > summary > span { display: grid; gap: .15rem; }
-.day-row small { font: 650 .75rem/1.4 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
-.day-row strong { color: var(--ink); font-size: clamp(1.1rem, 2.2vw, 1.4rem); line-height: 1.25; }
-.day-row .detail-body p { max-width: 58ch; margin-bottom: .55rem; }
+.day-lines { display: grid; max-width: 48rem; margin: 1.4rem 0 0; padding: 0; list-style: none; }
+.day-lines li { display: grid; gap: .15rem; padding-block: .8rem; border-top: 1px solid var(--line); }
+.day-lines li:last-child { border-bottom: 1px solid var(--line); }
+.day-lines small { color: var(--purple); font: 650 .75rem/1.4 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+.day-lines strong { font-size: clamp(1.1rem, 2.2vw, 1.4rem); line-height: 1.25; }
 
-.pitch-explore { background: #eee6fb; }
-.route-cards { display: grid; gap: .85rem; margin: 1.4rem 0 0; padding: 0; list-style: none; }
-.route-cards a { display: grid; height: 100%; grid-template-rows: auto auto 1fr auto; gap: .35rem; padding: 1.1rem; border: 1px solid #ddc8fa; border-radius: 1.1rem; background: #f8f3ff; color: var(--ink); text-decoration: none; }
-.route-cards a:hover { border-color: var(--purple); }
-.route-cards small { color: var(--purple); font: 650 .7rem/1.4 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
-.route-cards strong { font-size: 1.25rem; line-height: 1.2; }
-.route-cards p { margin: 0; color: var(--muted); }
-.route-cards span { margin-top: .4rem; color: var(--purple); font-size: .88rem; font-weight: 700; }
-@media (min-width: 40rem) { .route-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (min-width: 64rem) { .route-cards { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.pitch-proof { background: #eee6fb; }
+.pitch-proof h2 { max-width: 24ch; font-size: clamp(1.6rem, 3.2vw, 2.6rem); }
+.pitch-proof p:not(.eyebrow) { max-width: 52ch; }
 
 .pitch-about { background: #49209c; color: #fff; }
-.pitch-about-inner { display: grid; gap: 2rem; align-items: start; }
 .pitch-about .eyebrow, .pitch-about a { color: #fff; }
 .pitch-about .primary { color: #3d1384; }
-.proof-point { padding-top: 1rem; border-top: 1px solid #9678cc; }
-.proof-point .eyebrow { color: #e7be72; }
-.proof-point h3 { margin-bottom: .5rem; }
-.proof-point p:not(.eyebrow) { max-width: 52ch; }
 .pitch-hero :focus-visible, .pitch-about :focus-visible { outline-color: #e7be72; }
 
 @media (max-width: 44.99rem) {
@@ -95,5 +67,19 @@
   .pitch-hero-inner { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); }
   .pitch-cover { justify-items: end; }
   .pitch-cover img { width: min(100%, 25rem); }
-  .pitch-about-inner { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 2rem; }
+  .pitch-campaign-inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
 }
+
+/* Before you hit Buy, played on the page. fees-concept.css reads the --iv-* tokens. */
+.pitch-campaign-inner { display: grid; gap: 1.5rem; align-items: start; }
+.pitch-lede { max-width: 46ch; font-size: clamp(1rem, 1.6vw, 1.15rem); }
+.bh-formats { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: 1.2rem; }
+.bh-formats button { min-height: 44px; padding: .45rem .8rem; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink); font-size: .88rem; font-weight: 680; transition: background-color 150ms, border-color 150ms, scale 150ms; }
+.bh-formats button:hover { border-color: var(--purple); }
+.bh-formats button:active { scale: .96; }
+.bh-formats button[aria-pressed="true"] { background: var(--plum); border-color: var(--plum); color: #fff; }
+#fees-concept { --iv-surface: #fff; --iv-text: #12101b; --iv-muted: #554968; --iv-line: #ded1ed; --iv-active: #f2e7ff; --iv-action: #5614b9; width: 100%; min-width: 0; font-family: var(--sans); }
+#fees-concept noscript img { max-width: 420px; margin-inline: auto; border-radius: 14px; }
+#fees-concept .iv-nav { display: flex; justify-content: space-between; align-items: center; gap: .45rem; padding: .3rem .58rem; color: var(--iv-muted); font-size: .76rem; }
+#fees-concept .iv-nav button { min-height: 44px; padding: .35rem .48rem; border: 1px solid var(--iv-line); border-radius: 8px; background: var(--iv-surface); color: var(--iv-text); font-size: .76rem; }
+#fees-concept .iv-nav button[aria-disabled="true"] { opacity: .45; cursor: default; }
