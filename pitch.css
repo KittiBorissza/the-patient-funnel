@@ -146,13 +146,85 @@
 .budget-shell .button[aria-pressed="true"] { background: var(--plum); color: #fff; }
 .budget-shell #budget-lab-link { padding-inline: 0; }
 
-.pitch-plan .timeline { margin-block: 1.5rem 2.5rem; }
-.pitch-plan .timeline details { border-radius: .3rem; background: #eee6fb; }
-.pitch-plan .timeline summary span { display: flex; justify-content: space-between; gap: .35rem; }
-.pitch-plan .timeline summary span::after { content: "+"; font-weight: 750; color: var(--purple); }
-.pitch-plan .timeline details[open] summary span::after { content: "−"; }
-.pitch-plan .timeline details > p { margin-top: .8rem; }
-.operating-grid > article { padding-top: 1rem; border-top: 1px solid var(--line); }
+.plan-deck { max-width: 58ch; margin-bottom: 1.4rem; }
+.plan-tabs { display: grid; gap: .55rem; margin: 0; }
+.plan-tabs button {
+  display: grid;
+  align-content: start;
+  gap: .3rem;
+  min-width: 0;
+  min-height: 44px;
+  padding: .75rem .9rem;
+  text-align: left;
+  font: inherit;
+  line-height: 1.25;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+}
+.plan-tabs button:hover { border-color: var(--purple); }
+.plan-tabs button[aria-selected="true"] {
+  color: #fff;
+  background: #49209c;
+  border-color: #49209c;
+}
+.plan-tabs button:focus-visible, .plan-panel:focus-visible {
+  outline: 2px solid var(--purple);
+  outline-offset: 3px;
+}
+.plan-tabs button small, .plan-tabs button span { font-size: .79rem; }
+.plan-time-tabs button small { font-weight: 700; }
+.plan-panel {
+  min-width: 0;
+  margin-top: .65rem;
+  padding: clamp(.85rem, 2.5vw, 1.4rem);
+  border: 1px solid var(--line);
+  border-radius: .55rem;
+  background: var(--surface);
+}
+.plan-panel[hidden] { display: none; }
+.plan-time-panel ul, .plan-listening ul, #paid-setup ul { margin: 0; padding-left: 1.2rem; }
+.plan-time-panel li + li, .plan-listening li + li, #paid-setup li + li { margin-top: .28rem; }
+.plan-time-panel p { margin: .45rem 0 0; }
+.plan-listening {
+  display: grid;
+  gap: .85rem 1.75rem;
+  margin-block: 1.5rem;
+  padding: clamp(1rem, 3vw, 1.7rem);
+  background: #eee6fb;
+  color: #261844;
+  border-radius: .6rem;
+}
+.plan-listening h3 { margin-bottom: .42rem; }
+.plan-listening p:not(.eyebrow) { margin-bottom: .35rem; }
+.plan-listening-flow { font-weight: 750; }
+.plan-listening .disclosure { margin: .4rem 0 0; }
+.plan-section { margin-block: 1.8rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+.plan-section h3 { margin-bottom: .4rem; }
+.plan-channel-tabs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.plan-channel-tabs button { padding-inline: .55rem; text-align: center; align-content: center; }
+.plan-channel-panel { display: grid; gap: .9rem 1.4rem; align-items: start; }
+.plan-fields { display: grid; gap: .75rem; margin: 0; }
+.plan-fields dt { font-size: .82rem; font-weight: 750; }
+.plan-fields dd { margin: .12rem 0 0; }
+.plan-sample { display: grid; align-items: center; justify-items: start; gap: .4rem; font-weight: 700; }
+.plan-sample img { width: 100%; max-width: 10.5rem; height: auto; max-height: 10rem; object-fit: contain; object-position: left; }
+.plan-markets { margin-top: .85rem; }
+.plan-markets .disclosure { margin-block: .4rem; }
+.plan-language { font-size: .82em; font-weight: 500; }
+.plan-funnel-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.plan-funnel-tabs button small { order: 1; }
+.plan-funnel-tabs button span { order: 2; font-weight: 700; }
+.plan-funnel-panel .plan-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.plan-maintenance { margin: .85rem 0 .4rem; font-size: .92rem; }
+@media (min-width: 48rem) {
+  .plan-time-tabs, .plan-funnel-tabs { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .plan-channel-tabs { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .plan-channel-panel { grid-template-columns: minmax(0, 1fr) minmax(8rem, .38fr); }
+  .plan-listening { grid-template-columns: 1.3fr 1fr; align-items: center; }
+  .plan-funnel-panel .plan-fields { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
 .approval-list, .proof-list { margin: 0; }
 .approval-list > div, .proof-list > div { display: grid; gap: .2rem; padding: .7rem 0; }
 .approval-list > div + div { border-top: 1px solid var(--line); }

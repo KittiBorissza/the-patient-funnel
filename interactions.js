@@ -37,6 +37,12 @@ for (const list of document.querySelectorAll('[role="tablist"]')) {
   const tabs = [...list.querySelectorAll('[role="tab"]')];
   const initial = tabs.find(tab => tab.getAttribute('aria-selected') === 'true');
   activateTab(initial);
+  if (list.dataset.planTabs === 'timeline') {
+    const narrowTimeline = matchMedia('(max-width: 47.999rem)');
+    const setOrientation = () => list.setAttribute('aria-orientation', narrowTimeline.matches ? 'vertical' : 'horizontal');
+    narrowTimeline.addEventListener('change', setOrientation);
+    setOrientation();
+  }
   if (list.closest('.homepage-concept')) list.hidden = false;
   if (list.closest('.concept-feed')) {
     const restorePlatform = () => {
@@ -71,12 +77,15 @@ for (const list of document.querySelectorAll('[role="tablist"]')) {
     });
     tab.addEventListener('keydown', event => {
       const index = tabs.indexOf(tab);
+      const vertical = list.getAttribute('aria-orientation') === 'vertical';
+      const key = vertical && event.key === 'ArrowUp' ? 'ArrowLeft'
+        : vertical && event.key === 'ArrowDown' ? 'ArrowRight' : event.key;
       const next = {
         ArrowLeft: (index - 1 + tabs.length) % tabs.length,
         ArrowRight: (index + 1) % tabs.length,
         Home: 0,
         End: tabs.length - 1
-      }[event.key];
+      }[key];
       if (next === undefined) return;
       event.preventDefault();
       select(tabs[next]);
@@ -106,6 +115,9 @@ function revealFragment() {
   const target = document.getElementById(id);
   if (!target) return;
 
+  const planPanel = target.closest('.plan-panel');
+  if (planPanel) activateTab(document.getElementById(planPanel.getAttribute('aria-labelledby')));
+
   const month = target.closest('.calendar-month');
   if (month) activateTab(document.getElementById(month.getAttribute('aria-labelledby')));
 
@@ -120,7 +132,7 @@ function revealFragment() {
 
   if (id === 'ab-test') target.querySelector('details').open = true;
   const heading = document.getElementById(id + '-heading');
-  if (id !== originalId || heading || month || details || target.matches('.funnel-panel, .concept-feed [role=tabpanel]') || target.closest('details') || id === 'ab-test') {
+  if (id !== originalId || heading || month || planPanel || details || target.matches('.funnel-panel, .concept-feed [role=tabpanel]') || target.closest('details') || id === 'ab-test') {
     requestAnimationFrame(() => {
       (heading || target).scrollIntoView({ block: 'start' });
       if (heading) heading.focus({ preventScroll: true });
