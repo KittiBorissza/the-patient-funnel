@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.9.0 · 11 Nov 2026
+
+The fees concept becomes **Before you hit Buy**: one four-card master, five platform versions.
+
+- **Five formats, one switcher.** Pick the concept in the Ad Gallery and the format bar offers an Instagram carousel (default), an Instagram Reel, a Facebook carousel, a LinkedIn document and an X image post. Cards swipe, and Previous/Next and the arrow keys move between them.
+- **Playable Reel.** A 14-second 9:16 mockup with play, pause and replay. Every line is on screen, so it reads with the sound off. Under reduced motion nothing moves and the four frames show as stills.
+- **How I’d make this with AI.** A before/after switch between the original hook and “What will your first Bitcoin purchase cost?” changes the carousel cover, the Reel opening and the X copy together. It also shows the source brief, the human review step and the measure: walkthrough visits first, first purchases where attribution supports it.
+- **Placeholder art.** Headlines and captions are live text over crops of the existing fees artwork, with a schematic quote screen that shows no figures. The generated set replaces the crops in a later change.
+- **Links.** `#ad-fees` now introduces the concept and keeps the original video brief, artwork and A/B test. Old `#preview-fees-…` and `#creative-fees-…` links still work; `#preview-fees-yt` opens the Reel.
+
 ## 2.8.0 · 11 Nov 2026
 
 Kitti’s decisions on the site-polish recommendations.

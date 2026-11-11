@@ -9,6 +9,7 @@ Kitti Borissza's independent application proposal for the Social Media Lead role
 - `content-calendar.html` has four month views, 34 dated posts and seven review drafts. The WAGMI still can switch to the animated GIF.
 - `strategy.html` has one budget with two views: the Budget Forecast Calculator (focused vs. spread scenarios, spend by market, ranges and source fit per channel) and the Meta test planner, which opens with a market’s Meta spend from the forecast and sizes the controlled-test sample.
 - `styles.css`, `interactions.js`, `forecast-model.js` and `forecast.js` hold the shared design, interactions and forecast logic.
+- `fees-concept.js` and `fees-concept.css` build the Ad Gallery’s “Before you hit Buy” concept: five platform previews and the AI before/after demo. Its placeholder art crops sit in the `art` object at the top of the script.
 - `assets/` holds the original 4:5 artwork and the WAGMI still and GIF. `og.png` is the existing share image. `materials/` holds the source notes PDF. `cv/` contains Kitti’s approved Invity CV. About and All materials both link to that PDF.
 - `archive/` retains previous work and research. `REVIEW.md` maps the layouts, copy and detailed material.
 
