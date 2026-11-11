@@ -10,7 +10,8 @@ Kitti Borissza's independent application proposal for the Social Media Lead role
 - `strategy.html` has one budget with two views: the Budget Forecast Calculator (focused vs. spread scenarios, spend by market, ranges and source fit per channel) and the Meta test planner, which opens with a market’s Meta spend from the forecast and sizes the controlled-test sample. Below them sit the channel plan, the always-on funnel, the Creative Performance mockup and the paid setup.
 - `research.html` also holds the Invity feed review. `materials.html` holds the About Kitti background and past campaign examples.
 - `pitch.css` styles the Overview only. `styles.css`, `interactions.js`, `forecast-model.js` and `forecast.js` hold the shared design, interactions and forecast logic.
-- `fees-concept.js` and `fees-concept.css` build Content Studio’s “Before you hit Buy” concept: five platform previews and the AI before/after demo. Its placeholder art crops sit in the `art` object at the top of the script.
+- `fees-concept.js` and `fees-concept.css` build Content Studio’s “Before you hit Buy” concept: six platform previews (including a playable YouTube Short), a Czech cover draft, the three custody follow-ups and the AI before/after demo. Its art sits in the `art` object at the top of the script.
+- `dashboard-data.js` holds one illustrative reporting week for the Dashboard. Nothing loads it yet; `node dashboard-data.js` checks that its totals reconcile.
 - `assets/` holds the original 4:5 artwork and the WAGMI still and GIF. `og.png` is the existing share image. `materials/` holds the source notes PDF. `cv/` contains Kitti’s approved Invity CV. The header CV action, About and All materials all link to that PDF.
 - `archive/` retains previous work and research. `REVIEW.md` maps the layouts, copy and detailed material.
 
