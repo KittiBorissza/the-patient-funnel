@@ -297,3 +297,14 @@
   padding: .15rem 0 .15rem .75rem;
   font-weight: 720;
 }
+
+/* Creative Performance portfolio mockup. */
+.creative-performance { display: grid; gap: 1rem 1.5rem; align-items: start; }
+.performance-intro p:not(.eyebrow) { max-width: 38ch; margin-bottom: .65rem; }
+.performance-preview { min-width: 0; margin: 0; }
+.performance-preview > a { display: block; border-radius: .6rem; }
+.performance-preview img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: .6rem; }
+.performance-preview figcaption { margin-top: .55rem; font-size: .86rem; }
+@media (min-width: 56rem) {
+  .creative-performance { grid-template-columns: minmax(0, .75fr) minmax(0, 1.65fr); }
+}
