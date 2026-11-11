@@ -31,7 +31,7 @@
   <a class="wordmark" href="index.html"><span class="monogram" aria-hidden="true">PF</span><span>The Patient Funnel<small>KITTI BORISSZA</small></span></a>
   <nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="index.html#days100">100 days</a><a href="ad-gallery.html" aria-current="page">Ad Gallery</a><a href="content-calendar.html">Calendar</a><a href="strategy.html">Strategy Lab</a><a href="research.html">Research</a><a href="index.html#about">About / CV</a></nav>
 </div></header>
-<main id="main" tabindex="-1"><header class="page-intro wrap" id="top"><div><p class="eyebrow">02 / Paid creative</p><h1>Funnel Ad <em>Gallery.</em></h1></div><div class="intro-copy"><p>Eight independent concepts for four moments, from the first scroll to after a first buy. Pick one to see it. The stage briefs below cover copy, placement and measurement.</p></div></header>
+<main id="main" tabindex="-1"><header class="page-intro wrap" id="top"><div><p class="eyebrow">02 / Paid creative</p><h1>Funnel Ad <em>Gallery.</em></h1></div><div class="intro-copy"><p>Independent concepts for four moments, from the first scroll to after a first buy. Pick a concept, then switch its format: carousel, X, Facebook, Instagram Reel, LinkedIn or YouTube Short. The stage briefs below cover copy, placement and measurement.</p></div></header>
 <div class="wrap concept-intro"><span id="creative-compare-1"></span><section id="invity-gallery-sample" class="viz-dotted-background" aria-label="Invity portfolio creative gallery">
   <div class="iv-head">
     <div><p>THE PATIENT FUNNEL</p><h2>Pick a creative</h2></div>
@@ -41,11 +41,15 @@
     <button class="cursor-interaction" type="button" data-work="wagmi" aria-pressed="false"><img data-image="wagmi" alt=""><b>WAGMI</b><small>GIF</small></button>
     <button class="cursor-interaction" type="button" data-work="sats" aria-pressed="false"><img data-image="sats" alt=""><b>Same sats</b><small>Static + copy</small></button>
     <button class="cursor-interaction" type="button" data-work="hodl" aria-pressed="false"><img data-image="hodl" alt=""><b>I AM HODLING</b><small>Static + copy</small></button>
+    <button class="cursor-interaction" type="button" data-work="fees" aria-pressed="false"><img data-image="fees" alt=""><b>First-buy fees</b><small>Video · 35 seconds</small></button>
     <button class="cursor-interaction" type="button" id="carousel-autosend" data-work="autosend" aria-pressed="true"><img data-image="autosend" alt=""><b>Auto Send</b><small>Carousel · 5 slides</small></button>
     <button class="cursor-interaction" type="button" id="carousel-compare" data-work="compare" aria-pressed="false"><img data-image="compare" alt=""><b>The €100 test</b><small>Carousel · 5 slides</small></button>
     <button class="cursor-interaction" type="button" data-work="withdraw" aria-pressed="false"><img data-image="withdraw" alt=""><b>Withdrawal</b><small>Carousel · 6 slides</small></button>
     <button class="cursor-interaction" type="button" data-work="autobuy" aria-pressed="false"><img data-image="autobuy" alt=""><b>Auto Buy</b><small>Carousel · 4 slides</small></button>
     <button class="cursor-interaction" type="button" data-work="turbo" aria-pressed="false"><img data-image="turbo" alt=""><b>Turbo Buy</b><small>Carousel · 4 slides</small></button>
+  </div>
+  <div class="iv-formats" hidden role="group" aria-label="Format">
+    <button class="cursor-interaction" type="button" data-format-key="post" aria-pressed="true">Carousel</button><button class="cursor-interaction" type="button" data-format-key="x" aria-pressed="false">X</button><button class="cursor-interaction" type="button" data-format-key="fb" aria-pressed="false">Facebook</button><button class="cursor-interaction" type="button" data-format-key="ig" aria-pressed="false">Instagram Reel</button><button class="cursor-interaction" type="button" data-format-key="li" aria-pressed="false">LinkedIn</button><button class="cursor-interaction" type="button" data-format-key="yt" aria-pressed="false">YouTube Short</button>
   </div>
   <div class="iv-post" hidden>
     <div class="iv-profile"><span class="iv-avatar" aria-hidden="true">PF</span><div><b>The Patient Funnel</b><small data-format>Instagram carousel concept</small></div></div>
@@ -57,6 +61,15 @@
     <p class="iv-caption" data-caption></p>
     <div class="iv-nav iv-links"><a data-artwork>View full artwork</a><a data-brief>Open creative brief</a></div>
   </div>
+<section id="pf-social-preview" hidden aria-label="Platform preview">
+  <div>
+    <section class="pf-stage" data-variant="X" aria-label="X post"><article class="pf-frame pf-x"></article></section>
+    <section class="pf-stage" data-variant="Facebook" aria-label="Facebook post" hidden><article class="pf-frame pf-fb"></article></section>
+    <section class="pf-stage" data-variant="YouTube" aria-label="YouTube Shorts preview" hidden><article class="pf-frame pf-yt"></article></section>
+    <section class="pf-stage" data-variant="Instagram" aria-label="Instagram Reel preview" hidden><article class="pf-frame pf-ig"></article></section>
+    <section class="pf-stage" data-variant="LinkedIn" aria-label="LinkedIn post" hidden><article class="pf-frame pf-li"></article></section>
+  </div>
+</section>
   <noscript><ul>
     <li><a href="assets/wagmi-still-4x5.png">WAGMI artwork</a> · <a href="content-calendar.html#ex-wagmi">WAGMI script</a></li>
     <li><a href="assets/hodl-creative.webp">HODL artwork</a> · <a href="#ad-hodl">HODL creative brief</a></li>
@@ -80,10 +93,11 @@
 #invity-gallery-sample .iv-head p{margin:0;color:var(--iv-action);font-size:.72rem;letter-spacing:.09em}
 #invity-gallery-sample h2{margin:.15rem 0 0;font-size:1.4rem;font-weight:650}
 #invity-gallery-sample .iv-head span{color:var(--iv-muted);font-size:.75rem}
-#invity-gallery-sample .iv-picker{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.45rem;margin:0 0 .75rem}
+#invity-gallery-sample .iv-picker{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.45rem;margin:0 0 .75rem}
 #invity-gallery-sample button{cursor:var(--cursor-interaction,default);font:inherit}
 #invity-gallery-sample .iv-picker button{min-width:0;background:var(--iv-surface);color:var(--iv-text);border:1px solid var(--iv-line);border-radius:9px;padding:.35rem;text-align:left;min-height:44px}
 #invity-gallery-sample .iv-picker button[aria-pressed=true]{background:var(--iv-active);border-color:var(--iv-action)}
+#invity-gallery-sample .iv-formats{display:flex;flex-wrap:wrap;gap:.35rem;margin:.75rem 0}#invity-gallery-sample .iv-formats button{min-height:44px;padding:.45rem .75rem;border:1px solid var(--iv-line);border-radius:999px;background:var(--iv-surface);color:var(--iv-text);font-size:.85rem;font-weight:650}#invity-gallery-sample .iv-formats button[aria-pressed=true]{background:var(--iv-action);border-color:var(--iv-action);color:#fff}
 #invity-gallery-sample button{transition-property:background-color,border-color,scale;transition-duration:150ms;transition-timing-function:cubic-bezier(0.2,0,0,1)}#invity-gallery-sample button:active{scale:.96}@media(hover:hover){#invity-gallery-sample .iv-picker button:hover{scale:1.02}}
 #invity-gallery-sample .iv-picker img{width:100%;height:68px;object-fit:contain;background:#291048;border-radius:5px;display:block;margin:0 0 .26rem}
 #invity-gallery-sample .iv-picker b,#invity-gallery-sample .iv-profile b{display:block;font-size:.85rem;overflow-wrap:anywhere}
@@ -124,10 +138,11 @@
 <script>
 (() => {
   const root = document.getElementById('invity-gallery-sample');
-  const assets = {wagmi:'assets/wagmi-still-4x5.png',wagmiMotion:'assets/wagmi-4x5.gif',sats:'assets/same-sats-creative.webp',hodl:'assets/hodl-creative.webp',autosend:'assets/auto-send-creative.webp',compare:'assets/euro-100-creative.webp',withdraw:'assets/withdraw-creative.webp',autobuy:'assets/auto-buy-creative.webp',turbo:'assets/turbo-buy-creative.webp'};
+  const assets = {wagmi:'assets/wagmi-still-4x5.png',wagmiMotion:'assets/wagmi-4x5.gif',sats:'assets/same-sats-creative.webp',hodl:'assets/hodl-creative.webp',autosend:'assets/auto-send-creative.webp',fees:'assets/fees-creative.webp',compare:'assets/euro-100-creative.webp',withdraw:'assets/withdraw-creative.webp',autobuy:'assets/auto-buy-creative.webp',turbo:'assets/turbo-buy-creative.webp'};
   const entries = {
     wagmi: {format:'Animated concept',caption:'The chart is red. Someone posts WAGMI. Four letters can keep you company. The price can still do its own thing.',alt:'WAGMI artwork about Bitcoin culture on a red day.'},
     sats: {format:'Static X post concept',caption:'Your sats can stay the same while their euro value moves. What do you pay attention to on a red day?',alt:'Same sats. Different day.'},
+    fees: {format:'First-purchase video concept',caption:'A first purchase, every screen. The walkthrough pauses on the quote so people can check the amount, the fee and where the bitcoin goes.',alt:'Read this screen before you buy.'},
     hodl: {format:'Static post concept',caption:'December 2013. Bitcoin was down. A typo in a forum post became one of Bitcoin’s most persistent memes.',alt:'I AM HODLING, with the date of the original 2013 forum post.'},
     autosend: {format:'Instagram carousel concept',caption:'From your stack to a wallet you control. Here’s what Auto Send does and what to check before enabling it.',alt:'From your stack to your wallet.',slides:[
       ['01 / 04','01','Choose the destination.','Use a Bitcoin address for a wallet you control. Review it before confirming.'],
@@ -167,6 +182,7 @@
   const briefs = {
     wagmi: 'content-calendar.html#ex-wagmi',
     hodl: '#ad-hodl',
+    fees: '#ad-fees',
     sats: '#brief-sats',
     autosend: '#brief-autosend',
     compare: '#brief-compare',
@@ -175,7 +191,14 @@
     turbo: '#turbo-buy'
   };
   let active = 'autosend';
+  let format = 'post';
   let step = 0;
+  const post = root.querySelector('.iv-post');
+  const platformPreview = root.querySelector('#pf-social-preview');
+  const formats = [...root.querySelectorAll('[data-format-key]')];
+  // The platform previews were written for a slightly different concept list.
+  const toPlatformConcept = { autosend: 'keys', autobuy: 'routine' };
+  const fromPlatformConcept = { keys: 'autosend', routine: 'autobuy' };
   let playing = false;
   let timer;
   function render() {
@@ -194,6 +217,11 @@
     play.setAttribute('aria-pressed',String(playing));
     play.textContent = playing ? 'Stop WAGMI' : 'Play WAGMI';
     for (const button of selector) button.setAttribute('aria-pressed',String(button.dataset.work === active));
+    formats[0].textContent = entry.slides ? 'Carousel' : active === 'wagmi' ? 'Animation' : 'Artwork';
+    for (const button of formats) button.setAttribute('aria-pressed', String(button.dataset.formatKey === format));
+    post.hidden = format !== 'post';
+    platformPreview.hidden = format === 'post';
+    if (format !== 'post') renderPlatformPreview(toPlatformConcept[active] || active, format);
     if (!step) {
       target.innerHTML = '<img alt="' + entry.alt + '" src="' + assets[playing ? 'wagmiMotion' : active] + '">';
       return;
@@ -202,32 +230,38 @@
     const label = selector.find(button => button.dataset.work === active).querySelector('b').textContent;
     target.innerHTML = '<div class="iv-slide' + (step % 2 === 0 ? ' iv-purple' : '') + '"><div class="iv-chip">' + number + ' · ' + label + '</div><div class="iv-mark" aria-hidden="true">' + mark + '</div><div><h3>' + title + '</h3><p>' + body + '</p></div>' + (cta ? '<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + cta + '</a>' : '<span class="iv-chip">Independent concept</span>') + '<small class="iv-concept-label">Independent concept</small></div>';
   }
-  function selectCreative(creative, slide, writeHistory = false) {
+  function selectCreative(creative, slide, writeHistory = false, nextFormat = format) {
     clearTimeout(timer);
     active = creative;
+    format = nextFormat;
     const total = (entries[creative].slides?.length ?? 0) + 1;
     step = Math.max(0, Math.min(slide, total - 1));
     playing = false;
     render();
 
     if (writeHistory) {
-      const hash = '#creative-' + active + '-' + (step + 1);
+      const hash = format === 'post' ? '#creative-' + active + '-' + (step + 1) : '#preview-' + (toPlatformConcept[active] || active) + '-' + format;
       if (location.hash !== hash) history.pushState(null, '', hash);
-      revealChange(target);
+      revealChange(format === 'post' ? target : platformPreview);
     }
   }
 
   function restoreCreative(scroll = false) {
     const match = /^#creative-(wagmi|sats|hodl|autosend|compare|withdraw|autobuy|turbo)-([1-6])$/.exec(location.hash);
     const legacy = { '#carousel-autosend': 'autosend', '#carousel-compare': 'compare' };
-    selectCreative(match?.[1] || legacy[location.hash] || 'autosend', match ? Number(match[2]) - 1 : 0);
-    if (match && scroll) root.scrollIntoView({ block: 'start' });
+    const preview = /^#preview-(sats|wagmi|hodl|routine|fees|withdraw|compare|keys|turbo)-(x|fb|ig|li|yt)$/.exec(location.hash);
+    if (preview) selectCreative(fromPlatformConcept[preview[1]] || preview[1], 0, false, preview[2]);
+    else selectCreative(match?.[1] || legacy[location.hash] || 'autosend', match ? Number(match[2]) - 1 : 0, false, 'post');
+    if ((match || preview) && scroll) root.scrollIntoView({ block: 'start' });
   }
 
   for (const image of root.querySelectorAll('[data-image]')) image.src = assets[image.dataset.image];
+  for (const button of formats) button.addEventListener('click', () => {
+    selectCreative(active, 0, true, button.dataset.formatKey);
+  });
   for (const button of selector) button.addEventListener('click', () => {
-    selectCreative(button.dataset.work, 0, true);
-    scrollToChange(root.querySelector('.iv-post'));
+    selectCreative(button.dataset.work, 0, true, 'post');
+    scrollToChange(post);
   });
   prev.addEventListener('click', () => {
     if (step > 0) selectCreative(active, step - 1, true);
@@ -256,40 +290,18 @@
     if (distance > 45) prev.click();
   }, {passive:true});
   root.querySelector('.iv-picker').hidden = false;
-  root.querySelector('.iv-post').hidden = false;
+  root.querySelector('.iv-formats').hidden = false;
   addEventListener('hashchange', () => restoreCreative(true));
-  restoreCreative(true);
+  // The platform renderer is defined by the next script, so restore once the page has parsed.
+  document.addEventListener('DOMContentLoaded', () => restoreCreative(true));
 })();
 </script>
-<section id="pf-social-preview" hidden aria-label="Platform concept previews">
-  <header class="pf-top">
-    <div><span class="pf-kicker">THE PATIENT FUNNEL / PLATFORM PREVIEWS</span><h2>See each concept on each platform</h2></div>
-    <label for="pf-concept">Creative<select id="pf-concept">
-      <optgroup label="Market mood"><option value="sats">Same sats. Different day.</option><option value="wagmi">WAGMI on a red day</option><option value="hodl">I AM HODLING</option><option value="routine">Pick a rhythm</option></optgroup>
-      <optgroup label="First purchase"><option value="fees">See the fee screen</option><option value="withdraw">Can I move it out?</option></optgroup>
-      <optgroup label="Market comparison"><option value="compare">Same €100. How many sats?</option><option value="keys">Who holds the keys?</option><option value="turbo">Before you turn on Turbo</option></optgroup>
-    </select></label>
-  </header>
-  <label class="pf-platform-label" for="pf-platform">Platform<select id="pf-platform">
-      <option value="x">X</option><option value="fb">Facebook</option><option value="ig">Instagram Reels</option><option value="li">LinkedIn</option><option value="yt">YouTube Shorts</option>
-    </select></label>
-  <div aria-label="Platform preview">
-    <section class="pf-stage" data-variant="X" aria-label="X post"><article class="pf-frame pf-x"></article></section>
-    <section class="pf-stage" data-variant="Facebook" aria-label="Facebook post" hidden><article class="pf-frame pf-fb"></article></section>
-    <section class="pf-stage" data-variant="YouTube" aria-label="YouTube Shorts preview" hidden><article class="pf-frame pf-yt"></article></section>
-    <section class="pf-stage" data-variant="Instagram" aria-label="Instagram Reel preview" hidden><article class="pf-frame pf-ig"></article></section>
-    <section class="pf-stage" data-variant="LinkedIn" aria-label="LinkedIn post" hidden><article class="pf-frame pf-li"></article></section>
-  </div>
-</section>
+
+
 <style>
 #pf-social-preview{--pf-ink:light-dark(#17151e,#f5f1fa);--pf-muted:light-dark(#554d64,#c8bfd8);--pf-line:light-dark(#e7e2ef,#4e465d);--pf-pane:light-dark(#fff,#24202c);--pf-soft:light-dark(#f2edf9,#332943);--pf-purple:light-dark(#492784,#dabfff);--pf-face:system-ui,sans-serif;color:var(--pf-ink);color-scheme:light;font-family:var(--pf-face)}
 #pf-social-preview *,#pf-social-preview *::before,#pf-social-preview *::after{box-sizing:border-box}
 #pf-social-preview [hidden]{display:none!important}
-#pf-social-preview .pf-top{display:flex;flex-wrap:wrap;gap:.55rem 1.1rem;align-items:end;justify-content:space-between;padding:.9rem 1rem}
-#pf-social-preview h2{color:var(--pf-ink);margin:.25rem 0 0;font-size:1.4rem;font-weight:650;letter-spacing:-.02em}
-#pf-social-preview .pf-kicker{color:var(--pf-purple);font-weight:500;font-size:.72rem;letter-spacing:.08em}
-#pf-social-preview label{display:grid;gap:.2rem;font-size:.78rem;color:var(--pf-muted);max-width:100%}
-#pf-social-preview select{padding:.5rem .65rem;min-height:44px;max-width:100%;font:inherit;font-size:.95rem;color:var(--pf-ink);border:1px solid var(--pf-line);border-radius:7px;background:var(--pf-pane)}
 #pf-social-preview .pf-stage{padding:.2rem .7rem .75rem;min-height:510px}
 #pf-social-preview .pf-frame{max-width:465px;margin:auto;border:1px solid var(--pf-line);border-radius:15px;overflow:hidden;background:var(--pf-pane);color:var(--pf-ink);min-width:0}
 #pf-social-preview .pf-nativebar,#pf-social-preview .pf-author{display:flex;align-items:center;justify-content:space-between;gap:.5rem;padding:.5rem .75rem}
@@ -341,8 +353,7 @@
 #pf-social-preview .pf-result p{margin:.25rem 0 0}
 #pf-social-preview .pf-result a{display:inline-flex;color:var(--pf-purple);padding:.55rem 0 .2rem}
 #pf-social-preview .pf-review{padding:.35rem .75rem;color:var(--pf-muted);font-size:.73rem;margin:0}
-@media(max-width:440px){#pf-social-preview .pf-top{padding:.7rem .6rem}#pf-social-preview .pf-stage{min-height:525px;padding-inline:.35rem}#pf-social-preview .pf-caption{font-size:.83rem}}
-#pf-social-preview .pf-platform-label{padding:0 1rem .75rem;max-width:16rem}
+@media(max-width:440px){#pf-social-preview .pf-stage{min-height:525px;padding-inline:.35rem}#pf-social-preview .pf-caption{font-size:.83rem}}
 #pf-social-preview .pf-stage{min-height:0}
 </style>
 <script>
@@ -427,6 +438,7 @@
     hodl: 'assets/hodl-creative.webp',
     wagmi: 'assets/wagmi-still-4x5.png',
     sats: 'assets/same-sats-creative.webp',
+    keys: 'assets/auto-send-creative.webp',
     withdraw: 'assets/withdraw-creative.webp',
     compare: 'assets/euro-100-creative.webp',
     routine: 'assets/auto-buy-creative.webp',
@@ -454,11 +466,11 @@
     compare: ['€100 budget', 'Quoted sats —', 'Sats received —'],
     keys: ['App custody', 'Auto-send', 'Direct to wallet']
   };
-  const render = key => {
+  window.renderPlatformPreview = (key, platformKey) => {
     const c = concepts[key];
     for (const p of platforms) {
       const frame = root.querySelector('.pf-' + p.key);
-      frame.closest('.pf-stage').hidden = p.key !== platform.value;
+      frame.closest('.pf-stage').hidden = p.key !== platformKey;
       const vertical = p.key === 'yt' || p.key === 'ig';
       const mini = (posterLabels[key] || []).map(label => '<span>' + label + '</span>').join('');
       const poster = media[key]
@@ -475,36 +487,14 @@
         '<p class="pf-review">Independent working prototype · subject to product review</p>';
     }
   };
-  const selector = root.querySelector('#pf-concept');
-  const platform = root.querySelector('#pf-platform');
-  function choosePreview() {
-    render(selector.value);
-    const stage = root.querySelector('.pf-stage:not([hidden])');
-    revealChange(stage);
-    scrollToChange(stage);
-    const hash = '#preview-' + selector.value + '-' + platform.value;
-    if (location.hash !== hash) history.pushState(null, '', hash);
-  }
-  function restorePreview(scroll = false) {
-    const match = /^#preview-(sats|wagmi|hodl|routine|fees|withdraw|compare|keys|turbo)-(x|fb|ig|li|yt)$/.exec(location.hash);
-    selector.value = match?.[1] || 'sats';
-    platform.value = match?.[2] || 'x';
-    render(selector.value);
-    if (match && scroll) root.scrollIntoView({ block: 'start' });
-  }
-  selector.addEventListener('change', choosePreview);
-  platform.addEventListener('change', choosePreview);
-  addEventListener('hashchange', () => restorePreview(true));
   root.addEventListener('click', event => {
     const button = event.target.closest('.pf-action');
     if (!button) return;
     const result = document.getElementById(button.getAttribute('aria-controls'));
     result.hidden = !result.hidden;
     button.setAttribute('aria-expanded', String(!result.hidden));
-    if (!result.hidden) revealChange(result);
+    if (!result.hidden) { revealChange(result); scrollToChange(result); }
   });
-  root.hidden = false;
-  restorePreview(true);
 })();
 </script>
 </div>

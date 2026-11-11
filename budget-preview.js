@@ -31,7 +31,7 @@ function renderBudgetPreview() {
   const focus = result.focused;
   show('preview-focus-value', perMarket > 0 ? range(focus) + ' ' + focus.unit + ' on ' + focus.name + ', all ' + euros(focus.spend) : 'No paid test');
   show('preview-focus-decision', focus.spend > 0 ? focus.decision.label + '. ' + focus.decision.text : focus.decision.text);
-  document.getElementById('preview-spread').innerHTML = result.spread.map(line =>
+  document.getElementById('preview-spread').innerHTML = result.spread.filter(line => perMarket === 0 || line.spend > 0).map(line =>
     `<li><b>${line.name}</b> ${euros(line.spend)} · ${line.spend > 0 ? range(line) + ' ' + line.unit : 'no spend'}<span>${line.decision.label}${line.id === 'reels' && line.spend > 0 ? '. ' + line.decision.text : ''}</span></li>`).join('');
 }
 
