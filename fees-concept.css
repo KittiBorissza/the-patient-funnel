@@ -71,7 +71,7 @@ a.bh-cta{display:inline-flex;align-items:center;min-height:44px}
 .bh-scene{position:absolute;inset:0;opacity:0;transition:opacity .35s}
 .bh-scene.is-on{opacity:1}
 .bh-scene .bh-card{height:100%}
-.bh-badge{position:absolute;right:.6rem;bottom:.6rem;padding:.25rem .45rem;border-radius:5px;background:#1d142cd9;color:#fff;font-size:.72rem;transition:opacity .2s}
+.bh-badge{position:absolute;z-index:2;right:.6rem;bottom:.6rem;padding:.25rem .45rem;border-radius:5px;background:#1d142cd9;color:#fff;font-size:.72rem;transition:opacity .2s}
 .bh-screen:not([data-state=poster]) .bh-badge{opacity:0}
 #fees-concept .bh-player{gap:.6rem}
 #fees-concept .bh-player button{min-width:6.2rem}
@@ -109,3 +109,31 @@ a.bh-cta{display:inline-flex;align-items:center;min-height:44px}
 @media(hover:hover){.bh-cover-link:hover{scale:1.02}}
 .bh-format-links{display:flex;flex-wrap:wrap;gap:.1rem .9rem;margin:.6rem 0 0;padding:0;list-style:none;font-size:.9rem}
 .bh-format-links a{display:inline-flex;align-items:center;min-height:44px}
+
+.bh-custody{--art-pos:center bottom}
+.bh-custody .bh-art::after{background:linear-gradient(180deg,#1a0838 0%,#1a0838 50%,#1a083800 68%,#1a083800 76%,#1a0838 90%)}
+.bh-faq{margin:0;padding-left:1.2em;display:grid;gap:1.4cqi;font-size:5cqi;font-weight:650;color:#efe6ff}
+.bh-cc{align-self:center;margin:auto 0 0;padding:1.6cqi 3cqi;border-radius:2cqi;background:#0d031fd9;color:#fff;font-size:5.4cqi;font-weight:700;line-height:1.25;text-align:center;max-width:92%}
+.bh-has-quote .bh-cc{margin-top:0}
+.bh-poster{position:absolute;inset:0;z-index:1}
+.bh-poster .bh-card{height:100%}
+.bh-screen:not([data-state=poster]) .bh-poster{display:none}
+.bh-yt-title{margin:0;padding:.6rem .75rem 0;font-size:.95rem;font-weight:700;line-height:1.3}
+.bh-draft,.bh-setnote,.bh-review{margin:0;padding:.5rem .75rem;font-size:.78rem;line-height:1.4}
+.bh-draft{background:var(--iv-active);color:var(--iv-text);font-weight:650}
+.bh-setnote{border-bottom:1px solid var(--iv-line);color:var(--iv-muted)}
+.bh-setnote b{display:block;color:var(--iv-text)}
+.bh-review{border-top:1px solid var(--iv-line);color:var(--iv-muted)}
+.bh-static{margin:0 .75rem .2rem;border:1px solid var(--iv-line);border-radius:8px;overflow:hidden}
+#fees-concept .bh-email{max-width:460px}
+.bh-mail-head{display:grid;grid-template-columns:auto 1fr;gap:.2rem .7rem;margin:0;padding:.6rem .75rem;border-bottom:1px solid var(--iv-line);font-size:.8rem}
+.bh-mail-head dt{color:var(--iv-muted)}
+.bh-mail-head dd{margin:0;overflow-wrap:anywhere}
+.bh-mail-body{padding:.75rem;font-size:.88rem;line-height:1.45}
+.bh-mail-body img{display:block;width:min(100%,15rem);height:auto;margin:0 auto;border-radius:8px}
+.bh-mail-body ul{padding-left:1.1rem}
+.bh-mail-body li+li{margin-top:.35rem}
+.bh-mail-h{margin:.8rem 0 .3rem;font-size:1.2rem;font-weight:720;line-height:1.15;letter-spacing:-.02em}
+.bh-pending{display:inline-block;padding:0 .3rem;border-radius:4px;background:var(--iv-active);font-size:.75rem;font-weight:650}
+.bh-mail-cta{display:inline-flex;align-items:center;min-height:44px;padding:0 1rem;border-radius:99px;background:#5614b9;color:#fff;font-weight:650;text-decoration:none}
+.bh-mail-foot{margin:.9rem 0 0;color:var(--iv-muted);font-size:.75rem}

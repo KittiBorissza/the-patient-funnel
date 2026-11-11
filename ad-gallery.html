@@ -21,9 +21,9 @@
 <meta name="theme-color" content="#24084c">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="fees-concept.css?v=artwork">
+<link rel="stylesheet" href="fees-concept.css?v=followups">
 <script src="interactions.js" defer></script>
-<script src="fees-concept.js?v=artwork" defer></script>
+<script src="fees-concept.js?v=followups" defer></script>
 
 <noscript><style>.feed-controls .tablist{display:none!important}</style></noscript>
 </head>
@@ -44,7 +44,7 @@
     <button class="cursor-interaction" type="button" data-work="wagmi" aria-pressed="false"><img data-image="wagmi" alt=""><b>WAGMI</b><small>GIF</small></button>
     <button class="cursor-interaction" type="button" data-work="sats" aria-pressed="false"><img data-image="sats" alt=""><b>Same sats</b><small>Static + copy</small></button>
     <button class="cursor-interaction" type="button" data-work="hodl" aria-pressed="false"><img data-image="hodl" alt=""><b>I AM HODLING</b><small>Static + copy</small></button>
-    <button class="cursor-interaction" type="button" data-work="fees" aria-pressed="false"><img data-image="fees" alt=""><b>Before you hit Buy</b><small>Carousel + Reel · 5 formats</small></button>
+    <button class="cursor-interaction" type="button" data-work="fees" aria-pressed="false"><img data-image="fees" alt=""><b>Before you hit Buy</b><small>6 formats + follow-ups</small></button>
     <button class="cursor-interaction" type="button" id="carousel-autosend" data-work="autosend" aria-pressed="true"><img data-image="autosend" alt=""><b>Auto Send</b><small>Carousel · 5 slides</small></button>
     <button class="cursor-interaction" type="button" id="carousel-compare" data-work="compare" aria-pressed="false"><img data-image="compare" alt=""><b>The €100 test</b><small>Carousel · 5 slides</small></button>
     <button class="cursor-interaction" type="button" data-work="withdraw" aria-pressed="false"><img data-image="withdraw" alt=""><b>Withdrawal</b><small>Carousel · 6 slides</small></button>
@@ -52,7 +52,10 @@
     <button class="cursor-interaction" type="button" data-work="turbo" aria-pressed="false"><img data-image="turbo" alt=""><b>Turbo Buy</b><small>Carousel · 4 slides</small></button>
   </div>
   <div class="iv-formats" hidden role="group" aria-label="Format">
-    <button class="cursor-interaction" type="button" data-format-key="post" aria-pressed="true">Carousel</button><button class="cursor-interaction" type="button" data-format-key="x" aria-pressed="false">X</button><button class="cursor-interaction" type="button" data-format-key="fb" aria-pressed="false">Facebook</button><button class="cursor-interaction" type="button" data-format-key="ig" aria-pressed="false">Instagram Reel</button><button class="cursor-interaction" type="button" data-format-key="li" aria-pressed="false">LinkedIn</button><button class="cursor-interaction" type="button" data-format-key="yt" aria-pressed="false">YouTube Short</button>
+    <button class="cursor-interaction" type="button" data-format-key="post" aria-pressed="true">Carousel</button><button class="cursor-interaction" type="button" data-format-key="x" aria-pressed="false">X</button><button class="cursor-interaction" type="button" data-format-key="fb" aria-pressed="false">Facebook</button><button class="cursor-interaction" type="button" data-format-key="ig" aria-pressed="false">Instagram Reel</button><button class="cursor-interaction" type="button" data-format-key="li" aria-pressed="false">LinkedIn</button><button class="cursor-interaction" type="button" data-format-key="yt" aria-pressed="false">YouTube Short</button><button class="cursor-interaction" type="button" data-format-key="cs" aria-pressed="false">Czech draft</button>
+  </div>
+  <div class="iv-formats iv-followup" hidden role="group" aria-labelledby="custody-set-label">
+    <span id="custody-set-label">Custody follow-up</span><button class="cursor-interaction" type="button" data-format-key="custody-ig" aria-pressed="false">Instagram Reel</button><button class="cursor-interaction" type="button" data-format-key="custody-fb" aria-pressed="false">Facebook FAQ</button><button class="cursor-interaction" type="button" data-format-key="custody-email" aria-pressed="false">Email</button>
   </div>
   <div class="iv-post" hidden>
     <div class="iv-profile"><span class="iv-avatar" aria-hidden="true">PF</span><div><b>The Patient Funnel</b><small data-format>Instagram carousel concept</small></div></div>
@@ -115,6 +118,7 @@
 #invity-gallery-sample .iv-picker button{min-width:0;background:var(--iv-surface);color:var(--iv-text);border:1px solid var(--iv-line);border-radius:9px;padding:.35rem;text-align:left;min-height:44px}
 #invity-gallery-sample .iv-picker button[aria-pressed=true]{background:var(--iv-active);border-color:var(--iv-action)}
 #invity-gallery-sample .iv-formats{display:flex;flex-wrap:wrap;gap:.35rem;margin:.75rem 0}#invity-gallery-sample .iv-formats button{min-height:44px;padding:.45rem .75rem;border:1px solid var(--iv-line);border-radius:999px;background:var(--iv-surface);color:var(--iv-text);font-size:.85rem;font-weight:650}#invity-gallery-sample .iv-formats button[aria-pressed=true]{background:var(--iv-action);border-color:var(--iv-action);color:#fff}
+#invity-gallery-sample .iv-followup{margin-top:-.35rem;align-items:center}#invity-gallery-sample .iv-followup span{margin-right:.2rem;color:var(--iv-muted);font-size:.72rem;font-weight:650;letter-spacing:.07em;text-transform:uppercase}
 #invity-gallery-sample button{transition-property:background-color,border-color,scale;transition-duration:150ms;transition-timing-function:cubic-bezier(0.2,0,0,1)}#invity-gallery-sample button:active{scale:.96}@media(hover:hover){#invity-gallery-sample .iv-picker button:hover{scale:1.02}}
 #invity-gallery-sample .iv-picker img{width:100%;height:68px;object-fit:contain;background:#291048;border-radius:5px;display:block;margin:0 0 .26rem}
 #invity-gallery-sample .iv-picker b,#invity-gallery-sample .iv-profile b{display:block;font-size:.85rem;overflow-wrap:anywhere}
@@ -213,7 +217,8 @@
   const formats = [...root.querySelectorAll('[data-format-key]')];
   const feesView = root.querySelector('#fees-concept');
   const formatLabels = {x:'X',fb:'Facebook',ig:'Instagram Reel',li:'LinkedIn',yt:'YouTube Short'};
-  const feesFormatLabels = {post:'Instagram carousel',x:'X image post',fb:'Facebook carousel',ig:'Instagram Reel',li:'LinkedIn document'};
+  const feesFormatLabels = {post:'Instagram carousel',x:'X image post',fb:'Facebook carousel',ig:'Instagram Reel',li:'LinkedIn document',yt:'YouTube Short',cs:'Czech carousel · draft','custody-ig':'Instagram Reel','custody-fb':'Facebook FAQ','custody-email':'Email'};
+  const followUp = root.querySelector('.iv-followup');
   // The platform previews were written for a slightly different concept list.
   const toPlatformConcept = { autosend: 'keys', autobuy: 'routine' };
   const fromPlatformConcept = { keys: 'autosend', routine: 'autobuy' };
@@ -224,11 +229,12 @@
     for (const button of selector) button.setAttribute('aria-pressed',String(button.dataset.work === active));
     for (const button of formats) {
       const key = button.dataset.formatKey;
-      button.hidden = fees && !feesFormatLabels[key];
+      button.hidden = fees ? !feesFormatLabels[key] : key !== 'post' && !formatLabels[key];
       button.textContent = fees ? feesFormatLabels[key] || '' : key === 'post' ? (entries[active].slides ? 'Carousel' : active === 'wagmi' ? 'Animation' : 'Artwork') : formatLabels[key];
       button.setAttribute('aria-pressed', String(key === format));
     }
     feesView.hidden = !fees;
+    followUp.hidden = !fees;
     post.hidden = fees || format !== 'post';
     platformPreview.hidden = fees || format === 'post';
     feesConcept.render(fees && format, step, reveal);
@@ -259,7 +265,7 @@
   function selectCreative(creative, slide, writeHistory = false, nextFormat = format) {
     clearTimeout(timer);
     active = creative;
-    format = creative === 'fees' && nextFormat === 'yt' ? 'ig' : nextFormat;
+    format = nextFormat;
     const total = creative === 'fees' ? 4 : (entries[creative].slides?.length ?? 0) + 1;
     step = Math.max(0, Math.min(slide, total - 1));
     playing = false;
@@ -277,8 +283,10 @@
     const feesSection = ['#ad-fees', '#brief-fees', '#artwork-fees', '#ab-test', '#fees-ai'].includes(location.hash);
     const legacy = { '#carousel-autosend': 'autosend', '#carousel-compare': 'compare' };
     const feesLegacy = { '#fees-feed-facebook': 'fb', '#fees-feed-linkedin': 'li' }[location.hash];
-    const preview = /^#preview-(sats|wagmi|hodl|routine|fees|withdraw|compare|keys|turbo)-(x|fb|ig|li|yt)$/.exec(location.hash);
-    if (preview) selectCreative(fromPlatformConcept[preview[1]] || preview[1], 0, false, preview[2]);
+    const route = /^#preview-([a-z]+)-([a-z-]+)$/.exec(location.hash);
+    const routeCreative = route && (fromPlatformConcept[route[1]] || route[1]);
+    const preview = route && (routeCreative === 'fees' ? feesFormatLabels[route[2]] : entries[routeCreative] && formatLabels[route[2]]);
+    if (preview) selectCreative(routeCreative, 0, false, route[2]);
     else if (feesLegacy) selectCreative('fees', 0, false, feesLegacy);
     else selectCreative(match?.[1] || legacy[location.hash] || (feesSection ? 'fees' : 'autosend'), match ? Number(match[2]) - 1 : 0, false, 'post');
     if ((match || preview || feesLegacy) && scroll) root.scrollIntoView({ block: 'start' });
@@ -519,9 +527,9 @@
 </div>
 <nav class="wrap jump-links" aria-label="Funnel stages"><a href="#cold"><span>01</span> Cold</a><a href="#engaged"><span>02</span> Engaged</a><a href="#intent"><span>03</span> High intent</a><a href="#after"><span>04</span> After a first purchase</a></nav><section class="section-band gallery-stage" id="cold"><div class="wrap"><div class="stage-head"><p class="eyebrow">Stage 01</p><h2 id="cold-h">Cold</h2><p>Earn a first watch with a practical question or a piece of Bitcoin culture.</p></div>
 <article class="gallery-item" id="ad-fees"><div class="concept-showcase">
-      <div class="concept-feed"><p class="eyebrow">Concept preview</p><a class="bh-cover-link" href="#creative-fees-1"><span data-bh-cover><img src="assets/fees-campaign/cover.webp" width="1080" height="1350" alt="A lilac receipt curls forward from a dark glass phone."></span>Open the carousel and its four platform versions</a></div>
+      <div class="concept-feed"><p class="eyebrow">Concept preview</p><a class="bh-cover-link" href="#creative-fees-1"><span data-bh-cover><img src="assets/fees-campaign/cover.webp" width="1080" height="1350" alt="A lilac receipt curls forward from a dark glass phone."></span>Open the carousel and its platform versions</a></div>
       <div class="concept-info"><p class="eyebrow">Artwork 01 / 03</p><h3>Before you hit Buy</h3><p class="concept-desc">For someone preparing a first purchase: check what you’ll pay and how much bitcoin you’ll receive before you confirm. One four-card master, adapted for five placements.</p><div class="learn-note"><b>What I’d learn</b><p>Do the two checks send people to the first-buy walkthrough?</p></div>
-      <ul class="bh-format-links" aria-label="Formats"><li><a href="#creative-fees-1">Instagram carousel</a></li><li><a href="#preview-fees-ig">Instagram Reel</a></li><li><a href="#preview-fees-fb">Facebook carousel</a></li><li><a href="#preview-fees-li">LinkedIn document</a></li><li><a href="#preview-fees-x">X image post</a></li><li><a href="#fees-ai">How I’d make it with AI</a></li></ul>
+      <ul class="bh-format-links" aria-label="Formats"><li><a href="#creative-fees-1">Instagram carousel</a></li><li><a href="#preview-fees-ig">Instagram Reel</a></li><li><a href="#preview-fees-fb">Facebook carousel</a></li><li><a href="#preview-fees-li">LinkedIn document</a></li><li><a href="#preview-fees-x">X image post</a></li><li><a href="#preview-fees-yt">YouTube Short</a></li><li><a href="#preview-fees-cs">Czech cover · draft</a></li><li><a href="#preview-fees-custody-ig">Custody follow-up</a></li><li><a href="#fees-ai">How I’d make it with AI</a></li></ul>
       <div class="concept-links"><details class="disclosure" id="artwork-fees"><summary>View full artwork</summary><div class="detail-body"><figure class="full-art"><img src="assets/fees-creative.webp" width="1080" height="1350" alt="A floating receipt beside a phone silhouette. Read this screen before you buy." loading="lazy"><figcaption>Original 1080 × 1350 artwork. <a href="assets/fees-creative.webp">Open original image</a></figcaption></figure></div></details><details class="disclosure" id="brief-fees"><summary>Original video brief</summary><div class="detail-body"><div class="creative">
 <p class="headline">This is the screen to actually read.</p>
 <p class="copy">What you’ll pay, before you tap anything. A first bitcoin purchase, every screen, including the fee line. Bitcoin can lose value. Make sure you understand the risks before deciding whether to buy.</p>
