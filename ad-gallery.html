@@ -21,7 +21,9 @@
 <meta name="theme-color" content="#24084c">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="fees-concept.css">
 <script src="interactions.js" defer></script>
+<script src="fees-concept.js" defer></script>
 
 <noscript><style>.feed-controls .tablist{display:none!important}</style></noscript>
 </head>
@@ -41,7 +43,7 @@
     <button class="cursor-interaction" type="button" data-work="wagmi" aria-pressed="false"><img data-image="wagmi" alt=""><b>WAGMI</b><small>GIF</small></button>
     <button class="cursor-interaction" type="button" data-work="sats" aria-pressed="false"><img data-image="sats" alt=""><b>Same sats</b><small>Static + copy</small></button>
     <button class="cursor-interaction" type="button" data-work="hodl" aria-pressed="false"><img data-image="hodl" alt=""><b>I AM HODLING</b><small>Static + copy</small></button>
-    <button class="cursor-interaction" type="button" data-work="fees" aria-pressed="false"><img data-image="fees" alt=""><b>First-buy fees</b><small>Video · 35 seconds</small></button>
+    <button class="cursor-interaction" type="button" data-work="fees" aria-pressed="false"><img data-image="fees" alt=""><b>Before you hit Buy</b><small>Carousel + Reel · 5 formats</small></button>
     <button class="cursor-interaction" type="button" id="carousel-autosend" data-work="autosend" aria-pressed="true"><img data-image="autosend" alt=""><b>Auto Send</b><small>Carousel · 5 slides</small></button>
     <button class="cursor-interaction" type="button" id="carousel-compare" data-work="compare" aria-pressed="false"><img data-image="compare" alt=""><b>The €100 test</b><small>Carousel · 5 slides</small></button>
     <button class="cursor-interaction" type="button" data-work="withdraw" aria-pressed="false"><img data-image="withdraw" alt=""><b>Withdrawal</b><small>Carousel · 6 slides</small></button>
@@ -70,6 +72,20 @@
     <section class="pf-stage" data-variant="LinkedIn" aria-label="LinkedIn post" hidden><article class="pf-frame pf-li"></article></section>
   </div>
 </section>
+<div class="iv-fees" id="fees-concept" hidden>
+  <div data-bh-stage></div>
+  <div class="bh-links"><a href="content-calendar.html#ex-walkthrough">See the first-buy walkthrough</a><a href="#ad-fees">Concept notes and original video brief</a></div>
+  <details class="disclosure bh-ai" id="fees-ai"><summary>How I’d make this with AI</summary><div class="detail-body">
+    <p>AI drafts the variants; I decide what runs. Here the decision is the hook. Switch it and the three outputs that open with it change together. The previews above follow the switch too. Both sets of outputs are prebuilt examples for this demo.</p>
+    <div class="bh-toggle" role="group" aria-label="Hook"><button type="button" class="cursor-interaction" data-bh-hook="original" aria-pressed="true">Before · Original hook</button><button type="button" class="cursor-interaction" data-bh-hook="alternate" aria-pressed="false">After · “What will your first Bitcoin purchase cost?”</button></div>
+    <div class="bh-outputs" id="fees-ai-outputs"></div>
+    <div class="bh-ai-notes">
+      <div><h3>Source brief</h3><dl><dt>Audience</dt><dd>People preparing for their first bitcoin purchase.</dd><dt>Message</dt><dd>Before confirming, check what you’ll pay and how much bitcoin you’ll receive.</dd><dt>CTA</dt><dd>See the first-buy walkthrough, to the existing walkthrough.</dd><dt>Rules</dt><dd>No invented prices, rates, fees or app screens. Every card says “Independent concept”.</dd></dl></div>
+      <div><h3>What AI does, what I do</h3><ol><li>AI drafts hook variants, crops for 4:5, 1:1, 7:8 and 9:16, the Reel timing and each platform’s copy from the brief.</li><li>I pick one decision to change and edit the copy.</li><li>Human review before anything ships: <strong>claims</strong> (no figures, “Bitcoin can lose value” wherever a purchase is suggested), <strong>layout</strong> (copy inside each platform’s safe zone, both fields legible on every crop), <strong>captions</strong> (every Reel line on screen, readable with sound off), <strong>CTA</strong> (same words and link in all five).</li></ol></div>
+      <div><h3>How I’d measure it</h3><ul><li><strong>Primary paid signal:</strong> walkthrough visits from each ad’s tracked link.</li><li><strong>Follow-up:</strong> first purchases, per market, only where consented attribution supports it.</li><li>Hook versions are compared on the same signal, never called on a small sample.</li></ul></div>
+    </div>
+  </div></details>
+</div>
   <noscript><ul>
     <li><a href="assets/wagmi-still-4x5.png">WAGMI artwork</a> · <a href="content-calendar.html#ex-wagmi">WAGMI script</a></li>
     <li><a href="assets/hodl-creative.webp">HODL artwork</a> · <a href="#ad-hodl">HODL creative brief</a></li>
@@ -105,8 +121,8 @@
 #invity-gallery-sample .iv-post{margin:auto;max-width:355px;background:var(--iv-surface);border:1px solid var(--iv-line);border-radius:14px;overflow:hidden}
 #invity-gallery-sample .iv-profile{display:flex;align-items:center;gap:.5rem;padding:.5rem .7rem}
 #invity-gallery-sample .iv-avatar{display:grid;place-items:center;background:#6016cc;color:#fff;width:32px;height:32px;border-radius:50%;font-size:.75rem;font-weight:700}
-#invity-gallery-sample figure{margin:0;aspect-ratio:4/5;position:relative;overflow:hidden;background:#291048}
-#invity-gallery-sample figure img{width:100%;height:100%;display:block;object-fit:contain}
+#invity-gallery-sample .iv-post figure{margin:0;aspect-ratio:4/5;position:relative;overflow:hidden;background:#291048}
+#invity-gallery-sample .iv-post figure img{width:100%;height:100%;display:block;object-fit:contain}
 #invity-gallery-sample .iv-slide{height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(.85rem,4vw,1.35rem);background:#f1e8ff;color:#0f1018}
 #invity-gallery-sample .iv-slide.iv-purple{background:linear-gradient(146deg,#5214a5,#6916df 75%);color:white}
 #invity-gallery-sample .iv-chip{font-size:.67rem;letter-spacing:.075em;text-transform:uppercase;font-weight:650}
@@ -142,7 +158,6 @@
   const entries = {
     wagmi: {format:'Animated concept',caption:'The chart is red. Someone posts WAGMI. Four letters can keep you company. The price can still do its own thing.',alt:'WAGMI artwork about Bitcoin culture on a red day.'},
     sats: {format:'Static X post concept',caption:'Your sats can stay the same while their euro value moves. What do you pay attention to on a red day?',alt:'Same sats. Different day.'},
-    fees: {format:'First-purchase video concept',caption:'A first purchase, every screen. The walkthrough pauses on the quote so people can check the amount, the fee and where the bitcoin goes.',alt:'Read this screen before you buy.'},
     hodl: {format:'Static post concept',caption:'December 2013. Bitcoin was down. A typo in a forum post became one of Bitcoin’s most persistent memes.',alt:'I AM HODLING, with the date of the original 2013 forum post.'},
     autosend: {format:'Instagram carousel concept',caption:'From your stack to a wallet you control. Here’s what Auto Send does and what to check before enabling it.',alt:'From your stack to your wallet.',slides:[
       ['01 / 04','01','Choose the destination.','Use a Bitcoin address for a wallet you control. Review it before confirming.'],
@@ -182,7 +197,6 @@
   const briefs = {
     wagmi: 'content-calendar.html#ex-wagmi',
     hodl: '#ad-hodl',
-    fees: '#ad-fees',
     sats: '#brief-sats',
     autosend: '#brief-autosend',
     compare: '#brief-compare',
@@ -196,12 +210,28 @@
   const post = root.querySelector('.iv-post');
   const platformPreview = root.querySelector('#pf-social-preview');
   const formats = [...root.querySelectorAll('[data-format-key]')];
+  const feesView = root.querySelector('#fees-concept');
+  const formatLabels = {x:'X',fb:'Facebook',ig:'Instagram Reel',li:'LinkedIn',yt:'YouTube Short'};
+  const feesFormatLabels = {post:'Instagram carousel',x:'X image post',fb:'Facebook carousel',ig:'Instagram Reel',li:'LinkedIn document'};
   // The platform previews were written for a slightly different concept list.
   const toPlatformConcept = { autosend: 'keys', autobuy: 'routine' };
   const fromPlatformConcept = { keys: 'autosend', routine: 'autobuy' };
   let playing = false;
   let timer;
-  function render() {
+  function render(reveal = false) {
+    const fees = active === 'fees';
+    for (const button of selector) button.setAttribute('aria-pressed',String(button.dataset.work === active));
+    for (const button of formats) {
+      const key = button.dataset.formatKey;
+      button.hidden = fees && !feesFormatLabels[key];
+      button.textContent = fees ? feesFormatLabels[key] || '' : key === 'post' ? (entries[active].slides ? 'Carousel' : active === 'wagmi' ? 'Animation' : 'Artwork') : formatLabels[key];
+      button.setAttribute('aria-pressed', String(key === format));
+    }
+    feesView.hidden = !fees;
+    post.hidden = fees || format !== 'post';
+    platformPreview.hidden = fees || format === 'post';
+    feesConcept.render(fees && format, step, reveal);
+    if (fees) return;
     const entry = entries[active];
     const hasSlides = Boolean(entry.slides);
     const total = hasSlides ? entry.slides.length + 1 : 1;
@@ -216,11 +246,6 @@
     next.setAttribute('aria-disabled', String(step === total - 1));
     play.setAttribute('aria-pressed',String(playing));
     play.textContent = playing ? 'Stop WAGMI' : 'Play WAGMI';
-    for (const button of selector) button.setAttribute('aria-pressed',String(button.dataset.work === active));
-    formats[0].textContent = entry.slides ? 'Carousel' : active === 'wagmi' ? 'Animation' : 'Artwork';
-    for (const button of formats) button.setAttribute('aria-pressed', String(button.dataset.formatKey === format));
-    post.hidden = format !== 'post';
-    platformPreview.hidden = format === 'post';
     if (format !== 'post') renderPlatformPreview(toPlatformConcept[active] || active, format);
     if (!step) {
       target.innerHTML = '<img alt="' + entry.alt + '" src="' + assets[playing ? 'wagmiMotion' : active] + '">';
@@ -233,26 +258,29 @@
   function selectCreative(creative, slide, writeHistory = false, nextFormat = format) {
     clearTimeout(timer);
     active = creative;
-    format = nextFormat;
-    const total = (entries[creative].slides?.length ?? 0) + 1;
+    format = creative === 'fees' && nextFormat === 'yt' ? 'ig' : nextFormat;
+    const total = creative === 'fees' ? 4 : (entries[creative].slides?.length ?? 0) + 1;
     step = Math.max(0, Math.min(slide, total - 1));
     playing = false;
-    render();
+    render(writeHistory);
 
     if (writeHistory) {
       const hash = format === 'post' ? '#creative-' + active + '-' + (step + 1) : '#preview-' + (toPlatformConcept[active] || active) + '-' + format;
       if (location.hash !== hash) history.pushState(null, '', hash);
-      revealChange(format === 'post' ? target : platformPreview);
+      if (creative !== 'fees') revealChange(format === 'post' ? target : platformPreview);
     }
   }
 
   function restoreCreative(scroll = false) {
-    const match = /^#creative-(wagmi|sats|hodl|autosend|compare|withdraw|autobuy|turbo)-([1-6])$/.exec(location.hash);
+    const match = /^#creative-(wagmi|sats|hodl|fees|autosend|compare|withdraw|autobuy|turbo)-([1-6])$/.exec(location.hash);
+    const feesSection = ['#ad-fees', '#brief-fees', '#artwork-fees', '#ab-test', '#fees-ai'].includes(location.hash);
     const legacy = { '#carousel-autosend': 'autosend', '#carousel-compare': 'compare' };
+    const feesLegacy = { '#fees-feed-facebook': 'fb', '#fees-feed-linkedin': 'li' }[location.hash];
     const preview = /^#preview-(sats|wagmi|hodl|routine|fees|withdraw|compare|keys|turbo)-(x|fb|ig|li|yt)$/.exec(location.hash);
     if (preview) selectCreative(fromPlatformConcept[preview[1]] || preview[1], 0, false, preview[2]);
-    else selectCreative(match?.[1] || legacy[location.hash] || 'autosend', match ? Number(match[2]) - 1 : 0, false, 'post');
-    if ((match || preview) && scroll) root.scrollIntoView({ block: 'start' });
+    else if (feesLegacy) selectCreative('fees', 0, false, feesLegacy);
+    else selectCreative(match?.[1] || legacy[location.hash] || (feesSection ? 'fees' : 'autosend'), match ? Number(match[2]) - 1 : 0, false, 'post');
+    if ((match || preview || feesLegacy) && scroll) root.scrollIntoView({ block: 'start' });
   }
 
   for (const image of root.querySelectorAll('[data-image]')) image.src = assets[image.dataset.image];
@@ -261,7 +289,7 @@
   });
   for (const button of selector) button.addEventListener('click', () => {
     selectCreative(button.dataset.work, 0, true, 'post');
-    scrollToChange(post);
+    scrollToChange(button.dataset.work === 'fees' ? feesView : post);
   });
   prev.addEventListener('click', () => {
     if (step > 0) selectCreative(active, step - 1, true);
@@ -291,6 +319,7 @@
   }, {passive:true});
   root.querySelector('.iv-picker').hidden = false;
   root.querySelector('.iv-formats').hidden = false;
+  feesView.addEventListener('fees-card', event => selectCreative('fees', event.detail, true, 'post'));
   addEventListener('hashchange', () => restoreCreative(true));
   // The platform renderer is defined by the next script, so restore once the page has parsed.
   document.addEventListener('DOMContentLoaded', () => restoreCreative(true));
@@ -321,7 +350,6 @@
 #pf-social-preview .pf-original{display:block;width:100%;height:100%;position:absolute;inset:0;object-fit:contain}
 #pf-social-preview .pf-art.withdraw{background:#f6f1e8;color:#301948}
 #pf-social-preview .pf-art.hodl,#pf-social-preview .pf-art.wagmi{background:#1d0c38}
-#pf-social-preview .pf-art.fees{background:#441876}
 #pf-social-preview .pf-poster{display:flex;flex-direction:column;justify-content:center;gap:.28rem;padding:.85rem 1.1rem;position:relative;z-index:1}
 #pf-social-preview .pf-poster span{font-size:.69rem;letter-spacing:.075em;font-weight:650;text-transform:uppercase}
 #pf-social-preview .pf-poster b{font-family:Georgia,serif;font-size:clamp(1.62rem,6vw,2.42rem);font-weight:500;line-height:1.02;letter-spacing:-.035em}
@@ -392,14 +420,6 @@
       li: 'A short product explainer for people considering a recurring purchase. The storyboard covers amount, frequency and fees.',
       button: 'See how Auto Buy works', steps: 'Choose amount → choose schedule → review the quote and fee. Use approved app footage. Show that regular buying still carries price risk.'
     },
-    fees: {
-      phase: 'HIGH INTENT / FIRST BUY', title: 'See the fee screen', art: 'fees',
-      x: 'One screen I’d pause on before a first buy. Here’s what I’d check before tapping confirm.',
-      fb: 'Considering a first Invity purchase? See what to look for before you confirm, including the fee and how much bitcoin the quote delivers.',
-      video: 'A first purchase, every screen', ig: 'A first buy in 35 seconds. Pause on the number you’d actually check.',
-      li: 'What belongs in a first-purchase walkthrough? An honest look at the amount, fee, and what happens once you confirm.',
-      button: 'Watch the walkthrough', steps: 'Open on fees or custody → show the same purchase flow → hold on the confirm screen → explain where the BTC sits. This is a storyboard.', link: 'https://www.invity.io/blog/buying-your-first-bitcoin-with-invity-2'
-    },
     withdraw: {
       phase: 'ENGAGED / CUSTODY', title: 'Can I move it out?', sub: 'See the path to a wallet you control.', mark: '→',
       x: 'What happens after the buy? Here’s the path from your app balance to a wallet you control.',
@@ -434,7 +454,6 @@
     }
   };
   const media = {
-    fees: 'assets/fees-creative.webp',
     hodl: 'assets/hodl-creative.webp',
     wagmi: 'assets/wagmi-still-4x5.png',
     sats: 'assets/same-sats-creative.webp',
@@ -456,7 +475,6 @@
     wagmi: 'content-calendar.html#ex-wagmi',
     hodl: '#ad-hodl',
     routine: '#ad-autobuy',
-    fees: 'content-calendar.html#ex-walkthrough',
     withdraw: 'content-calendar.html#ex-withdraw',
     compare: '#brief-compare',
     keys: '#carousel-autosend',
@@ -500,19 +518,10 @@
 </div>
 <nav class="wrap jump-links" aria-label="Funnel stages"><a href="#cold"><span>01</span> Cold</a><a href="#engaged"><span>02</span> Engaged</a><a href="#intent"><span>03</span> High intent</a><a href="#after"><span>04</span> After a first purchase</a></nav><section class="section-band gallery-stage" id="cold"><div class="wrap"><div class="stage-head"><p class="eyebrow">Stage 01</p><h2 id="cold-h">Cold</h2><p>Earn a first watch with a practical question or a piece of Bitcoin culture.</p></div>
 <article class="gallery-item" id="ad-fees"><div class="concept-showcase">
-      <div class="concept-feed"><div class="feed-controls"><span class="eyebrow">Concept preview</span><div class="tablist" role="tablist" aria-label="First purchase / fees platforms"><button type="button" id="fees-tab-facebook" role="tab" aria-controls="fees-feed-facebook" aria-selected="true" tabindex="0">Facebook</button><button type="button" id="fees-tab-linkedin" role="tab" aria-controls="fees-feed-linkedin" aria-selected="false" tabindex="-1">LinkedIn</button></div></div><div class="feed feed-facebook" id="fees-feed-facebook" role="tabpanel" aria-labelledby="fees-tab-facebook">
-          <div class="feed-profile"><span class="feed-avatar" aria-hidden="true">PF</span><div><strong>The Patient Funnel</strong><small>Independent creative</small></div></div>
-          <p class="feed-caption">Thinking about a first bitcoin purchase? Start with the screen you can still walk away from.<br><br>Here’s what to look for before you confirm: the amount, the fee and where the bitcoin goes. Bitcoin can lose value.</p>
-          <img src="assets/fees-creative.webp" width="1080" height="1350" alt="A floating receipt beside a phone silhouette. Read this screen before you buy.">
-          <div class="feed-action"><a href="content-calendar.html#ex-walkthrough">See the walkthrough</a></div>
-        </div><div class="feed feed-linkedin" id="fees-feed-linkedin" role="tabpanel" aria-labelledby="fees-tab-linkedin">
-          <div class="feed-profile"><span class="feed-avatar" aria-hidden="true">PF</span><div><strong>The Patient Funnel</strong><small>Independent creative</small></div></div>
-          <p class="feed-caption">A first bitcoin purchase has a screen worth slowing down for: the one before you confirm.<br><br>In this walkthrough I’d pause on the amount and fee, then show where the bitcoin goes. It’s a practical checklist for anyone weighing a first purchase. Bitcoin can lose value.</p>
-          <img src="assets/fees-creative.webp" width="1080" height="1350" alt="A floating receipt beside a phone silhouette. Read this screen before you buy." loading="lazy">
-          <div class="feed-action"><a href="content-calendar.html#ex-walkthrough">Read the 35-second script</a></div>
-        </div></div>
-      <div class="concept-info"><p class="eyebrow">Artwork 01 / 03</p><h3>First purchase / fees</h3><p class="concept-desc">For someone considering a first buy who wants to see the total before tapping confirm.</p><div class="learn-note"><b>What I’d learn</b><p>Does showing the fee screen up front keep people watching?</p></div>
-      <div class="concept-links"><details class="disclosure" id="artwork-fees"><summary>View full artwork</summary><div class="detail-body"><figure class="full-art"><img src="assets/fees-creative.webp" width="1080" height="1350" alt="A floating receipt beside a phone silhouette. Read this screen before you buy." loading="lazy"><figcaption>Original 1080 × 1350 artwork. <a href="assets/fees-creative.webp">Open original image</a></figcaption></figure></div></details><details class="disclosure" id="brief-fees"><summary>Open creative brief</summary><div class="detail-body"><div class="creative">
+      <div class="concept-feed"><p class="eyebrow">Concept preview</p><a class="bh-cover-link" href="#creative-fees-1"><span data-bh-cover><img src="assets/fees-creative.webp" width="1080" height="1350" alt="A floating receipt beside a phone silhouette. Read this screen before you buy."></span>Open the carousel and its four platform versions</a></div>
+      <div class="concept-info"><p class="eyebrow">Artwork 01 / 03</p><h3>Before you hit Buy</h3><p class="concept-desc">For someone preparing a first purchase: check what you’ll pay and how much bitcoin you’ll receive before you confirm. One four-card master, adapted for five placements.</p><div class="learn-note"><b>What I’d learn</b><p>Do the two checks send people to the first-buy walkthrough?</p></div>
+      <ul class="bh-format-links" aria-label="Formats"><li><a href="#creative-fees-1">Instagram carousel</a></li><li><a href="#preview-fees-ig">Instagram Reel</a></li><li><a href="#preview-fees-fb">Facebook carousel</a></li><li><a href="#preview-fees-li">LinkedIn document</a></li><li><a href="#preview-fees-x">X image post</a></li><li><a href="#fees-ai">How I’d make it with AI</a></li></ul>
+      <div class="concept-links"><details class="disclosure" id="artwork-fees"><summary>View full artwork</summary><div class="detail-body"><figure class="full-art"><img src="assets/fees-creative.webp" width="1080" height="1350" alt="A floating receipt beside a phone silhouette. Read this screen before you buy." loading="lazy"><figcaption>Original 1080 × 1350 artwork. <a href="assets/fees-creative.webp">Open original image</a></figcaption></figure></div></details><details class="disclosure" id="brief-fees"><summary>Original video brief</summary><div class="detail-body"><div class="creative">
 <p class="headline">This is the screen to actually read.</p>
 <p class="copy">What you’ll pay, before you tap anything. A first bitcoin purchase, every screen, including the fee line. Bitcoin can lose value. Make sure you understand the risks before deciding whether to buy.</p>
 </div><p class="row"><span class="k">Who it is for.</span> People who know roughly what bitcoin is and have not engaged with Invity — a proposed cold audience, not an existing one. This is one half of a pair, not a test to run in every market at once.</p><p class="row"><span class="k">What we want to learn.</span> Whether a fees-first opening holds attention past the hook and the fee screen, and what questions people ask. First purchases from tracked links come second, and only once the sample can support a comparison.</p><p class="row"><span class="k">Audience signal.</span> People who know roughly what bitcoin is and have not engaged with Invity. Broad interest prospecting, or a lookalike built later from viewers of the walkthrough — both are proposed, not existing Invity audiences.</p><p class="row"><span class="k">The hesitation.</span> What will it actually cost me to buy, and will I see that before I’m committed?</p><p class="row"><span class="k">Call to action.</span> Watch the walkthrough</p><p class="row"><span class="k">Destination.</span> The 35-second film, or a page that also says, plainly, who holds the bitcoin afterwards and that it can be withdrawn. The film should be able to stand alone if the click never happens.</p><p class="row"><span class="k">Visual.</span> Typographic 4:5 still with the headline, until an approved recording exists. When it does, a single still from the fee line — a real screen, never a reconstructed one — can replace the typography as the cover. A typographic mock-up is on this page.</p><p class="row"><span class="k">Placement.</span> Reels and Shorts first, with the same opening as a 4:5 feed still. This is half of the only genuine A/B test in the gallery.</p><p class="row"><span class="k">Main success metric.</span> Watch time past the hook, and past the fee screen, plus the questions people ask. First purchases from tracked links come second, per market, and only once the sample can support a comparison — never a winner on a small sample.</p><p class="row"><span class="k">Why this stage.</span> Fees are one practical question a first-time buyer may have. Leading with them is a way to be useful before anyone has a reason to trust the brand.</p><p class="row"><a href="content-calendar.html#n24">Organic version in the Content Calendar</a> · <a href="#ab-test">How the A/B pair is measured</a></p></div></details></div>
