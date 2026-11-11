@@ -365,14 +365,13 @@ function renderBudgetCalc() {
   const focus = result.focused;
   write('calc-focus-title', focus.name + ' · ' + wholeEuro(focus.spend));
   get('calc-focus-line').innerHTML = `<p class="calc-value">${estimateCell(focus)}</p>
-    <p>${wholeEuro(focus.perMarket)} per market.</p><p><b>What it answers</b> ${focus.decision.text}</p>
+    <p>${wholeEuro(focus.perMarket)} per market.</p><p><b>${focus.decision.label}.</b> ${focus.decision.text}</p>
     <p class="calc-fit" data-fit="${focus.fitLevel}">${focus.fit}</p>`;
-  const answered = result.spread.filter(line => line.decision.enough).length;
-  write('calc-spread-title', answered + ' of ' + result.spread.length + ' channels get enough volume to compare versions');
+  write('calc-spread-title', 'Delivery by campaign line');
   get('calc-spread').innerHTML = result.spread.map(line => `<tr><th scope="row">${line.name}</th>
     <td>${wholeEuro(line.spend)}<small>${wholeEuro(line.perMarket)} per market</small></td>
     <td>${estimateCell(line)}<small class="calc-fit" data-fit="${line.fitLevel}">${line.fit}</small></td>
-    <td>${line.decision.text}</td></tr>`).join('');
+    <td><b>${line.decision.label}.</b> ${line.decision.text}</td></tr>`).join('');
 }
 
 const showCalcChange = () => { revealChange(get('calc-scenarios')); scrollToChange(get('calc-total')); };

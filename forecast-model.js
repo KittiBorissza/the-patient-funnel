@@ -200,23 +200,28 @@ model.TEST_CHANNELS = [
   }
 ];
 
-// What a result of this size lets the team decide, judged on the low end of the range.
-// shortcut: fixed volume thresholds for clicks and views, replace with Invity's own test history.
-model.testDecision = function (channelId, spend, markets, low) {
-  if (!(spend > 0)) return { enough: false, text: 'No paid test. Organic publishing and listening still run.' };
+const hookTest = { baseline: 0.25, lift: 0.03, allocation: 0.5, alpha: 0.05, power: 0.8 };
+const hookSample = model.sampleSize(hookTest).a;
+const sampleFormat = new Intl.NumberFormat('en-GB');
+
+model.testDecision = function (channelId, spend, markets) {
+  if (!(spend > 0)) return { label: 'No paid test', text: 'Organic publishing and listening still run.' };
   if (channelId === 'reels') {
-    const reachedPerArm = spend * 1000 / Math.max(...markets.map(id => model.BENCH.cpm[id].hi)) / 1.2 / 2 / markets.length;
-    const needed = model.sampleSize({ baseline: 0.25, lift: 0.03, allocation: 0.5, alpha: 0.05, power: 0.8 }).a;
-    return reachedPerArm >= needed
-      ? { enough: true, text: 'Shows which opening holds attention better in each market. Comparing first purchases needs more data.' }
-      : { enough: false, text: 'Shows where viewers drop off, but not which opening wins in each market. Run one version or pool markets.' };
+    const highestCpm = Math.max(...markets.map(id => model.BENCH.cpm[id].hi));
+    const projectedPerVersion = Math.floor(spend * 1000 / highestCpm / 1.2 / 2 / markets.length);
+    return {
+      label: projectedPerVersion >= hookSample ? 'Potentially enough for a hook test' : 'Below the hook-test sample target',
+      text: `Target ${sampleFormat.format(hookSample)} reached people per version per market. The low-end estimate is ${sampleFormat.format(projectedPerVersion)} per version in the highest-cost market. Check actual unique reach and random assignment.`
+    };
   }
-  if (channelId === 'youtube') return low >= 2000
-    ? { enough: true, text: 'Shows whether a walkthrough keeps viewers to the fee screen.' }
-    : { enough: false, text: 'A format check only: too few views to compare versions.' };
-  return low >= 300
-    ? { enough: true, text: 'Shows which messages bring people to the app page.' }
-    : { enough: false, text: 'A landing-page check only: too few clicks to compare messages.' };
+  if (channelId === 'youtube') return {
+    label: 'Directional video check',
+    text: 'Use view and retention data to spot drop-off. Size a separate test before comparing versions.'
+  };
+  return {
+    label: 'Directional traffic check',
+    text: 'Use click data to check traffic. Size a separate test before comparing messages.'
+  };
 };
 
 model.budgetForecast = function ({ perMarket, markets, focus = 'reels', shares, purchaseRate }) {
@@ -231,7 +236,7 @@ model.budgetForecast = function ({ perMarket, markets, focus = 'reels', shares, 
       range.hi += one.hi;
     }
     const purchases = channel.clicks && purchaseRate > 0 ? { lo: range.lo * purchaseRate, hi: range.hi * purchaseRate } : null;
-    const decision = model.testDecision(channel.id, spend, markets, range.lo);
+    const decision = model.testDecision(channel.id, spend, markets);
     if (channel.clicks && spend > 0 && !purchases) decision.text += ' First purchases need a conversion assumption.';
     return { id: channel.id, name: channel.name, unit: channel.unit, fit: channel.fit, fitLevel: channel.fitLevel,
       spend, perMarket: spend / markets.length, ...range, purchases,

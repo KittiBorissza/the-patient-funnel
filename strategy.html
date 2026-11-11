@@ -19,8 +19,8 @@
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="styles.css">
 <script src="interactions.js" defer></script>
-<script src="forecast-model.js" defer></script>
-<script src="forecast.js" defer></script>
+<script src="forecast-model.js?v=sample-clarity" defer></script>
+<script src="forecast.js?v=sample-clarity" defer></script>
 </head>
 <body class="strategy">
 <a class="skip" href="#main">Skip to content</a>
@@ -49,7 +49,7 @@
 <p class="budget-total" id="calc-total" role="status"></p>
 <div class="calc-scenarios" id="calc-scenarios">
 <article class="calc-scenario"><p class="eyebrow">Focused / one channel</p><h3 id="calc-focus-title"></h3><div id="calc-focus-line"></div></article>
-<article class="calc-scenario"><p class="eyebrow">Spread / four channels</p><h3 id="calc-spread-title"></h3><div class="table-scroll" tabindex="0" role="region" aria-label="Spread scenario by channel"><table class="calc-table"><thead><tr><th scope="col">Channel</th><th scope="col">Spend</th><th scope="col">Estimate</th><th scope="col">What it answers</th></tr></thead><tbody id="calc-spread"></tbody></table></div></article>
+<article class="calc-scenario"><p class="eyebrow">Spread / four campaign lines</p><h3 id="calc-spread-title"></h3><div class="table-scroll" tabindex="0" role="region" aria-label="Spread scenario by campaign line"><table class="calc-table"><thead><tr><th scope="col">Campaign line</th><th scope="col">Spend</th><th scope="col">Estimate</th><th scope="col">How to use it</th></tr></thead><tbody id="calc-spread"></tbody></table></div></article>
 </div>
 <details class="disclosure" id="calc-sources"><summary>Sources, source fit and assumptions</summary><div class="detail-body"><dl class="bench-list">
 <dt>Meta CPM by country / Close</dt><dd><a href="https://www.adspendspy.com/facebook-cpm-by-country">AdSpendSpy</a> 2026 country estimates for a standard Meta campaign, low and high. Same platform and market; not Bitcoin-specific.</dd>
@@ -57,7 +57,7 @@
 <dt>View past the opening / Assumption</dt><dd>20%–30% of Meta impressions. My planning assumption; the first test replaces it.</dd>
 <dt>Google Search cost per click / Loose</dt><dd>US finance and insurance search benchmarks range from about $3 to $7+ per click (<a href="https://www.wordstream.com/blog/2025-google-ads-benchmarks">WordStream 2025</a> and the trade press that reports it). Used as €3–€7. Different market and broader sector.</dd>
 <dt>YouTube cost per view / Loose</dt><dd>Vendor and agency estimates of about $0.01–$0.03 per view, mostly global or US (for example <a href="https://strikesocial.com/blog/2025-youtube-ads-benchmark-report/">Strike Social 2025</a>). Widened to €0.01–€0.05.</dd>
-<dt>What it answers</dt><dd>A controlled opening test needs about 3,400 reached people per version per market (25% baseline, 3-point lift, 5% significance, 80% power, 1.2 impressions per person, highest CPM in the selection). Click channels need about 300 clicks and YouTube about 2,000 views at the low end of the range before versions are compared.</dd>
+<dt>Meta Reels hook-test sample</dt><dd>The model targets about 3,400 unique people per version per market with a 25% baseline, a 3-percentage-point lift, 5% two-sided significance, 80% power and a 50/50 split. The low-end estimate assumes 1.2 impressions per person and uses the highest CPM in the selected markets. Validate unique reach and random assignment before launch.</dd><dt>Clicks and YouTube views</dt><dd>These estimates are directional. A comparison needs its own outcome, baseline, minimum detectable lift and sample calculation.</dd>
 </dl><p class="note">Ranges use each market’s own CPM where one exists and split the budget evenly across the selected markets. Search and YouTube use the same cost range in every market. None of this is Invity data.</p></div></details>
 </div></section>
 <section class="section-band forecast-band" aria-labelledby="planner-h"><div class="wrap">
