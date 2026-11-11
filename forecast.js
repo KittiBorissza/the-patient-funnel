@@ -207,6 +207,10 @@ controls.addEventListener('click', event => {
   setOrigin('meta-budget');
   renderForecast();
 });
+// Discrete choices (radios, selects, presets) get a visible change; typing stays still.
+const showForecastChange = () => { revealChange(get('result')); scrollToChange(get('result')); };
+controls.addEventListener('change', event => { if (event.target.matches('[type="radio"], select')) showForecastChange(); });
+controls.addEventListener('click', event => { if (event.target.closest('[data-budget]')) showForecastChange(); });
 
 const mix = get('market-plan');
 const plans = calc.initialPlans();
@@ -216,7 +220,7 @@ for (const item of calc.MARKETS) {
 }
 get('mix-channels').innerHTML = calc.CHANNELS.map(({ id, name, share, buy }) => `
   <div class="mix-channel">
-    <div><h4>${name}</h4><label for="mix-share-${id}">Allocation <output id="mix-display-${id}" for="mix-share-${id}">${share}%</output></label>
+    <div><h3>${name}</h3><label for="mix-share-${id}">Allocation <output id="mix-display-${id}" for="mix-share-${id}">${share}%</output></label>
       <input type="range" id="mix-share-${id}" min="0" max="100" value="${share}" aria-describedby="mix-share-${id}-origin">
       <p class="note" id="mix-share-${id}-origin"></p><p class="note" id="mix-note-${id}"></p></div>
     <div class="field"><label for="mix-rate-${id}">Install to first purchase (%)</label>
@@ -308,20 +312,85 @@ mix.addEventListener('input', event => {
   }
   renderMix();
 });
+mix.addEventListener('change', event => { if (event.target.matches('select')) revealChange(get('mix-channels')); });
 
 controls.addEventListener('input', renderMix);
 controls.addEventListener('click', event => { if (event.target.closest('[data-budget]')) renderMix(); });
-const previewParams = new URLSearchParams(location.search);
-if (previewParams.has('budget')) {
-  const budget = get('meta-budget');
-  const originalBudget = budget.value;
-  budget.value = previewParams.get('budget');
-  if (valid(['meta-budget'])) setOrigin('meta-budget', 'User-entered value');
-  else budget.value = originalBudget;
-}
-const previewDecision = previewParams.get('decision');
-if (previewDecision === 'purchases' || previewDecision === 'compare') {
-  controls.querySelector('[name="decision"][value="' + previewDecision + '"]').checked = true;
-}
 renderForecast();
 renderMix();
+
+const budgetCalc = get('budget-calc');
+const whole = new Intl.NumberFormat('en', { maximumFractionDigits: 0 });
+const wholeEuro = value => '€' + whole.format(value);
+const span = line => whole.format(line.lo) + '–' + whole.format(line.hi);
+budgetCalc.querySelector('.budget-presets').innerHTML = calc.PRESETS.map(preset =>
+  `<button type="button" data-amount="${preset.amount}"><b>${preset.name}</b> €${whole.format(preset.amount)}</button>`).join('');
+get('calc-focus').innerHTML = calc.TEST_CHANNELS.map(channel => `<option value="${channel.id}">${channel.name}</option>`).join('');
+get('calc-shares').innerHTML = calc.TEST_CHANNELS.map(channel => `<div class="field"><label for="share-${channel.id}">${channel.name}</label>
+  <input id="share-${channel.id}" type="number" min="0" max="100" step="any" value="${channel.share}" inputmode="decimal" required></div>`).join('');
+
+function estimateCell(line) {
+  if (!(line.spend > 0)) return 'No spend';
+  return span(line) + ' ' + line.unit
+    + (line.purchases ? ' · ' + span(line.purchases) + ' first purchases at the assumed conversion' : '');
+}
+
+function renderBudgetCalc() {
+  const budget = get('calc-budget');
+  const purchase = get('calc-purchase');
+  const shareInputs = calc.TEST_CHANNELS.map(channel => get('share-' + channel.id));
+  const markets = [...budgetCalc.querySelectorAll('[name="market"]:checked')].map(box => box.value);
+  for (const input of [budget, purchase, ...shareInputs]) input.setAttribute('aria-invalid', String(!input.validity.valid));
+  for (const button of budgetCalc.querySelectorAll('[data-amount]')) {
+    button.setAttribute('aria-pressed', String(Number(budget.value) === Number(button.dataset.amount)));
+  }
+  const problem = !budget.validity.valid || budget.value === '' ? 'Enter a monthly budget of €0 or more.'
+    : !markets.length ? 'Pick at least one market.'
+    : !purchase.validity.valid ? 'Enter a conversion between 0% and 100%, or leave it empty.'
+    : shareInputs.some(input => !input.validity.valid || input.value === '') ? 'Enter a split between 0% and 100% for each channel.'
+    : null;
+  get('calc-scenarios').hidden = Boolean(problem);
+  if (problem) {
+    write('calc-total', problem);
+    return;
+  }
+  const perMarket = Number(budget.value);
+  const result = calc.budgetForecast({
+    perMarket, markets, focus: get('calc-focus').value,
+    shares: shareInputs.map(input => Number(input.value)),
+    purchaseRate: purchase.value === '' ? 0 : Number(purchase.value) / 100
+  });
+  write('calc-total', markets.length + (markets.length === 1 ? ' market' : ' markets') + ' × ' + wholeEuro(perMarket)
+    + ' = ' + wholeEuro(result.total) + ' a month in total. Both scenarios spend exactly this.');
+  const focus = result.focused;
+  write('calc-focus-title', focus.name + ' · ' + wholeEuro(focus.spend));
+  get('calc-focus-line').innerHTML = `<p class="calc-value">${estimateCell(focus)}</p>
+    <p>${wholeEuro(focus.perMarket)} per market.</p><p><b>What it answers</b> ${focus.decision.text}</p>
+    <p class="calc-fit" data-fit="${focus.fitLevel}">${focus.fit}</p>`;
+  const answered = result.spread.filter(line => line.decision.enough).length;
+  write('calc-spread-title', answered + ' of ' + result.spread.length + ' channels get enough volume to compare versions');
+  get('calc-spread').innerHTML = result.spread.map(line => `<tr><th scope="row">${line.name}</th>
+    <td>${wholeEuro(line.spend)}<small>${wholeEuro(line.perMarket)} per market</small></td>
+    <td>${estimateCell(line)}<small class="calc-fit" data-fit="${line.fitLevel}">${line.fit}</small></td>
+    <td>${line.decision.text}</td></tr>`).join('');
+}
+
+const showCalcChange = () => { revealChange(get('calc-scenarios')); scrollToChange(get('calc-total')); };
+budgetCalc.addEventListener('input', renderBudgetCalc);
+budgetCalc.addEventListener('change', event => { if (event.target.matches('select, [type="checkbox"]')) showCalcChange(); });
+budgetCalc.addEventListener('submit', event => event.preventDefault());
+budgetCalc.addEventListener('click', event => {
+  const preset = event.target.closest('[data-amount]');
+  if (!preset) return;
+  get('calc-budget').value = preset.dataset.amount;
+  renderBudgetCalc();
+  showCalcChange();
+});
+const requestedBudget = new URLSearchParams(location.search).get('budget');
+if (requestedBudget !== null) {
+  const budgetInput = get('calc-budget');
+  const fallback = budgetInput.value;
+  budgetInput.value = requestedBudget;
+  if (!budgetInput.validity.valid || budgetInput.value === '') budgetInput.value = fallback;
+}
+renderBudgetCalc();

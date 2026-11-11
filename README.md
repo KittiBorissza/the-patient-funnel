@@ -4,10 +4,10 @@ Kitti Borissza's independent application proposal for the Social Media Lead role
 
 ## What’s here
 
-- `index.html` introduces the first buyer, three creative examples, the first month and Kitti.
+- `index.html` leads with the 100-day commitment, then the feed, the creative work, a creative index, the fees-versus-custody test with a budget preview, the 100-day plan and Kitti.
 - `ad-gallery.html` has eight concepts across four stages, platform-specific previews, original artwork and the fees-versus-custody test.
 - `content-calendar.html` has four month views, 34 dated posts and seven review drafts. The WAGMI still can switch to the animated GIF.
-- `strategy.html` has the Meta delivery forecast, event-target budget, controlled-test sample and separate five-channel plan for nine markets.
+- `strategy.html` has the Budget Forecast Calculator (focused vs. spread scenarios, ranges and source fit per channel), the Meta test planner, the controlled-test sample and the five-channel plan for nine markets.
 - `styles.css`, `interactions.js`, `forecast-model.js` and `forecast.js` hold the shared design, interactions and forecast logic.
 - `assets/` holds the original 4:5 artwork and the WAGMI still and GIF. `og.png` is the existing share image. `cv/` contains Kitti’s approved Invity CV. About and All materials both link to that PDF.
 - `archive/` retains previous work and research. `REVIEW.md` maps the layouts, copy and detailed material.
