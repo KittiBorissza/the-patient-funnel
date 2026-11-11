@@ -207,6 +207,10 @@ controls.addEventListener('click', event => {
   setOrigin('meta-budget');
   renderForecast();
 });
+// Discrete choices (radios, selects, presets) get a visible change; typing stays still.
+const showForecastChange = () => { revealChange(get('result')); scrollToChange(get('result')); };
+controls.addEventListener('change', event => { if (event.target.matches('[type="radio"], select')) showForecastChange(); });
+controls.addEventListener('click', event => { if (event.target.closest('[data-budget]')) showForecastChange(); });
 
 const mix = get('market-plan');
 const plans = calc.initialPlans();
@@ -216,7 +220,7 @@ for (const item of calc.MARKETS) {
 }
 get('mix-channels').innerHTML = calc.CHANNELS.map(({ id, name, share, buy }) => `
   <div class="mix-channel">
-    <div><h4>${name}</h4><label for="mix-share-${id}">Allocation <output id="mix-display-${id}" for="mix-share-${id}">${share}%</output></label>
+    <div><h3>${name}</h3><label for="mix-share-${id}">Allocation <output id="mix-display-${id}" for="mix-share-${id}">${share}%</output></label>
       <input type="range" id="mix-share-${id}" min="0" max="100" value="${share}" aria-describedby="mix-share-${id}-origin">
       <p class="note" id="mix-share-${id}-origin"></p><p class="note" id="mix-note-${id}"></p></div>
     <div class="field"><label for="mix-rate-${id}">Install to first purchase (%)</label>
@@ -308,6 +312,7 @@ mix.addEventListener('input', event => {
   }
   renderMix();
 });
+mix.addEventListener('change', event => { if (event.target.matches('select')) revealChange(get('mix-channels')); });
 
 controls.addEventListener('input', renderMix);
 controls.addEventListener('click', event => { if (event.target.closest('[data-budget]')) renderMix(); });
@@ -370,13 +375,16 @@ function renderBudgetCalc() {
     <td>${line.decision.text}</td></tr>`).join('');
 }
 
+const showCalcChange = () => { revealChange(get('calc-scenarios')); scrollToChange(get('calc-total')); };
 budgetCalc.addEventListener('input', renderBudgetCalc);
+budgetCalc.addEventListener('change', event => { if (event.target.matches('select, [type="checkbox"]')) showCalcChange(); });
 budgetCalc.addEventListener('submit', event => event.preventDefault());
 budgetCalc.addEventListener('click', event => {
   const preset = event.target.closest('[data-amount]');
   if (!preset) return;
   get('calc-budget').value = preset.dataset.amount;
   renderBudgetCalc();
+  showCalcChange();
 });
 const requestedBudget = new URLSearchParams(location.search).get('budget');
 if (requestedBudget !== null) {

@@ -134,7 +134,6 @@ summary::-webkit-details-marker { display: none; }
 .test-panel { padding: 1rem 1.25rem; margin: 1.8rem 0; background: #f1e8f8; border: 1px solid #dbc8eb; }
 .test-panel h3 { margin-bottom: .2em; }
 .test-pair { display: grid; gap: .65rem; margin-bottom: 1rem; }
-.test-pair > div { padding: .8rem; background: var(--surface); }
 .text-concept { display: grid; gap: .6rem 1.5rem; padding: 1rem 0; border-top: 1px solid var(--line); margin-top: .85rem; }
 .text-concept h3 { font-size: 1.55rem; }
 
@@ -207,9 +206,9 @@ summary::-webkit-details-marker { display: none; }
 .bench-list dd { margin: .25rem 0 1rem; }
 .market-band { background: #f2edf5; }
 .mix-channel { display: grid; gap: .55rem 1rem; padding: .8rem 0; border-top: 1px solid var(--line); }
-.mix-channel h4 { margin-bottom: .35rem; }
+.mix-channel h3 { margin-bottom: .35rem; font-size: 1.15rem; letter-spacing: -.02em; }
 .mix-channel input[type="range"] { width: 100%; accent-color: var(--purple); }
-.table-scroll { overflow-x: auto; }
+.table-scroll, .research-table { overflow-x: auto; background: linear-gradient(to right, var(--scroll-cover, var(--paper)) 30%, transparent) left / 2.5rem 100% no-repeat local, linear-gradient(to left, var(--scroll-cover, var(--paper)) 30%, transparent) right / 2.5rem 100% no-repeat local, radial-gradient(farthest-side at 0 50%, rgba(29, 20, 37, .22), transparent) left / .9rem 100% no-repeat scroll, radial-gradient(farthest-side at 100% 50%, rgba(29, 20, 37, .22), transparent) right / .9rem 100% no-repeat scroll; }
 table { border-collapse: collapse; width: 100%; font-size: .88rem; }
 th, td { text-align: left; padding: .6rem .55rem; border-bottom: 1px solid var(--line); }
 thead, tfoot { background: #f0e9f6; }
@@ -242,7 +241,7 @@ thead, tfoot { background: #f0e9f6; }
   .mix-channel { grid-template-columns: minmax(0, 1fr) minmax(0, .7fr); align-items: center; }
 }
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: .01ms !important; scroll-behavior: auto !important; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
 
 .forecast-result a { color: var(--amber); }
@@ -253,7 +252,7 @@ thead, tfoot { background: #f0e9f6; }
 .research-filter { display: grid; gap: .35rem; max-width: 19rem; margin-block: 1rem; }
 .research-filter label { font-weight: 700; }
 .research-filter select { min-height: 44px; font: inherit; color: inherit; padding: .4rem; }
-.research-table { overflow-x: auto; margin-block: 1rem; }
+.research-table { margin-block: 1rem; }
 .research-table table { width: 100%; min-width: 40rem; border-collapse: collapse; }
 .research-table caption { font-weight: 700; text-align: left; margin-block-end: .5rem; }
 .research-table th, .research-table td { padding: .7rem; border: 1px solid var(--line); text-align: left; vertical-align: top; }
@@ -317,3 +316,14 @@ p.calc-fit { color: var(--muted); font-size: .85rem; }
   .calc-table td:nth-child(2) { text-align: right; }
   .calc-table td:nth-child(n+3) { grid-column: 1 / -1; }
 }
+
+/* Interaction feedback: smooth in-page scrolling, quick color changes, a slight press. */
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+.button, .budget-presets button, .tablist button, .plan-tabs button, .jump-links a, .market-picks label, .creative-index a, .disclosure > summary, .site-head nav a {
+  transition-property: background-color, border-color, color, scale;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+.button:active, .budget-presets button:active, .tablist button:active, .plan-tabs button:active, .jump-links a:active { scale: .96; }
+.calc-scenario .table-scroll { --scroll-cover: var(--surface); }
+.market-band .table-scroll { --scroll-cover: #f2edf5; }

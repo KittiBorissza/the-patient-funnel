@@ -41,6 +41,8 @@ preview.addEventListener('click', event => {
   if (!preset) return;
   previewBudget.value = preset.dataset.amount;
   renderBudgetPreview();
+  revealChange(document.getElementById('preview-scenarios'));
+  scrollToChange(document.getElementById('preview-total'));
 });
 preview.addEventListener('submit', event => event.preventDefault());
 renderBudgetPreview();

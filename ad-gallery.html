@@ -19,6 +19,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://kittiborissza.github.io/the-patient-funnel/og.png">
 <meta name="theme-color" content="#24084c">
+<link rel="icon" href="data:,">
 <link rel="stylesheet" href="styles.css">
 <script src="interactions.js" defer></script>
 
@@ -33,7 +34,7 @@
 <main id="main" tabindex="-1"><header class="page-intro wrap" id="top"><div><p class="eyebrow">02 / Paid creative</p><h1>Funnel Ad <em>Gallery.</em></h1></div><div class="intro-copy"><p>Eight independent concepts for four moments, from the first scroll to after a first buy. Pick one to see it. The stage briefs below cover copy, placement and measurement.</p></div></header>
 <div class="wrap concept-intro"><span id="creative-compare-1"></span><section id="invity-gallery-sample" class="viz-dotted-background" aria-label="Invity portfolio creative gallery">
   <div class="iv-head">
-    <div><p>THE PATIENT FUNNEL</p><h2>Campaign gallery</h2></div>
+    <div><p>THE PATIENT FUNNEL</p><h2>Pick a creative</h2></div>
     <span>Independent concepts</span>
   </div>
   <div class="iv-picker" hidden role="group" aria-label="Creative">
@@ -50,7 +51,7 @@
     <div class="iv-profile"><span class="iv-avatar" aria-hidden="true">PF</span><div><b>The Patient Funnel</b><small data-format>Instagram carousel concept</small></div></div>
     <figure data-slide></figure>
     <div class="iv-nav" data-slide-controls>
-      <button type="button" class="cursor-interaction" data-move="-1">‹ Previous</button><span data-count aria-live="polite" aria-atomic="true">1 / 5</span><button type="button" class="cursor-interaction" data-move="1">Next ›</button>
+      <button type="button" class="cursor-interaction" data-move="-1"><span aria-hidden="true">‹</span> Previous</button><span data-count aria-live="polite" aria-atomic="true">1 / 5</span><button type="button" class="cursor-interaction" data-move="1">Next <span aria-hidden="true">›</span></button>
     </div>
     <div class="iv-nav" data-motion-controls hidden><button type="button" class="cursor-interaction" data-play aria-pressed="false">Play WAGMI</button><span>5-second animation</span></div>
     <p class="iv-caption" data-caption></p>
@@ -83,6 +84,7 @@
 #invity-gallery-sample button{cursor:var(--cursor-interaction,default);font:inherit}
 #invity-gallery-sample .iv-picker button{min-width:0;background:var(--iv-surface);color:var(--iv-text);border:1px solid var(--iv-line);border-radius:9px;padding:.35rem;text-align:left;min-height:44px}
 #invity-gallery-sample .iv-picker button[aria-pressed=true]{background:var(--iv-active);border-color:var(--iv-action)}
+#invity-gallery-sample button{transition-property:background-color,border-color,scale;transition-duration:150ms;transition-timing-function:cubic-bezier(0.2,0,0,1)}#invity-gallery-sample button:active{scale:.96}
 #invity-gallery-sample .iv-picker img{width:100%;height:68px;object-fit:contain;background:#291048;border-radius:5px;display:block;margin:0 0 .26rem}
 #invity-gallery-sample .iv-picker b,#invity-gallery-sample .iv-profile b{display:block;font-size:.85rem;overflow-wrap:anywhere}
 #invity-gallery-sample small{display:block;color:var(--iv-muted);font-size:.72rem}
@@ -210,6 +212,7 @@
     if (writeHistory) {
       const hash = '#creative-' + active + '-' + (step + 1);
       if (location.hash !== hash) history.pushState(null, '', hash);
+      revealChange(target);
     }
   }
 
@@ -221,7 +224,10 @@
   }
 
   for (const image of root.querySelectorAll('[data-image]')) image.src = assets[image.dataset.image];
-  for (const button of selector) button.addEventListener('click', () => selectCreative(button.dataset.work, 0, true));
+  for (const button of selector) button.addEventListener('click', () => {
+    selectCreative(button.dataset.work, 0, true);
+    scrollToChange(root.querySelector('.iv-post'));
+  });
   prev.addEventListener('click', () => {
     if (step > 0) selectCreative(active, step - 1, true);
   });
@@ -236,7 +242,7 @@
     }
   });
   play.addEventListener('click', () => {
-    clearTimeout(timer); playing = !playing; render();
+    clearTimeout(timer); playing = !playing; render(); revealChange(target);
     if(playing) timer = setTimeout(() => { playing = false; render(); }, 5500);
   });
   let touchX;
@@ -256,9 +262,9 @@
 </script>
 <section id="pf-social-preview" hidden aria-label="Platform concept previews">
   <header class="pf-top">
-    <div><span class="pf-kicker">THE PATIENT FUNNEL / CONCEPT GALLERY</span><h2>From red days to real decisions.</h2></div>
+    <div><span class="pf-kicker">THE PATIENT FUNNEL / PLATFORM PREVIEWS</span><h2>See each concept on each platform</h2></div>
     <label for="pf-concept">Creative<select id="pf-concept">
-      <optgroup label="Market mood"><option value="sats">Same sats. Different chart.</option><option value="wagmi">WAGMI on a red day</option><option value="hodl">I AM HODLING</option><option value="routine">Pick a rhythm</option></optgroup>
+      <optgroup label="Market mood"><option value="sats">Same sats. Different day.</option><option value="wagmi">WAGMI on a red day</option><option value="hodl">I AM HODLING</option><option value="routine">Pick a rhythm</option></optgroup>
       <optgroup label="First purchase"><option value="fees">See the fee screen</option><option value="withdraw">Can I move it out?</option></optgroup>
       <optgroup label="Market comparison"><option value="compare">Same €100. How many sats?</option><option value="keys">Who holds the keys?</option><option value="turbo">Before you turn on Turbo</option></optgroup>
     </select></label>
@@ -279,7 +285,7 @@
 #pf-social-preview *,#pf-social-preview *::before,#pf-social-preview *::after{box-sizing:border-box}
 #pf-social-preview [hidden]{display:none!important}
 #pf-social-preview .pf-top{display:flex;flex-wrap:wrap;gap:.55rem 1.1rem;align-items:end;justify-content:space-between;padding:.9rem 1rem}
-#pf-social-preview h2{color:var(--pf-ink);font-family:Georgia,serif;font-weight:500;margin:.25rem 0 0}
+#pf-social-preview h2{color:var(--pf-ink);margin:.25rem 0 0;font-size:1.4rem;font-weight:650;letter-spacing:-.02em}
 #pf-social-preview .pf-kicker{color:var(--pf-purple);font-weight:500;font-size:.72rem;letter-spacing:.08em}
 #pf-social-preview label{display:grid;gap:.2rem;font-size:.78rem;color:var(--pf-muted);max-width:100%}
 #pf-social-preview select{padding:.5rem .65rem;min-height:44px;max-width:100%;font:inherit;font-size:.95rem;color:var(--pf-ink);border:1px solid var(--pf-line);border-radius:7px;background:var(--pf-pane)}
@@ -472,6 +478,9 @@
   const platform = root.querySelector('#pf-platform');
   function choosePreview() {
     render(selector.value);
+    const stage = root.querySelector('.pf-stage:not([hidden])');
+    revealChange(stage);
+    scrollToChange(stage);
     const hash = '#preview-' + selector.value + '-' + platform.value;
     if (location.hash !== hash) history.pushState(null, '', hash);
   }
@@ -491,6 +500,7 @@
     const result = document.getElementById(button.getAttribute('aria-controls'));
     result.hidden = !result.hidden;
     button.setAttribute('aria-expanded', String(!result.hidden));
+    if (!result.hidden) revealChange(result);
   });
   root.hidden = false;
   restorePreview(true);
@@ -532,7 +542,7 @@
           <img src="assets/hodl-creative.webp" width="1080" height="1350" alt="I AM HODLING. A typo that stuck. 18 December 2013." loading="lazy">
           <div class="feed-action"><a href="content-calendar.html#ex-hodl">Read the story</a></div>
         </div></div>
-      <div class="concept-info"><p class="eyebrow">Artwork 03 / 03</p><h3>HODL / the typo that stuck</h3><p class="concept-desc">For someone who sees HODL on the timeline and wonders what it means.</p><div class="learn-note"><b>What I’d learn</b><p>Do people share the story or ask about the original thread?</p></div>
+      <div class="concept-info"><p class="eyebrow">Artwork 02 / 03</p><h3>HODL / the typo that stuck</h3><p class="concept-desc">For someone who sees HODL on the timeline and wonders what it means.</p><div class="learn-note"><b>What I’d learn</b><p>Do people share the story or ask about the original thread?</p></div>
       <div class="concept-links"><details class="disclosure" id="artwork-hodl"><summary>View full artwork</summary><div class="detail-body"><figure class="full-art"><img src="assets/hodl-creative.webp" width="1080" height="1350" alt="I AM HODLING. A typo that stuck. 18 December 2013." loading="lazy"><figcaption>Original 1080 × 1350 artwork. <a href="assets/hodl-creative.webp">Open original image</a></figcaption></figure></div></details><details class="disclosure" id="brief-hodl"><summary>Open creative brief</summary><div class="detail-body"><div class="creative">
 <p class="headline">I AM HODLING</p>
 <p class="copy">A typo from 18 December 2013, written while the price was falling. Today it means: I’m not trying to time this. The fine print: holding doesn’t protect you from losses.</p>
@@ -555,7 +565,7 @@
           <img src="assets/withdraw-creative.webp" width="1080" height="1350" alt="Can I move my bitcoin out of Invity? What to check before you withdraw." loading="lazy">
           <div class="feed-action"><a href="content-calendar.html#ex-withdraw">Read the withdrawal script</a></div>
         </div></div>
-      <div class="concept-info"><p class="eyebrow">Artwork 02 / 03</p><h3>Withdrawal to a hardware wallet</h3><p class="concept-desc">For someone who wants to know whether they can move their bitcoin to a wallet they control.</p><div class="learn-note"><b>What I’d learn</b><p>Do people save the answer or open the guide?</p></div>
+      <div class="concept-info"><p class="eyebrow">Artwork 03 / 03</p><h3>Withdrawal to a hardware wallet</h3><p class="concept-desc">For someone who wants to know whether they can move their bitcoin to a wallet they control.</p><div class="learn-note"><b>What I’d learn</b><p>Do people save the answer or open the guide?</p></div>
       <div class="concept-links"><details class="disclosure" id="artwork-withdraw"><summary>View full artwork</summary><div class="detail-body"><figure class="full-art"><img src="assets/withdraw-creative.webp" width="1080" height="1350" alt="Can I move my bitcoin out of Invity? What to check before you withdraw." loading="lazy"><figcaption>Original 1080 × 1350 artwork. <a href="assets/withdraw-creative.webp">Open original image</a> · <a href="#creative-withdraw-1">View all six slides</a></figcaption></figure></div></details><details class="disclosure" id="brief-withdraw"><summary>Open creative brief</summary><div class="detail-body"><div class="creative">
 <p class="headline">Can I move my bitcoin out of Invity?</p>
 <p class="copy">Invity’s public pages say you can withdraw to a hardware wallet or any Bitcoin address you control. That needs checking for current limits, fees and conditions. Moving it comes with a miner fee. Check the address twice, and send a small test first if the wallet is new.</p>

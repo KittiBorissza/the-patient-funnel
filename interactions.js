@@ -1,5 +1,22 @@
 'use strict';
 
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+
+// Fade new content in with a short rise. Skipped when the reader asks for reduced motion.
+function revealChange(element) {
+  if (!element || reducedMotion.matches) return;
+  element.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }],
+    { duration: 220, easing: 'cubic-bezier(0.2, 0, 0, 1)' });
+}
+
+// Scroll to changed content only when its top sits off screen or low in the viewport.
+function scrollToChange(element) {
+  if (!element) return;
+  const top = element.getBoundingClientRect().top;
+  if (top >= 0 && top <= innerHeight * .7) return;
+  element.scrollIntoView({ block: 'start', behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+}
+
 function activateTab(tab, focus = false) {
   const tabs = tab.closest('[role="tablist"]').querySelectorAll('[role="tab"]');
   for (const item of tabs) {
@@ -31,7 +48,13 @@ for (const list of document.querySelectorAll('[role="tablist"]')) {
     restorePlatform();
   }
   const select = tab => {
+    const wasSelected = tab.getAttribute('aria-selected') === 'true';
     activateTab(tab, true);
+    if (!wasSelected) {
+      const panel = document.getElementById(tab.getAttribute('aria-controls'));
+      revealChange(panel);
+      scrollToChange(panel);
+    }
     if (list.closest('.concept-feed')) {
       const hash = '#' + tab.getAttribute('aria-controls');
       if (location.hash !== hash) history.pushState(null, '', hash);
@@ -113,6 +136,12 @@ function revealFragment() {
 }
 
 addEventListener('hashchange', revealFragment);
+document.addEventListener('toggle', event => {
+  const details = event.target;
+  if (details.tagName !== 'DETAILS' || !details.open) return;
+  revealChange(details.querySelector(':scope > :not(summary)'));
+  scrollToChange(details);
+}, true);
 document.addEventListener('click', event => {
   const sameLink = event.target.closest('a[href^="#"]');
   if (sameLink && sameLink.hash === location.hash) revealFragment();
@@ -127,6 +156,7 @@ if (wagmiToggle) {
   wagmiToggle.addEventListener('click', () => {
     playing = !playing;
     image.src = playing ? 'assets/wagmi-4x5.gif' : 'assets/wagmi-still-4x5.png';
+    revealChange(image);
     wagmiToggle.textContent = playing ? 'Stop WAGMI GIF' : 'Play WAGMI GIF';
   });
 }
@@ -143,6 +173,9 @@ if (countrySelector) {
     const hash = countrySelector.value ? '#market-' + countrySelector.value : '#markets';
     history.pushState(null, '', hash);
     restoreCountry();
+    const table = countrySelector.closest('.research-filter').nextElementSibling;
+    revealChange(table);
+    scrollToChange(table);
   });
   addEventListener('hashchange', restoreCountry);
   restoreCountry();
@@ -171,6 +204,7 @@ if (mainNav) {
   const setOpen = open => {
     toggle.setAttribute('aria-expanded', String(open));
     mainNav.classList.toggle('mobile-open', open);
+    if (open) revealChange(mainNav);
   };
   toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') === 'false'));
   mainNav.addEventListener('click', event => {
