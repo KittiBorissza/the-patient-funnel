@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.8.0 · 11 Nov 2026
+
+Kitti’s decisions on the site-polish recommendations.
+
+- **One budget, two views.** The Strategy Lab forecast now splits spend by market and channel. “Plan the Meta test” opens the Meta test planner with that market and its Meta spend filled in. The planner’s own presets and the separate five-channel market plan are gone.
+- **Benchmarks.** No credible EU fintech benchmark exists for either. Google Search stays as a labelled proxy, €0.50–€3.00 per click (European ecommerce median to US finance median). YouTube is out of the default split and can be added back.
+- **Ad Gallery.** One picker: choose the concept, then its format. The fees concept joins the picker; old `#creative-…` and `#preview-…` links still work.
+- **Homepage.** The three extra samples under “What I’d post” are gone; the creative index covers them. The 12-slide pitch PDF and its link are removed.
+- **Research and Materials.** Page descriptions and share tags, the source notes PDF in the materials list, and Markdown links that open on GitHub, rendered.
+
 ## 2.7.0 · 11 Nov 2026
 
 The homepage now leads with the 100-day commitment, and the Strategy Lab opens with a Budget Forecast Calculator.

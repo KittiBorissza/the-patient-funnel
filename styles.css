@@ -40,7 +40,7 @@ h1 em { color: var(--purple); font-style: normal; font-weight: inherit; }
   letter-spacing: .07em; text-transform: uppercase;
 }
 .note, .small, .muted, .agenda-meta, figcaption { color: var(--muted); font-size: .9rem; }
-.skip:not(:focus) { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.visually-hidden, .skip:not(:focus) { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .skip { position: absolute; inset: .5rem auto auto .5rem; z-index: 2; background: white; padding: .65rem; }
 .site-head { border-bottom: 1px solid var(--line); }
 .head-inner { display: flex; flex-direction: column; gap: .7rem; padding-block: .85rem .5rem; }
@@ -306,7 +306,10 @@ thead, tfoot { background: #f0e9f6; }
 .calc-table thead th { border-top: 0; font-size: .78rem; color: var(--muted); }
 .calc-table small { display: block; margin-top: .2rem; color: var(--muted); font-size: .78rem; }
 .calc-fit::before { content: attr(data-fit); display: inline-block; margin-right: .4rem; padding: 0 .35rem; border-radius: .2rem; background: #ece2f6; color: var(--plum); font: 650 .66rem/1.6 var(--mono); text-transform: uppercase; }
-.calc-fit[data-fit="loose"]::before { background: #fff0d2; }
+.calc-fit[data-fit="loose"]::before, .calc-fit[data-fit="proxy"]::before { background: #fff0d2; }
+.calc-markets { margin-bottom: 1rem; }
+.calc-markets .button { min-height: 2.5rem; padding: .35rem .65rem; font-size: .85rem; white-space: nowrap; }
+.calc-markets .button[aria-pressed="true"] { background: var(--plum); border-color: var(--plum); color: #fff; }
 p.calc-fit { color: var(--muted); font-size: .85rem; }
 @media (min-width: 60rem) { .calc-scenarios { grid-template-columns: minmax(0, .8fr) minmax(0, 1.6fr); } }
 @media (max-width: 40rem) {
@@ -335,13 +338,13 @@ p.calc-fit { color: var(--muted); font-size: .85rem; }
 .concept-feed > [role="tabpanel"] > article { height: 100%; }
 
 /* Clickable cards lift slightly on hover. */
-.creative-index a, .pitch-samples article > a, .evidence-image, .plan-sample, .touch-art, .performance-preview > a, .lifecycle-entries button {
+.creative-index a, .evidence-image, .plan-sample, .touch-art, .performance-preview > a, .lifecycle-entries button {
   transition-property: scale, border-color, background-color, color;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
 }
 @media (hover: hover) {
-  .creative-index a:hover, .pitch-samples article > a:hover, .evidence-image:hover, .plan-sample:hover, .touch-art:hover, .performance-preview > a:hover, .lifecycle-entries button:hover { scale: 1.02; }
+  .creative-index a:hover, .evidence-image:hover, .plan-sample:hover, .touch-art:hover, .performance-preview > a:hover, .lifecycle-entries button:hover { scale: 1.02; }
 }
 
 /* Accordions slide open and closed where the browser can animate to auto height. */

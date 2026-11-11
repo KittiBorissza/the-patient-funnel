@@ -120,9 +120,6 @@ function renderForecast() {
     input.setAttribute('aria-invalid', String(!input.closest('[hidden]') && !valid([input.id])));
   }
   secondary.setAttribute('aria-invalid', String(duplicate));
-  for (const button of controls.querySelectorAll('[data-budget]')) {
-    button.setAttribute('aria-pressed', String(Number(get('meta-budget').value) === Number(button.dataset.budget)));
-  }
 
   if (!valid(ids) || duplicate) {
     write('result-tag', 'Planning estimate');
@@ -189,7 +186,10 @@ function renderForecast() {
 controls.addEventListener('input', event => {
   const input = event.target;
   if (input.dataset.origin) setOrigin(input.id, 'User-entered value');
-  if (input === primary) updateMarketReference(primary.value, 'cpm', 'ctr');
+  if (input === primary) {
+    updateMarketReference(primary.value, 'cpm', 'ctr');
+    showPlannerMarket();
+  }
   if (input === secondary) updateMarketReference(secondary.value, 'cpm2', 'ctr2');
   if (input.id === 'sample-event') {
     const buy = input.value === 'purchase';
@@ -200,124 +200,10 @@ controls.addEventListener('input', event => {
   }
   renderForecast();
 });
-controls.addEventListener('click', event => {
-  const preset = event.target.closest('[data-budget]');
-  if (!preset) return;
-  get('meta-budget').value = preset.dataset.budget;
-  setOrigin('meta-budget');
-  renderForecast();
-});
-// Discrete choices (radios, selects, presets) get a visible change; typing stays still.
+// Discrete choices (radios, selects) get a visible change; typing stays still.
 const showForecastChange = () => { revealChange(get('result')); scrollToChange(get('result')); };
 controls.addEventListener('change', event => { if (event.target.matches('[type="radio"], select')) showForecastChange(); });
-controls.addEventListener('click', event => { if (event.target.closest('[data-budget]')) showForecastChange(); });
 
-const mix = get('market-plan');
-const plans = calc.initialPlans();
-for (const item of calc.MARKETS) {
-  plans[item.id].rates = calc.CHANNELS.map(channel => channel.buy);
-  plans[item.id].edited = new Set();
-}
-get('mix-channels').innerHTML = calc.CHANNELS.map(({ id, name, share, buy }) => `
-  <div class="mix-channel">
-    <div><h3>${name}</h3><label for="mix-share-${id}">Allocation <output id="mix-display-${id}" for="mix-share-${id}">${share}%</output></label>
-      <input type="range" id="mix-share-${id}" min="0" max="100" value="${share}" aria-describedby="mix-share-${id}-origin">
-      <p class="note" id="mix-share-${id}-origin"></p><p class="note" id="mix-note-${id}"></p></div>
-    <div class="field"><label for="mix-rate-${id}">Install to first purchase (%)</label>
-      <input type="number" id="mix-rate-${id}" min="0" max="100" step="any" value="${buy}" aria-describedby="mix-rate-${id}-origin">
-      <small id="mix-rate-${id}-origin"></small></div>
-  </div>`).join('');
-
-function renderMix() {
-  const active = get('mix-market').value;
-  const plan = plans[active];
-  const scenario = Number(get('mix-scenario').value);
-  const result = calc.MARKETS.map(item => {
-    const one = plans[item.id];
-    const channels = calc.marketChannels(item).map((channel, index) => ({ ...channel, buy: one.rates[index] }));
-    return { item, plan: one, channels, ...calc.model(one.budget, one.shares, scenario, channels) };
-  });
-  const selected = result.find(row => row.item.id === active);
-  const testSpend = Number(get('meta-budget').value);
-  const social = selected.rows.find(row => row.id === 'social').allocated;
-  const totals = { budget: 0, social: 0, clicks: 0, installs: 0, buyers: 0, spend: 0 };
-  write('market-language', selected.item.langNote);
-  setOrigin('mix-budget', plan.edited.has('mix-budget') ? 'User-entered value' : undefined);
-  const summary = euro(plan.budget) + ' across five channels · ' + euro(social) + ' included for Meta · ≈ '
-    + fmt(selected.total.installs) + ' installs · ≈ ' + fmt(selected.total.buyers) + ' first buyers'
-    + (selected.total.unused > .01 ? ' · ' + euro(selected.total.unused) + ' unused after the referral cap' : '') + '. ';
-  const bridge = active === primary.value && testSpend > social
-    ? 'This market’s Meta line is smaller than the separate monthly test scenario. Reallocate within the plan if you adopt that test.'
-    : 'The separate Meta test scenario is excluded from this total.';
-  write('mix-result', summary + bridge);
-  const shares = calc.display(plan.shares);
-  for (const [index, row] of selected.rows.entries()) {
-    const shareId = 'mix-share-' + row.id;
-    const rateId = 'mix-rate-' + row.id;
-    get(shareId).value = shares[index];
-    write('mix-display-' + row.id, shares[index] + '%');
-    write(shareId + '-origin', plan.edited.has('shares') ? 'User-entered allocation, balanced to 100%' : 'Illustrative assumption');
-    write(rateId + '-origin', plan.edited.has(rateId) ? 'User-entered value' : 'Illustrative assumption');
-    write('mix-note-' + row.id, euro(row.allocated) + ' allocated · ' + euro(row.cpi) + ' illustrative CPI'
-      + ' · ≈ ' + fmt(row.buyers) + ' first buyers' + (row.capped ? ' · referral cap reached' : ''));
-  }
-  get('market-rows').innerHTML = result.map(({ item, plan, total, rows }) => {
-    const meta = rows.find(row => row.id === 'social').allocated;
-    const media = calc.socialForecast(meta, plan.cpm, plan.ctr);
-    totals.budget += plan.budget;
-    totals.social += meta;
-    totals.clicks += media.clicks;
-    totals.installs += total.installs;
-    totals.buyers += total.buyers;
-    totals.spend += total.spend;
-    return `<tr><th scope="row">${item.name}${item.toConfirm ? ' *' : ''}</th><td>${item.langShort}</td><td>${euro(plan.budget)}</td>
-      <td>${euro(meta)}</td><td>${euro(plan.cpm)}</td><td>${pct.format(plan.ctr)}%</td><td>${fmt(media.clicks)}</td>
-      <td>${fmt(total.installs)}</td><td>${fmt(total.buyers)}</td><td>${total.perBuyer == null ? '—' : euro(total.perBuyer)}</td></tr>`;
-  }).join('');
-  get('market-totals').innerHTML = `<tr><th scope="row">All markets</th><td>—</td><td>${euro(totals.budget)}</td>
-    <td>${euro(totals.social)}</td><td>—</td><td>—</td><td>${fmt(totals.clicks)}</td><td>${fmt(totals.installs)}</td>
-    <td>${fmt(totals.buyers)}</td><td>${totals.buyers ? euro(totals.spend / totals.buyers) : '—'}</td></tr>`;
-}
-function refreshMixInputs() {
-  const plan = plans[get('mix-market').value];
-  get('mix-budget').value = plan.budget;
-  for (const [i, channel] of calc.CHANNELS.entries()) {
-    const input = get('mix-rate-' + channel.id);
-    input.value = plan.rates[i];
-    input.removeAttribute('aria-invalid');
-  }
-  get('mix-budget').removeAttribute('aria-invalid');
-}
-mix.addEventListener('input', event => {
-  const input = event.target;
-  const plan = plans[get('mix-market').value];
-  const share = input.id.startsWith('mix-share-');
-  const rate = input.id.startsWith('mix-rate-');
-  if (input.id === 'mix-market' || input.id === 'mix-scenario') setOrigin(input.id, 'User-entered value');
-  if (input.id === 'mix-market') refreshMixInputs();
-  if (input.id === 'mix-budget' || rate) {
-    input.setAttribute('aria-invalid', String(!valid([input.id])));
-    if (!valid([input.id])) {
-      write('mix-result', 'Enter a valid value to update the market plan.');
-      return;
-    }
-    plan.edited.add(input.id);
-    if (rate) plan.rates[calc.CHANNELS.findIndex(channel => input.id === 'mix-rate-' + channel.id)] = Number(input.value);
-    else plan.budget = Number(input.value);
-  }
-  if (share) {
-    const index = calc.CHANNELS.findIndex(channel => input.id === 'mix-share-' + channel.id);
-    plan.shares = calc.rebalance(plan.shares, index, Number(input.value));
-    plan.edited.add('shares');
-  }
-  renderMix();
-});
-mix.addEventListener('change', event => { if (event.target.matches('select')) revealChange(get('mix-channels')); });
-
-controls.addEventListener('input', renderMix);
-controls.addEventListener('click', event => { if (event.target.closest('[data-budget]')) renderMix(); });
-renderForecast();
-renderMix();
 
 const budgetCalc = get('budget-calc');
 const whole = new Intl.NumberFormat('en', { maximumFractionDigits: 0 });
@@ -335,6 +221,32 @@ function estimateCell(line) {
     + (line.purchases ? ' · ' + span(line.purchases) + ' first purchases at the assumed conversion' : '');
 }
 
+// The planner opens on one market from the forecast, with that market's Meta spend (Reels + link ads) filled in.
+let plannerMarket = null;
+let lastForecast = null;
+function showPlannerMarket() {
+  write('market-language', market(primary.value).langNote);
+  write('planner-from', 'Opened from the forecast: ' + market(primary.value).name + '. Pick another market in the forecast table, or change it under “Adjust setup”.');
+}
+function openPlanner(id, fromClick = false) {
+  const row = lastForecast?.byMarket.find(item => item.id === id);
+  if (!row) return;
+  plannerMarket = id;
+  primary.value = id;
+  updateMarketReference(id, 'cpm', 'ctr');
+  setOrigin('primary-market', 'From the forecast');
+  const metaSpend = row.lines.filter(line => line.id === 'reels' || line.id === 'meta-link').reduce((sum, line) => sum + line.spend, 0);
+  get('meta-budget').value = Math.round(metaSpend) || '';
+  setOrigin('meta-budget', 'From the forecast');
+  showPlannerMarket();
+  renderForecast();
+  for (const button of get('calc-markets').querySelectorAll('[data-plan-market]')) button.setAttribute('aria-pressed', String(button.dataset.planMarket === id));
+  if (fromClick) {
+    revealChange(get('result'));
+    get('planner-h').scrollIntoView({ block: 'start', behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+  }
+}
+
 function renderBudgetCalc() {
   const budget = get('calc-budget');
   const purchase = get('calc-purchase');
@@ -350,6 +262,7 @@ function renderBudgetCalc() {
     : shareInputs.some(input => !input.validity.valid || input.value === '') ? 'Enter a split between 0% and 100% for each channel.'
     : null;
   get('calc-scenarios').hidden = Boolean(problem);
+  get('calc-markets-card').hidden = Boolean(problem);
   if (problem) {
     write('calc-total', problem);
     return;
@@ -367,18 +280,32 @@ function renderBudgetCalc() {
   get('calc-focus-line').innerHTML = `<p class="calc-value">${estimateCell(focus)}</p>
     <p>${wholeEuro(focus.perMarket)} per market.</p><p><b>What it answers</b> ${focus.decision.text}</p>
     <p class="calc-fit" data-fit="${focus.fitLevel}">${focus.fit}</p>`;
-  const answered = result.spread.filter(line => line.decision.enough).length;
-  write('calc-spread-title', answered + ' of ' + result.spread.length + ' channels get enough volume to compare versions');
+  const funded = result.spread.filter(line => line.spend > 0);
+  const answered = funded.filter(line => line.decision.enough).length;
+  write('calc-spread-title', answered + ' of ' + funded.length + (funded.length === 1 ? ' channel gets' : ' channels get') + ' enough volume to compare versions');
   get('calc-spread').innerHTML = result.spread.map(line => `<tr><th scope="row">${line.name}</th>
     <td>${wholeEuro(line.spend)}<small>${wholeEuro(line.perMarket)} per market</small></td>
     <td>${estimateCell(line)}<small class="calc-fit" data-fit="${line.fitLevel}">${line.fit}</small></td>
     <td>${line.decision.text}</td></tr>`).join('');
+  lastForecast = result;
+  const spendOf = (row, ids) => row.lines.filter(line => ids.includes(line.id)).reduce((sum, line) => sum + line.spend, 0);
+  get('calc-markets').innerHTML = result.byMarket.map(row => `<tr><th scope="row">${market(row.id).name}<small>${market(row.id).langShort}</small></th>
+    <td>${wholeEuro(spendOf(row, ['reels', 'meta-link']))}<small>${span(row.lines[0])} views past the opening</small></td>
+    <td>${wholeEuro(spendOf(row, ['search']))}</td><td>${wholeEuro(spendOf(row, ['youtube']))}</td>
+    <td><button type="button" class="button outline" data-plan-market="${row.id}" aria-pressed="${row.id === plannerMarket}">Plan the Meta test<span class="visually-hidden"> for ${market(row.id).name}</span></button></td></tr>`).join('');
+  if (!markets.includes(plannerMarket)) openPlanner(markets[0]);
+  else if (get('meta-budget-origin').textContent === 'From the forecast') openPlanner(plannerMarket);
 }
 
 const showCalcChange = () => { revealChange(get('calc-scenarios')); scrollToChange(get('calc-total')); };
 budgetCalc.addEventListener('input', renderBudgetCalc);
 budgetCalc.addEventListener('change', event => { if (event.target.matches('select, [type="checkbox"]')) showCalcChange(); });
 budgetCalc.addEventListener('submit', event => event.preventDefault());
+get('calc-markets').addEventListener('click', event => {
+  const button = event.target.closest('[data-plan-market]');
+  if (!button) return;
+  openPlanner(button.dataset.planMarket, true);
+});
 budgetCalc.addEventListener('click', event => {
   const preset = event.target.closest('[data-amount]');
   if (!preset) return;
@@ -394,3 +321,4 @@ if (requestedBudget !== null) {
   if (!budgetInput.validity.valid || budgetInput.value === '') budgetInput.value = fallback;
 }
 renderBudgetCalc();
+renderForecast();
