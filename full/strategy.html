@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What can I learn with this budget? · The Patient Funnel</title>
+<meta name="description" content="What can I learn with this budget? A budget forecast calculator, a Meta test planner and a multi-market plan for Kitti Borissza's independent Invity application, with ranges, sources and assumptions.">
+<meta name="author" content="Kitti Borissza">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="canonical" href="https://kittiborissza.github.io/the-patient-funnel/strategy.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="What can I learn with this budget? · Kitti Borissza">
+<meta property="og:description" content="Independent application proposal for Invity's Social Media Lead role. Not an official Invity page.">
+<meta property="og:url" content="https://kittiborissza.github.io/the-patient-funnel/strategy.html">
+<meta property="og:image" content="https://kittiborissza.github.io/the-patient-funnel/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kittiborissza.github.io/the-patient-funnel/og.png">
+<meta name="theme-color" content="#24084c">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="styles.css">
+<script src="interactions.js" defer></script>
+<script src="forecast-model.js?v=sample-clarity" defer></script>
+<script src="forecast.js?v=sample-clarity" defer></script>
+</head>
+<body class="strategy">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head"><div class="wrap head-inner">
+  <a class="wordmark" href="index.html"><span class="monogram" aria-hidden="true">PF</span><span>The Patient Funnel<small>KITTI BORISSZA</small></span></a>
+  <nav aria-label="Main navigation"><a href="index.html">Home</a><a href="ad-gallery.html">Content Studio</a><a href="content-calendar.html">Content Calendar</a><a href="strategy.html" aria-current="page">Strategy Lab</a><a href="research.html">Research</a><a href="index.html#about">About</a><a href="../cv/Kitti-Borissza-Invity-Social-Media-Lead.pdf?v=76632c7b">CV</a></nav>
+</div></header>
+<main id="main" tabindex="-1">
+<div id="forecast"><header class="page-intro wrap" id="top"><div><p class="eyebrow">Strategy &amp; forecast</p><h1>What can I learn <em>with this budget?</em></h1></div><div class="intro-copy"><p>One budget, two views. The forecast splits a monthly budget per market across markets and channels. Pick a market there to open the Meta test planner with its Meta spend filled in, then size the test.</p><a class="text-link" href="#planner-h">Go to the Meta test planner</a></div></header>
+
+<section class="section-band budget-band" id="budget" aria-labelledby="budget-h"><div class="wrap">
+<p class="eyebrow">Budget Forecast Calculator / Planning estimate</p>
+<h2 id="budget-h">Same money, two ways to spend it</h2>
+<form class="budget-calc" id="budget-calc">
+<div class="budget-calc-inputs">
+<div class="budget-presets" role="group" aria-label="Suggested monthly budgets per market"></div>
+<div class="field-grid">
+<div class="field"><label for="calc-budget">Monthly budget per market (€)</label><input id="calc-budget" type="number" min="0" step="any" value="1000" inputmode="decimal" required aria-describedby="calc-total"><small>Suggested media budget. €0 means no paid test.</small></div>
+<div class="field"><label for="calc-focus">Focused scenario channel</label><select id="calc-focus"></select><small>The whole budget goes here.</small></div>
+<div class="field"><label for="calc-purchase">Click to first purchase (%)</label><input id="calc-purchase" type="number" min="0" max="100" step="any" inputmode="decimal" placeholder="Not set"><small>Optional. Leave empty to skip first-purchase estimates.</small></div>
+</div>
+<fieldset class="market-picks"><legend>Markets</legend><label><input type="checkbox" name="market" value="cz" checked> Czechia</label><label><input type="checkbox" name="market" value="at"> Austria</label><label><input type="checkbox" name="market" value="de" checked> Germany</label><label><input type="checkbox" name="market" value="it"> Italy</label><label><input type="checkbox" name="market" value="sk"> Slovakia</label><label><input type="checkbox" name="market" value="es" checked> Spain</label><label><input type="checkbox" name="market" value="nl"> Netherlands</label><label><input type="checkbox" name="market" value="pl" checked> Poland</label><label><input type="checkbox" name="market" value="hu"> Hungary · to confirm</label></fieldset>
+<fieldset class="share-picks"><legend>Spread scenario split (%)</legend><div class="field-grid" id="calc-shares"></div></fieldset>
+</div>
+</form>
+<p class="budget-total" id="calc-total" role="status"></p>
+<div class="calc-scenarios" id="calc-scenarios">
+<article class="calc-scenario"><p class="eyebrow">Focused / one channel</p><h3 id="calc-focus-title"></h3><div id="calc-focus-line"></div></article>
+<article class="calc-scenario"><p class="eyebrow">Spread / campaign lines</p><h3 id="calc-spread-title"></h3><div class="table-scroll" tabindex="0" role="region" aria-label="Spread scenario by campaign line"><table class="calc-table"><thead><tr><th scope="col">Campaign line</th><th scope="col">Spend</th><th scope="col">Estimate</th><th scope="col">How to use it</th></tr></thead><tbody id="calc-spread"></tbody></table></div></article>
+</div>
+<article class="calc-scenario calc-markets" id="calc-markets-card"><p class="eyebrow">Spread scenario / by market</p><h3>Where the money goes</h3>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Spend by market and line"><table class="calc-table"><thead><tr><th scope="col">Market</th><th scope="col">Meta</th><th scope="col">Search</th><th scope="col">YouTube</th><th scope="col">Meta test</th></tr></thead><tbody id="calc-markets"></tbody></table></div></article>
+<details class="disclosure" id="calc-sources"><summary>Sources, source fit and assumptions</summary><div class="detail-body"><dl class="bench-list">
+<dt>Meta CPM by country / Close</dt><dd><a href="https://www.adspendspy.com/facebook-cpm-by-country">AdSpendSpy</a> 2026 country estimates for a standard Meta campaign, low and high. Same platform and market; not Bitcoin-specific.</dd>
+<dt>Meta link CTR / Partial</dt><dd><a href="https://www.adtribute.io/data/benchmarks/meta-ads">adtribute</a>, September 2026, European direct-to-consumer e-commerce: middle half 0.92%–1.48%. Right region and platform, different sector.</dd>
+<dt>View past the opening / Assumption</dt><dd>20%–30% of Meta impressions. My planning assumption; the first test replaces it.</dd>
+<dt>Google Search cost per click / Proxy</dt><dd>No EU fintech or crypto benchmark could be found. The range runs from the European ecommerce search median, €0.46 (<a href="https://smarter-ecommerce.com/en/smec-market-observer/metrics/cpc/">smec Market Observer</a>, November 2026), to the US Finance &amp; Insurance median, $3.39 (<a href="https://localiq.com/blog/search-advertising-benchmarks/">LocaliQ/WordStream</a>, June 2026), used as €0.50–€3.00. Crypto keywords probably cost more, and in the EU they need a MiCA licence and <a href="https://support.google.com/adspolicy/answer/16089943">Google certification</a>.</dd>
+<dt>YouTube cost per view / Not in the default split</dt><dd>No credible EU benchmark exists. Vendor estimates run around $0.03 per view, mostly global or US. Add a YouTube share to include it at €0.02–€0.05 per view.</dd>
+<dt>Meta Reels hook-test sample</dt><dd>The model targets about 3,400 unique people per version per market with a 25% baseline, a 3-percentage-point lift, 5% two-sided significance, 80% power and a 50/50 split. The low-end estimate assumes 1.2 impressions per person and uses the highest CPM in the selected markets. Validate unique reach and random assignment before launch.</dd><dt>Clicks and YouTube views</dt><dd>These estimates are directional. A comparison needs its own outcome, baseline, minimum detectable lift and sample calculation.</dd>
+</dl><p class="note">Ranges use each market’s own CPM where one exists and split the budget evenly across the selected markets. Search and YouTube use the same cost range in every market. The market list uses the 9 November 2026 ESMA check in the <a href="https://github.com/KittiBorissza/the-patient-funnel/blob/main/archive/notes/mica-note.md">MiCA research notes</a>; confirm the live sign-up list and eligible ad platforms with Invity. None of this is Invity data.</p></div></details>
+</div></section>
+<section class="section-band forecast-band" aria-labelledby="planner-h"><div class="wrap">
+<p class="eyebrow">Meta test planner</p><h2 id="planner-h">Plan one Meta test in detail</h2><p class="planner-from" id="planner-from"></p>
+<div class="planner-grid"><div class="planner-controls">
+<fieldset class="decisions"><legend>What do you want to decide?</legend><label><input type="radio" name="decision" value="attention" checked><span><b>01</b> Which opening holds attention?</span></label><label><input type="radio" name="decision" value="purchases"><span><b>02</b> How many first purchases?</span></label><label><input type="radio" name="decision" value="compare"><span><b>03</b> Can I run a controlled test?</span></label></fieldset>
+<div class="budget-controls"><p class="eyebrow">Monthly Meta media budget</p><p class="note">Filled in from the forecast for the chosen market, prorated from a 30-day month. Edit it to try another amount.</p><p class="note" id="market-language"></p>
+<div class="field-grid"><div class="field"><label for="meta-budget">Monthly budget (€)</label><input id="meta-budget" type="number" min="0.01" step="any" value="750" inputmode="decimal" aria-describedby="meta-budget-origin" data-origin="From the forecast"><small id="meta-budget-origin">From the forecast</small></div><div class="field"><label for="period">Test window (days)</label><input id="period" type="number" min="1" max="365" step="1" value="30" inputmode="decimal" aria-describedby="period-origin" data-origin="Illustrative assumption"><small id="period-origin">Illustrative assumption</small></div></div>
+</div></div>
+<div class="forecast-result" id="result" aria-live="polite" aria-atomic="true"><p class="eyebrow" id="result-tag">Planning estimate / 30 days</p>
+<p id="result-value" class="result-value">≈ 62,086</p><p id="result-event" class="result-event">watches past the opening</p>
+<div class="result-rationale"><b>What this can tell me</b><p id="result-decision">Whether the opening earns attention and where people have follow-up questions.</p><b>Simplest setup</b><p id="result-setup">One market, one acquisition ad set and the walkthrough. Use this to find patterns in attention.</p></div>
+<p id="result-delivery" class="result-delivery"></p><p id="result-sample-link" class="result-delivery" hidden><a href="#sample">See sample and feasibility</a></p></div></div>
+<noscript><p>Enable JavaScript to update the examples and see per-group delivery.</p></noscript>
+<div class="forecast-details" id="planner">
+<details class="disclosure" id="d-setup"><summary>Adjust setup</summary><div class="detail-body"><p>Start with one market and one acquisition setup. Split when language, eligibility or audience rules require separate delivery. Each split leaves less volume in each group.</p>
+<div class="field-grid"><div class="field"><label for="primary-market">Primary market</label><select id="primary-market" aria-describedby="primary-market-origin" data-origin="Illustrative assumption"><option value="cz" selected>Czechia</option><option value="at">Austria</option><option value="de">Germany</option><option value="it">Italy</option><option value="sk">Slovakia</option><option value="es">Spain</option><option value="nl">Netherlands</option><option value="pl">Poland</option><option value="hu">Hungary · to confirm</option></select><small id="primary-market-origin">Illustrative assumption</small></div><div class="field"><label for="second-market">Second market</label><select id="second-market" aria-describedby="second-market-origin" data-origin="Illustrative assumption"><option value="" selected>None</option><option value="cz">Czechia</option><option value="at">Austria</option><option value="de">Germany</option><option value="it">Italy</option><option value="sk">Slovakia</option><option value="es">Spain</option><option value="nl">Netherlands</option><option value="pl">Poland</option><option value="hu">Hungary · to confirm</option></select><small id="second-market-origin">Illustrative assumption</small></div><div id="market-share-field" hidden><div class="field"><label for="market-share">Acquisition budget for primary market (%)</label><input id="market-share" type="number" min="1" max="99" step="any" value="50" inputmode="decimal" aria-describedby="market-share-origin" data-origin="Illustrative assumption"><small id="market-share-origin">Illustrative assumption</small></div></div><div class="field"><label for="adsets">Acquisition ad sets per market</label><input id="adsets" type="number" min="1" max="4" step="1" value="1" inputmode="decimal" aria-describedby="adsets-origin" data-origin="Illustrative assumption"><small id="adsets-origin">Illustrative assumption</small></div><div class="field"><label for="remarketing">Budget reserved for remarketing (%)</label><input id="remarketing" type="number" min="0" max="99" step="any" value="0" inputmode="decimal" aria-describedby="remarketing-origin" data-origin="Illustrative assumption"><small id="remarketing-origin">Illustrative assumption</small></div></div>
+<p class="note">Extra acquisition ad sets share each market’s budget equally. Remarketing is shown as a reserve. It needs eligible audiences, consent and enough volume to deliver.</p>
+<div id="delivery-groups" class="group-output"></div></div></details>
+<details class="disclosure" id="d-assume"><summary>See test assumptions</summary><div class="detail-body"><p>Change the model to use your own assumptions. Source labels update when you edit a value.</p>
+<div class="field-grid">
+<div class="field"><label for="cost-mode">First-purchase model</label><select id="cost-mode" aria-describedby="cost-mode-origin" data-origin="Illustrative assumption"><option value="direct" selected>Direct cost per event</option><option value="funnel">Funnel breakdown</option></select><small id="cost-mode-origin">Illustrative assumption</small></div>
+<div id="direct-fields"><div class="field"><label for="cost">Cost per first purchase (€)</label><input id="cost" type="number" min="0.01" step="any" value="60" inputmode="decimal" aria-describedby="cost-origin" data-origin="Illustrative assumption"><small id="cost-origin">Illustrative assumption</small></div></div>
+<div class="field"><label for="cpm">Primary market CPM (€)</label><input id="cpm" type="number" min="0.01" step="any" value="6.04" inputmode="decimal" aria-describedby="cpm-origin" data-origin="Published reference"><small id="cpm-origin">Published reference</small></div>
+<div class="field"><label for="ctr">Primary market link CTR (%)</label><input id="ctr" type="number" min="0" max="100" step="any" value="1.19" inputmode="decimal" aria-describedby="ctr-origin" data-origin="Published reference"><small id="ctr-origin">Published reference</small></div>
+<div id="second-media" class="field-grid nested-fields" hidden><div class="field"><label for="cpm2">Second market CPM (€)</label><input id="cpm2" type="number" min="0.01" step="any" value="9.37" inputmode="decimal" aria-describedby="cpm2-origin" data-origin="Published reference"><small id="cpm2-origin">Published reference</small></div><div class="field"><label for="ctr2">Second market link CTR (%)</label><input id="ctr2" type="number" min="0" max="100" step="any" value="1.19" inputmode="decimal" aria-describedby="ctr2-origin" data-origin="Published reference"><small id="ctr2-origin">Published reference</small></div></div>
+<div class="field"><label for="hold">Watch past the opening (% of impressions)</label><input id="hold" type="number" min="0" max="100" step="any" value="25" inputmode="decimal" aria-describedby="hold-origin" data-origin="Illustrative assumption"><small id="hold-origin">Illustrative assumption</small></div>
+<div class="field"><label for="frequency">Impressions per reached person</label><input id="frequency" type="number" min="1" step="any" value="1.2" inputmode="decimal" aria-describedby="frequency-origin" data-origin="Illustrative assumption"><small id="frequency-origin">Illustrative assumption</small></div>
+<div id="funnel-fields" class="field-grid nested-fields" hidden><div class="field"><label for="click-install">Link click to install (%)</label><input id="click-install" type="number" min="0" max="100" step="any" value="20" inputmode="decimal" aria-describedby="click-install-origin" data-origin="Illustrative assumption"><small id="click-install-origin">Illustrative assumption</small></div><div class="field"><label for="install-buy">Install to first purchase (%)</label><input id="install-buy" type="number" min="0" max="100" step="any" value="5" inputmode="decimal" aria-describedby="install-buy-origin" data-origin="Illustrative assumption"><small id="install-buy-origin">Illustrative assumption</small></div></div>
+</div>
+<p class="note">Impressions = spend ÷ CPM × 1,000. Clicks = impressions × CTR. Direct purchases = spend ÷ cost per first purchase. Funnel purchases = clicks × install rate × first-purchase rate. Watch events can include repeat views.</p>
+<details class="disclosure" id="benchmarks"><summary>See published references and metric definitions</summary><div class="detail-body"><dl class="bench-list">
+<dt>Country CPM / Published reference</dt><dd><a href="https://www.adspendspy.com/facebook-cpm-by-country">AdSpendSpy</a>, 2026 estimates, by country. Standard Meta (Facebook and Instagram) campaign scenario. CPM is EUR per 1,000 impressions. A modelled industry reference.</dd>
+<dt>Meta CTR, CPM and CPC / Published reference</dt><dd><a href="https://www.adtribute.io/data/benchmarks/meta-ads">adtribute</a>, September 2026, European direct-to-consumer e-commerce, Facebook and Instagram. Mixed campaign objectives in a customer panel. Link CTR 1.19% (middle half 0.92%–1.48%), CPM €12.76 (€9.19–€16.56) and CPC €1.06 (€0.82–€1.28) per link click. The model’s implied CPC uses country CPM and European CTR together.</dd>
+<dt>Finance app CPI / Published reference</dt><dd><a href="https://www.adjust.com/blog/finance-app-insights-2025">Adjust Finance App Insights</a>, published 29 October 2025, data January 2023–August 2025. Mobile user acquisition across paid networks. CPI is spend per attributed install, shown in original USD. Global finance $1.51 (2024) → $1.13 (H1 2025). Global crypto $5.17 → $2.90. In H1 2025, France $5.37 and Germany $7.71. European finance app CTR 1%. Context only. The forecast runs in EUR and uses no USD conversion.</dd>
+<dt>Completed first purchase / Illustrative assumption</dt><dd>The event is a customer’s first completed purchase, counted once. The default €60 CPA is an editable planning input. It is separate from the cost of a click or an install.</dd></dl></div></details></div></details>
+<span id="d-need" class="legacy-anchor"></span><details class="disclosure" id="event-target"><summary>Budget for an event target</summary><div class="detail-body"><p>Pick a delivery target and multiply it by the modelled cost per event. This estimates the spend for the target.</p>
+<div class="field-grid"><div class="field"><label for="target-event">Target event</label><select id="target-event" aria-describedby="target-event-origin" data-origin="Illustrative assumption"><option value="watch">Watch past the opening</option><option value="purchase" selected>Completed first purchase</option></select><small id="target-event-origin">Illustrative assumption</small></div><div class="field"><label for="target-count">Target events</label><input id="target-count" type="number" min="1" step="1" value="50" inputmode="decimal" aria-describedby="target-count-origin" data-origin="Illustrative assumption"><small id="target-count-origin">Illustrative assumption</small></div></div>
+<p class="sub-result" id="event-result" aria-live="polite"></p></div></details>
+<details class="disclosure" id="sample"><summary>Sample for a controlled test</summary><div class="detail-body"><p>Size a two-arm comparison with random assignment in one market. Each reached person counts once. Choose the outcome and decide what difference would matter before launch.</p>
+<div class="field-grid">
+<div class="field"><label for="sample-event">Primary test outcome</label><select id="sample-event" aria-describedby="sample-event-origin" data-origin="Illustrative assumption"><option value="hold" selected>Watched past the opening (% of reached people)</option><option value="purchase">Completed a first purchase (% of reached people)</option></select><small id="sample-event-origin">Illustrative assumption</small></div>
+<div class="field"><label for="baseline">Baseline event rate (%)</label><input id="baseline" type="number" min="0.0001" max="99.9999" step="any" value="25" inputmode="decimal" aria-describedby="baseline-origin" data-origin="Illustrative assumption"><small id="baseline-origin">Illustrative assumption</small></div>
+<div class="field"><label for="effect">Minimum detectable lift (percentage points)</label><input id="effect" type="number" min="0.0001" max="99.9999" step="any" value="3" inputmode="decimal" aria-describedby="effect-origin" data-origin="Illustrative assumption"><small id="effect-origin">Illustrative assumption</small></div>
+<div class="field"><label for="allocation">Share assigned to A (%)</label><input id="allocation" type="number" min="1" max="99" step="any" value="50" inputmode="decimal" aria-describedby="allocation-origin" data-origin="Illustrative assumption"><small id="allocation-origin">Illustrative assumption</small></div>
+<div class="field"><label for="significance">Significance level, two-sided (%)</label><input id="significance" type="number" min="0.01" max="20" step="any" value="5" inputmode="decimal" aria-describedby="significance-origin" data-origin="Illustrative assumption"><small id="significance-origin">Illustrative assumption</small></div>
+<div class="field"><label for="power">Statistical power (%)</label><input id="power" type="number" min="50" max="99.99" step="any" value="80" inputmode="decimal" aria-describedby="power-origin" data-origin="Illustrative assumption"><small id="power-origin">Illustrative assumption</small></div>
+</div><p class="sub-result" id="sample-result" aria-live="polite"></p>
+<p class="note">This planning approximation uses the baseline and baseline plus lift, a two-sided significance level and the chosen power and allocation. It assumes independent people and stable delivery. Available sample uses primary-market acquisition spend and estimated reach after deduplicating impressions with the frequency assumption. Confirm actual randomised eligible reach before launch. Sparse events need a more exact calculation. For a purchase outcome, confirm event matching in both arms.</p>
+<p><a href="ad-gallery.html#ab-test">See the fees-versus-custody test design</a></p></div></details>
+</div></div></section></div>
+<section class="section-band" id="creatives"><div class="wrap narrow-wrap"><h2>What I’d test next</h2><p>Start with the <a id="c1" href="ad-gallery.html#ad-fees">first-purchase walkthrough</a>, the <a id="c2" href="ad-gallery.html#ad-withdraw">withdrawal answer</a> or the <a id="c3" href="ad-gallery.html#ad-hodl">HODL explainer</a>. Then use the response to pick the next question.</p>
+<details class="disclosure"><summary>Read four follow-up creative ideas</summary><div class="detail-body"><article class="cr" aria-labelledby="c4">
+        <h3 id="c4">Where is my bitcoin?</h3>
+        <p class="fmt">Six-slide carousel</p>
+        <dl>
+          <dt>Idea</dt><dd>Custody in plain words, from Invity’s public pages and pending verification: held by BitGo, described as separate from Invity’s own money, with withdrawal subject to current limits, fees and conditions.</dd>
+          <dt>Hook</dt><dd class="hook">“You bought bitcoin. Where is it now?”</dd>
+          <dt>Call to action</dt><dd>Read how Invity holds it</dd>
+          <dt>Hypothesis</dt><dd>A plain custody explainer earns more clicks to the FAQ than a general trust post.</dd>
+          <dt>Metric</dt><dd>Click-through rate to the custody FAQ</dd>
+          <dt>Localising</dt><dd>Same facts everywhere; wording checked by compliance per market.</dd>
+        </dl>
+      </article><article class="cr" aria-labelledby="c5">
+        <h3 id="c5">Five scams to spot</h3>
+        <p class="fmt">X thread and carousel</p>
+        <dl>
+          <dt>Idea</dt><dd>Five common phishing patterns, one per slide, with what to do instead.</dd>
+          <dt>Hook</dt><dd class="hook">“No real Bitcoin company will ever ask for your recovery words.”</dd>
+          <dt>Call to action</dt><dd>Send this to someone who just bought their first bitcoin</dd>
+          <dt>Hypothesis</dt><dd>Safety posts get shared more than any other topic.</dd>
+          <dt>Metric</dt><dd>Shares per 1,000 people reached</dd>
+          <dt>Localising</dt><dd>Local scam examples where they exist, checked by a native speaker.</dd>
+        </dl>
+      </article><article class="cr" aria-labelledby="c6">
+        <h3 id="c6">Auto Buy: what it does and doesn’t</h3>
+        <p class="fmt">Carousel</p>
+        <dl>
+          <dt>Idea</dt><dd>It buys a set amount on a schedule you choose. It doesn’t time the market or promise a better result than a single purchase.</dd>
+          <dt>Hook</dt><dd class="hook">“Auto Buy, without the sales pitch.”</dd>
+          <dt>Call to action</dt><dd>See how Auto Buy works in the app</dd>
+          <dt>Hypothesis</dt><dd>An honest “does / doesn’t” post leads to more Auto Buy set-ups per visit than a benefits-only post.</dd>
+          <dt>Metric</dt><dd>Auto Buy set-ups per tracked visit</dd>
+          <dt>Localising</dt><dd>Same wording rules everywhere; the risk line translated and checked per market.</dd>
+        </dl>
+        <p class="risk">Regular buying doesn’t suit everyone and doesn’t protect you from losses.</p>
+      </article><article class="cr" aria-labelledby="c7">
+        <h3 id="c7">A local creator’s first setup</h3>
+        <p class="fmt">Creator video, clearly labelled as paid</p>
+        <dl>
+          <dt>Idea</dt><dd>A local Bitcoin educator, in the language of that market, sets up a first purchase on camera, in their own words, including what confused them.</dd>
+          <dt>Hook</dt><dd class="hook">“I did my first purchase on camera, including the bits I didn’t get.” (written by each creator in their own language)</dd>
+          <dt>Call to action</dt><dd>Questions? The Invity team answers in the comments</dd>
+          <dt>Hypothesis</dt><dd>Visitors from a creator buy at a higher rate than visitors from a brand-made video, and the gap differs by market.</dd>
+          <dt>Metric</dt><dd>First purchases per tracked visit</dd>
+          <dt>Localising</dt><dd>A language version in each market we adapt it to, written by the creator; paid-partnership rules checked per market. Start where the forecast and review capacity make sense.</dd>
+        </dl>
+        <p class="risk">Bitcoin can lose value. Make sure you understand the risks before deciding whether to buy.</p>
+      </article></div></details>
+<details class="disclosure" id="days"><summary>See the first-month test sequence</summary><div class="detail-body">
+
+
+    <ul class="plain">
+      <li>Weeks 1–2: talk to support, product and the people who know each market; read the comments in every language we can.</li>
+      <li>Build a multi-market forecast we can measure against — with CPM, CTR and language versions in one view — and replace the industry defaults with Invity’s account data as soon as it is available.</li>
+      <li>Agree what we want to learn from one useful comparison, and set up measurement so the same test can later be read market by market.</li>
+      <li>Make and review that comparison in the first market where the forecast shows enough volume, with a native-language check and a compliance check. Then decide where to adapt it.</li>
+      <li>End of month: share what we learned, what the sample can and cannot tell us, and which markets are ready for a language version next.</li>
+    </ul>
+  <p><a href="index.html#days-1-20">See the first-month overview</a>.</p></div></details>
+<details class="disclosure" id="needs"><summary>See what I’d ask Invity for</summary><div class="detail-body">
+
+
+    <table class="needs">
+      <thead><tr><th scope="col">Assumption</th><th scope="col">What would replace it</th></tr></thead>
+      <tbody>
+        <tr><td>Which markets are live</td><td>The current country list from sign-up, and whether Hungary is served or planned</td></tr>
+        <tr><td>Cost per install by channel and market</td><td>Past ad account data, and which platforms have approved Invity in each market</td></tr>
+        <tr><td>Share of installs who buy</td><td>Product analytics: install, sign-up, verification and first-purchase cohorts</td></tr>
+        <tr><td>Referral caps and cost index per market</td><td>Referral terms, customers per market, and real media costs per country</td></tr>
+        <tr><td>Creator costs and fit</td><td>Who Invity already works with, and its rules for paid partnerships</td></tr>
+        <tr><td>What counts as success</td><td>Revenue per retained customer and an agreed payback window</td></tr>
+        <tr><td>What we may say, where</td><td>Compliance review per market, local marketing rules, approved fee and custody wording</td></tr>
+      </tbody>
+    </table>
+  </div></details>
+</div></section>
+<section class="section-band plan-band" id="distribution" aria-labelledby="distribution-h"><div class="wrap">
+<h2 id="distribution-h">Channels, follow-ups and the weekly decision</h2>
+<p>Where each channel fits, how follow-ups reach people after the first touch, and how each week ends in one decision.</p>
+    <section class="plan-section" aria-labelledby="days-channels-heading">
+      <h3 id="days-channels-heading">Five channels, five jobs</h3>
+      <p>Proposed cadence for the channel mix. Local accounts get a rhythm they can sustain.</p>
+      <div class="plan-tabs plan-channel-tabs" role="tablist" aria-label="Social channels" data-plan-tabs="channels">
+        <button type="button" id="days-instagram-tab" role="tab" aria-controls="days-instagram" aria-selected="true" tabindex="0">
+          <strong>Instagram</strong>
+        </button>
+        <button type="button" id="days-facebook-tab" role="tab" aria-controls="days-facebook" aria-selected="false" tabindex="-1">
+          <strong>Facebook</strong>
+        </button>
+        <button type="button" id="days-x-tab" role="tab" aria-controls="days-x" aria-selected="false" tabindex="-1">
+          <strong>X</strong>
+        </button>
+        <button type="button" id="days-youtube-tab" role="tab" aria-controls="days-youtube" aria-selected="false" tabindex="-1">
+          <strong>YouTube</strong>
+        </button>
+        <button type="button" id="days-linkedin-tab" role="tab" aria-controls="days-linkedin" aria-selected="false" tabindex="-1">
+          <strong>LinkedIn</strong>
+        </button>
+      </div>
+      <div class="plan-panel plan-channel-panel" id="days-instagram" role="tabpanel" aria-labelledby="days-instagram-tab" tabindex="0">
+        <dl class="plan-fields"><div><dt>What I’d publish</dt><dd>Local-language creator demos and saveable explainers.</dd></div><div><dt>Starting rhythm</dt><dd>2–3 Reels or carousels per week.</dd></div><div><dt>Paid setup</dt><dd>Prepare Meta placements and eligible creator amplification.</dd></div></dl><a class="plan-sample" href="content-calendar.html#creator-wallet"><img src="../assets/creator-wallet.webp" width="810" height="1440" loading="lazy" alt="Creator holding a hardware wallet"><span>Wallet educator Reel →</span></a>
+      </div>
+      <div class="plan-panel plan-channel-panel" id="days-facebook" role="tabpanel" aria-labelledby="days-facebook-tab" tabindex="0" hidden>
+        <dl class="plan-fields"><div><dt>What I’d publish</dt><dd>Local FAQs, scam alerts and practical product education.</dd></div><div><dt>Starting rhythm</dt><dd>1–2 posts per week.</dd></div><div><dt>Paid setup</dt><dd>Prepare Meta placements, local landing pages and eligible remarketing.</dd></div></dl><a class="plan-sample" href="ad-gallery.html#withdraw-feed-facebook"><img src="../assets/withdraw-creative.webp" width="1080" height="1350" loading="lazy" alt="Can I move my bitcoin out of Invity?"><span>Withdrawal FAQ preview →</span></a>
+      </div>
+      <div class="plan-panel plan-channel-panel" id="days-x" role="tabpanel" aria-labelledby="days-x-tab" tabindex="0" hidden>
+        <dl class="plan-fields"><div><dt>What I’d publish</dt><dd>Bitcoin conversation, quick answers and product updates.</dd></div><div><dt>Starting rhythm</dt><dd>3–5 original posts per week, with daily replies.</dd></div><div><dt>Paid setup</dt><dd>Prepare one paid test of a strong organic post.</dd></div></dl><a class="plan-sample" href="ad-gallery.html#preview-sats-x"><img src="../assets/same-sats-creative.webp" width="1080" height="1350" loading="lazy" alt="Same sats. Different day."><span>Same sats X preview →</span></a>
+      </div>
+      <div class="plan-panel plan-channel-panel" id="days-youtube" role="tabpanel" aria-labelledby="days-youtube-tab" tabindex="0" hidden>
+        <dl class="plan-fields"><div><dt>What I’d publish</dt><dd>Searchable answers, local subtitles and native-language recordings where justified.</dd></div><div><dt>Starting rhythm</dt><dd>One Short per week and one full walkthrough per month.</dd></div><div><dt>Paid setup</dt><dd>Prepare a Google/YouTube video test with a local destination and tracking.</dd></div></dl><a class="plan-sample" href="ad-gallery.html#preview-fees-yt"><img src="../assets/fees-creative.webp" width="1080" height="1350" loading="lazy" alt="First purchase concept cover about checking the amount, fee and custody"><span>First-buy YouTube Short →</span></a>
+      </div>
+      <div class="plan-panel plan-channel-panel" id="days-linkedin" role="tabpanel" aria-labelledby="days-linkedin-tab" tabindex="0" hidden>
+        <dl class="plan-fields"><div><dt>What I’d publish</dt><dd>Product decisions, founder perspectives, partnerships and market updates.</dd></div><div><dt>Starting rhythm</dt><dd>1–2 posts per week.</dd></div><div><dt>Paid setup</dt><dd>Define a paid test for a specific business audience and objective.</dd></div></dl><a class="plan-sample" href="ad-gallery.html#preview-compare-li"><img src="../assets/euro-100-creative.webp" width="1080" height="1350" loading="lazy" alt="What does €100 actually buy?"><span>€100 comparison preview →</span></a>
+      </div>
+      <details class="disclosure plan-markets" id="days-markets"><summary>Market and language plan</summary><div class="detail-body">
+        <p>English is the global publishing layer. Audit existing local Instagram accounts, test demand through local creator Collabs, then assess whether a dedicated handle can sustain audience demand and moderation.</p>
+        <p>Creator profiles and topics below are proposals. Confirm service, features and local review coverage before publishing.</p>
+        <details class="disclosure"><summary>Czechia <span class="plan-language">· Czech</span></summary><div class="detail-body"><dl class="plan-fields"><div><dt>Account audit</dt><dd>Review Czech accounts for comment coverage and existing creator overlap.</dd></div><div><dt>Creator to research</dt><dd>Czech-speaking hardware wallet educator.</dd></div><div><dt>Potential first topic</dt><dd><a href="content-calendar.html#creator-wallet">A creator’s pre-transfer wallet check</a>.</dd></div></dl></div></details>
+        <details class="disclosure"><summary>Germany <span class="plan-language">· German</span></summary><div class="detail-body"><dl class="plan-fields"><div><dt>Account audit</dt><dd>Check whether existing handles answer German product and wallet questions.</dd></div><div><dt>Creator to research</dt><dd>German-speaking Bitcoin educator with walkthrough experience.</dd></div><div><dt>Potential first topic</dt><dd><span lang="de">„Wann landen die Sats in meiner eigenen Wallet?“</span> Explain the Auto Send threshold.</dd></div></dl></div></details>
+        <details class="disclosure"><summary>Spain <span class="plan-language">· Spanish</span></summary><div class="detail-body"><dl class="plan-fields"><div><dt>Account audit</dt><dd>Audit Spanish publishing and reply coverage. Test demand with a local Collab.</dd></div><div><dt>Creator to research</dt><dd>Spanish-speaking creator who can demonstrate a wallet on camera.</dd></div><div><dt>Potential first topic</dt><dd><span lang="es">“¿Cuándo llegan los sats a tu propio monedero?”</span> Show the destination on approved screens.</dd></div></dl></div></details>
+        <details class="disclosure"><summary>Poland <span class="plan-language">· Polish</span></summary><div class="detail-body"><dl class="plan-fields"><div><dt>Account audit</dt><dd>Check existing Polish accounts, reviewer capacity and the local product destination.</dd></div><div><dt>Creator to research</dt><dd>Polish-speaking consumer-tech reviewer with a Bitcoin audience.</dd></div><div><dt>Potential first topic</dt><dd>What does a matched first-purchase budget buy?</dd></div></dl></div></details>
+        <details class="disclosure"><summary>Other confirmed markets <span class="plan-language">· Confirm local languages</span></summary><div class="detail-body"><dl class="plan-fields"><div><dt>Account audit</dt><dd>Inventory existing accounts and test demand before proposing a new handle.</dd></div><div><dt>Creator to research</dt><dd>Local educator whose audience overlaps with the market.</dd></div><div><dt>Potential first topic</dt><dd>Start with the most common verified customer question.</dd></div></dl></div></details>
+        <p><a href="strategy.html#budget">Budget by market</a> · <a href="content-calendar.html#local">Localisation notes</a></p>
+      </div></details>
+      <details class="disclosure" id="days-workflow"><summary id="ops-h">Approval process: Grokbot prepares, people approve</summary><div class="detail-body">
+        <p>Give Grokbot approved voice examples, product facts, briefs and market notes. Use it for a sourced competitor digest, stale-claim flags and grouped customer questions. Social picks what becomes a brief.</p>
+        <dl class="approval-list">
+          <div><dt>Social</dt><dd>Editorial copy, replies and publishing. Route account issues to Support.</dd></div>
+          <div><dt>Product</dt><dd>Mechanics, current app screens and fee or availability claims.</dd></div>
+          <div><dt>Local reviewer</dt><dd>Language, feature availability and the destination link.</dd></div>
+          <div><dt>Compliance</dt><dd>Regulated claims and paid or creator disclosures where required.</dd></div>
+        </dl>
+        <p>Conflicting or stale facts go back to their owner. Social holds the affected version until it clears review.</p>
+        <p><a href="strategy.html#needs">Data, production and approval dependencies</a></p>
+      </div></details>
+    </section>
+
+    <section class="plan-section lifecycle-funnel" aria-labelledby="days-funnel-heading">
+      <h3 id="days-funnel-heading">The always-on funnel</h3>
+      <p>Two ways in. Show the next useful touch.</p>
+      <div class="plan-tabs lifecycle-entries" role="tablist" aria-label="Funnel entry routes" data-plan-tabs="lifecycle-entries">
+        <button type="button" id="entry-app-tab" role="tab" aria-controls="entry-app" aria-selected="true" tabindex="0"><span class="entry-icon entry-phone" aria-hidden="true"></span><strong>Downloaded the app</strong><span>Help them take the next step.</span></button>
+        <button type="button" id="entry-ebook-tab" role="tab" aria-controls="entry-ebook" aria-selected="false" tabindex="-1"><span class="entry-icon entry-book" aria-hidden="true"></span><strong>Requested the e-book</strong><span>Give readers a reason to try the app.</span></button>
+      </div>
+      <div class="lifecycle-path" id="entry-app" role="tabpanel" aria-labelledby="entry-app-tab" tabindex="0">
+        <div class="plan-tabs touch-steps" role="tablist" aria-label="App onboarding steps" data-plan-tabs="lifecycle-steps">
+            <button type="button" id="days-first-open-tab" role="tab" aria-controls="days-first-open" aria-selected="true" tabindex="0"><span aria-hidden="true">01</span><strong>First open</strong></button>
+            <button type="button" id="days-setup-resume-tab" role="tab" aria-controls="days-setup-resume" aria-selected="false" tabindex="-1"><span aria-hidden="true">02</span><strong>Finish setup</strong></button>
+            <button type="button" id="days-purchase-tab" role="tab" aria-controls="days-purchase" aria-selected="false" tabindex="-1"><span aria-hidden="true">03</span><strong>First purchase</strong></button>
+            <button type="button" id="days-lifecycle-tab" role="tab" aria-controls="days-lifecycle" aria-selected="false" tabindex="-1"><span aria-hidden="true">04</span><strong>Keep using</strong></button>
+            <button type="button" id="days-refer-tab" role="tab" aria-controls="days-refer" aria-selected="false" tabindex="-1"><span aria-hidden="true">05</span><strong>Invite a friend</strong></button>
+        </div>
+          <div class="plan-panel touch-panel" id="days-first-open" role="tabpanel" aria-labelledby="days-first-open-tab" tabindex="0">
+            <div class="touch-preview"><div class="touch-message"><p class="eyebrow">In-app · Independent sample</p><strong>Let’s get you set up.</strong><p>See what you’ll need and pick up when you’re ready.</p><a href="content-calendar.html#ex-walkthrough">See the first-buy walkthrough →</a></div></div>
+            <div class="touch-copy"><p class="eyebrow">See the next touch</p><h4>Make the first session useful.</h4><p class="touch-channels">In-app</p><p><strong>Measure</strong> · First open → setup start</p>
+              <details class="disclosure"><summary>How it works</summary><div class="detail-body"><dl class="plan-fields"><div><dt>Trigger</dt><dd>First recorded app open.</dd></div><div><dt>Timing and eligibility</dt><dd>At first open, show a short setup guide.</dd></div><div><dt>Stop when</dt><dd>Setup begins.</dd></div><div><dt>Owner</dt><dd>Product and CRM.</dd></div></dl></div></details>
+            </div>
+          </div>
+          <div class="plan-panel touch-panel" id="days-setup-resume" role="tabpanel" aria-labelledby="days-setup-resume-tab" tabindex="0" hidden>
+            <div class="touch-preview"><div class="touch-message"><p class="eyebrow">Email · Independent sample</p><strong>Ready to finish setting up?</strong><p>Pick up where you left off, or ask Support if you’re stuck.</p><a href="content-calendar.html#ex-walkthrough">See the setup walkthrough →</a></div></div>
+            <div class="touch-copy"><p class="eyebrow">See the next touch</p><h4>Help them pick up where they stopped.</h4><p class="touch-channels">In-app · CRM</p><p><strong>Measure</strong> · Setup completion</p>
+              <details class="disclosure"><summary>How it works</summary><div class="detail-body"><dl class="plan-fields"><div><dt>Trigger</dt><dd>Setup started and is still incomplete.</dd></div><div><dt>Timing and eligibility</dt><dd>Start with an in-app prompt. Test one CRM reminder for eligible contacts. Keep verification details in owned channels.</dd></div><div><dt>Stop when</dt><dd>Setup completes or the reminder window ends.</dd></div><div><dt>Owner</dt><dd>CRM and Support.</dd></div></dl></div></details>
+            </div>
+          </div>
+          <div class="plan-panel touch-panel" id="days-purchase" role="tabpanel" aria-labelledby="days-purchase-tab" tabindex="0" hidden>
+            <div class="touch-preview"><a class="touch-art" href="ad-gallery.html#ad-fees"><img src="../assets/fees-creative.webp" width="1080" height="1350" loading="lazy" alt="First purchase concept cover about checking the amount, fee and custody"><span>See the fees creative →</span></a><div class="touch-message"><p class="eyebrow">Email · Independent sample</p><strong>Three things to check before you buy</strong><p>Take a moment to check the amount, the fee and where your bitcoin goes.</p><a href="content-calendar.html#ex-walkthrough">See the first-buy walkthrough →</a></div></div>
+            <div class="touch-copy"><p class="eyebrow">See the next touch</p><h4>Answer the questions that hold up a first buy.</h4><p class="touch-channels">Email · Meta test</p><p><strong>Measure</strong> · First completed purchase</p>
+              <details class="disclosure"><summary>How it works</summary><div class="detail-body"><dl class="plan-fields"><div><dt>Trigger</dt><dd>Setup complete, with no first completed purchase.</dd></div><div><dt>Timing and eligibility</dt><dd>Send the guide to eligible CRM contacts. Test fees versus custody on Facebook and Instagram if audience, events and campaign approvals allow.</dd></div><div><dt>Stop when</dt><dd>First purchase completes or the test window ends.</dd></div><div><dt>Owner</dt><dd>Paid Social, CRM and Analytics.</dd></div></dl></div></details>
+            </div>
+          </div>
+          <div class="plan-panel touch-panel" id="days-lifecycle" role="tabpanel" aria-labelledby="days-lifecycle-tab" tabindex="0" hidden>
+            <div class="touch-preview"><a class="touch-art" href="ad-gallery.html#creative-autosend-1"><img src="../assets/auto-send-creative.webp" width="1080" height="1350" loading="lazy" alt="From your stack to your wallet"><span>See the Auto Send carousel →</span></a></div>
+            <div class="touch-copy"><p class="eyebrow">See the next touch</p><h4>Offer one next step that fits how they use the app.</h4><p class="touch-channels">In-app · Email</p><p><strong>Measure</strong> · Next feature used</p>
+              <details class="disclosure"><summary>How it works</summary><div class="detail-body"><dl class="plan-fields"><div><dt>Trigger</dt><dd>First purchase completed.</dd></div><div><dt>Timing and eligibility</dt><dd>Follow up with relevant education on withdrawal, Auto Send or Auto Buy. Link to the matching product guide.</dd></div><div><dt>Stop when</dt><dd>The relevant feature is used or the sequence ends.</dd></div><div><dt>Owner</dt><dd>CRM and Product.</dd></div></dl></div></details>
+            </div>
+          </div>
+          <div class="plan-panel touch-panel" id="days-refer" role="tabpanel" aria-labelledby="days-refer-tab" tabindex="0" hidden>
+            <div class="touch-preview"><div class="touch-message"><p class="eyebrow">In-app · Independent sample</p><strong>Know someone curious about Bitcoin?</strong><p>If you’re eligible, you can share your personal invite from the app.</p><a href="https://www.invity.io/referral">See Invity’s referral programme →</a></div></div>
+            <div class="touch-copy"><p class="eyebrow">See the next touch</p><h4>Ask after the customer has had time to use the app.</h4><p class="touch-channels">In-app · CRM</p><p><strong>Measure</strong> · First eligible referred purchase</p>
+              <details class="disclosure"><summary>How it works</summary><div class="detail-body"><dl class="plan-fields"><div><dt>Trigger</dt><dd>A returning customer meets the current referral criteria.</dd></div><div><dt>Timing and eligibility</dt><dd>Offer the personal invite after a useful product moment. Apply current market and programme terms.</dd></div><div><dt>Stop when</dt><dd>The customer shares an invite or the prompt expires.</dd></div><div><dt>Owner</dt><dd>CRM and Partnerships.</dd></div></dl></div></details>
+            </div>
+          </div>
+      </div>
+      <div class="lifecycle-path" id="entry-ebook" role="tabpanel" aria-labelledby="entry-ebook-tab" tabindex="0" hidden>
+        <div class="plan-tabs touch-steps" role="tablist" aria-label="E-book steps" data-plan-tabs="lifecycle-steps">
+            <button type="button" id="days-discover-tab" role="tab" aria-controls="days-discover" aria-selected="true" tabindex="0"><span aria-hidden="true">01</span><strong>Read the sample</strong></button>
+            <button type="button" id="days-ebook-request-tab" role="tab" aria-controls="days-ebook-request" aria-selected="false" tabindex="-1"><span aria-hidden="true">02</span><strong>Request the PDF</strong></button>
+            <button type="button" id="days-learn-tab" role="tab" aria-controls="days-learn" aria-selected="false" tabindex="-1"><span aria-hidden="true">03</span><strong>Explore the app</strong></button>
+            <button type="button" id="days-ebook-open-tab" role="tab" aria-controls="days-ebook-open" aria-selected="false" tabindex="-1"><span aria-hidden="true">04</span><strong>First open</strong></button>
+        </div>
+          <div class="plan-panel touch-panel" id="days-discover" role="tabpanel" aria-labelledby="days-discover-tab" tabindex="0">
+            <div class="touch-preview"><div class="touch-message touch-book"><p class="eyebrow">Independent concept</p><div><strong>Why does money change over time?</strong><p>Explore the history of money in Invity’s free guide.</p></div><a href="https://downloadapp.invity.io/broken-money-and-the-way-out">Get the full guide →</a></div></div>
+            <div class="touch-copy"><p class="eyebrow">See the next touch</p><h4>Give readers a reason to get the full guide.</h4><p class="touch-channels">Facebook · Instagram</p><p><strong>Measure</strong> · Full PDF requests</p>
+              <details class="disclosure"><summary>How it works</summary><div class="detail-body"><dl class="plan-fields"><div><dt>Trigger</dt><dd>Sample page viewed, with no full-PDF request recorded.</dd></div><div><dt>Timing and eligibility</dt><dd>Test a chapter-led creative with an eligible Meta web audience. Send people back to the e-book landing page.</dd></div><div><dt>Stop when</dt><dd>Full PDF is requested, or the audience window ends.</dd></div><div><dt>Owner</dt><dd>Paid Social.</dd></div></dl></div></details>
+            </div>
+          </div>
+          <div class="plan-panel touch-panel" id="days-ebook-request" role="tabpanel" aria-labelledby="days-ebook-request-tab" tabindex="0" hidden>
+            <div class="touch-preview"><div class="touch-message"><p class="eyebrow">Email · Independent sample</p><strong>Your Bitcoin reading guide</strong><p>Start with one question from the book: what do you actually own when you buy Bitcoin?</p><a href="https://downloadapp.invity.io/broken-money-and-the-way-out">Read the guide →</a></div></div>
+            <div class="touch-copy"><p class="eyebrow">See the next touch</p><h4>Deliver the guide and follow up with one useful question.</h4><p class="touch-channels">Email · Instagram test</p><p><strong>Measure</strong> · Guide clicks and app interest</p>
+              <details class="disclosure"><summary>How it works</summary><div class="detail-body"><dl class="plan-fields"><div><dt>Trigger</dt><dd>Full PDF requested through the form.</dd></div><div><dt>Timing and eligibility</dt><dd>Make the PDF available first. For eligible CRM contacts, test an educational follow-up. An Instagram Reel is an optional paid touch for an eligible audience. <a href="content-calendar.html#creator-sats">See the creator format</a>.</dd></div><div><dt>Stop when</dt><dd>A known app open or the follow-up window ends.</dd></div><div><dt>Owner</dt><dd>CRM and Social.</dd></div></dl></div></details>
+            </div>
+          </div>
+          <div class="plan-panel touch-panel" id="days-learn" role="tabpanel" aria-labelledby="days-learn-tab" tabindex="0" hidden>
+            <div class="touch-preview"><a class="touch-art" href="content-calendar.html#ex-walkthrough"><img src="../assets/fees-creative.webp" width="1080" height="1350" loading="lazy" alt="First purchase concept cover about checking the amount, fee and custody"><span>See the first-buy walkthrough →</span></a></div>
+            <div class="touch-copy"><p class="eyebrow">See the next touch</p><h4>Show what a first purchase actually looks like.</h4><p class="touch-channels">Email · Meta test</p><p><strong>Measure</strong> · App CTA and matched first opens</p>
+              <details class="disclosure"><summary>How it works</summary><div class="detail-body"><dl class="plan-fields"><div><dt>Trigger</dt><dd>The reader engages with the app guide or clicks the app CTA.</dd></div><div><dt>Timing and eligibility</dt><dd>Use the walkthrough, then offer the reviewed local app destination. Suppress people already known to have opened the app where supported.</dd></div><div><dt>Stop when</dt><dd>A matched first app open or the test window ends.</dd></div><div><dt>Owner</dt><dd>CRM and Paid Social.</dd></div></dl></div></details>
+            </div>
+          </div>
+          <div class="plan-panel touch-panel" id="days-ebook-open" role="tabpanel" aria-labelledby="days-ebook-open-tab" tabindex="0" hidden>
+            <div class="touch-preview"><div class="touch-message"><p class="eyebrow">In-app · Independent sample</p><strong>Take your first look around.</strong><p>See the setup steps when you’re ready.</p><a href="#days-first-open">See the app onboarding path →</a></div></div>
+            <div class="touch-copy"><p class="eyebrow">See the next touch</p><h4>Hand off to app onboarding when the two paths can be matched.</h4><p class="touch-channels">In-app</p><p><strong>Measure</strong> · Matched first opens</p>
+              <details class="disclosure"><summary>How it works</summary><div class="detail-body"><dl class="plan-fields"><div><dt>Trigger</dt><dd>A first app open is recorded and can be linked to the e-book path.</dd></div><div><dt>Timing and eligibility</dt><dd>Move to app onboarding. Keep unmatched opens visible in reporting.</dd></div><div><dt>Stop when</dt><dd>Exit the e-book sequence at the matched first open.</dd></div><div><dt>Owner</dt><dd>Product and Analytics.</dd></div></dl></div></details>
+            </div>
+          </div>
+        <p class="touch-handoff"><a class="text-link" href="#days-first-open">Continue to app onboarding →</a></p>
+      </div>
+      <details class="disclosure lifecycle-measurement"><summary>PDF requests → Matched first opens → First purchases</summary><div class="detail-body">
+        <p>Track sample views, PDF requests, app CTA clicks, installs and first opens as separate events. Show opens that cannot be linked to a reader as <strong>Unmatched</strong>.</p>
+        <p>Check eligible Facebook and Instagram audiences and remove people from the preceding sequence when they progress, where supported. Consider Google/YouTube app re-engagement as a second test if the account and audience qualify.</p>
+        <p>Creator affiliates can bring readers in through an approved link or code. Customer referrals are a separate touch after product use.</p>
+        <p><a href="https://downloadapp.invity.io/broken-money-and-the-way-out">Invity’s e-book</a> · <a href="strategy.html#forecast">Strategy Lab</a> · <a href="ad-gallery.html">Content Studio</a></p>
+      </div></details>
+      <p class="plan-maintenance">Weekly: check spend, tracking and creative performance. Update when the data, customer questions or product changes give us a reason.</p>
+    </section>
+
+    <section class="plan-section creative-performance" id="creative-performance" aria-labelledby="creative-performance-heading">
+      <div class="performance-intro">
+        <p class="eyebrow">Decision support / Illustrative data</p>
+        <h3 id="creative-performance-heading">Creative Performance</h3>
+        <p>I’d build a dashboard that brings every piece of content into one place, from Instagram Reels, Facebook posts and X threads to YouTube videos, LinkedIn posts, emails and in-app messages.</p>
+        <p>Pick an idea and see every version we published, where it ran, what we spent and what people did next. Where tracking allows, I’d follow that journey through to the first app open or completed purchase.</p>
+        <p>Each view ends with one decision for the next week: what to adapt, what to test again and where the evidence is strong enough to move budget.</p>
+      </div>
+      <figure class="performance-preview">
+        <a href="../assets/creative-performance-demo.webp" aria-label="Open the full-size Creative Performance mockup"><img src="../assets/creative-performance-demo.webp" width="1586" height="992" loading="lazy" alt="Creative Performance mockup with illustrative First Buy results by placement. Instagram Reels shows 12 first purchases at €20 each and Facebook Feed shows six at €30. The suggested next step is a matched placement test."></a>
+        <figcaption>Static mockup with illustrative data. <a href="../assets/creative-performance-demo.webp">Open full-size image →</a></figcaption>
+      </figure>
+      <div class="performance-cards">
+        <article class="next-decision">
+          <p class="eyebrow">Next decision / Illustrative data</p>
+          <h4>Run a matched placement test</h4>
+          <p>In the mockup, Instagram Reels brought 12 first purchases at €20 each and Facebook Feed six at €30. Before moving budget, I’d run the same creative in both placements with matched spend.</p>
+        </article>
+        <article class="measured-before">
+          <p class="eyebrow">Measured before / My past work</p>
+          <h4>GamerHours: from Facebook lead to first top-up</h4>
+          <p>With engineering, I routed Facebook Lead Ads into Mailchimp and the product database, organised Mixpanel testing and set up lifecycle emails for people ready for a first top-up.</p>
+          <a class="text-link" href="index.html#case-gamerhours">Read the GamerHours case</a>
+        </article>
+      </div>
+    </section>
+      <details class="disclosure" id="paid-setup"><summary>Paid setup and measurement</summary><div class="detail-body">
+        <ul>
+          <li><strong>Campaign:</strong> Confirm market, language, objective, placements, advertiser eligibility and approvals.</li>
+          <li><strong>Delivery:</strong> Define the audience, exclusions and budget pacing. Check the local destination and UTMs.</li>
+          <li><strong>Measurement:</strong> Validate app attribution and events before launch. Track first transactions where reliable, and use a controlled comparison to estimate impact.</li>
+        </ul>
+        <p><a href="ad-gallery.html#ab-test">Fees-versus-custody test</a> · <a href="strategy.html#forecast">Budget forecast</a></p>
+      </div></details>
+</div></section></main>
+<footer class="site-foot"><div class="wrap foot-inner"><div><strong>The Patient Funnel</strong><p>An independent application by Kitti Borissza for Invity’s Social Media Lead role.</p></div><div><a href="materials.html">All materials</a><a href="mailto:borisszakitti@gmail.com">Email Kitti</a><a href="https://www.linkedin.com/in/kittiborissza">LinkedIn</a></div></div><div class="wrap fineprint">Invity product details and creative concepts are pending review. Bitcoin can lose value. This portfolio contains no financial advice.</div></footer>
+<script type="text/plain" id="legacy-fragments">
+  market-plan budget
+  allmk budget
+  mix-notes budget
+  planner-form planner
+  cmp-wrap d-setup
+  q-structure d-setup
+  market primary-market
+  mk-note primary-market
+  m2-wrap second-market
+  market2 second-market
+  mk2-note second-market
+  preset-l meta-budget
+  mbudget meta-budget
+  mbudget-note meta-budget
+  q-results result
+  q-title result
+  q-market result
+  q-langs result
+  q-missing result
+  q-note result
+  q-lines result-setup
+  q-next result-setup
+  q-volume result-value
+  n-vol result-value
+  q-learn result-decision
+  q-impr result-delivery
+  q-clicks result-delivery
+  q-cpc result-delivery
+  media d-assume
+  media-mk d-assume
+  mode-note d-assume
+  o-cpm cpm
+  cpm-note cpm
+  a-cpm cpm
+  o-ctr ctr
+  ctr-note ctr
+  q-adsets adsets
+  split-wrap delivery-groups
+  split-l delivery-groups
+  sp-0 delivery-groups
+  sp-1 delivery-groups
+  sp-2 delivery-groups
+  sp-even delivery-groups
+  f-cpa cost
+  cpa cost
+  ci click-install
+  ip install-buy
+  a-user baseline
+  abp1 baseline
+  target target-count
+  weeks period
+  abm sample
+  n-exp sample
+  abd effect
+  aba significance
+  mix-h budget
+  plancalc budget
+  bridge budget
+  mk-name budget
+  o-budget budget
+  budget budget
+  t-market budget
+  t-installs budget
+  t-buyers budget
+  t-per budget
+  t-impr budget
+  t-clicks budget
+  t-cpc budget
+  media-out budget
+  t-note budget
+  t-langs budget
+  allmk-h budget
+  allmk-body budget
+  allmk-b budget
+  allmk-cpm budget
+  allmk-ctr budget
+  allmk-clicks budget
+  allmk-i budget
+  allmk-f budget
+  allmk-p budget
+  cr-h creatives
+  days-h days
+  needs-h needs
+  o-search budget
+  sh-search budget
+  d-search budget
+  b-search budget
+  r-search budget
+  o-social budget
+  sh-social budget
+  d-social budget
+  b-social budget
+  r-social budget
+  o-creators budget
+  sh-creators budget
+  d-creators budget
+  b-creators budget
+  r-creators budget
+  o-referral budget
+  sh-referral budget
+  d-referral budget
+  b-referral budget
+  r-referral budget
+  o-community budget
+  sh-community budget
+  d-community budget
+  b-community budget
+  r-community budget
+  cap-referral budget
+</script>
+</body></html>
