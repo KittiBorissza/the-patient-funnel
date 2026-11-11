@@ -9,7 +9,7 @@ The homepage now leads with the 100-day commitment, and the Strategy Lab opens w
 - **Funnel and work samples.** The four-stage funnel is now a creative index that opens each piece in the Ad Gallery. Creative Performance sits beside its next decision and the GamerHours measurement case. The gallery and calendar show work sooner, and every page has the same menu.
 - **Budget Forecast Calculator.** Four presets per market (Minimum €250, Medium €500, Optimum €1,000, Growth Machine €1,500; €0 allowed). Total spend is always shown. One budget, two scenarios: one focused channel or a spread across four. Each channel estimates only what it has a benchmark for, as a range, with a source-fit label and the decision it supports. First purchases appear only with a stated conversion assumption. The homepage preview and the Strategy Lab use the same model in `forecast-model.js`.
 - **Motion and scroll.** Every tab, disclosure, picker, preview, filter and calculator choice fades its new content in and scrolls to it when it would land below the fold. In-page links scroll smoothly, buttons give a slight press. All of it switches off under reduced motion.
-- **Fixes.** The gallery’s fees-versus-custody hook cards were white on white; wide tables now show a scroll cue; heading levels no longer skip.
+- **Fixes.** The gallery’s fees-versus-custody hook cards were white on white, and the gallery widgets turned dark (and unreadable) under OS dark mode; wide tables now show a scroll cue; heading levels no longer skip.
 - **Labels.** Past results are marked “Actual result”; the fees-versus-custody comparison is marked as a planned test; the dashboard stays illustrative.
 
 ## 2.6.0 · 10 Nov 2026
