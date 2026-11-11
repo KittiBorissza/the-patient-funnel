@@ -308,3 +308,19 @@
 @media (min-width: 56rem) {
   .creative-performance { grid-template-columns: minmax(0, .75fr) minmax(0, 1.65fr); }
 }
+
+/* 100-day summary directly after the hero. */
+.pitch-summary { border-top: 0; background: #eee6fb; }
+.pitch-summary h2 { max-width: 18ch; }
+.summary-loop { display: grid; gap: 1rem; margin: 1.6rem 0; padding: 0; list-style: none; }
+.summary-loop li { padding: 1.1rem 1.2rem; border-radius: .6rem; background: var(--surface); border: 1px solid #dccdf3; }
+.summary-loop span { display: block; color: var(--purple); font: 650 .73rem/1.4 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+.summary-loop strong { display: block; margin: .2rem 0 .45rem; font-size: clamp(1.45rem, 2.6vw, 2rem); letter-spacing: -.04em; line-height: 1.05; }
+.summary-loop p { margin: 0; color: var(--muted); }
+.summary-proof { max-width: 62ch; }
+.summary-proof a { font-weight: 730; }
+@media (min-width: 45rem) {
+  .summary-loop { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem; }
+  .summary-loop li + li { position: relative; }
+  .summary-loop li + li::before { content: "→"; position: absolute; left: -.875rem; top: 1.1rem; transform: translateX(-50%); color: var(--purple); font-weight: 700; }
+}
