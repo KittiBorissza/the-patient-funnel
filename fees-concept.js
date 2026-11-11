@@ -1,6 +1,6 @@
 'use strict';
 
-// "Before you hit Buy": the fees concept's five platform previews and AI before/after demo in the Ad Gallery.
+// "Before you hit Buy": the fees concept's five platform previews and AI before/after demo in Content Studio.
 (() => {
   const view = document.getElementById('fees-concept');
   if (!view) return;

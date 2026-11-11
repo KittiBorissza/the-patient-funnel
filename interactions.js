@@ -32,13 +32,12 @@ for (const list of document.querySelectorAll('[role="tablist"]')) {
   const tabs = [...list.querySelectorAll('[role="tab"]')];
   const initial = tabs.find(tab => tab.getAttribute('aria-selected') === 'true');
   activateTab(initial);
-  if (['timeline', 'lifecycle-steps'].includes(list.dataset.planTabs)) {
+  if (list.dataset.planTabs === 'lifecycle-steps') {
     const narrowTimeline = matchMedia('(max-width: 47.999rem)');
     const setOrientation = () => list.setAttribute('aria-orientation', narrowTimeline.matches ? 'vertical' : 'horizontal');
     narrowTimeline.addEventListener('change', setOrientation);
     setOrientation();
   }
-  if (list.closest('.homepage-concept')) list.hidden = false;
   if (list.closest('.concept-feed')) {
     const restorePlatform = () => {
       const active = tabs.find(tab => '#' + tab.getAttribute('aria-controls') === location.hash);
@@ -99,6 +98,10 @@ function revealFragment() {
   }
   const originalId = id;
   id = legacyFragments.get(id) || id;
+  if (id.includes('#')) {
+    location.replace(id);
+    return;
+  }
   if (!originalId) {
     const firstMonth = document.getElementById('tab-nov');
     if (firstMonth) activateTab(firstMonth);
@@ -187,18 +190,13 @@ const mainNav = document.querySelector('.site-head nav');
 if (mainNav) {
   const navId = 'site-navigation';
   mainNav.id = navId;
-  const quick = document.createElement('a');
-  quick.className = 'mobile-campaign';
-  quick.href = 'ad-gallery.html';
-  quick.textContent = 'Ad Gallery';
-
   const toggle = document.createElement('button');
   toggle.type = 'button';
   toggle.className = 'mobile-menu';
   toggle.textContent = 'Menu';
   toggle.setAttribute('aria-controls', navId);
   toggle.setAttribute('aria-expanded', 'false');
-  mainNav.before(quick, toggle);
+  mainNav.before(toggle);
   mainNav.classList.add('mobile-collapsible');
 
   const setOpen = open => {
