@@ -37,7 +37,7 @@
 .index h2 { font-size: clamp(2.05rem, 4.8vw, 4.15rem); text-wrap: balance; }
 .index h3 { font-size: clamp(1.28rem, 2.5vw, 2rem); }
 .evidence-grid, .pitch-samples, .creative-feature, .hook-comparison,
-.test-setup, .operating-grid, .local-grid, .pitch-about-inner { display: grid; gap: 1.5rem; }
+.test-setup, .pitch-about-inner { display: grid; gap: 1.5rem; }
 
 .evidence-grid { align-items: start; }
 .evidence-item {
@@ -264,13 +264,6 @@
 .approval-list > div + div { border-top: 1px solid var(--line); }
 .approval-list dt, .proof-list dt { font-weight: 750; }
 .approval-list dd, .proof-list dd { margin: 0; }
-.local-example { margin-block: 2rem; padding: clamp(1rem, 3vw, 1.9rem); background: #eee6fb; }
-.local-example > p:not(.eyebrow) { max-width: 65ch; }
-.local-grid { margin-block: 1rem; }
-.local-grid article { padding-top: .65rem; border-top: 1px solid #c9b7e0; }
-.local-grid article p { margin-bottom: .45rem; }
-.local-grid article p[lang] { font-size: 1.15rem; }
-.local-grid article .eyebrow { margin-bottom: .5rem; }
 
 .pitch-about { background: #49209c; color: #fff; }
 .pitch-about .eyebrow, .pitch-about a, .pitch-about .disclosure > summary,
@@ -294,7 +287,7 @@
   .evidence-grid { grid-template-columns: minmax(0, 1.33fr) repeat(2, minmax(0, 1fr)); }
   .pitch-samples { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .creative-feature, .pitch-about-inner { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 2rem; }
-  .hook-comparison, .test-setup, .operating-grid, .local-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+  .hook-comparison, .test-setup { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
 }
 .evidence-question {
   margin: 0 0 .8rem;
@@ -353,3 +346,4 @@
 .loop-steps dl { display: grid; gap: .55rem; margin: .7rem 0 0; padding-top: .7rem; border-top: 1px solid #4d3478; font-size: .9rem; }
 .loop-steps dt { color: #cdb9f0; font-size: .78rem; font-weight: 750; }
 .loop-steps dd { margin: .05rem 0 0; }
+.evidence-note { color: #e6dbff; font-size: .9rem; }
