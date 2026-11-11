@@ -9,16 +9,16 @@
   const walkthrough = 'content-calendar.html#ex-walkthrough';
   const cta = 'See the first-buy walkthrough';
 
-  // Placeholder crops of the original fees art. When issue #9 lands, point each src at its generated file and set size to cover, position to center.
+  // Campaign artwork uses 4:5 master cards and 9:16 Reel crops.
   const art = {
-    cover: { src: 'assets/fees-creative.webp', size: '175%', position: '88% 80%' },
-    pay: { src: 'assets/fees-creative.webp', size: '260%', position: '90% 58%' },
-    receive: { src: 'assets/fees-creative.webp', size: '260%', position: '90% 75%' },
-    both: { src: 'assets/fees-creative.webp', size: '175%', position: '100% 80%' },
-    reelHook: { src: 'assets/fees-creative.webp', size: 'auto 150%', position: '100% 100%' },
-    reelPay: { src: 'assets/fees-creative.webp', size: 'auto 210%', position: '100% 62%' },
-    reelReceive: { src: 'assets/fees-creative.webp', size: 'auto 210%', position: '100% 78%' },
-    reelBoth: { src: 'assets/fees-creative.webp', size: 'auto 140%', position: '100% 100%' }
+    cover: 'assets/fees-campaign/cover.webp',
+    pay: 'assets/fees-campaign/pay.webp',
+    receive: 'assets/fees-campaign/receive.webp',
+    both: 'assets/fees-campaign/both.webp',
+    reelHook: 'assets/fees-campaign/reel-cover.webp',
+    reelPay: 'assets/fees-campaign/reel-pay.webp',
+    reelReceive: 'assets/fees-campaign/reel-receive.webp',
+    reelBoth: 'assets/fees-campaign/reel-both.webp'
   };
 
   const hooks = {
@@ -44,9 +44,9 @@
   ];
   const linkedin = [
     { art: 'cover', chip: 'Page 1 / 4', title: 'What should a first-time buyer see before confirming?', body: 'Two numbers. One screen. Before the button.' },
-    { light: true, chip: 'Page 2 / 4', title: 'What they will pay.', body: 'The total, in their own currency, before they tap Confirm.', focus: 'pay' },
-    { light: true, chip: 'Page 3 / 4', title: 'How much bitcoin they will receive.', body: 'The BTC amount this quote gives them, on the same screen.', focus: 'receive' },
-    { light: true, chip: 'Page 4 / 4 · Product-design takeaway', title: 'Make the purchase decision clear.', body: 'Show what someone pays and what they receive side by side, before Confirm. If a first-time buyer has to hunt for either number, the screen isn’t finished.', cta: true }
+    { art: 'pay', light: true, chip: 'Page 2 / 4', title: 'What they will pay.', body: 'The total, in their own currency, before they tap Confirm.', focus: 'pay' },
+    { art: 'receive', light: true, chip: 'Page 3 / 4', title: 'How much bitcoin they will receive.', body: 'The BTC amount this quote gives them, on the same screen.', focus: 'receive' },
+    { art: 'both', light: true, chip: 'Page 4 / 4 · Product-design takeaway', title: 'Make the purchase decision clear.', body: 'Show what someone pays and what they receive side by side, before Confirm. If a first-time buyer has to hunt for either number, the screen isn’t finished.', cta: true }
   ];
   const reel = () => [
     { art: 'reelHook', chip: 'Independent concept', title: hooks[hook].cover, body: 'First bitcoin purchase? Pause here.' },
@@ -63,13 +63,13 @@
     '<span class="bh-field" data-field="receive"><span>You receive · BTC</span><i></i></span>' +
     '<span class="bh-q-confirm">Confirm</span><span class="bh-note">Schematic · no real figures</span></div>';
 
-  // Live text over placeholder art, so copy changes never need a new image.
+  // The hook stays editable across platform previews.
   function card(c, shape = '', live = true) {
     const a = art[c.art];
-    const style = a ? ' style="--art:url(\'' + a.src + '\');--art-size:' + a.size + ';--art-pos:' + a.position + '"' : '';
+    const style = a ? ' style="--art:url(' + a + ')"' : '';
     const action = c.cta ? (live ? '<a class="bh-cta" href="' + walkthrough + '">' + cta + '</a>' : '<span class="bh-cta">' + cta + '</span>') : '';
     return '<div class="bh-card' + (shape ? ' bh-' + shape : '') + (c.light ? ' bh-light' : '') + (c.focus ? ' bh-has-quote' : '') + '"' + style + '>' +
-      (a && !c.light ? '<span class="bh-art" aria-hidden="true"></span>' : '') +
+      (a ? '<span class="bh-art" aria-hidden="true"></span>' : '') +
       '<div class="bh-in"><span class="bh-chip">' + c.chip + (c.chip.includes('Independent') ? '' : ' · Independent concept') + '</span>' +
       '<p class="bh-h">' + c.title + '</p>' + (c.body ? '<p class="bh-body">' + c.body + '</p>' : '') +
       (c.focus ? quote(c.focus) : '') + action + '</div></div>';

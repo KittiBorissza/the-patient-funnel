@@ -9,6 +9,8 @@
 .bh-art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#1a0838 0%,#1a0838f2 34%,#1a083800 60%,#1a083800 74%,#1a0838f2 92%)}
 .bh-has-quote .bh-art{opacity:.55}
 .bh-light{background:#f1e8ff;color:#24084c}
+.bh-light .bh-art{opacity:1}
+.bh-light .bh-art::after{background:linear-gradient(180deg,#f1e8ff 0%,#f1e8ff 44%,#f1e8ff00 82%)}
 .bh-chip{font-size:3.3cqi;letter-spacing:.07em;text-transform:uppercase;font-weight:650;color:#e4d3ff}
 .bh-light .bh-chip{color:#5614b9}
 .bh-h{margin:0;font-size:9.6cqi;line-height:1.03;letter-spacing:-.035em;font-weight:720;max-width:15ch;text-wrap:balance}
